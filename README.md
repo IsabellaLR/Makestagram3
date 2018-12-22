@@ -1,1 +1,1 @@
-# Makestagram3
+# Makestagram3 - makestagram tutorial
