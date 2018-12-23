@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QED-U7-GgA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Yh5-oD-VTS">
+            <objects>
+                <viewController id="QED-U7-GgA" customClass="LoginViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4xF-pT-Acf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wve-wv-sHk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="265"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="cRj-yN-iaS">
+                                        <rect key="frame" x="65" y="80.5" width="245" height="104.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makestagram 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yy-u3-KRF">
+                                                <rect key="frame" x="0.0" y="0.0" width="245" height="43.5"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up to see photos and videos from your friends" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc5-vc-yha">
+                                                <rect key="frame" x="2.5" y="68.5" width="240" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="0Av-Py-Dda"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.41568627450980389" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cRj-yN-iaS" firstAttribute="centerX" secondItem="Wve-wv-sHk" secondAttribute="centerX" id="Agg-5g-dhT"/>
+                                    <constraint firstAttribute="height" constant="265" id="tTC-ft-kVD"/>
+                                    <constraint firstItem="cRj-yN-iaS" firstAttribute="centerY" secondItem="Wve-wv-sHk" secondAttribute="centerY" id="waQ-OG-u9h"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxX-2u-WLc">
+                                <rect key="frame" x="35" y="310" width="305" height="44"/>
+                                <color key="backgroundColor" red="0.2196078431372549" green="0.59215686274509804" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Iue-XD-eLi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Register or Log In"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Wve-wv-sHk" firstAttribute="top" secondItem="4xF-pT-Acf" secondAttribute="top" constant="20" id="0bF-k3-CGr"/>
+                            <constraint firstItem="SvB-bJ-Tgl" firstAttribute="trailing" secondItem="MxX-2u-WLc" secondAttribute="trailing" constant="35" id="AMU-TH-TP6"/>
+                            <constraint firstItem="MxX-2u-WLc" firstAttribute="top" secondItem="Wve-wv-sHk" secondAttribute="bottom" constant="25" id="JfR-fw-wRT"/>
+                            <constraint firstItem="MxX-2u-WLc" firstAttribute="leading" secondItem="SvB-bJ-Tgl" secondAttribute="leading" constant="35" id="MSI-9u-Tz8"/>
+                            <constraint firstItem="SvB-bJ-Tgl" firstAttribute="trailing" secondItem="Wve-wv-sHk" secondAttribute="trailing" id="Svs-ug-pz4"/>
+                            <constraint firstItem="Wve-wv-sHk" firstAttribute="leading" secondItem="SvB-bJ-Tgl" secondAttribute="leading" id="qiB-36-k3U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SvB-bJ-Tgl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZs-JR-6Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="66.11694152923539"/>
+        </scene>
+    </scenes>
+</document>

@@ -13,6 +13,8 @@
 		28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4AC21CEE7610083EE24 /* Assets.xcassets */; };
 		28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4AE21CEE7610083EE24 /* LaunchScreen.storyboard */; };
 		28EAC4B821CEF9A10083EE24 /* GoogleService-Info(4).plist in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4B721CEF9A10083EE24 /* GoogleService-Info(4).plist */; };
+		28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4C321CF20500083EE24 /* Login.storyboard */; };
+		28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAC4C521CF21640083EE24 /* LoginViewController.swift */; };
 		C4F995E50979BA0333CDF937 /* Pods_Makestagram3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF0DB8C582B08D3456AFA2 /* Pods_Makestagram3.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		28EAC4AF21CEE7610083EE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28EAC4B121CEE7610083EE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28EAC4B721CEF9A10083EE24 /* GoogleService-Info(4).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info(4).plist"; sourceTree = "<group>"; };
+		28EAC4C321CF20500083EE24 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		28EAC4C521CF21640083EE24 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A77C4271F9B02348076A58C0 /* Pods-Makestagram3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram3/Pods-Makestagram3.release.xcconfig"; sourceTree = "<group>"; };
 		F49599F9F6318BEAE3590776 /* Pods-Makestagram3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram3/Pods-Makestagram3.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +49,14 @@
 		28EAC49921CEE7600083EE24 = {
 			isa = PBXGroup;
 			children = (
+				28EAC4C021CEFF5E0083EE24 /* Views */,
+				28EAC4BF21CEFF560083EE24 /* Supporting */,
+				28EAC4BE21CEFF510083EE24 /* Storyboards */,
+				28EAC4BD21CEFF4B0083EE24 /* Services */,
+				28EAC4BC21CEFF460083EE24 /* Models */,
+				28EAC4BB21CEFF400083EE24 /* Helpers */,
+				28EAC4BA21CEFF360083EE24 /* Extensions */,
+				28EAC4B921CEFF090083EE24 /* Controllers */,
 				28EAC4A421CEE7600083EE24 /* Makestagram3 */,
 				28EAC4A321CEE7600083EE24 /* Products */,
 				7B06AA1CF8425FA2BA5411E2 /* Pods */,
@@ -64,14 +76,72 @@
 			isa = PBXGroup;
 			children = (
 				28EAC4A521CEE7600083EE24 /* AppDelegate.swift */,
-				28EAC4A721CEE7600083EE24 /* ViewController.swift */,
-				28EAC4A921CEE7600083EE24 /* Main.storyboard */,
 				28EAC4AC21CEE7610083EE24 /* Assets.xcassets */,
-				28EAC4AE21CEE7610083EE24 /* LaunchScreen.storyboard */,
-				28EAC4B121CEE7610083EE24 /* Info.plist */,
-				28EAC4B721CEF9A10083EE24 /* GoogleService-Info(4).plist */,
 			);
 			path = Makestagram3;
+			sourceTree = "<group>";
+		};
+		28EAC4B921CEFF090083EE24 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28EAC4A721CEE7600083EE24 /* ViewController.swift */,
+				28EAC4C521CF21640083EE24 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		28EAC4BA21CEFF360083EE24 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		28EAC4BB21CEFF400083EE24 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		28EAC4BC21CEFF460083EE24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		28EAC4BD21CEFF4B0083EE24 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		28EAC4BE21CEFF510083EE24 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				28EAC4A921CEE7600083EE24 /* Main.storyboard */,
+				28EAC4C321CF20500083EE24 /* Login.storyboard */,
+				28EAC4AE21CEE7610083EE24 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		28EAC4BF21CEFF560083EE24 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				28EAC4B721CEF9A10083EE24 /* GoogleService-Info(4).plist */,
+				28EAC4B121CEE7610083EE24 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		28EAC4C021CEFF5E0083EE24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7B06AA1CF8425FA2BA5411E2 /* Pods */ = {
@@ -155,6 +225,7 @@
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
 				28EAC4B821CEF9A10083EE24 /* GoogleService-Info(4).plist in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
+				28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */,
 				28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */,
 				28EAC4A821CEE7600083EE24 /* ViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 			);
@@ -379,7 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGCMUKPMKN;
-				INFOPLIST_FILE = Makestagram3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UGCMUKPMKN;
-				INFOPLIST_FILE = Makestagram3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
