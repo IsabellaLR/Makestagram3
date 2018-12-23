@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */; };
 		28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAC4A521CEE7600083EE24 /* AppDelegate.swift */; };
 		28EAC4A821CEE7600083EE24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAC4A721CEE7600083EE24 /* ViewController.swift */; };
 		28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4A921CEE7600083EE24 /* Main.storyboard */; };
 		28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4AC21CEE7610083EE24 /* Assets.xcassets */; };
 		28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4AE21CEE7610083EE24 /* LaunchScreen.storyboard */; };
-		28EAC4B821CEF9A10083EE24 /* GoogleService-Info(4).plist in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4B721CEF9A10083EE24 /* GoogleService-Info(4).plist */; };
 		28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4C321CF20500083EE24 /* Login.storyboard */; };
 		28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAC4C521CF21640083EE24 /* LoginViewController.swift */; };
 		C4F995E50979BA0333CDF937 /* Pods_Makestagram3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF0DB8C582B08D3456AFA2 /* Pods_Makestagram3.framework */; };
@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1DAF0DB8C582B08D3456AFA2 /* Pods_Makestagram3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28EAC4A221CEE7600083EE24 /* Makestagram3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EAC4A521CEE7600083EE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28EAC4A721CEE7600083EE24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		28EAC4AC21CEE7610083EE24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28EAC4AF21CEE7610083EE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28EAC4B121CEE7610083EE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28EAC4B721CEF9A10083EE24 /* GoogleService-Info(4).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info(4).plist"; sourceTree = "<group>"; };
 		28EAC4C321CF20500083EE24 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		28EAC4C521CF21640083EE24 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A77C4271F9B02348076A58C0 /* Pods-Makestagram3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Makestagram3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Makestagram3/Pods-Makestagram3.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		28EAC4BF21CEFF560083EE24 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				28EAC4B721CEF9A10083EE24 /* GoogleService-Info(4).plist */,
+				28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */,
 				28EAC4B121CEE7610083EE24 /* Info.plist */,
 			);
 			path = Supporting;
@@ -223,9 +223,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
-				28EAC4B821CEF9A10083EE24 /* GoogleService-Info(4).plist in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
 				28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */,
+				28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */,
 				28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
