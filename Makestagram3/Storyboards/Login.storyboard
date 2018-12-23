@@ -57,6 +57,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Register or Log In"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="QED-U7-GgA" eventType="touchUpInside" id="VCd-3B-1Vs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -69,6 +72,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SvB-bJ-Tgl"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="MxX-2u-WLc" id="vJp-Pi-eMa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZs-JR-6Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

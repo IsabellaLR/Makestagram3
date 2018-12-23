@@ -10,7 +10,13 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    // Mark: - Properties
+    @IBOutlet weak var loginButton: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        print("login button tapped")
+    }
 }
