@@ -10,17 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="3xR-sS-nTX">
             <objects>
-                <viewController id="aAB-FQ-deE" sceneMemberID="viewController">
+                <viewController id="aAB-FQ-deE" customClass="MainTabBarController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3jK-fP-HkN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oas-X9-9EE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="tab_plus_black" id="Qqo-uu-20D">
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="tab_plus_black" id="Qqo-uu-20D">
                         <inset key="imageInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                 </viewController>
@@ -38,7 +38,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="odI-uy-QC1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="tab_find_friends_black" id="VXc-f9-eoq">
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="tab_find_friends_black" id="VXc-f9-eoq">
                         <inset key="imageInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                 </viewController>
@@ -56,7 +56,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="m3h-2j-9xI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" selectedImage="tab_home_black" id="Tzo-1m-BBy">
+                    <tabBarItem key="tabBarItem" title="" image="tab_home_black" id="Tzo-1m-BBy">
                         <inset key="imageInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
                 </viewController>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="548" y="-312"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="DNM-gq-zwt">
             <objects>
-                <tabBarController id="cW0-kF-e8T" sceneMemberID="viewController">
+                <tabBarController id="cW0-kF-e8T" customClass="MainTabBarController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="77M-cZ-0b6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -6,4 +6,8 @@
 //  Copyright © 2018 Bella. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class FindFriendsViewController: UIViewController {
+    
+}

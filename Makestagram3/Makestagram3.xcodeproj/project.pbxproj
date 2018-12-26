@@ -12,6 +12,8 @@
 		2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */; };
 		2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45721D316BF007E3FF1 /* HomeViewController.swift */; };
 		2871D45A21D316D0007E3FF1 /* FindFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45921D316D0007E3FF1 /* FindFriendsViewController.swift */; };
+		2871D45C21D31F44007E3FF1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */; };
+		2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45D21D33B75007E3FF1 /* MGPhotoHelper.swift */; };
 		28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */; };
 		28C06FDE21D09C2C008F2783 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDD21D09C2C008F2783 /* User.swift */; };
 		28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */; };
@@ -31,6 +33,8 @@
 		2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		2871D45721D316BF007E3FF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2871D45921D316D0007E3FF1 /* FindFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsViewController.swift; sourceTree = "<group>"; };
+		2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2871D45D21D33B75007E3FF1 /* MGPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGPhotoHelper.swift; sourceTree = "<group>"; };
 		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28C06FDD21D09C2C008F2783 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */,
 				2871D45721D316BF007E3FF1 /* HomeViewController.swift */,
 				2871D45921D316D0007E3FF1 /* FindFriendsViewController.swift */,
+				2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 		28EAC4BB21CEFF400083EE24 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2871D45D21D33B75007E3FF1 /* MGPhotoHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -320,8 +326,10 @@
 			files = (
 				28C06FDE21D09C2C008F2783 /* User.swift in Sources */,
 				28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */,
+				2871D45C21D31F44007E3FF1 /* MainTabBarController.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
+				2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */,
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
 				2871D45A21D316D0007E3FF1 /* FindFriendsViewController.swift in Sources */,
 				2871D45421D30F43007E3FF1 /* Constants.swift in Sources */,
