@@ -16,6 +16,9 @@
 		2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45D21D33B75007E3FF1 /* MGPhotoHelper.swift */; };
 		2871D46021D34E7F007E3FF1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45F21D34E7F007E3FF1 /* StorageService.swift */; };
 		2871D46221D3528C007E3FF1 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46121D3528C007E3FF1 /* PostService.swift */; };
+		2871D46421D3F84D007E3FF1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46321D3F84D007E3FF1 /* Post.swift */; };
+		2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */; };
+		2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46721D3FD0E007E3FF1 /* StorageReference.swift */; };
 		28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */; };
 		28C06FDE21D09C2C008F2783 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDD21D09C2C008F2783 /* User.swift */; };
 		28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */; };
@@ -39,6 +42,9 @@
 		2871D45D21D33B75007E3FF1 /* MGPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGPhotoHelper.swift; sourceTree = "<group>"; };
 		2871D45F21D34E7F007E3FF1 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		2871D46121D3528C007E3FF1 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		2871D46321D3F84D007E3FF1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
+		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
 		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28C06FDD21D09C2C008F2783 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */,
+				2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */,
+				2871D46721D3FD0E007E3FF1 /* StorageReference.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -133,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				28C06FDD21D09C2C008F2783 /* User.swift */,
+				2871D46321D3F84D007E3FF1 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,6 +344,9 @@
 				28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */,
 				2871D45C21D31F44007E3FF1 /* MainTabBarController.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
+				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
+				2871D46421D3F84D007E3FF1 /* Post.swift in Sources */,
+				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
 				2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */,
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
