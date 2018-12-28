@@ -45,6 +45,7 @@
 		2871D46321D3F84D007E3FF1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
+		28A6B19921D4AF5900004BB0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Home.storyboard; path = /Users/Bella/Desktop/GitHub/Makestagram3/Makestagram3/Storyboards/Home.storyboard; sourceTree = "<absolute>"; };
 		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28C06FDD21D09C2C008F2783 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		28EAC4BE21CEFF510083EE24 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				28A6B19921D4AF5900004BB0 /* Home.storyboard */,
 				28EAC4A921CEE7600083EE24 /* Main.storyboard */,
 				28EAC4C321CF20500083EE24 /* Login.storyboard */,
 				28EAC4AE21CEE7610083EE24 /* LaunchScreen.storyboard */,
