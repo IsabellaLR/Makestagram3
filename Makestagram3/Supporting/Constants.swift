@@ -16,4 +16,13 @@ struct Constants {
     struct UserDefaults {
         static let currentUser = "currentUser"
     }
+    
+    struct Reference {
+        static let posts = "posts"
+        static let images = "images"
+        static let users = "users"
+        static let postLikes = "postLikes"
+        static let followers = "followers"
+        static let timeline = "timeline"
+    }
 }

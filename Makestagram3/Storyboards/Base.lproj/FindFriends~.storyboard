@@ -35,85 +35,16 @@
                     <view key="view" contentMode="scaleToFill" id="53q-Wq-Eoi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A82-jR-BQG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Find Friends" id="b2r-Fr-iUZ"/>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ipx-5x-syV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindFriendsCell" rowHeight="71" id="fpz-uz-Q4r" customClass="FindFriendsCell" customModule="Makestagram3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="71"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fpz-uz-Q4r" id="jHf-3C-nHd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpA-Lu-YUZ">
-                                                    <rect key="frame" x="15" y="0.0" width="223" height="70.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPq-oP-y7I">
-                                                    <rect key="frame" x="250" y="10" width="115" height="50.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="115" id="4UM-aQ-WnF"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="followButtonTapped:" destination="fpz-uz-Q4r" eventType="touchUpInside" id="oeC-Zi-GhC"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="LpA-Lu-YUZ" firstAttribute="top" secondItem="jHf-3C-nHd" secondAttribute="top" id="LyL-Gr-biB"/>
-                                                <constraint firstItem="bPq-oP-y7I" firstAttribute="top" secondItem="jHf-3C-nHd" secondAttribute="top" constant="10" id="eiL-bC-Xw9"/>
-                                                <constraint firstAttribute="bottom" secondItem="LpA-Lu-YUZ" secondAttribute="bottom" id="o7E-Lv-Nle"/>
-                                                <constraint firstAttribute="bottom" secondItem="bPq-oP-y7I" secondAttribute="bottom" constant="10" id="qmT-yX-B9d"/>
-                                                <constraint firstItem="bPq-oP-y7I" firstAttribute="leading" secondItem="LpA-Lu-YUZ" secondAttribute="trailing" constant="12" id="sa0-lT-fiW"/>
-                                                <constraint firstAttribute="trailing" secondItem="bPq-oP-y7I" secondAttribute="trailing" constant="10" id="x2i-cN-dBP"/>
-                                                <constraint firstItem="LpA-Lu-YUZ" firstAttribute="leading" secondItem="jHf-3C-nHd" secondAttribute="leading" constant="15" id="yHX-Yg-xSb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="followButton" destination="bPq-oP-y7I" id="ssz-YM-ifI"/>
-                                            <outlet property="usernameLabel" destination="LpA-Lu-YUZ" id="iKj-NG-JWT"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Yfw-c4-M9M" id="eLA-yV-0JA"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="trailing" secondItem="53q-Wq-Eoi" secondAttribute="trailing" id="1zU-p1-LGY"/>
-                            <constraint firstItem="A82-jR-BQG" firstAttribute="top" secondItem="odI-uy-QC1" secondAttribute="top" id="7RE-QF-yRH"/>
-                            <constraint firstItem="A82-jR-BQG" firstAttribute="leading" secondItem="odI-uy-QC1" secondAttribute="leading" id="G2A-Td-BTn"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="bottom" secondItem="53q-Wq-Eoi" secondAttribute="bottom" id="Rhy-wY-JMZ"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="leading" secondItem="53q-Wq-Eoi" secondAttribute="leading" id="Sk7-Em-rxL"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="top" secondItem="A82-jR-BQG" secondAttribute="bottom" id="Z7P-yu-xJj"/>
-                            <constraint firstItem="A82-jR-BQG" firstAttribute="trailing" secondItem="odI-uy-QC1" secondAttribute="trailing" id="dej-G2-Gda"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="top" secondItem="A82-jR-BQG" secondAttribute="bottom" id="olw-xa-2ga"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="odI-uy-QC1"/>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="" image="tab_find_friends_black" id="VXc-f9-eoq">
                         <inset key="imageInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
-                    <connections>
-                        <outlet property="tableView" destination="Ipx-5x-syV" id="7rE-Tz-tgn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euG-50-hav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170.40000000000001" y="-662.51874062968523"/>
+            <point key="canvasLocation" x="-170" y="-662"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="DNM-gq-zwt">
