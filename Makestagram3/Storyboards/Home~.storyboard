@@ -1,17 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cW0-kF-e8T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="3xR-sS-nTX">
+            <objects>
+                <viewController id="aAB-FQ-deE" customClass="MainTabBarController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3jK-fP-HkN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oas-X9-9EE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="tab_plus_black" id="Qqo-uu-20D">
+                        <inset key="imageInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYA-Cg-4aw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="354"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="DNM-gq-zwt">
+            <objects>
+                <tabBarController id="cW0-kF-e8T" customClass="MainTabBarController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="77M-cZ-0b6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="28Q-TN-N9a" kind="relationship" relationship="viewControllers" id="4o4-2V-tnB"/>
+                        <segue destination="aAB-FQ-deE" kind="relationship" relationship="viewControllers" id="MXD-xJ-EvZ"/>
+                        <segue destination="ciS-e0-UQp" kind="relationship" relationship="viewControllers" id="Ppo-C3-nei"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1up-ds-cai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-406" y="20"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="34J-JD-26H">
             <objects>
                 <viewController id="JSr-ys-F4Y" customClass="HomeViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IU4-Ea-y2p">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-2q-ELq">
@@ -97,7 +138,7 @@
             <objects>
                 <viewController storyboardIdentifier="MakeBetViewController" id="TrX-W2-Fhr" customClass="MakeBetViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="prS-Lc-iJ7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aip-6b-zZg">
@@ -151,7 +192,7 @@
             <objects>
                 <viewController id="DRk-b1-LmG" customClass="PopOverViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hh6-W7-sLm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-wn-BRX">
@@ -200,7 +241,7 @@
         <!--Navigation Controller-->
         <scene sceneID="TcF-Ge-Zua">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController-28Q-TN-N9a" automaticallyAdjustsScrollViewInsets="NO" id="28Q-TN-N9a" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="28Q-TN-N9a" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="tab_home_black" id="0ij-uu-3dU">
                         <inset key="imageInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
                     </tabBarItem>
@@ -218,9 +259,20 @@
             </objects>
             <point key="canvasLocation" x="1576.8" y="-307.1964017991005"/>
         </scene>
+        <!--Friends-->
+        <scene sceneID="1GU-j6-L7A">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Friends" id="ciS-e0-UQp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="KBp-My-IHG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWg-7L-wuc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170.40000000000001" y="-662.51874062968523"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn_heart_red_solid" width="24" height="24"/>
         <image name="tab_home_black" width="25" height="25"/>
+        <image name="tab_plus_black" width="25" height="25"/>
     </resources>
 </document>
