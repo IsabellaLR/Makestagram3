@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC0E21D709890002A238 /* HomeTableViewCell.swift */; };
+		2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1021D7116E0002A238 /* MakeBetViewController.swift */; };
 		2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45121D0BF3D007E3FF1 /* UserService.swift */; };
 		2871D45421D30F43007E3FF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45321D30F43007E3FF1 /* Constants.swift */; };
 		2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		1DAF0DB8C582B08D3456AFA2 /* Pods_Makestagram3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2840AC0E21D709890002A238 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		2840AC1021D7116E0002A238 /* MakeBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBetViewController.swift; sourceTree = "<group>"; };
 		2871D45121D0BF3D007E3FF1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2871D45321D30F43007E3FF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				28EAC4C521CF21640083EE24 /* LoginViewController.swift */,
 				28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */,
 				2871D45721D316BF007E3FF1 /* HomeViewController.swift */,
+				2840AC1021D7116E0002A238 /* MakeBetViewController.swift */,
 				2871D45921D316D0007E3FF1 /* FindFriendsViewController.swift */,
 				2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */,
 			);
@@ -181,6 +186,7 @@
 		28EAC4C021CEFF5E0083EE24 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2840AC0E21D709890002A238 /* HomeTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,7 +361,9 @@
 				2871D45A21D316D0007E3FF1 /* FindFriendsViewController.swift in Sources */,
 				2871D45421D30F43007E3FF1 /* Constants.swift in Sources */,
 				2871D46221D3528C007E3FF1 /* PostService.swift in Sources */,
+				2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */,
 				28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */,
+				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
