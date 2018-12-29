@@ -11,6 +11,7 @@ import UIKit
 class MakeBetViewController: UIViewController {
 
     @IBOutlet weak var episodeLabel: UILabel!
+    @IBOutlet weak var btnSelect: UIButton!
     
     var name = ""
     
@@ -18,6 +19,11 @@ class MakeBetViewController: UIViewController {
         super.viewDidLoad()
         
         episodeLabel.text = "Make a bet for \(name)"
+        
+        btnSelect.backgroundColor = .clear
+        btnSelect.layer.cornerRadius = 5
+        btnSelect.layer.borderWidth = 0.5
+        btnSelect.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     override func didReceiveMemoryWarning() {
