@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +15,7 @@
             <objects>
                 <viewController id="JSr-ys-F4Y" customClass="HomeViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IU4-Ea-y2p">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-2q-ELq">
@@ -19,11 +23,11 @@
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.59215686270000001" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2F-dX-R9C">
-                                <rect key="frame" x="0.0" y="140" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="97"/>
                                 <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U0O-dh-XXd">
-                                <rect key="frame" x="0.0" y="188" width="375" height="430"/>
+                                <rect key="frame" x="0.0" y="237" width="375" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" rowHeight="100" id="ekD-Fg-jLU" customClass="HomeTableViewCell" customModule="Makestagram3" customModuleProvider="target">
@@ -97,7 +101,7 @@
             <objects>
                 <viewController storyboardIdentifier="MakeBetViewController" id="TrX-W2-Fhr" customClass="MakeBetViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="prS-Lc-iJ7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aip-6b-zZg">
@@ -146,12 +150,12 @@
             </objects>
             <point key="canvasLocation" x="2924" y="-307.1964017991005"/>
         </scene>
-        <!--Pop Over View Controller-->
+        <!--Send To Pop Over View Controller-->
         <scene sceneID="lhe-86-tUu">
             <objects>
-                <viewController id="DRk-b1-LmG" customClass="PopOverViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DRk-b1-LmG" customClass="SendToPopOverViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hh6-W7-sLm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-wn-BRX">
@@ -163,23 +167,44 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="eIL-CI-5C0">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SendToFollowersCell" id="eIL-CI-5C0" customClass="SendToFollowersCell" customModule="Makestagram3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="328" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eIL-CI-5C0" id="AEh-y8-Kph">
                                                     <rect key="frame" x="0.0" y="0.0" width="328" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiC-dg-0VJ">
+                                                            <rect key="frame" x="15" y="11" width="124" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wl-fb-MIR">
+                                                            <rect key="frame" x="210" y="6" width="103" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="followButtonTapped:" destination="eIL-CI-5C0" eventType="touchUpInside" id="MV0-NS-aJZ"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="followerName" destination="SiC-dg-0VJ" id="Rj1-3A-b96"/>
+                                                    <outlet property="sendButton" destination="1wl-fb-MIR" id="KvL-ZT-3xB"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="DRk-b1-LmG" id="JpF-GG-HpT"/>
+                                        </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slD-sr-NiE">
-                                        <rect key="frame" x="23" y="220" width="328" height="30"/>
+                                        <rect key="frame" x="23" y="220" width="171" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="closePopup:" destination="DRk-b1-LmG" eventType="touchUpInside" id="CQp-DI-6wX"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,8 +214,7 @@
                         <viewLayoutGuide key="safeArea" id="Fxi-31-TCs"/>
                     </view>
                     <connections>
-                        <outlet property="Popupview" destination="Fqb-wn-BRX" id="VE5-15-PaI"/>
-                        <outlet property="tableView" destination="DFw-C3-DNj" id="gI6-Do-QRo"/>
+                        <outlet property="tableView" destination="DFw-C3-DNj" id="JrA-8l-AGE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ln9-kb-Ee3" userLabel="First Responder" sceneMemberID="firstResponder"/>

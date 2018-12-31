@@ -14,6 +14,8 @@
 		2840AC1921D822BA0002A238 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1821D822BA0002A238 /* PopOverViewController.swift */; };
 		2840AC1D21D82AB50002A238 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1C21D82AB50002A238 /* Friends.storyboard */; };
 		2840AC1F21D82AFB0002A238 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1E21D82AFB0002A238 /* Home.storyboard */; };
+		2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */; };
+		2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */; };
 		2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45121D0BF3D007E3FF1 /* UserService.swift */; };
 		2871D45421D30F43007E3FF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45321D30F43007E3FF1 /* Constants.swift */; };
 		2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */; };
@@ -47,6 +49,8 @@
 		2840AC1821D822BA0002A238 /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		2840AC1C21D82AB50002A238 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		2840AC1E21D82AFB0002A238 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToPopOverViewController.swift; sourceTree = "<group>"; };
+		2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToFollowersCell.swift; sourceTree = "<group>"; };
 		2871D45121D0BF3D007E3FF1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2871D45321D30F43007E3FF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				2871D45921D316D0007E3FF1 /* FindFriendsViewController.swift */,
 				2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */,
 				2840AC1821D822BA0002A238 /* PopOverViewController.swift */,
+				2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			children = (
 				2840AC0E21D709890002A238 /* HomeTableViewCell.swift */,
 				2840AC1621D8029E0002A238 /* FindFriendsCell.swift */,
+				2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 				2871D45C21D31F44007E3FF1 /* MainTabBarController.swift in Sources */,
 				2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
+				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
 				2871D46421D3F84D007E3FF1 /* Post.swift in Sources */,
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
@@ -381,6 +388,7 @@
 				2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */,
 				28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */,
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
+				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 			);

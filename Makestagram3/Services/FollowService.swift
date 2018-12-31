@@ -65,4 +65,20 @@ struct FollowService {
             }
         })
     }
+
+    static func retrieveFollowers(for user: User, completion: @escaping ([User]?) -> Void) {
+        Database.database().reference().child("followers").child(user.uid).observe(.childAdded, with: { (snapshot) in
+            
+            if snapshot.childrenCount == 0{
+                return completion(nil)
+            }
+            
+            var followersArr = [User]()
+            for snap in snapshot.children {
+                let user = User(snapshot: snap as! DataSnapshot)
+                followersArr.append(user!)
+            }
+            return completion(followersArr)
+        })
+    }
 }
