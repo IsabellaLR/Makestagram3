@@ -25,4 +25,17 @@ struct Constants {
         static let followers = "followers"
         static let timeline = "timeline"
     }
+    
+    struct Dict {
+        static let image_url = "image_url"
+        static let image_height = "image_height"
+        static let created_at = "created_at"
+        static let username = "username"
+        static let like_count = "like_count"
+        static let poster = "poster"
+        static let poster_uid = "poster_uid"
+        static let uid = "uid"
+        static let followers = "followers"
+        static let following = "following"
+    }
 }

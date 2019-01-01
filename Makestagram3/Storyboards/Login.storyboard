@@ -59,7 +59,6 @@
                                 <state key="normal" title="Register or Log In"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="QED-U7-GgA" eventType="touchUpInside" id="VCd-3B-1Vs"/>
-                                    <segue destination="Dsq-rK-riO" kind="show" identifier="toCreateUsername" id="AQN-Hc-XLR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,6 +75,7 @@
                     <navigationItem key="navigationItem" id="kP2-o0-KfI"/>
                     <connections>
                         <outlet property="loginButton" destination="MxX-2u-WLc" id="vJp-Pi-eMa"/>
+                        <segue destination="Dsq-rK-riO" kind="show" identifier="toCreateUsername" id="4Yu-uf-aEu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZs-JR-6Ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nc7-Ri-Xqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870" y="66"/>
+            <point key="canvasLocation" x="2041" y="65"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4xX-D9-Jv7">
