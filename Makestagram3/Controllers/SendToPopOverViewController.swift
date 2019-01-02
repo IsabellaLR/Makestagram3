@@ -12,26 +12,32 @@ class SendToPopOverViewController: UIViewController {
     
     var followersKey = [String]()
  
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.tableFooterView = UIView()
-//        tableView.rowHeight = 71
+//        tableView.dataSource = self
+//        tableView.register(SendToFollowersCell.self, forCellReuseIdentifier: "SendToFollowersCell")
+        tableView.tableFooterView = UIView()//        tableView.rowHeight = 71
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         FollowService.followers(for: User.current) { [unowned self] (followersKey) in
-                self.followersKey = followersKey
+            self.followersKey = followersKey
+            self.tableView.reloadData()
         }
         
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+        
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+            
         }
     }
     
@@ -53,7 +59,10 @@ extension SendToPopOverViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SendToFollowersCell") as! SendToFollowersCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SendToFollowersCell") as? SendToFollowersCell else {
+            fatalError("Could not retrieve cell")
+        }
+        
 //        cell.delegate = self
         configure(cell: cell, atIndexPath: indexPath)
         
@@ -65,7 +74,12 @@ extension SendToPopOverViewController: UITableViewDataSource {
         
         cell.followerName.text = followers
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(self.followersKey[indexPath.row])
+    }
 }
+
 
 //extension SendToPopOverViewController: SendToFollowersCellDelegate {
 //    func didTapFollowButton(_ sendButton: UIButton, on cell: SendToFollowersCell) {
@@ -97,3 +111,5 @@ extension SendToPopOverViewController: UITableViewDataSource {
 }
 
 */
+
+
