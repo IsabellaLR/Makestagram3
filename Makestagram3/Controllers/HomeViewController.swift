@@ -10,7 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var totalEpisodes = ["The Dungeon", "Cersei Dies", "3", "4", "5", "6", "7", "8",]
+    var totalEpisodes = ["Fire and Ice", "Viserys", "The Last Debt", "The Queen of Winterfell", "Reborn", "Claim to the Throne", "The Wheel Has Broken", "End Game"]
+    var episodeImages = ["ep1", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon"]
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -26,7 +27,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 175
+        return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +38,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? HomeTableViewCell
         cell?.homeLabel.text = totalEpisodes[indexPath.row]
-//        cell?.homeImage.image = UIImage(named: totalEpisodes[indexPath.row])
+        cell?.homeImage.image = UIImage(named: episodeImages[indexPath.row])
+        
+//        switch indexPath.row {
+//        case 0:
+//            cell?.homeImage.image =
+//        default:
+//            cell?.homeImage.image = UIImage.comingSoon
+//        }
         
         return cell!
     }
