@@ -39,13 +39,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? HomeTableViewCell
         cell?.homeLabel.text = totalEpisodes[indexPath.row]
         cell?.homeImage.image = UIImage(named: episodeImages[indexPath.row])
-        
-//        switch indexPath.row {
-//        case 0:
-//            cell?.homeImage.image =
-//        default:
-//            cell?.homeImage.image = UIImage.comingSoon
-//        }
+
         
         return cell!
     }

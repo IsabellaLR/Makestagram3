@@ -194,7 +194,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="followerName" destination="SiC-dg-0VJ" id="Rj1-3A-b96"/>
+                                                    <outlet property="followerName" destination="SiC-dg-0VJ" id="fAe-Ws-imh"/>
                                                     <outlet property="sendButton" destination="1wl-fb-MIR" id="KvL-ZT-3xB"/>
                                                 </connections>
                                             </tableViewCell>
@@ -207,6 +207,17 @@
                                         <rect key="frame" x="23" y="220" width="171" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="DRk-b1-LmG" eventType="touchUpInside" id="Ii9-Uq-IYC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5P-H3-h11">
+                                        <rect key="frame" x="202" y="220" width="149" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendTapped:" destination="DRk-b1-LmG" eventType="touchUpInside" id="Bfx-Vp-cbv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -216,6 +227,8 @@
                         <viewLayoutGuide key="safeArea" id="Fxi-31-TCs"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="slD-sr-NiE" id="osT-S7-zQo"/>
+                        <outlet property="sendButton" destination="J5P-H3-h11" id="Xil-Rx-WwM"/>
                         <outlet property="tableView" destination="DFw-C3-DNj" id="JrA-8l-AGE"/>
                     </connections>
                 </viewController>

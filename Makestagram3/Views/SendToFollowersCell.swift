@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol SendToFollowersCellDelegate: class {
-    func didTapFollowButton(_ sendButton: UIButton, on cell: SendToFollowersCell)
-}
+//protocol SendToFollowersCellDelegate: class {
+//    func didTapFollowButton(_ sendButton: UIButton, on cell: SendToFollowersCell)
+//}
 
 class SendToFollowersCell: UITableViewCell {
     
-    weak var delegate: SendToFollowersCellDelegate?
+//    weak var delegate: SendToFollowersCellDelegate?
 
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var followerName: UILabel!
@@ -38,7 +38,8 @@ class SendToFollowersCell: UITableViewCell {
     //    }
     
     
-    @IBAction func followButtonTapped(_ sender: UIButton) {
-        delegate?.didTapFollowButton(sender, on: self)
-    }
+//    @IBAction func followButtonTapped(_ sender: UIButton) {
+//        delegate?.didTapFollowButton(sender, on: self)
+//    }
+    
 }
