@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */; };
+		283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0D0121DDB0410096BB6E /* ShowBetCell.swift */; };
+		283F0D0421DDCCAB0096BB6E /* BetHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */; };
 		2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC0E21D709890002A238 /* HomeTableViewCell.swift */; };
 		2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1021D7116E0002A238 /* MakeBetViewController.swift */; };
 		2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1221D7F93F0002A238 /* FollowService.swift */; };
@@ -29,7 +32,7 @@
 		2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */; };
 		2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46721D3FD0E007E3FF1 /* StorageReference.swift */; };
 		28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE421DCA71F0041FDDB /* Selection.swift */; };
-		28AC0FE721DCAC490041FDDB /* Bets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* Bets.storyboard */; };
+		28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */; };
 		28AC0FE921DCAC7F0041FDDB /* BetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */; };
 		28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */; };
 		28C06FDE21D09C2C008F2783 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDD21D09C2C008F2783 /* User.swift */; };
@@ -45,6 +48,9 @@
 
 /* Begin PBXFileReference section */
 		1DAF0DB8C582B08D3456AFA2 /* Pods_Makestagram3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBetsViewController.swift; sourceTree = "<group>"; };
+		283F0D0121DDB0410096BB6E /* ShowBetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBetCell.swift; sourceTree = "<group>"; };
+		283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetHeaderCell.swift; sourceTree = "<group>"; };
 		2840AC0E21D709890002A238 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		2840AC1021D7116E0002A238 /* MakeBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBetViewController.swift; sourceTree = "<group>"; };
 		2840AC1221D7F93F0002A238 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
@@ -67,7 +73,7 @@
 		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
 		28AC0FE421DCA71F0041FDDB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
-		28AC0FE621DCAC490041FDDB /* Bets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bets.storyboard; sourceTree = "<group>"; };
+		28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBets.storyboard; sourceTree = "<group>"; };
 		28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCell.swift; sourceTree = "<group>"; };
 		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28C06FDD21D09C2C008F2783 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */,
 				2840AC1821D822BA0002A238 /* PopOverViewController.swift */,
 				2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */,
+				283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,7 +195,7 @@
 		28EAC4BE21CEFF510083EE24 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				28AC0FE621DCAC490041FDDB /* Bets.storyboard */,
+				28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */,
 				2840AC1E21D82AFB0002A238 /* Home.storyboard */,
 				2840AC1C21D82AB50002A238 /* Friends.storyboard */,
 				28EAC4A921CEE7600083EE24 /* Main.storyboard */,
@@ -215,6 +222,8 @@
 				2840AC1621D8029E0002A238 /* FindFriendsCell.swift */,
 				2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */,
 				28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */,
+				283F0D0121DDB0410096BB6E /* ShowBetCell.swift */,
+				283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,7 +310,7 @@
 				2840AC1D21D82AB50002A238 /* Friends.storyboard in Resources */,
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
-				28AC0FE721DCAC490041FDDB /* Bets.storyboard in Resources */,
+				28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */,
 				28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */,
 				28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */,
 				28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */,
@@ -384,11 +393,13 @@
 				2840AC1921D822BA0002A238 /* PopOverViewController.swift in Sources */,
 				28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */,
 				2871D45C21D31F44007E3FF1 /* MainTabBarController.swift in Sources */,
+				283F0D0421DDCCAB0096BB6E /* BetHeaderCell.swift in Sources */,
 				2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
 				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
 				2871D46421D3F84D007E3FF1 /* Post.swift in Sources */,
+				283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */,
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
 				28AC0FE921DCAC7F0041FDDB /* BetsCell.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
@@ -401,6 +412,7 @@
 				28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */,
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
+				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 			);

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase.FIRDataSnapshot
 
 class SendToPopOverViewController: UIViewController {
     
-    var followersKey = [String]()
+    var followingKeys = [String]()
  
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -20,14 +21,14 @@ class SendToPopOverViewController: UIViewController {
         super.viewDidLoad()
 //        tableView.dataSource = self
 //        tableView.register(SendToFollowersCell.self, forCellReuseIdentifier: "SendToFollowersCell")
-        tableView.tableFooterView = UIView()//        tableView.rowHeight = 71
+//        tableView.tableFooterView = UIView()//        tableView.rowHeight = 71
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        FollowService.followers(for: User.current) { [unowned self] (followersKey) in
-            self.followersKey = followersKey
+        FollowService.followingUsernames(for: User.current) { [unowned self] (followingKeys) in
+            self.followingKeys = followingKeys
             self.tableView.reloadData()
         }
         
@@ -55,7 +56,7 @@ class SendToPopOverViewController: UIViewController {
 
 extension SendToPopOverViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return followersKey.count
+        return followingKeys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -70,13 +71,12 @@ extension SendToPopOverViewController: UITableViewDataSource {
     }
     
     func configure(cell: SendToFollowersCell, atIndexPath indexPath: IndexPath) {
-        let followers = followersKey[indexPath.row]
-        
-        cell.followerName.text = followers
+            
+        cell.followerName.text = followingKeys[indexPath.row]
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.followersKey[indexPath.row])
+        print(self.followingKeys[indexPath.row])
     }
 }
 
@@ -109,7 +109,5 @@ extension SendToPopOverViewController: UITableViewDataSource {
         }
     }
 }
-
-*/
-
+ */
 

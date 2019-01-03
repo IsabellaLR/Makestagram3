@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="2924" y="-307.1964017991005"/>
         </scene>
-        <!--Bets-->
+        <!--ViewBets-->
         <scene sceneID="Mf4-1Z-eaj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Bets" id="Lwg-M0-le8" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ViewBets" id="Lwg-M0-le8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="yhJ-fm-hAO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBs-oW-8UJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -194,6 +194,17 @@
                                 <rect key="frame" x="41" y="595" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="P52-3m-ghK" eventType="touchUpInside" id="hgG-h0-m5h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fR-W2-3W9">
+                                <rect key="frame" x="197" y="595" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendTapped:" destination="P52-3m-ghK" eventType="touchUpInside" id="VvS-hc-VSM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,12 +212,13 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="3pw-of-jCp" id="nkB-aV-pST"/>
+                        <outlet property="sendButton" destination="5fR-W2-3W9" id="lFA-IG-yLv"/>
                         <outlet property="tableView" destination="QY5-xR-sdj" id="Ajp-Nf-nIj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L13-c7-7oo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3730" y="-307"/>
+            <point key="canvasLocation" x="3728.8000000000002" y="-307.1964017991005"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TcF-Ge-Zua">
