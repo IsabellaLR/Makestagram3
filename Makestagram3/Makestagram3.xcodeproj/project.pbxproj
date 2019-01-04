@@ -10,6 +10,7 @@
 		283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */; };
 		283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0D0121DDB0410096BB6E /* ShowBetCell.swift */; };
 		283F0D0421DDCCAB0096BB6E /* BetHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */; };
+		283F0D0621DF36010096BB6E /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0D0521DF36010096BB6E /* Bet.swift */; };
 		2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC0E21D709890002A238 /* HomeTableViewCell.swift */; };
 		2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1021D7116E0002A238 /* MakeBetViewController.swift */; };
 		2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1221D7F93F0002A238 /* FollowService.swift */; };
@@ -27,8 +28,7 @@
 		2871D45C21D31F44007E3FF1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */; };
 		2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45D21D33B75007E3FF1 /* MGPhotoHelper.swift */; };
 		2871D46021D34E7F007E3FF1 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45F21D34E7F007E3FF1 /* StorageService.swift */; };
-		2871D46221D3528C007E3FF1 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46121D3528C007E3FF1 /* PostService.swift */; };
-		2871D46421D3F84D007E3FF1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46321D3F84D007E3FF1 /* Post.swift */; };
+		2871D46221D3528C007E3FF1 /* BetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46121D3528C007E3FF1 /* BetService.swift */; };
 		2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */; };
 		2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46721D3FD0E007E3FF1 /* StorageReference.swift */; };
 		28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE421DCA71F0041FDDB /* Selection.swift */; };
@@ -51,6 +51,7 @@
 		283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBetsViewController.swift; sourceTree = "<group>"; };
 		283F0D0121DDB0410096BB6E /* ShowBetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBetCell.swift; sourceTree = "<group>"; };
 		283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetHeaderCell.swift; sourceTree = "<group>"; };
+		283F0D0521DF36010096BB6E /* Bet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
 		2840AC0E21D709890002A238 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		2840AC1021D7116E0002A238 /* MakeBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBetViewController.swift; sourceTree = "<group>"; };
 		2840AC1221D7F93F0002A238 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
@@ -68,8 +69,7 @@
 		2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2871D45D21D33B75007E3FF1 /* MGPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGPhotoHelper.swift; sourceTree = "<group>"; };
 		2871D45F21D34E7F007E3FF1 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
-		2871D46121D3528C007E3FF1 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
-		2871D46321D3F84D007E3FF1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2871D46121D3528C007E3FF1 /* BetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetService.swift; sourceTree = "<group>"; };
 		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
 		28AC0FE421DCA71F0041FDDB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				28C06FDD21D09C2C008F2783 /* User.swift */,
-				2871D46321D3F84D007E3FF1 /* Post.swift */,
 				28AC0FE421DCA71F0041FDDB /* Selection.swift */,
+				283F0D0521DF36010096BB6E /* Bet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			children = (
 				2871D45121D0BF3D007E3FF1 /* UserService.swift */,
 				2871D45F21D34E7F007E3FF1 /* StorageService.swift */,
-				2871D46121D3528C007E3FF1 /* PostService.swift */,
+				2871D46121D3528C007E3FF1 /* BetService.swift */,
 				2840AC1221D7F93F0002A238 /* FollowService.swift */,
 			);
 			path = Services;
@@ -398,7 +398,6 @@
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
 				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
-				2871D46421D3F84D007E3FF1 /* Post.swift in Sources */,
 				283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */,
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
 				28AC0FE921DCAC7F0041FDDB /* BetsCell.swift in Sources */,
@@ -407,7 +406,7 @@
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
 				2871D45A21D316D0007E3FF1 /* FindFriendsViewController.swift in Sources */,
 				2871D45421D30F43007E3FF1 /* Constants.swift in Sources */,
-				2871D46221D3528C007E3FF1 /* PostService.swift in Sources */,
+				2871D46221D3528C007E3FF1 /* BetService.swift in Sources */,
 				2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */,
 				28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */,
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
@@ -415,6 +414,7 @@
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
+				283F0D0621DF36010096BB6E /* Bet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

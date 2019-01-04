@@ -126,7 +126,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="P52-3m-ghK" kind="popoverPresentation" popoverAnchorView="1aO-aY-FBT" id="DkI-9h-Pyw">
+                                    <action selector="btnSelect:" destination="TrX-W2-Fhr" eventType="touchUpInside" id="2rc-7b-cSd"/>
+                                    <segue destination="P52-3m-ghK" kind="popoverPresentation" identifier="&quot;popover&quot;" popoverAnchorView="1aO-aY-FBT" id="DkI-9h-Pyw">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -144,6 +145,7 @@
                         <viewLayoutGuide key="safeArea" id="ouv-eU-kwt"/>
                     </view>
                     <connections>
+                        <outlet property="betTextField" destination="XNj-9N-LyW" id="O5m-Ss-LcC"/>
                         <outlet property="btnSelect" destination="1aO-aY-FBT" id="Xrs-es-Ssw"/>
                         <outlet property="episodeLabel" destination="aip-6b-zZg" id="V0K-5q-8wF"/>
                     </connections>

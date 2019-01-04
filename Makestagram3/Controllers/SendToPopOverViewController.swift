@@ -50,6 +50,7 @@ class SendToPopOverViewController: UIViewController {
         let initialViewController = UIStoryboard.initialViewController(for: .main)
         self.view.window?.rootViewController = initialViewController
         self.view.window?.makeKeyAndVisible()
+        // call BetService create to make reference
     }
     
 }

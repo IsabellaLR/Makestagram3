@@ -14,7 +14,7 @@ struct FollowService {
         //1
         let currentUID = User.current.uid
         let followData = ["followers/\(user.uid)/\(currentUID)": true,
-                          "following/\(currentUID)/\(user.username)": true]
+                          "following/\(currentUID)/\(user.uid)": true]
         
         //2
         let ref = Database.database().reference()
@@ -33,7 +33,7 @@ struct FollowService {
         // Use NSNull() object instead of nil because updateChildValues expects type [Hashable : Any]
         // http://stackoverflow.com/questions/38462074/using-updatechildvalues-to-delete-from-firebase
         let followData = ["followers/\(user.uid)/\(currentUID)" : NSNull(),
-                          "following/\(currentUID)/\(user.username)" : NSNull()]
+                          "following/\(currentUID)/\(user.uid)" : NSNull()]
         
         let ref = Database.database().reference()
         ref.updateChildValues(followData) { (error, ref) in
@@ -67,22 +67,53 @@ struct FollowService {
     }
     
     static func followingUsernames(for user: User, completion: @escaping ([String]) -> Void) {
-        let followingRef = Database.database().reference().child("following").child(user.uid)
-        
         var followingKeys = [String]()
         
+        let followingRef = Database.database().reference().child("following").child(user.uid)
+        
         followingRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let followersDict = snapshot.value as? [String : Bool] else {
+            guard let followingDict = snapshot.value as? [String : Bool] else {
                 return completion([])
             }
             
-            for (key, value) in followersDict {
-                followingKeys.append(key)
+            let Keys = Array(followingDict.keys)
+            
+            //convert user.uid into username to display on sendBets table
+            
+            for following in Keys {
+                let ref2 = Database.database().reference().child("users").child(following)
+                ref2.observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    guard let usernameDict = snapshot.value as? [String: String] else {
+                        return completion([])
+                    }
+                    for (key, value) in usernameDict {
+                        followingKeys.append(value)
+                    }
+                })
             }
-//            let followingKeys = Array(followersDict.values)
             completion(followingKeys)
         })
     }
+
+    
+//    static func followingUsernames(for user: User, completion: @escaping ([String]) -> Void) {
+//        let followingRef = Database.database().reference().child("following").child(user.uid)
+//
+//        var followingKeys = [String]()
+//
+//        followingRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let followersDict = snapshot.value as? [String : Bool] else {
+//                return completion([])
+//            }
+//
+//            for (key, value) in followersDict {
+//                followingKeys.append(key)
+//            }
+////            let followingKeys = Array(followersDict.values)
+//            completion(followingKeys)
+//        })
+//    }
 }
 //    static func retrieveFollowers(for user: User, completion: @escaping ([String]?) -> Void) {
 //        Database.database().reference().child("followers").child(user.uid).observe(.childAdded, with: { (snapshot) in
@@ -103,27 +134,3 @@ struct FollowService {
 //}
 
 
-//static func followers(for user: User, completion: @escaping ([String]) -> Void) {
-//    var usernames = [String]()
-//    let followersRef = Database.database().reference().child(Constants.Reference.followers).child(user.uid)
-//
-//    followersRef.observeSingleEvent(of: .value, with: { (snapshot) in
-//        guard let followersDict = snapshot.value as? [String : Bool] else {
-//            return completion([])
-//        }
-//
-//        let followersKeys = Array(followersDict.keys)
-//
-//        for follower in followersKeys {
-//            let ref2 = Database.database().reference().child("users").child(follower)
-//            ref2.observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//                guard let usernameDict = snapshot.value as? [String: Any?] else {
-//                    return completion([])
-//                }
-//                usernames.append(usernameDict["username"] as! String)
-//            })
-//        }
-//        completion(usernames)
-//    })
-//}
