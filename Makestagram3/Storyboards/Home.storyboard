@@ -120,6 +120,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="betText:" destination="NoF-OA-94i" eventType="editingDidEnd" id="iWj-0q-vpL"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-aY-FBT">
                                 <rect key="frame" x="313" y="334" width="46" height="36"/>
@@ -151,6 +154,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQj-yO-NkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NoF-OA-94i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2924" y="-307.1964017991005"/>
         </scene>

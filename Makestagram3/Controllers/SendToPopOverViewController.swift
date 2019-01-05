@@ -22,6 +22,8 @@ class SendToPopOverViewController: UIViewController {
 //        tableView.dataSource = self
 //        tableView.register(SendToFollowersCell.self, forCellReuseIdentifier: "SendToFollowersCell")
 //        tableView.tableFooterView = UIView()//        tableView.rowHeight = 71
+        self.tableView.allowsMultipleSelection = true
+        self.tableView.allowsMultipleSelectionDuringEditing = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,10 +38,10 @@ class SendToPopOverViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
-//        if let index = self.tableView.indexPathForSelectedRow{
-//            self.tableView.deselectRow(at: index, animated: true)
-//
-//        }
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+
+        }
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -50,7 +52,7 @@ class SendToPopOverViewController: UIViewController {
         let initialViewController = UIStoryboard.initialViewController(for: .main)
         self.view.window?.rootViewController = initialViewController
         self.view.window?.makeKeyAndVisible()
-        // call BetService create to make reference
+//          BetService.create(description: description, sentTime: sentTime, fromUser: fromUser)
     }
     
 }
@@ -80,35 +82,4 @@ extension SendToPopOverViewController: UITableViewDataSource {
         print(self.followingKeys[indexPath.row])
     }
 }
-
-
-//extension SendToPopOverViewController: SendToFollowersCellDelegate {
-//    func didTapFollowButton(_ sendButton: UIButton, on cell: SendToFollowersCell) {
-//        //you could just pass around the indexpath here instead of the whole cell
-//        print("Cell with \(cell.tag) was pressed")
-//        //the answer to your question is no
-//     //su
-//    }
-//}
-
-/*extension SendToPopOverViewController: FindFriendsCellDelegate {
-    func didTapFollowButton(_ followButton: UIButton, on cell: FindFriendsCell) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-
-        followButton.isUserInteractionEnabled = false
-        let followee = users[indexPath.row]
-
-        FollowService.setIsFollowing(!followee.isFollowed, fromCurrentUserTo: followee) { (success) in
-            defer {
-                followButton.isUserInteractionEnabled = true
-            }
-
-            guard success else { return }
-
-            followee.isFollowed = !followee.isFollowed
-            self.tableView.reloadRows(at: [indexPath], with: .none)
-        }
-    }
-}
- */
 

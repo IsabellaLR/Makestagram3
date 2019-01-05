@@ -18,6 +18,20 @@ class SendToFollowersCell: UITableViewCell {
 
     @IBOutlet weak var followerName: UILabel!
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        self.accessoryType = selected ? .checkmark : .none
+    }
+    
 //    override func awakeFromNib() {
 //        super.awakeFromNib()
 //        selectionStyle = .none
@@ -41,12 +55,4 @@ class SendToFollowersCell: UITableViewCell {
 //    @IBAction func followButtonTapped(_ sender: UIButton) {
 //        delegate?.didTapFollowButton(sender, on: self)
 //    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // update UI
-        accessoryType = selected ? .checkmark : .none
-    }
-    
 }
