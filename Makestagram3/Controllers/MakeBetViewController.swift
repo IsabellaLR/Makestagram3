@@ -42,11 +42,10 @@ class MakeBetViewController: UIViewController {
         case "popover":
             let betDescription = betTextField.text
             
-            BetService.create(betDescription: betDescription)
+//            BetService.create(betDescription: betDescription)
             
         default:
             print("Unexpected segue identifier")
         }
     }
-}
 }

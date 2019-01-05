@@ -67,7 +67,6 @@ struct FollowService {
     }
     
     static func followingUsernames(for user: User, completion: @escaping ([String]) -> Void) {
-        var followingKeys = [String]()
         
         let followingRef = Database.database().reference().child("following").child(user.uid)
         
@@ -79,6 +78,7 @@ struct FollowService {
             let Keys = Array(followingDict.keys)
             
             //convert user.uid into username to display on sendBets table
+            var followingKeys = [String]()
             
             for following in Keys {
                 let ref2 = Database.database().reference().child("users").child(following)
@@ -87,12 +87,12 @@ struct FollowService {
                     guard let usernameDict = snapshot.value as? [String: String] else {
                         return completion([])
                     }
-                    for (key, value) in usernameDict {
+                    for (_, value) in usernameDict {
                         followingKeys.append(value)
                     }
+                    completion(followingKeys)
                 })
             }
-            completion(followingKeys)
         })
     }
 

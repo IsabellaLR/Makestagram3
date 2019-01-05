@@ -122,12 +122,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-aY-FBT">
-                                <rect key="frame" x="313" y="334" width="46" height="30"/>
+                                <rect key="frame" x="313" y="334" width="46" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="btnSelect:" destination="TrX-W2-Fhr" eventType="touchUpInside" id="2rc-7b-cSd"/>
-                                    <segue destination="P52-3m-ghK" kind="popoverPresentation" identifier="&quot;popover&quot;" popoverAnchorView="1aO-aY-FBT" id="DkI-9h-Pyw">
+                                    <segue destination="P52-3m-ghK" kind="popoverPresentation" identifier="&quot;popover&quot;" popoverAnchorView="1aO-aY-FBT" id="afo-1C-85d">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQj-yO-NkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2924" y="-307"/>
+            <point key="canvasLocation" x="2924" y="-307.1964017991005"/>
         </scene>
         <!--Send To Pop Over View Controller-->
         <scene sceneID="tav-DO-qKa">
@@ -174,8 +174,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOH-0U-Ilc">
-                                                    <rect key="frame" x="25" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFb-95-fP3">
+                                                    <rect key="frame" x="24" y="11" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -184,7 +184,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="followerName" destination="XOH-0U-Ilc" id="CyZ-Hx-ueL"/>
+                                            <outlet property="followerName" destination="sFb-95-fP3" id="dRM-cb-fdp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -197,7 +197,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="cancelTapped:" destination="P52-3m-ghK" eventType="touchUpInside" id="hgG-h0-m5h"/>
+                                    <action selector="cancelTapped:" destination="P52-3m-ghK" eventType="touchUpInside" id="Sfh-HN-rHl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fR-W2-3W9">
@@ -205,7 +205,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
-                                    <action selector="sendTapped:" destination="P52-3m-ghK" eventType="touchUpInside" id="VvS-hc-VSM"/>
+                                    <action selector="sendTapped:" destination="P52-3m-ghK" eventType="touchUpInside" id="zBu-ag-tXk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,8 +213,8 @@
                         <viewLayoutGuide key="safeArea" id="H4a-hY-IFn"/>
                     </view>
                     <connections>
-                        <outlet property="cancelButton" destination="3pw-of-jCp" id="nkB-aV-pST"/>
-                        <outlet property="sendButton" destination="5fR-W2-3W9" id="lFA-IG-yLv"/>
+                        <outlet property="cancelButton" destination="3pw-of-jCp" id="5ui-nY-ULR"/>
+                        <outlet property="sendButton" destination="5fR-W2-3W9" id="7dh-dp-GxS"/>
                         <outlet property="tableView" destination="QY5-xR-sdj" id="Ajp-Nf-nIj"/>
                     </connections>
                 </viewController>

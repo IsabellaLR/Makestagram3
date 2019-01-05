@@ -1,81 +1,82 @@
+////
+////  ViewBetsViewController.swift
+////  Makestagram3
+////
+////  Created by Bella on 1/2/19.
+////  Copyright © 2019 Bella. All rights reserved.
+////
 //
-//  ViewBetsViewController.swift
-//  Makestagram3
+//import Foundation
+//import UIKit
 //
-//  Created by Bella on 1/2/19.
-//  Copyright © 2019 Bella. All rights reserved.
+//class ViewBetsViewController: UIViewController {
 //
-
-import Foundation
-import UIKit
-
-class ViewBetsViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    var bets = [Bet]()
-    
-//    func configureTableView() {
-//        // remove separators for empty cells
-//        tableView.tableFooterView = UIView()
-//        // remove separators from cells
-//        tableView.separatorStyle = .none
-//    }
+//    @IBOutlet weak var tableView: UITableView!
 //
+//    var bets = [Bet]()
+//
+////    func configureTableView() {
+////        // remove separators for empty cells
+////        tableView.tableFooterView = UIView()
+////        // remove separators from cells
+////        tableView.separatorStyle = .none
+////    }
+////
+////    override func viewDidLoad() {
+////        super.viewDidLoad()
+////
+////        configureTableView()
+////
+////        // ...
+////    }
+//
+////    var bets = [Bet]()
+////
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
-//        configureTableView()
 //
-//        // ...
+//        UserService.observeBet(for: User.current) { (bets) in
+//            self.bets = bets
+//            self.tableView.reloadData()
+//        }
 //    }
-    
-//    var bets = [Bet]()
+//}
 //
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-
-        UserService.observeBet(for: User.current) { (bets) in
-            self.bets = bets
-            self.tableView.reloadData()
-        }
-    }
-}
-
-// MARK: - UITableViewDataSource
-
-extension ViewBetsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let bet = bets[indexPath.section]
-
-            switch indexPath.row {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
-                cell.usernameHeaderLabel.text = bet.senderUsername
-
-                return cell
-
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ShowBetCell") as! ShowBetCell
-                cell.betDescription.text = bet.description
-
-                return cell
-
-            default:
-                fatalError("Error: unexpected indexPath.")
-            }
-        }
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return bets.count
-    }
+//// MARK: - UITableViewDataSource
+//
+//extension ViewBetsViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 2
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            let bet = bets[indexPath.section]
+//
+//            switch indexPath.row {
+//            case 0:
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
+//                cell.usernameHeaderLabel.text = bet.senderUsername
+//
+//                return cell
+//
+//            case 1:
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "ShowBetCell") as! ShowBetCell
+//                cell.betDescription.text = bet.description
+//
+//                return cell
+//
+//            default:
+//                fatalError("Error: unexpected indexPath.")
+//            }
+//        }
+//    }
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return bets.count
+//    }
+//}
 
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        switch indexPath.row {
@@ -89,7 +90,7 @@ extension ViewBetsViewController: UITableViewDataSource {
 //            fatalError()
 //        }
 //    }
-}
+
 
 // MARK: - UITableViewDelegate
 

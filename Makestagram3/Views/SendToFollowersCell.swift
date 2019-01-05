@@ -16,7 +16,6 @@ class SendToFollowersCell: UITableViewCell {
     
 //    weak var delegate: SendToFollowersCellDelegate?
 
-    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var followerName: UILabel!
     
 //    override func awakeFromNib() {

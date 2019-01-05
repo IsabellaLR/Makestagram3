@@ -27,7 +27,7 @@ class SendToPopOverViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        FollowService.followingUsernames(for: User.current) { [unowned self] (followingKeys) in
+        FollowService.followingUsernames(for: User.current) { (followingKeys) in
             self.followingKeys = followingKeys
             self.tableView.reloadData()
         }
@@ -36,10 +36,10 @@ class SendToPopOverViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
-        if let index = self.tableView.indexPathForSelectedRow{
-            self.tableView.deselectRow(at: index, animated: true)
-            
-        }
+//        if let index = self.tableView.indexPathForSelectedRow{
+//            self.tableView.deselectRow(at: index, animated: true)
+//
+//        }
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
