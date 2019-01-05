@@ -11,36 +11,22 @@ import FirebaseStorage
 import FirebaseDatabase
 
 struct BetService {
-//    static func create(for image: UIImage) {
-//        let imageRef = StorageReference.newPostImageReference()
-//        StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
-//            guard let downloadURL = downloadURL else {
-//                return
-//            }
-//            
-//            let urlString = downloadURL.absoluteString
-//            let aspectHeight = image.aspectHeight
-//            create(forURLString: urlString, aspectHeight: aspectHeight)
-//        }
-//    }
-//
     
     static func create(from bet: Bet, completion: @escaping (Bet?) -> Void) {
         
         // 1
-        var membersDict = [String : Bool]()
-        for uid in bet.senderUIDs {
-            membersDict[uid] = true
-        }
+//        var membersDict = [String : Bool]()
+//        for uid in bet.senderUIDs {
+//            membersDict[uid] = true
+//        }
         
         // 2
-        let sentTime = bet.timestamp.timeIntervalSince1970
-        bet.sentTime = bet.timestamp
+        let lastMessageSent = bet.lastMessageSent?.timeIntervalSince1970
         
         // 3
-        let betDict: [String : Any] = ["memberHash" : bet.memberHash,
-                                        "members" : membersDict,
-                                        "sentTime" : sentTime]
+        let betDict: [String : Any] = ["description" : bet.description,
+                                        "fromUser": bet.senderUsername,
+                                        "lastMessageSent" : lastMessageSent!]
         
         // 4
         let betRef = Database.database().reference().child("bets").child(User.current.uid).childByAutoId()
@@ -50,7 +36,7 @@ struct BetService {
         var multiUpdateValue = [String : Any]()
         
         // 6
-        for uid in bet.memberUIDs {
+        for uid in bet.sentToUsernames {
             multiUpdateValue["bets/\(uid)/\(betRef.key)"] = betDict
         }
         
@@ -69,30 +55,30 @@ struct BetService {
                 return
             }
             
-            completion(chat)
+            completion(bet)
         }
     }
     
-    static func checkForExistingChat(with user: User, completion: @escaping (Bet?) -> Void) {
-        // 1
-        let members = [user, User.current]
-        let hashValue = Chat.hash(forMembers: members)
-        
-        // 2
-        let betRef = Database.database().reference().child("bets").child(User.current.uid)
-        
-        // 3
-        let query = betRef.queryOrdered(byChild: "memberHash").queryEqual(toValue: hashValue)
-        
-        // 4
-        query.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let betSnap = snapshot.children.allObjects.first as? DataSnapshot,
-                let bet = Bet(snapshot: betSnap)
-                else { return completion(nil) }
-            
-            completion(bet)
-        })
-    }
+//    static func checkForExistingChat(with user: User, completion: @escaping (Bet?) -> Void) {
+//        // 1
+//        let members = [user, User.current]
+//        let hashValue = Chat.hash(forMembers: members)
+//
+//        // 2
+//        let betRef = Database.database().reference().child("bets").child(User.current.uid)
+//
+//        // 3
+//        let query = betRef.queryOrdered(byChild: "memberHash").queryEqual(toValue: hashValue)
+//
+//        // 4
+//        query.observeSingleEvent(of: .value, with: { (snapshot) in
+//            guard let betSnap = snapshot.children.allObjects.first as? DataSnapshot,
+//                let bet = Bet(snapshot: betSnap)
+//                else { return completion(nil) }
+//
+//            completion(bet)
+//        })
+//    }
     
 //    static func sendMessage(_ message: Message, for chat: Chat, success: ((Bool) -> Void)? = nil) {
 //        guard let chatKey = chat.key else {

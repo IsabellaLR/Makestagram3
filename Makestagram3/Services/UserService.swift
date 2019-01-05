@@ -73,16 +73,31 @@ struct UserService {
         })
     }
     
-    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
+    static func observeBet(for user: User = User.current, withCompletion completion: @escaping ([Bet]) -> Void) -> DatabaseHandle {
         let ref = Database.database().reference().child("bets").child(user.uid)
         
         return ref.observe(.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-                return completion(ref, [])
+                return completion([])
             }
             
-            let chats = snapshot.flatMap(Chat.init)
-            completion(ref, bets)
+            let dispatchGroup = DispatchGroup()
+            
+            var bets = [Bet]()
+            
+            for betSnap in snapshot {
+                
+                dispatchGroup.enter()
+                
+                guard let bet = Bet(snapshot: betSnap) else { return }
+                bets.append(bet)
+                
+                dispatchGroup.leave()
+            }
+            completion(bets)
+//            dispatchGroup.notify(queue: .main, execute: {
+//                completion(bets.reversed())
+//            })
         })
     }
     

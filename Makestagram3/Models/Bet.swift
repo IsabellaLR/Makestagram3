@@ -15,49 +15,51 @@ class Bet {
     
     var key: String?
     let description: String
-    let memberHash: String
-    let senderUIDs: [String]
-    var sentTime: Date?
+    let sentToUsernames: [String]
+    let senderUsername: String
+    var lastMessageSent: Date?
     
     init?(snapshot: DataSnapshot) {
         guard !snapshot.key.isEmpty,
             let dict = snapshot.value as? [String : Any],
-            let memberHash = dict["memberHash"] as? String,
-            let membersDict = dict["members"] as? [String : Bool],
-            let sentTime = dict["lastMessageSent"] as? TimeInterval
+            let senderUsername = dict["toUsername"] as? String,
+            let description = dict["description"] as? String,
+            let sentToUsernames = dict["fromUsername"] as? [String],
+            let lastMessageSent = dict["lastMessageSent"] as? TimeInterval
             else { return nil }
         
         self.key = snapshot.key
-        self.memberHash = memberHash
-        self.senderUIDs = Array(membersDict.keys)
-        self.sentTime = Date(timeIntervalSince1970: sentTime)
+        self.senderUsername = senderUsername
+        self.sentToUsernames = sentToUsernames
+        self.description = description
+        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
     }
     
-    init(members: [User]){
-        // 1
-//        assert(members.count == 2, "There must be two members in a chat.")
-        
-        // 2
-//        self.title = members.reduce("") { (acc, cur) -> String in
-//            return acc.isEmpty ? cur.username : "\(acc), \(cur.username)"
-//        }
-        // 3
-        self.memberHash = Bet.hash(forMembers: members)
-        // 4
-        self.senderUIDs = members.map { $0.uid }
-    }
+//    init(members: [User]){
+//        // 1
+////        assert(members.count == 2, "There must be two members in a chat.")
+//
+//        // 2
+////        self.title = members.reduce("") { (acc, cur) -> String in
+////            return acc.isEmpty ? cur.username : "\(acc), \(cur.username)"
+////        }
+//        // 3
+//        self.memberHash = Bet.hash(forMembers: members)
+//        // 4
+//        self.senderUIDs = members.map { $0.uid }
+//    }
     
     // MARK: - Class Methods
     
-    static func hash(forMembers members: [User]) -> String {
-//        guard members.count == 2 else {
-//            fatalError("There must be two members to compute member hash.")
-//        }
-        
-        let firstMember = members[0]
-        let secondMember = members[1]
-        
-        let memberHash = String(firstMember.uid.hashValue ^ secondMember.uid.hashValue)
-        return memberHash
-    }
+//    static func hash(forMembers members: [User]) -> String {
+////        guard members.count == 2 else {
+////            fatalError("There must be two members to compute member hash.")
+////        }
+//
+//        let firstMember = members[0]
+//        let secondMember = members[1]
+//
+//        let memberHash = String(firstMember.uid.hashValue ^ secondMember.uid.hashValue)
+//        return memberHash
+//    }
 }
