@@ -9,15 +9,19 @@
 import UIKit
 
 class MakeBetViewController: UIViewController {
-
+    
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var btnSelect: UIButton!
     @IBOutlet weak var betTextField: UITextField!
+    
+    var betDescription: String?
+//    var betContent = UserDefaults.standard.set(betDescription, forKey: "betDescription")
     
     var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        var betDescription: String = betTextField.text ?? ""
         
         episodeLabel.text = "Make a bet for \(name)"
         
@@ -25,6 +29,8 @@ class MakeBetViewController: UIViewController {
         btnSelect.layer.cornerRadius = 5
         btnSelect.layer.borderWidth = 0.5
         btnSelect.layer.borderColor = UIColor.lightGray.cgColor
+        
+//        btnSelect(_ sender: Any)
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,17 +38,16 @@ class MakeBetViewController: UIViewController {
     }
     
     @IBAction func btnSelect(_ sender: Any) {
-        
+        betDescription = betTextField.text
+        UserDefaults.standard.set(betDescription, forKey: "betDescription")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
-        
+
         switch identifier {
         case "popover":
-            let betDescription = betTextField.text
-            
-//            BetService.create(betDescription: betDescription)
+            print("go to popover")
             
         default:
             print("Unexpected segue identifier")

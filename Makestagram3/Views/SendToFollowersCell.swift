@@ -14,6 +14,8 @@ import UIKit
 
 class SendToFollowersCell: UITableViewCell {
     
+    var selectedRows: [Int] = []
+    
 //    weak var delegate: SendToFollowersCellDelegate?
 
     @IBOutlet weak var followerName: UILabel!
@@ -55,4 +57,8 @@ class SendToFollowersCell: UITableViewCell {
 //    @IBAction func followButtonTapped(_ sender: UIButton) {
 //        delegate?.didTapFollowButton(sender, on: self)
 //    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedRows.append(indexPath.row)
+    }
 }

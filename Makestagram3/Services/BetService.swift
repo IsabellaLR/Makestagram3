@@ -12,50 +12,23 @@ import FirebaseDatabase
 
 struct BetService {
     
-    static func create(from bet: Bet, completion: @escaping (Bet?) -> Void) {
+    static func create(description: String, senderUsername: String, sentToUsernames: [String]) {
         
-        // 1
-//        var membersDict = [String : Bool]()
-//        for uid in bet.senderUIDs {
-//            membersDict[uid] = true
-//        }
-        
-        // 2
-        let lastMessageSent = bet.lastMessageSent?.timeIntervalSince1970
-        
-        // 3
-        let betDict: [String : Any] = ["description" : bet.description,
-                                        "fromUser": bet.senderUsername,
-                                        "lastMessageSent" : lastMessageSent!]
-        
-        // 4
+//        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
+        let betDict: [String : Any] = ["description" : description,
+                                        "senderUsername" : senderUsername]
         let betRef = Database.database().reference().child("bets").child(User.current.uid).childByAutoId()
-        bet.key = betRef.key
-        
-        // 5
+        _ = betRef.key
         var multiUpdateValue = [String : Any]()
-        
-        // 6
-        for uid in bet.sentToUsernames {
-            multiUpdateValue["bets/\(uid)/\(betRef.key)"] = betDict
+        for username in sentToUsernames {
+            multiUpdateValue["bets/\(username)/\(betRef.key)"] = betDict
         }
-        
-//        // 7
-//        let messagesRef = FIRDatabase.database().reference().child("messages").child(chatRef.key).childByAutoId()
-//        let messageKey = messagesRef.key
-//
-//        // 8
-//        multiUpdateValue["messages/\(chatRef.key)/\(messageKey)"] = message.dictValue
-        
-        // 9
         let rootRef = Database.database().reference()
         rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return
             }
-            
-            completion(bet)
         }
     }
     

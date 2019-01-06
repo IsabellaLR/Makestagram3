@@ -112,18 +112,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XNj-9N-LyW">
-                                <rect key="frame" x="10" y="76" width="355" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="OwN-Zq-stt"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="betText:" destination="NoF-OA-94i" eventType="editingDidEnd" id="iWj-0q-vpL"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aO-aY-FBT">
                                 <rect key="frame" x="313" y="334" width="46" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -135,26 +123,29 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-wU-uZa">
+                                <rect key="frame" x="40" y="163" width="281" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aip-6b-zZg" firstAttribute="top" secondItem="ouv-eU-kwt" secondAttribute="top" constant="25" id="KE9-va-gID"/>
-                            <constraint firstItem="ouv-eU-kwt" firstAttribute="trailing" secondItem="XNj-9N-LyW" secondAttribute="trailing" constant="10" id="QPb-yW-M5m"/>
-                            <constraint firstItem="XNj-9N-LyW" firstAttribute="top" secondItem="aip-6b-zZg" secondAttribute="bottom" constant="10" id="Zqp-8e-2jP"/>
                             <constraint firstItem="aip-6b-zZg" firstAttribute="leading" secondItem="ouv-eU-kwt" secondAttribute="leading" constant="10" id="lJo-2C-Vpz"/>
                             <constraint firstItem="ouv-eU-kwt" firstAttribute="trailing" secondItem="aip-6b-zZg" secondAttribute="trailing" constant="10" id="mkt-IZ-Gon"/>
-                            <constraint firstItem="XNj-9N-LyW" firstAttribute="leading" secondItem="ouv-eU-kwt" secondAttribute="leading" constant="10" id="stv-wW-YKP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ouv-eU-kwt"/>
                     </view>
                     <connections>
-                        <outlet property="betTextField" destination="XNj-9N-LyW" id="O5m-Ss-LcC"/>
+                        <outlet property="betTextField" destination="7Od-wU-uZa" id="DLm-zd-tr0"/>
                         <outlet property="btnSelect" destination="1aO-aY-FBT" id="Xrs-es-Ssw"/>
                         <outlet property="episodeLabel" destination="aip-6b-zZg" id="V0K-5q-8wF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQj-yO-NkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="NoF-OA-94i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2924" y="-307.1964017991005"/>
         </scene>

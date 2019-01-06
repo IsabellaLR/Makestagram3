@@ -10,9 +10,15 @@ import UIKit
 import FirebaseDatabase.FIRDataSnapshot
 
 class SendToPopOverViewController: UIViewController {
-    
+
+    var selectedIndexPathArray = [IndexPath?]()
     var followingKeys = [String]()
+    var selectedUsers = [String]()
+    
+    var newVariableName = MakeBetViewController()
  
+    //get values from selected rows
+    
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
@@ -38,10 +44,10 @@ class SendToPopOverViewController: UIViewController {
 //            self.tableView.reloadData()
 //        }
         
-        if let index = self.tableView.indexPathForSelectedRow{
-            self.tableView.deselectRow(at: index, animated: true)
-
-        }
+//        if let index = self.tableView.indexPathForSelectedRow{
+//            self.tableView.deselectRow(at: index, animated: true)
+//
+//        }
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -52,7 +58,14 @@ class SendToPopOverViewController: UIViewController {
         let initialViewController = UIStoryboard.initialViewController(for: .main)
         self.view.window?.rootViewController = initialViewController
         self.view.window?.makeKeyAndVisible()
-//          BetService.create(description: description, sentTime: sentTime, fromUser: fromUser)
+        guard let selectedIndexPathArray = self.tableView.indexPathForSelectedRow else {
+            return
+        }
+        for user in selectedIndexPathArray {
+            selectedUsers.append(followingKeys[user])
+        }
+        selectedUsers.append(User.current.username)
+        BetService.create(description: UserDefaults.standard.string(forKey: "betDescription") ?? "nil", senderUsername: User.current.username, sentToUsernames: selectedUsers)
     }
     
 }
@@ -60,6 +73,10 @@ class SendToPopOverViewController: UIViewController {
 extension SendToPopOverViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return followingKeys.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndexPathArray = tableView.indexPathsForSelectedRows!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,10 +93,6 @@ extension SendToPopOverViewController: UITableViewDataSource {
     func configure(cell: SendToFollowersCell, atIndexPath indexPath: IndexPath) {
             
         cell.followerName.text = followingKeys[indexPath.row]
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.followingKeys[indexPath.row])
     }
 }
 
