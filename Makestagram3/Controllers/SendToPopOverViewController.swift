@@ -11,7 +11,7 @@ import FirebaseDatabase.FIRDataSnapshot
 
 class SendToPopOverViewController: UIViewController {
 
-    var selectedIndexPathArray = [IndexPath?]()
+//    var selectedIndexPathArray = [IndexPath?]()
     var followingKeys = [String]()
     var selectedUsers = [String]()
     
@@ -58,11 +58,11 @@ class SendToPopOverViewController: UIViewController {
         let initialViewController = UIStoryboard.initialViewController(for: .main)
         self.view.window?.rootViewController = initialViewController
         self.view.window?.makeKeyAndVisible()
-        guard let selectedIndexPathArray = self.tableView.indexPathForSelectedRow else {
+        guard let selectedIndexPathArray = self.tableView.indexPathsForSelectedRows else {
             return
         }
         for user in selectedIndexPathArray {
-            selectedUsers.append(followingKeys[user])
+            selectedUsers.append(followingKeys[user.row])
         }
         selectedUsers.append(User.current.username)
         BetService.create(description: UserDefaults.standard.string(forKey: "betDescription") ?? "nil", senderUsername: User.current.username, sentToUsernames: selectedUsers)
@@ -75,9 +75,9 @@ extension SendToPopOverViewController: UITableViewDataSource {
         return followingKeys.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedIndexPathArray = tableView.indexPathsForSelectedRows!
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.selectedIndexPathArray = tableView.indexPathsForSelectedRows!
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SendToFollowersCell") as? SendToFollowersCell else {
