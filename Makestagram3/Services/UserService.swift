@@ -22,7 +22,7 @@ struct UserService {
         })
     }
     
-    
+        //?
     static func create(_ firUser: FIRUser, username: String, completion: @escaping (User?) -> Void) {
         let userAttrs = [Constants.Dict.username: username]
         
@@ -72,34 +72,40 @@ struct UserService {
             }
         })
     }
-    
-    static func observeBet(for user: User = User.current, withCompletion completion: @escaping ([Bet]) -> Void) -> DatabaseHandle {
-        let ref = Database.database().reference().child("bets").child(user.uid)
+
+    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
+        let ref = Database.database().reference().child("bets").child(user.username)
         
         return ref.observe(.value, with: { (snapshot) in
-            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-                return completion([])
+            guard let bets = Bet(snapshot: snapshot) else {
+                return completion(ref, [])
             }
-            
-            let dispatchGroup = DispatchGroup()
-            
-            var bets = [Bet]()
-            
-            for betSnap in snapshot {
-                
-                dispatchGroup.enter()
-                
-                guard let bet = Bet(snapshot: betSnap) else { return }
-                bets.append(bet)
-                
-                dispatchGroup.leave()
-            }
-            completion(bets)
-//            dispatchGroup.notify(queue: .main, execute: {
-//                completion(bets.reversed())
-//            })
+            completion(ref, [bets])
         })
     }
+    
+//    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
+//        let ref = Database.database().reference().child("bets").child(user.username)
+//
+//        return ref.observe(.value, with: { (snapshot) in
+//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+//                return completion(ref, [])
+//            }
+//            let dispatchGroup = DispatchGroup()
+//            var bets = [Bet]()
+//
+//            for betSnap in snapshot {
+//
+//                dispatchGroup.enter()
+//
+//                guard let bet = Bet(snapshot: betSnap) else { return }
+//                bets.append(bet)
+//
+//                dispatchGroup.leave()
+//            }
+//            completion(ref, bets)
+//        })
+//    }
     
 //    static func posts(for user: User, completion: @escaping ([Bet]) -> Void) {
 //        let ref = Database.database().reference().child("bets").child(user.uid)

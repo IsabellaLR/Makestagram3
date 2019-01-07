@@ -14,6 +14,7 @@ class BetHeaderCell: UITableViewCell {
     static let height: CGFloat = 30
     
     @IBOutlet weak var usernameHeaderLabel: UILabel!
+    @IBOutlet weak var betDescription: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
