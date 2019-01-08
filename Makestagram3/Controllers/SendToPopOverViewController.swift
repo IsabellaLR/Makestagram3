@@ -22,7 +22,8 @@ class SendToPopOverViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendButton: UIButton!
-    
+    @IBOutlet weak var usernamesView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tableView.dataSource = self
@@ -30,6 +31,8 @@ class SendToPopOverViewController: UIViewController {
 //        tableView.tableFooterView = UIView()//        tableView.rowHeight = 71
         self.tableView.allowsMultipleSelection = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
+        self.usernamesView.layer.borderWidth = 1
+        self.usernamesView.layer.borderColor = UIColor(red:170/255, green: 170/255, blue: 170/255, alpha: 0.5).cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,15 +42,6 @@ class SendToPopOverViewController: UIViewController {
             self.followingKeys = followingKeys
             self.tableView.reloadData()
         }
-        
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
-        
-//        if let index = self.tableView.indexPathForSelectedRow{
-//            self.tableView.deselectRow(at: index, animated: true)
-//
-//        }
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -74,10 +68,6 @@ extension SendToPopOverViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return followingKeys.count
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.selectedIndexPathArray = tableView.indexPathsForSelectedRows!
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SendToFollowersCell") as? SendToFollowersCell else {

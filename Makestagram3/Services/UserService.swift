@@ -75,26 +75,38 @@ struct UserService {
 
     static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
         let ref = Database.database().reference().child("bets").child(user.username)
-
+        
         return ref.observe(.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion(ref, [])
             }
-            
-            var bets = [Bet]()
-            
-            for betInfo in snapshot {
-                guard  betInfo != nil else {
-                    return completion(ref, [])
-                }
-                let betData = Bet(snapshot: betInfo)
-                // TODO: safely unwrap line below. Refer to above method "show"
-                bets.append(betData!)
-                
-            }
+            let bets = snapshot.flatMap(Bet.init)
             completion(ref, bets)
         })
     }
+    
+//    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
+//        let ref = Database.database().reference().child("bets").child(user.username)
+//
+//        return ref.observe(.value, with: { (snapshot) in
+//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+//                return completion(ref, [])
+//            }
+//
+//            var bets = [Bet]()
+//
+//            for betInfo in snapshot {
+//                guard  betInfo != nil else {
+//                    return completion(ref, [])
+//                }
+//                let betData = Bet(snapshot: betInfo)
+//                // TODO: safely unwrap line below. Refer to above method "show"
+//                bets.append(betData!)
+//
+//            }
+//            completion(ref, bets)
+//        })
+//    }
     
 //    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
 //        let ref = Database.database().reference().child("bets").child(user.username)
