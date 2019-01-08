@@ -15,23 +15,32 @@ class Bet {
     
     var key: String?
     let description: String
-    let sentToUsernames: [String]
+//    let sentToUsernames: [String]
     let senderUsername: String
     var lastMessageSent: Date?
     
     init?(snapshot: DataSnapshot) {
-        guard !snapshot.key.isEmpty,
-            let dict = snapshot.value as? [String : Any],
-            let senderUsername = dict["toUsername"] as? String,
-            let description = dict["description"] as? String,
-            let sentToUsernames = dict["fromUsername"] as? [String],
-            let lastMessageSent = dict["lastMessageSent"] as? TimeInterval
-            else { return nil }
+        //do i need to include lastMessageSent is that why// not really
+        guard !snapshot.key.isEmpty else {return nil}
+        if let dict = snapshot.value as? [String : Any]{
+            
+            let senderUsername = dict["senderUsername"] as? String // this line is crashing
+            let description = dict["description"] as? String
+//            let sentToUsernames = dict["sentToUsernames"] as? [String] // this line crashing as well // typo senderUsername
+            // i thing you're right this line will crash -- run again
+//            let lastMessageSent = dict["lastMessageSent"] as? TimeInterval
+//            else {
+//                print("oupss")
+//                return nil }
         
         self.key = snapshot.key
-        self.senderUsername = senderUsername
-        self.sentToUsernames = sentToUsernames
-        self.description = description
-        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
+        self.senderUsername = senderUsername ?? ""
+//        self.sentToUsernames = sentToUsernames ?? [String]() //oops so i think should be lol right? -- let see
+        self.description = description ?? "no description"
+//        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
+        }
+        else{
+            return nil
+        }
     }
 }

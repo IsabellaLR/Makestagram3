@@ -73,18 +73,6 @@ struct UserService {
         })
     }
 
-    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
-        let ref = Database.database().reference().child("bets").child(user.username)
-        
-        return ref.observe(.value, with: { (snapshot) in
-            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-                return completion(ref, [])
-            }
-            let bets = snapshot.flatMap(Bet.init)
-            completion(ref, bets)
-        })
-    }
-    
 //    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
 //        let ref = Database.database().reference().child("bets").child(user.username)
 //
@@ -93,20 +81,39 @@ struct UserService {
 //                return completion(ref, [])
 //            }
 //
-//            var bets = [Bet]()
-//
-//            for betInfo in snapshot {
-//                guard  betInfo != nil else {
-//                    return completion(ref, [])
-//                }
-//                let betData = Bet(snapshot: betInfo)
-//                // TODO: safely unwrap line below. Refer to above method "show"
-//                bets.append(betData!)
-//
-//            }
+//            let bets = snapshot.flatMap(Bet.init)
 //            completion(ref, bets)
 //        })
 //    }
+    
+    // or this way
+    
+    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
+        
+        let ref = Database.database().reference().child("bets").child(user.username)
+
+        return ref.observe(.value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion(ref, [])
+            }
+// can you run it on phone is that fine bc its slow on mac -- yea i need the above ^
+            var bets = [Bet]()
+
+            for betInfo in snapshot {
+                // this guard won't work -- ok, let see why // what happen here is the decode, something doesnt match youer model
+                guard  let betData = Bet(snapshot: betInfo) else {
+                    return completion(ref, [])
+                }
+                // to user is crashing -- why two???
+                bets.append(betData) //1
+                // TODO: safely unwrap line below. Refer to above method "show"
+
+            }
+            completion(ref, bets)
+            // now i think everything works  =but sentTo and sender have 0 values, because it doesn't have data on the database
+        })
+    }
+
     
 //    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
 //        let ref = Database.database().reference().child("bets").child(user.username)

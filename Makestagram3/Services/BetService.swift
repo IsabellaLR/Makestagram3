@@ -12,15 +12,24 @@ import FirebaseDatabase
 
 struct BetService {
     
-    static func create(description: String, senderUsername: String, sentToUsernames: [String]) {
+    static func create(description: String, senderUsername: String, sentUsernames: [String]) {
         
 //        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
         let betDict: [String : Any] = ["description" : description,
                                         "senderUsername" : senderUsername]
-        let betRef = Database.database().reference().child("bets").child(User.current.uid).childByAutoId()
+//                                        "sentToUsernames": User.current.username]
+        // make sense, look at your betDict only 2 data and? is there more data you should pass? so ur saying i dont need the sendToUsernames dict in the Bet.swift?, well, you need to add it here as well, something like
+        //ok i see but does it matter then if for the databas under each user will be their own username and user who sent bet?
+        // if this post goes to every user than it doesnt really matter but if you wanna know who else bet on it, then yea youll need their uid k
+        // That's all your problem or anything else? just realizing rn do i need this User.current.uid here, actually you dont need the childBy... so i can delete, hold on
+        
+        // the structure on your code and on the database doesn't look alike..
+        //so which part should i delete
+        // your database, so you can have data from this new ref, ac
+        let betRef = Database.database().reference().child("bets").child(User.current.username).childByAutoId()
         _ = betRef.key
         var multiUpdateValue = [String : Any]()
-        for username in sentToUsernames {
+        for username in sentUsernames {
             multiUpdateValue["bets/\(username)/\(betRef.key ?? "")"] = betDict
         }
         let rootRef = Database.database().reference()
@@ -31,9 +40,10 @@ struct BetService {
             }
         }
     }
-    
+    //
     static func show(user: User, completion: @escaping (Bet?) -> Void) {
-        let betRef = Database.database().reference().child("bets").child(User.current.username).childByAutoId()
+        // childAutoby create a new id/uid
+        let betRef = Database.database().reference().child("bets").child(User.current.username)
         let ref = Database.database().reference().child("bets").child(user.username).child(betRef.key ?? "")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
