@@ -118,9 +118,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="btnSelect:" destination="TrX-W2-Fhr" eventType="touchUpInside" id="2rc-7b-cSd"/>
-                                    <segue destination="P52-3m-ghK" kind="popoverPresentation" identifier="&quot;popover&quot;" popoverAnchorView="1aO-aY-FBT" id="afo-1C-85d">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="P52-3m-ghK" kind="presentation" identifier="&quot;popover&quot;" id="afo-1C-85d"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-wU-uZa">
@@ -152,7 +150,7 @@
         <!--Send To Pop Over View Controller-->
         <scene sceneID="tav-DO-qKa">
             <objects>
-                <viewController id="P52-3m-ghK" customClass="SendToPopOverViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="P52-3m-ghK" customClass="SendToPopOverViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cVp-IQ-bo2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +202,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="H4a-hY-IFn"/>
                     </view>
                     <connections>

@@ -21,7 +21,7 @@ struct BetService {
         _ = betRef.key
         var multiUpdateValue = [String : Any]()
         for username in sentToUsernames {
-            multiUpdateValue["bets/\(username)/\(betRef.key)"] = betDict
+            multiUpdateValue["bets/\(username)/\(betRef.key ?? "")"] = betDict
         }
         let rootRef = Database.database().reference()
         rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
