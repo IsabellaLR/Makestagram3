@@ -89,6 +89,7 @@ extension ViewBetsViewController: UITableViewDataSource {
         let bet = bets[indexPath.row]
         cell.usernameHeaderLabel.text = bet.senderUsername
         cell.betDescription.text = bet.description
+        cell.betDescription.textAlignment = .left
         
         return cell
     }
@@ -132,9 +133,8 @@ extension ViewBetsViewController: UITableViewDataSource {
 
  // MARK: - UITableViewDelegate
 
-//extension ViewBetsViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let bet = bets[indexPath.row]
-//        return post.imageHeight
-//    }
-//}
+extension ViewBetsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
