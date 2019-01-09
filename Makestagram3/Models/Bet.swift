@@ -17,6 +17,7 @@ class Bet {
     let description: String
 //    let sentToUsernames: [String]
     let senderUsername: String
+    let color: String
     var lastMessageSent: Date?
     
     init?(snapshot: DataSnapshot) {
@@ -26,6 +27,7 @@ class Bet {
             
             let senderUsername = dict["senderUsername"] as? String // this line is crashing
             let description = dict["description"] as? String
+            let color = dict["color"] as? String
 //            let sentToUsernames = dict["sentToUsernames"] as? [String] // this line crashing as well // typo senderUsername
             // i thing you're right this line will crash -- run again
 //            let lastMessageSent = dict["lastMessageSent"] as? TimeInterval
@@ -37,6 +39,7 @@ class Bet {
         self.senderUsername = senderUsername ?? ""
 //        self.sentToUsernames = sentToUsernames ?? [String]() //oops so i think should be lol right? -- let see
         self.description = description ?? "no description"
+        self.color = color ?? "not decided"
 //        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
         }
         else{

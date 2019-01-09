@@ -16,16 +16,8 @@ struct BetService {
         
 //        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
         let betDict: [String : Any] = ["description" : description,
-                                        "senderUsername" : senderUsername]
-//                                        "sentToUsernames": User.current.username]
-        // make sense, look at your betDict only 2 data and? is there more data you should pass? so ur saying i dont need the sendToUsernames dict in the Bet.swift?, well, you need to add it here as well, something like
-        //ok i see but does it matter then if for the databas under each user will be their own username and user who sent bet?
-        // if this post goes to every user than it doesnt really matter but if you wanna know who else bet on it, then yea youll need their uid k
-        // That's all your problem or anything else? just realizing rn do i need this User.current.uid here, actually you dont need the childBy... so i can delete, hold on
-        
-        // the structure on your code and on the database doesn't look alike..
-        //so which part should i delete
-        // your database, so you can have data from this new ref, ac
+                                        "senderUsername" : senderUsername,
+                                        "color": ""]
         let betRef = Database.database().reference().child("bets").child(User.current.username).childByAutoId()
         _ = betRef.key
         var multiUpdateValue = [String : Any]()
@@ -40,7 +32,7 @@ struct BetService {
             }
         }
     }
-    //
+    
     static func show(user: User, completion: @escaping (Bet?) -> Void) {
         // childAutoby create a new id/uid
         let betRef = Database.database().reference().child("bets").child(User.current.username)
@@ -54,18 +46,34 @@ struct BetService {
             completion(bet)
         })
     }
-//    static func observeMessages(forChatKey chatKey: String, completion: @escaping (DatabaseReference, Message?) -> Void) -> DatabaseHandle {
-//        let messagesRef = Database.database().reference().child("messages").child(chatKey)
-//
-//        return messagesRef.observe(.childAdded, with: { snapshot in
-//            guard let message = Message(snapshot: snapshot) else {
-//                return completion(messagesRef, nil)
-//            }
-//
-//            completion(messagesRef, message)
-//        })
-//    }
+    
+    static func setBetColor(color: String, senderUser: String) {
 
+        let color = ["color": color]
+        
+        // change color for current user
+        
+        let betRef1 = Database.database().reference().child("bets").child(User.current.username)
+        let ref1 = Database.database().reference().child("bets").child(User.current.username).child(betRef1.key ?? "")
+        
+        ref1.updateChildValues(color) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+        
+        // change color for sender User
+        let betRef2 = Database.database().reference().child("bets").child(senderUser)
+        let ref2 = Database.database().reference().child("bets").child(senderUser).child(betRef2.key ?? "")
+
+        ref2.updateChildValues(color) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+    }
 }
 
 

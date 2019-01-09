@@ -15,7 +15,6 @@
 		2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1021D7116E0002A238 /* MakeBetViewController.swift */; };
 		2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1221D7F93F0002A238 /* FollowService.swift */; };
 		2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1621D8029E0002A238 /* FindFriendsCell.swift */; };
-		2840AC1921D822BA0002A238 /* PopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1821D822BA0002A238 /* PopOverViewController.swift */; };
 		2840AC1D21D82AB50002A238 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1C21D82AB50002A238 /* Friends.storyboard */; };
 		2840AC1F21D82AFB0002A238 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1E21D82AFB0002A238 /* Home.storyboard */; };
 		2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */; };
@@ -56,7 +55,6 @@
 		2840AC1021D7116E0002A238 /* MakeBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBetViewController.swift; sourceTree = "<group>"; };
 		2840AC1221D7F93F0002A238 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
 		2840AC1621D8029E0002A238 /* FindFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsCell.swift; sourceTree = "<group>"; };
-		2840AC1821D822BA0002A238 /* PopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverViewController.swift; sourceTree = "<group>"; };
 		2840AC1C21D82AB50002A238 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		2840AC1E21D82AFB0002A238 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToPopOverViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				2840AC1021D7116E0002A238 /* MakeBetViewController.swift */,
 				2871D45921D316D0007E3FF1 /* FindFriendsViewController.swift */,
 				2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */,
-				2840AC1821D822BA0002A238 /* PopOverViewController.swift */,
 				2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */,
 				283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */,
 			);
@@ -390,7 +387,6 @@
 				28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */,
 				28C06FDE21D09C2C008F2783 /* User.swift in Sources */,
 				2871D46021D34E7F007E3FF1 /* StorageService.swift in Sources */,
-				2840AC1921D822BA0002A238 /* PopOverViewController.swift in Sources */,
 				28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */,
 				2871D45C21D31F44007E3FF1 /* MainTabBarController.swift in Sources */,
 				283F0D0421DDCCAB0096BB6E /* BetHeaderCell.swift in Sources */,

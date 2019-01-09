@@ -9,12 +9,15 @@
 import UIKit
 
 class BetHeaderCell: UITableViewCell {
-
     
     static let height: CGFloat = 30
     
+    var tappedColor = ""
+    
     @IBOutlet weak var usernameHeaderLabel: UILabel!
     @IBOutlet weak var betDescription: UILabel!
+    @IBOutlet weak var agreeButton: UIButton!
+    @IBOutlet weak var disagreeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +29,12 @@ class BetHeaderCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func agreeButtonTapped(_ sender: Any) {
+        tappedColor = "blue"
+    }
+    
+    @IBAction func disagreeButtonTapped(_ sender: Any) {
+        tappedColor = "green"
+    }
 }

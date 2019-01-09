@@ -91,6 +91,8 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
         
+//        BetService.setBetColor(color: cell.tappedColor, senderUser: cell.usernameHeaderLabel.text ?? "")
+        
         return cell
     }
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -135,6 +137,6 @@ extension ViewBetsViewController: UITableViewDataSource {
 
 extension ViewBetsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 120
     }
 }
