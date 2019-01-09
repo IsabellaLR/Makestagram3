@@ -30,6 +30,7 @@
 		2871D46221D3528C007E3FF1 /* BetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46121D3528C007E3FF1 /* BetService.swift */; };
 		2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */; };
 		2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46721D3FD0E007E3FF1 /* StorageReference.swift */; };
+		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
 		28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE421DCA71F0041FDDB /* Selection.swift */; };
 		28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */; };
 		28AC0FE921DCAC7F0041FDDB /* BetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */; };
@@ -70,6 +71,7 @@
 		2871D46121D3528C007E3FF1 /* BetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetService.swift; sourceTree = "<group>"; };
 		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
+		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		28AC0FE421DCA71F0041FDDB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBets.storyboard; sourceTree = "<group>"; };
 		28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCell.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				2871D45B21D31F44007E3FF1 /* MainTabBarController.swift */,
 				2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */,
 				283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */,
+				28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
+				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 				283F0D0621DF36010096BB6E /* Bet.swift in Sources */,
 			);

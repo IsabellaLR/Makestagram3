@@ -43,18 +43,31 @@
         <!--Item-->
         <scene sceneID="C7K-oy-W6k">
             <objects>
-                <viewController id="0nu-dT-47x" sceneMemberID="viewController">
+                <viewController id="0nu-dT-47x" customClass="MyProfileViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kP0-tW-g64">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-sj-vBb">
+                                <rect key="frame" x="114" y="90" width="105" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="ninja"/>
+                                <connections>
+                                    <action selector="addPhoto:" destination="0nu-dT-47x" eventType="touchUpInside" id="th9-hU-9o0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kmR-pX-gnx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="XHO-ge-jnT"/>
+                    <connections>
+                        <outlet property="profileButton" destination="nfr-sj-vBb" id="xLS-eU-5Bh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q4-Ry-WVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="-465"/>
+            <point key="canvasLocation" x="460" y="-465.51724137931041"/>
         </scene>
         <!--UINavigationController-28Q-TN-N9a-->
         <scene sceneID="crp-Ru-3eJ">
@@ -85,4 +98,7 @@
             <point key="canvasLocation" x="548" y="353.9730134932534"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ninja" width="100" height="100"/>
+    </resources>
 </document>
