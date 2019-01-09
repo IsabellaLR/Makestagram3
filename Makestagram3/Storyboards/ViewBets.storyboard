@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BetHeaderCell" rowHeight="120" id="3Uw-2W-EwR" customClass="BetHeaderCell" customModule="Makestagram3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BetHeaderCell" rowHeight="120" id="3Uw-2W-EwR" customClass="BetHeaderCell" customModule="Makestagram3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Uw-2W-EwR" id="1pe-tP-kci">
@@ -48,13 +48,13 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ninja" translatesAutoresizingMaskIntoConstraints="NO" id="Vpr-Iq-mS8">
                                                     <rect key="frame" x="15" y="15" width="61" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agree" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-kg-rtK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreeb4" highlightedImage="agree" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-kg-rtK">
                                                     <rect key="frame" x="266" y="25" width="40" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="QRJ-dO-yQj"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disagree" translatesAutoresizingMaskIntoConstraints="NO" id="AgX-hp-ehB">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disagreeb4" highlightedImage="disagree" translatesAutoresizingMaskIntoConstraints="NO" id="AgX-hp-ehB">
                                                     <rect key="frame" x="316" y="25" width="44" height="50"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-RT-ttq">
@@ -150,7 +150,9 @@
     </scenes>
     <resources>
         <image name="agree" width="100" height="100"/>
-        <image name="disagree" width="305" height="350"/>
+        <image name="agreeb4" width="100" height="100"/>
+        <image name="disagree" width="100" height="100"/>
+        <image name="disagreeb4" width="100" height="100"/>
         <image name="ninja" width="100" height="100"/>
         <image name="tab_plus_black" width="25" height="25"/>
     </resources>

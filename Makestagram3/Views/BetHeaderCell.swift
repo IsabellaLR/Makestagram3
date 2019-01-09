@@ -32,9 +32,11 @@ class BetHeaderCell: UITableViewCell {
     
     @IBAction func agreeButtonTapped(_ sender: Any) {
         tappedColor = "blue"
+        BetService.setBetColor(color: tappedColor)
     }
     
     @IBAction func disagreeButtonTapped(_ sender: Any) {
         tappedColor = "green"
+        BetService.setBetColor(color: tappedColor)
     }
 }

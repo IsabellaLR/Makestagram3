@@ -91,7 +91,7 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
         
-//        BetService.setBetColor(color: cell.tappedColor, senderUser: cell.usernameHeaderLabel.text ?? "")
+//        , senderUser: cell.usernameHeaderLabel.text ?? ""
         
         return cell
     }

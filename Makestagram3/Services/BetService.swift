@@ -47,7 +47,8 @@ struct BetService {
         })
     }
     
-    static func setBetColor(color: String, senderUser: String) {
+//    , senderUser: String
+    static func setBetColor(color: String) {
 
         let color = ["color": color]
         
@@ -63,16 +64,16 @@ struct BetService {
             }
         }
         
-        // change color for sender User
-        let betRef2 = Database.database().reference().child("bets").child(senderUser)
-        let ref2 = Database.database().reference().child("bets").child(senderUser).child(betRef2.key ?? "")
-
-        ref2.updateChildValues(color) { (error, _) in
-            if let error = error {
-                assertionFailure(error.localizedDescription)
-                return
-            }
-        }
+//        // change color for sender User
+//        let betRef2 = Database.database().reference().child("bets").child(senderUser)
+//        let ref2 = Database.database().reference().child("bets").child(senderUser).child(betRef2.key ?? "")
+//
+//        ref2.updateChildValues(color) { (error, _) in
+//            if let error = error {
+//                assertionFailure(error.localizedDescription)
+//                return
+//            }
+//        }
     }
 }
 
