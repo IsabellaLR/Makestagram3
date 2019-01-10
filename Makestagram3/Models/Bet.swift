@@ -39,7 +39,7 @@ class Bet {
         self.senderUsername = senderUsername ?? ""
 //        self.sentToUsernames = sentToUsernames ?? [String]() //oops so i think should be lol right? -- let see
         self.description = description ?? "no description"
-        self.color = color ?? "not decided"
+        self.color = color ?? "white"
 //        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
         }
         else{

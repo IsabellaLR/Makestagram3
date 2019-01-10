@@ -17,7 +17,7 @@ struct BetService {
 //        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
         let betDict: [String : Any] = ["description" : description,
                                         "senderUsername" : senderUsername,
-                                        "color": ""]
+                                        "color": "white"]
         let betRef = Database.database().reference().child("bets").child(User.current.username).childByAutoId()
         _ = betRef.key
         var multiUpdateValue = [String : Any]()

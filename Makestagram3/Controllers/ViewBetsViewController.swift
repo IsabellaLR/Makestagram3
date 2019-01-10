@@ -89,9 +89,35 @@ extension ViewBetsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
         
         let bet = bets[indexPath.row]
+
         cell.usernameHeaderLabel.text = bet.senderUsername
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
+        
+        //color
+        
+        enum Color: String {
+            case white
+            case blue
+            case green
+            
+            var create: UIColor {
+                switch self {
+                case .white:
+                    return UIColor.white
+                case .blue:
+                    return UIColor.blue
+                case .green:
+                    return UIColor.green
+                }
+            }
+        }
+        
+        let color = Color(rawValue: bet.color)
+        
+        let colorSelected = color?.create
+        
+        cell.backgroundColor = colorSelected
         
         // Assign the tap action which will be executed when the user taps the UIButton
         

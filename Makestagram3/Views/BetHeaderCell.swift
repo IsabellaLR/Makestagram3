@@ -14,7 +14,6 @@ class BetHeaderCell: UITableViewCell {
     
     var tapAgreeAction: ((UITableViewCell) -> Void)?
     var tapDisagreeAction: ((UITableViewCell) -> Void)?
-    var tappedColor = ""
     
     @IBOutlet weak var usernameHeaderLabel: UILabel!
     @IBOutlet weak var betDescription: UILabel!
