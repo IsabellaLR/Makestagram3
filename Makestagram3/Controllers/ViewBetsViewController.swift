@@ -15,6 +15,7 @@ class ViewBetsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var bets = [Bet]()
+    var parentKeys = [String]()
     
     var userBetsHandle: DatabaseHandle = 0
     var userBetsRef: DatabaseReference?
@@ -42,9 +43,10 @@ class ViewBetsViewController: UIViewController {
         
         // 2
         
-        userBetsHandle = UserService.observeBets { [weak self] (ref, bets) in
+        userBetsHandle = UserService.observeBets { [weak self] (parentKeys, ref, bets) in
             self?.userBetsRef = ref
             self?.bets = bets
+            self?.parentKeys = parentKeys
 
             // 3
             DispatchQueue.main.async {
@@ -91,30 +93,24 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
         
-//        , senderUser: cell.usernameHeaderLabel.text ?? ""
+        // Assign the tap action which will be executed when the user taps the UIButton
+        
+        //Agree - blue
+        cell.tapAgreeAction = { (cell) in
+            let parentKey = self.parentKeys[indexPath.row]
+            UserDefaults.standard.set(parentKey, forKey: "parentKey")
+            BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil")
+        }
+        
+        //Disagree - green
+        cell.tapDisagreeAction = { (cell) in
+            let parentKey = self.parentKeys[indexPath.row]
+            UserDefaults.standard.set(parentKey, forKey: "parentKey")
+            BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil")
+        }
         
         return cell
     }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let bet = bets[indexPath.section]
-//
-//        switch indexPath.row {
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
-//            cell.usernameHeaderLabel.text = bet.senderUsername
-//
-//            return cell
-//
-//        case 1:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "ShowBetCell") as! ShowBetCell
-//            cell.betDescription.text = bet.description
-//
-//            return cell
-//
-//        default:
-//            fatalError("Error: unexpected indexPath.")
-//        }
-//    }
 }
 
 

@@ -88,28 +88,30 @@ struct UserService {
     
     // or this way
     
-    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
+    static func observeBets(for user: User = User.current, withCompletion completion: @escaping ([String], DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
         
         let ref = Database.database().reference().child("bets").child(user.username)
 
         return ref.observe(.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-                return completion(ref, [])
+                return completion([], ref, [])
             }
 // can you run it on phone is that fine bc its slow on mac -- yea i need the above ^
             var bets = [Bet]()
+            var parentKeys = [String]()
 
             for betInfo in snapshot {
                 // this guard won't work -- ok, let see why // what happen here is the decode, something doesnt match youer model
                 guard  let betData = Bet(snapshot: betInfo) else {
-                    return completion(ref, [])
+                    return completion([], ref, [])
                 }
                 // to user is crashing -- why two???
                 bets.append(betData) //1
+                parentKeys.append(betInfo.ref.key ?? "nil")
                 // TODO: safely unwrap line below. Refer to above method "show"
 
             }
-            completion(ref, bets)
+            completion(parentKeys, ref, bets)
             // now i think everything works  =but sentTo and sender have 0 values, because it doesn't have data on the database
         })
     }

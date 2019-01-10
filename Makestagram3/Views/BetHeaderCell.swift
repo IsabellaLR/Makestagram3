@@ -9,9 +9,11 @@
 import UIKit
 
 class BetHeaderCell: UITableViewCell {
-    
+
     static let height: CGFloat = 30
     
+    var tapAgreeAction: ((UITableViewCell) -> Void)?
+    var tapDisagreeAction: ((UITableViewCell) -> Void)?
     var tappedColor = ""
     
     @IBOutlet weak var usernameHeaderLabel: UILabel!
@@ -31,12 +33,10 @@ class BetHeaderCell: UITableViewCell {
     }
     
     @IBAction func agreeButtonTapped(_ sender: Any) {
-        tappedColor = "blue"
-        BetService.setBetColor(color: tappedColor)
+        tapAgreeAction?(self)
     }
     
     @IBAction func disagreeButtonTapped(_ sender: Any) {
-        tappedColor = "green"
-        BetService.setBetColor(color: tappedColor)
+        tapDisagreeAction?(self)
     }
 }

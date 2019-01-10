@@ -48,16 +48,15 @@ struct BetService {
     }
     
 //    , senderUser: String
-    static func setBetColor(color: String) {
+    static func setBetColor(color: String, parentKey: String) {
 
         let color = ["color": color]
         
         // change color for current user
         
-        let betRef1 = Database.database().reference().child("bets").child(User.current.username)
-        let ref1 = Database.database().reference().child("bets").child(User.current.username).child(betRef1.key ?? "")
+        let betRef = Database.database().reference().child("bets").child(User.current.username).child(parentKey)
         
-        ref1.updateChildValues(color) { (error, _) in
+        betRef.updateChildValues(color) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return
