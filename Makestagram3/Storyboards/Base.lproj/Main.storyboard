@@ -48,16 +48,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-sj-vBb">
-                                <rect key="frame" x="114" y="90" width="105" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="ninja"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-sj-vBb">
+                                <rect key="frame" x="130" y="70" width="125" height="125"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="2Eu-iF-GBR"/>
+                                    <constraint firstAttribute="height" constant="125" id="q9n-Gh-9GM"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ninja">
+                                    <color key="titleShadowColor" red="1" green="0.3921568627" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addPhoto:" destination="0nu-dT-47x" eventType="touchUpInside" id="th9-hU-9o0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nfr-sj-vBb" firstAttribute="top" secondItem="kmR-pX-gnx" secondAttribute="top" constant="50" id="Ijs-or-MeH"/>
+                            <constraint firstItem="kmR-pX-gnx" firstAttribute="trailing" secondItem="nfr-sj-vBb" secondAttribute="trailing" constant="120" id="Q5x-yh-5H5"/>
+                            <constraint firstItem="nfr-sj-vBb" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="130" id="i5G-uT-zED"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kmR-pX-gnx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="XHO-ge-jnT"/>
