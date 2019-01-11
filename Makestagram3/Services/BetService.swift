@@ -66,24 +66,32 @@ struct BetService {
         })
     }
     
-//    , senderUser: String
-    static func setBetColor(color: String, parentKey: String, usernames: [String]) {
+
+    static func setBetColor(color: String, parentKey: String, user1: String, user2: String) {
 
         let color = ["color": color]
         
-        // change color for current user
-        
-        for user in usernames{
-            let betRef = Database.database().reference().child("bets").child(user).child(parentKey)
+        // change color for first user
+        let betRef1 = Database.database().reference().child("bets").child(user1).child(parentKey)
                 
-            betRef.updateChildValues(color) { (error, _) in
-                if let error = error {
-                    assertionFailure(error.localizedDescription)
-                    return
-                }
+        betRef1.updateChildValues(color) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+    
+        // change color for first user
+        let betRef2 = Database.database().reference().child("bets").child(user2).child(parentKey)
+    
+        betRef2.updateChildValues(color) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
             }
         }
     }
+}
 
     //for groupchat! color changes for all same parentKeys
 //    static func setBetColor(color: String, parentKey: String, usernames: [String]) {
@@ -103,7 +111,7 @@ struct BetService {
 //            }
 //        }
 //    }
-}
+
         
 //        // change color for sender User
 //        let betRef2 = Database.database().reference().child("bets").child(senderUser)

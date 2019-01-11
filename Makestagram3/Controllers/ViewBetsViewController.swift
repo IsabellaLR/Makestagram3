@@ -140,12 +140,11 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.tapAgreeAction = { (cell) in
             changeAgreeImage()
             let parentKey = self.parentKeys[indexPath.row]
-            let usernames = bet.sentToUsernames
             UserDefaults.standard.set(parentKey, forKey: "parentKey")
             if (self.agreeImageHighlighted == true) {
-                BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+                BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
             }else{
-                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
             }
         }
         
@@ -153,12 +152,11 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.tapDisagreeAction = { (cell) in
             changeDisagreeImage()
             let parentKey = self.parentKeys[indexPath.row]
-            let usernames = bet.sentToUsernames
             UserDefaults.standard.set(parentKey, forKey: "parentKey")
             if (self.disagreeImageHighlighted == true) {
-                BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+                BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
             }else{
-                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
             }
         }
         
