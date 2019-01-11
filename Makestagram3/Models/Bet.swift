@@ -17,6 +17,7 @@ class Bet {
     let description: String
     let sentToUsernames: [String]
     let senderUsername: String
+    let sentToUser: String
     let color: String
     var lastMessageSent: Date?
     
@@ -29,6 +30,7 @@ class Bet {
             let description = dict["description"] as? String
             let color = dict["color"] as? String
             let sentToUsernames = dict["sentToUsernames"] as? [String]
+            let sentToUser = dict["sentToUser"] as? String
             // i thing you're right this line will crash -- run again
 //            let lastMessageSent = dict["lastMessageSent"] as? TimeInterval
 //            else {
@@ -39,6 +41,7 @@ class Bet {
         self.senderUsername = senderUsername ?? ""
         self.sentToUsernames = sentToUsernames ?? [""]
         self.description = description ?? "no description"
+        self.sentToUser = sentToUser ?? ""
         self.color = color ?? "white"
 //        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
         }

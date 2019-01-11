@@ -58,7 +58,6 @@ class SendToPopOverViewController: UIViewController {
         for user in selectedIndexPathArray {
             selectedUsers.append(followingKeys[user.row])
         }
-        selectedUsers.append(User.current.username)
         BetService.create(description: UserDefaults.standard.string(forKey: "betDescription") ?? "nil", senderUsername: User.current.username, sentToUsernames: selectedUsers)
     }
     

@@ -15,21 +15,39 @@ struct BetService {
     static func create(description: String, senderUsername: String, sentToUsernames: [String]) {
         
 //        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
-        let betDict: [String : Any] = ["description" : description,
-                                        "senderUsername" : senderUsername,
-                                        "color": "white",
-                                        "sentToUsernames": sentToUsernames]
-        let betRef = Database.database().reference().child("bets").child(User.current.username).childByAutoId()
-        _ = betRef.key
+
         var multiUpdateValue = [String : Any]()
+        
         for username in sentToUsernames {
+            let rootRef = Database.database().reference()
+            
+            let betDict: [String : Any] = ["description" : description,
+                                            "senderUsername" : senderUsername,
+                                            "color": "white",
+                                            "sentToUsernames": sentToUsernames,
+                                            "sentToUser": username]
+        
+            let betRef = Database.database().reference().child("bets").child(username).childByAutoId()
+            _ = betRef.key
+    
             multiUpdateValue["bets/\(username)/\(betRef.key ?? "")"] = betDict
-        }
-        let rootRef = Database.database().reference()
-        rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
-            if let error = error {
-                assertionFailure(error.localizedDescription)
-                return
+
+            rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    return
+                }
+            }
+            
+            //for current user
+            
+            multiUpdateValue["bets/\(User.current.username)/\(betRef.key ?? "")"] = betDict
+            
+            rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    return
+                }
             }
         }
     }
@@ -66,6 +84,25 @@ struct BetService {
             }
         }
     }
+
+    //for groupchat! color changes for all same parentKeys
+//    static func setBetColor(color: String, parentKey: String, usernames: [String]) {
+//
+//        let color = ["color": color]
+//
+//        // change color for current user
+//
+//        for user in usernames{
+//            let betRef = Database.database().reference().child("bets").child(user).child(parentKey)
+//
+//            betRef.updateChildValues(color) { (error, _) in
+//                if let error = error {
+//                    assertionFailure(error.localizedDescription)
+//                    return
+//                }
+//            }
+//        }
+//    }
 }
         
 //        // change color for sender User
