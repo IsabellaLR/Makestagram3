@@ -16,6 +16,8 @@ class ViewBetsViewController: UIViewController {
     
     var bets = [Bet]()
     var parentKeys = [String]()
+    var agreeImageHighlighted = false
+    var disagreeImageHighlighted = false
     
     var userBetsHandle: DatabaseHandle = 0
     var userBetsRef: DatabaseReference?
@@ -24,19 +26,9 @@ class ViewBetsViewController: UIViewController {
         super.awakeFromNib()
     }
 
-//    func configureTableView() {
-//        // remove separators for empty cells
-////        tableView.tableFooterView = UIView()
-////        // remove separators from cells
-////        tableView.separatorStyle = .none
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.tableView.delegate = self
-//        self.tableView.datasource = self
-        
+    
         tableView.rowHeight = 71
         // remove separators for empty cells
         tableView.tableFooterView = UIView()
@@ -60,19 +52,7 @@ class ViewBetsViewController: UIViewController {
         userBetsRef?.removeObserver(withHandle: userBetsHandle)
     }
 }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        BetService.show(user: User.current) { (bet) in
-//            self.bets = bets
-//            self.tableView.reloadData()
-//        }
-//    }
-//    UserService.observeBet(user: User.current) { (bets) in
-//            self.bets = bets
-//            self.tableView.reloadData()
-//        }
-//    }
+
 
 // MARK: - UITableViewDataSource
 
@@ -80,10 +60,6 @@ extension ViewBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bets.count
     }
-
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return bets.count
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
@@ -94,8 +70,35 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
         
-        //color
+        //images - highlighted and nonhighlighted
+
+        func changeAgreeImage() {
+            if (agreeImageHighlighted == false) {
+                cell.agreeImage.image = UIImage(named: "agree")
+                cell.disagreeImage.image = UIImage(named: "disagreeb4")
+                agreeImageHighlighted = true
+                disagreeImageHighlighted = false
+            }else{
+                cell.agreeImage.image = UIImage(named: "agreeb4")
+                agreeImageHighlighted = false
+                disagreeImageHighlighted = false
+            }
+        }
         
+        func changeDisagreeImage() {
+            if (disagreeImageHighlighted == false){
+                cell.disagreeImage.image = UIImage(named: "disagree")
+                cell.agreeImage.image = UIImage(named: "agreeb4")
+                disagreeImageHighlighted = true
+                agreeImageHighlighted = false
+            }else{
+                cell.disagreeImage.image = UIImage(named: "disagreeb4")
+                disagreeImageHighlighted = false
+                agreeImageHighlighted = false
+            }
+        }
+        
+        //color
         enum Color: String {
             case white
             case blue
@@ -123,39 +126,33 @@ extension ViewBetsViewController: UITableViewDataSource {
         
         //Agree - blue
         cell.tapAgreeAction = { (cell) in
+            changeAgreeImage()
             let parentKey = self.parentKeys[indexPath.row]
             let usernames = bet.sentToUsernames
             UserDefaults.standard.set(parentKey, forKey: "parentKey")
-            BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+            if (self.agreeImageHighlighted == true) {
+                BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+            }else{
+                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+            }
         }
         
         //Disagree - green
         cell.tapDisagreeAction = { (cell) in
+            changeDisagreeImage()
             let parentKey = self.parentKeys[indexPath.row]
             let usernames = bet.sentToUsernames
             UserDefaults.standard.set(parentKey, forKey: "parentKey")
-            BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+            if (self.disagreeImageHighlighted == true) {
+                BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+            }else{
+                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
+            }
         }
         
         return cell
     }
 }
-
-
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let bet = bets[indexPath.section]
-//        switch indexPath.row {
-//        case 0:
-//            return BetHeaderCell.height
-//
-//        case 1:
-//            let somethingBet = bet[indexPath.section]
-//
-//        default:
-//            fatalError()
-//        }
-//    }
-//}
 
  // MARK: - UITableViewDelegate
 

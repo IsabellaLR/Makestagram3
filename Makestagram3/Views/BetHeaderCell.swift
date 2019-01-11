@@ -19,6 +19,9 @@ class BetHeaderCell: UITableViewCell {
     @IBOutlet weak var betDescription: UILabel!
     @IBOutlet weak var agreeButton: UIButton!
     @IBOutlet weak var disagreeButton: UIButton!
+    @IBOutlet weak var agreeImage: UIImageView!
+    @IBOutlet weak var disagreeImage: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +35,12 @@ class BetHeaderCell: UITableViewCell {
     }
     
     @IBAction func agreeButtonTapped(_ sender: Any) {
+        agreeImage.isUserInteractionEnabled = true
         tapAgreeAction?(self)
     }
     
     @IBAction func disagreeButtonTapped(_ sender: Any) {
+        disagreeImage.isUserInteractionEnabled = true
         tapDisagreeAction?(self)
     }
 }

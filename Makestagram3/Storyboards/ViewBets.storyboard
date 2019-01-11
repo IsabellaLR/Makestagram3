@@ -96,8 +96,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="agreeButton" destination="cRh-RT-ttq" id="2Qo-Jj-wvb"/>
+                                            <outlet property="agreeImage" destination="Io8-kg-rtK" id="rzj-ke-o1c"/>
                                             <outlet property="betDescription" destination="Hbg-A8-feh" id="iXq-GK-j5d"/>
                                             <outlet property="disagreeButton" destination="Ywt-24-EuN" id="2hq-D7-6Ub"/>
+                                            <outlet property="disagreeImage" destination="AgX-hp-ehB" id="ZDi-eC-anH"/>
                                             <outlet property="usernameHeaderLabel" destination="iFU-oa-zQd" id="CHu-bh-vDx"/>
                                         </connections>
                                     </tableViewCell>
