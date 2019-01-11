@@ -124,15 +124,17 @@ extension ViewBetsViewController: UITableViewDataSource {
         //Agree - blue
         cell.tapAgreeAction = { (cell) in
             let parentKey = self.parentKeys[indexPath.row]
+            let usernames = bet.sentToUsernames
             UserDefaults.standard.set(parentKey, forKey: "parentKey")
-            BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil")
+            BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
         }
         
         //Disagree - green
         cell.tapDisagreeAction = { (cell) in
             let parentKey = self.parentKeys[indexPath.row]
+            let usernames = bet.sentToUsernames
             UserDefaults.standard.set(parentKey, forKey: "parentKey")
-            BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil")
+            BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", usernames: usernames)
         }
         
         return cell

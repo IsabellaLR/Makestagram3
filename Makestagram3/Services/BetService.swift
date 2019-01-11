@@ -12,16 +12,17 @@ import FirebaseDatabase
 
 struct BetService {
     
-    static func create(description: String, senderUsername: String, sentUsernames: [String]) {
+    static func create(description: String, senderUsername: String, sentToUsernames: [String]) {
         
 //        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
         let betDict: [String : Any] = ["description" : description,
                                         "senderUsername" : senderUsername,
-                                        "color": "white"]
+                                        "color": "white",
+                                        "sentToUsernames": sentToUsernames]
         let betRef = Database.database().reference().child("bets").child(User.current.username).childByAutoId()
         _ = betRef.key
         var multiUpdateValue = [String : Any]()
-        for username in sentUsernames {
+        for username in sentToUsernames {
             multiUpdateValue["bets/\(username)/\(betRef.key ?? "")"] = betDict
         }
         let rootRef = Database.database().reference()
@@ -48,20 +49,24 @@ struct BetService {
     }
     
 //    , senderUser: String
-    static func setBetColor(color: String, parentKey: String) {
+    static func setBetColor(color: String, parentKey: String, usernames: [String]) {
 
         let color = ["color": color]
         
         // change color for current user
         
-        let betRef = Database.database().reference().child("bets").child(User.current.username).child(parentKey)
-        
-        betRef.updateChildValues(color) { (error, _) in
-            if let error = error {
-                assertionFailure(error.localizedDescription)
-                return
+        for user in usernames{
+            let betRef = Database.database().reference().child("bets").child(user).child(parentKey)
+                
+            betRef.updateChildValues(color) { (error, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    return
+                }
             }
         }
+    }
+}
         
 //        // change color for sender User
 //        let betRef2 = Database.database().reference().child("bets").child(senderUser)
@@ -73,7 +78,6 @@ struct BetService {
 //                return
 //            }
 //        }
-    }
-}
+
 
 
