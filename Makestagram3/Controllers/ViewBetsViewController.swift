@@ -123,16 +123,16 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.backgroundColor = colorSelected
         
         // assigning image states for other users
-//        if bet.color == "white" {
-//            cell.agreeImage.image = UIImage(named: "agreeb4")
-//            cell.disagreeImage.image = UIImage(named: "disagreeb4")
-//        }else if (bet.color == "blue") {
-//            cell.agreeImage.image = UIImage(named: "agree")
-//            cell.disagreeImage.image = UIImage(named: "disagreeb4")
-//        }else{
-//            cell.agreeImage.image = UIImage(named: "agreeb4")
-//            cell.disagreeImage.image = UIImage(named: "disagree")
-//        }
+        if bet.color == "white" {
+            cell.agreeImage.image = UIImage(named: "agreeb4")
+            cell.disagreeImage.image = UIImage(named: "disagreeb4")
+        }else if (bet.color == "blue") {
+            cell.agreeImage.image = UIImage(named: "agree")
+            cell.disagreeImage.image = UIImage(named: "disagreeb4")
+        }else{
+            cell.agreeImage.image = UIImage(named: "agreeb4")
+            cell.disagreeImage.image = UIImage(named: "disagree")
+        }
         
         // Assign the tap action which will be executed when the user taps the UIButton
         
