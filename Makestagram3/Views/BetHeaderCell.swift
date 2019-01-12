@@ -23,6 +23,7 @@ class BetHeaderCell: UITableViewCell {
     @IBOutlet weak var disagreeImage: UIImageView!
     @IBOutlet weak var showPointsLabel: UILabel!
     @IBOutlet weak var showEpisodeLabel: UILabel!
+    @IBOutlet weak var timeAgoLabel: UILabel!
     
     
     override func awakeFromNib() {

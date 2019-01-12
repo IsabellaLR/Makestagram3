@@ -11,7 +11,6 @@ import FirebaseDatabase.FIRDataSnapshot
 
 class SendToPopOverViewController: UIViewController {
 
-//    var selectedIndexPathArray = [IndexPath?]()
     var followingKeys = [String]()
     var selectedUsers = [String]()
     

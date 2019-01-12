@@ -91,6 +91,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llX-0q-Y6S">
+                                                    <rect key="frame" x="266" y="83" width="94" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ywt-24-EuN" secondAttribute="trailing" id="08f-dw-OwP"/>
@@ -136,6 +143,7 @@
                                             <outlet property="disagreeImage" destination="AgX-hp-ehB" id="ZDi-eC-anH"/>
                                             <outlet property="showEpisodeLabel" destination="wVj-4Q-yGX" id="IfS-dv-WSP"/>
                                             <outlet property="showPointsLabel" destination="b7Z-dh-wvn" id="oGf-nO-K1m"/>
+                                            <outlet property="timeAgoLabel" destination="llX-0q-Y6S" id="yPG-cS-fCE"/>
                                             <outlet property="usernameHeaderLabel" destination="iFU-oa-zQd" id="CHu-bh-vDx"/>
                                         </connections>
                                     </tableViewCell>

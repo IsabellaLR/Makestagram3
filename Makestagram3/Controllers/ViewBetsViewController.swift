@@ -76,6 +76,16 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.showPointsLabel.text = bet.points
         cell.showEpisodeLabel.text = bet.episode
         
+        // date formatter
+//        let timestampFormatter: DateFormatter = {
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateStyle = .short
+//            
+//            return dateFormatter
+//        }()
+        let date = bet.creationDate
+        cell.timeAgoLabel.text = bet.creationDate
+        
         //images - highlighted and nonhighlighted
         func changeAgreeImage() {
             if (agreeImageHighlighted == false) {

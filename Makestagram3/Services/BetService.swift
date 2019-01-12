@@ -13,10 +13,12 @@ import FirebaseDatabase
 struct BetService {
     
     static func create(description: String, senderUsername: String, sentToUsernames: [String], points: String, episode: String) {
-        
-//        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
 
         var multiUpdateValue = [String : Any]()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM DD"
+        let defaultTimeZoneStr = formatter.string(from: NSDate() as Date)
         
         for username in sentToUsernames {
             let rootRef = Database.database().reference()
@@ -27,7 +29,8 @@ struct BetService {
                                             "sentToUsernames": sentToUsernames,
                                             "sentToUser": username,
                                             "points": points,
-                                            "episode": episode]
+                                            "episode": episode,
+                                            "creationDate": defaultTimeZoneStr]
         
             let betRef = Database.database().reference().child("bets").child(username).childByAutoId()
             _ = betRef.key

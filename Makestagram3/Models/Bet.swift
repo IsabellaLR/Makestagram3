@@ -21,7 +21,7 @@ class Bet {
     let color: String
     let points: String
     let episode: String
-    var lastMessageSent: Date?
+    let creationDate: String
     
     init?(snapshot: DataSnapshot) {
         //do i need to include lastMessageSent is that why// not really
@@ -36,7 +36,7 @@ class Bet {
             let points = dict["points"] as? String
             let episode = dict["episode"] as? String
             // i thing you're right this line will crash -- run again
-//            let lastMessageSent = dict["lastMessageSent"] as? TimeInterval
+            let creationDate = dict["creationDate"] as? String
 //            else {
 //                print("oupss")
 //                return nil }
@@ -49,10 +49,16 @@ class Bet {
         self.color = color ?? "white"
         self.points = points ?? "0 pts"
         self.episode = episode ?? ""
-//        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
+        self.creationDate = creationDate ?? "idk man"
         }
         else{
             return nil
         }
     }
+    
+//    var dictValue: [String : Any] {
+//        let createdAgo = creationDate.timeIntervalSince1970
+//        
+//        return [Constants.Dict.created_at : createdAgo]
+//    }
 }
