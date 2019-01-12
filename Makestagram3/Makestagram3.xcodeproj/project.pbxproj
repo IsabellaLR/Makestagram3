@@ -30,6 +30,8 @@
 		2871D46221D3528C007E3FF1 /* BetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46121D3528C007E3FF1 /* BetService.swift */; };
 		2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */; };
 		2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46721D3FD0E007E3FF1 /* StorageReference.swift */; };
+		2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97921EA91C70071D497 /* ProfileService.swift */; };
+		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
 		28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE421DCA71F0041FDDB /* Selection.swift */; };
 		28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */; };
@@ -71,6 +73,8 @@
 		2871D46121D3528C007E3FF1 /* BetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetService.swift; sourceTree = "<group>"; };
 		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
+		2895D97921EA91C70071D497 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		28AC0FE421DCA71F0041FDDB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBets.storyboard; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 				28C06FDD21D09C2C008F2783 /* User.swift */,
 				28AC0FE421DCA71F0041FDDB /* Selection.swift */,
 				283F0D0521DF36010096BB6E /* Bet.swift */,
+				2895D97B21EA95C00071D497 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				2871D45F21D34E7F007E3FF1 /* StorageService.swift */,
 				2871D46121D3528C007E3FF1 /* BetService.swift */,
 				2840AC1221D7F93F0002A238 /* FollowService.swift */,
+				2895D97921EA91C70071D497 /* ProfileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				283F0D0421DDCCAB0096BB6E /* BetHeaderCell.swift in Sources */,
 				2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
+				2895D97C21EA95C00071D497 /* Profile.swift in Sources */,
 				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
 				283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */,
@@ -415,6 +422,7 @@
 				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 				283F0D0621DF36010096BB6E /* Bet.swift in Sources */,
+				2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

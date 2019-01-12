@@ -11,7 +11,11 @@ import AVFoundation
 import Photos
 
 class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var myPointsLabel: UILabel!
+    
+    var profiles = [Profile]()
     var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
@@ -22,6 +26,11 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
 //        profileButton.layer.borderWidth = 1
 //        profileButton.layer.borderColor = UIColor.black.cgColor
 //        self.applyRoundCorner(profileButton)
+        
+        ProfileService.show(user: User.current) { [unowned self] (profiles) in
+            self.profiles = profiles
+        }
+        myPointsLabel.text = profiles.posPoints - profiles.negPoints
     }
     
     override func didReceiveMemoryWarning() {

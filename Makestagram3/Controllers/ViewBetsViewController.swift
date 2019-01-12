@@ -15,6 +15,7 @@ class ViewBetsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var bets = [Bet]()
+    var profiles = [Profile]()
     var parentKeys = [String]()
     var agreeImageHighlighted = false
     var disagreeImageHighlighted = false
@@ -52,6 +53,12 @@ class ViewBetsViewController: UIViewController {
         // 4
         userBetsRef?.removeObserver(withHandle: userBetsHandle)
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        ProfileService.show(user: User) { [unowned self] (profiles) in
+//            self.profiles = profiles
+//        }
+//    }
 }
 
 
@@ -81,11 +88,32 @@ extension ViewBetsViewController: UITableViewDataSource {
         
         if (cell.showEpisodeLabel.text == UserDefaults.standard.string(forKey: "premieurEp") ?? "") {
             isPremieurEp == true
-            cell.agreeImage.image = UIImage(named: "winner")
-            cell.disagreeImage.image = UIImage(named: "loser")
+            cell.agreeImage.image = UIImage(named: "winnerb4")
+            cell.disagreeImage.image = UIImage(named: "loserb4")
             cell.whoWonLabel.text = "Who won?"
         }
         
+        func changeToWin(){
+            cell.agreeImage.image = UIImage(named: "winner")
+            if bet.senderUsername == User.current.username {
+                ProfileService.create(username: User.current.username, posPoints: Int(bet.points)!, negPoints: 0)
+                ProfileService.create(username: bet.sentToUser, posPoints: 0, negPoints: Int(bet.points)!)
+            }else{
+                ProfileService.create(username: User.current.username, posPoints: Int(bet.points)!, negPoints: 0)
+                ProfileService.create(username: bet.senderUsername, posPoints: 0, negPoints: Int(bet.points)!)
+            }
+        }
+        
+        func changeToLose(){
+            cell.disagreeImage.image = UIImage(named: "loser")
+            if bet.senderUsername == User.current.username {
+                ProfileService.create(username: bet.sentToUser, posPoints: Int(bet.points)!, negPoints: 0)
+                ProfileService.create(username: User.current.username, posPoints: 0, negPoints: Int(bet.points)!)
+            } else {
+                ProfileService.create(username: bet.senderUsername, posPoints: Int(bet.points)!, negPoints: 0)
+                ProfileService.create(username: User.current.username, posPoints: 0, negPoints: Int(bet.points)!)
+            }
+        }
         
         //images - highlighted and nonhighlighted
         func changeAgreeImage() {
@@ -158,6 +186,9 @@ extension ViewBetsViewController: UITableViewDataSource {
         
         //Agree - blue
         cell.tapAgreeAction = { (cell) in
+            if (bet.episode == UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
+                changeToWin()
+            }
             if (bet.senderUsername == User.current.username) {
                 return
             }else{
@@ -174,6 +205,9 @@ extension ViewBetsViewController: UITableViewDataSource {
         
         //Disagree - green
         cell.tapDisagreeAction = { (cell) in
+            if (bet.episode == UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
+                changeToLose()
+            }
             if (bet.senderUsername == User.current.username) {
                 return
             }else{
