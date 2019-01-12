@@ -11,7 +11,8 @@ import UIKit
 class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var homeImage: UIImageView!
-    @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var homeEpisodeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

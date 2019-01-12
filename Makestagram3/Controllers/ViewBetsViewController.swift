@@ -18,6 +18,7 @@ class ViewBetsViewController: UIViewController {
     var parentKeys = [String]()
     var agreeImageHighlighted = false
     var disagreeImageHighlighted = false
+    var isPremieurEp = false
     
     var userBetsHandle: DatabaseHandle = 0
     var userBetsRef: DatabaseReference?
@@ -74,17 +75,17 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
         cell.showPointsLabel.text = bet.points
-        cell.showEpisodeLabel.text = bet.episode
-        
-        // date formatter
-//        let timestampFormatter: DateFormatter = {
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateStyle = .short
-//            
-//            return dateFormatter
-//        }()
         let date = bet.creationDate
         cell.timeAgoLabel.text = bet.creationDate
+        cell.showEpisodeLabel.text = bet.episode
+        
+        if (cell.showEpisodeLabel.text == UserDefaults.standard.string(forKey: "premieurEp") ?? "") {
+            isPremieurEp == true
+            cell.agreeImage.image = UIImage(named: "winner")
+            cell.disagreeImage.image = UIImage(named: "loser")
+            cell.whoWonLabel.text = "Who won?"
+        }
+        
         
         //images - highlighted and nonhighlighted
         func changeAgreeImage() {
@@ -138,16 +139,18 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.backgroundColor = colorSelected
         
         // assigning image states for other users
-        if (bet.senderUsername != User.current.username) {
-            if bet.color == "white" {
-                cell.agreeImage.image = UIImage(named: "agreeb4")
-                cell.disagreeImage.image = UIImage(named: "disagreeb4")
-            }else if (bet.color == "blue") {
-                cell.agreeImage.image = UIImage(named: "agree")
-                cell.disagreeImage.image = UIImage(named: "disagreeb4")
-            }else{
-                cell.agreeImage.image = UIImage(named: "agreeb4")
-                cell.disagreeImage.image = UIImage(named: "disagree")
+        if (cell.showEpisodeLabel.text != UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
+            if (bet.senderUsername != User.current.username) {
+                if bet.color == "white" {
+                    cell.agreeImage.image = UIImage(named: "agreeb4")
+                    cell.disagreeImage.image = UIImage(named: "disagreeb4")
+                }else if (bet.color == "blue") {
+                    cell.agreeImage.image = UIImage(named: "agree")
+                    cell.disagreeImage.image = UIImage(named: "disagreeb4")
+                }else{
+                    cell.agreeImage.image = UIImage(named: "agreeb4")
+                    cell.disagreeImage.image = UIImage(named: "disagree")
+                }
             }
         }
         

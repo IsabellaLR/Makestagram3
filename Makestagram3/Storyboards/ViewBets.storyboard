@@ -98,6 +98,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGq-xe-nEY">
+                                                    <rect key="frame" x="264" y="0.0" width="96" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ywt-24-EuN" secondAttribute="trailing" id="08f-dw-OwP"/>
@@ -145,6 +152,7 @@
                                             <outlet property="showPointsLabel" destination="b7Z-dh-wvn" id="oGf-nO-K1m"/>
                                             <outlet property="timeAgoLabel" destination="llX-0q-Y6S" id="yPG-cS-fCE"/>
                                             <outlet property="usernameHeaderLabel" destination="iFU-oa-zQd" id="CHu-bh-vDx"/>
+                                            <outlet property="whoWonLabel" destination="oGq-xe-nEY" id="ifv-PT-C87"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

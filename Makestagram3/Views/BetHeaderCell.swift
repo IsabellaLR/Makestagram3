@@ -24,6 +24,7 @@ class BetHeaderCell: UITableViewCell {
     @IBOutlet weak var showPointsLabel: UILabel!
     @IBOutlet weak var showEpisodeLabel: UILabel!
     @IBOutlet weak var timeAgoLabel: UILabel!
+    @IBOutlet weak var whoWonLabel: UILabel!
     
     
     override func awakeFromNib() {
