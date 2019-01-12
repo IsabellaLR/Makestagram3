@@ -21,6 +21,8 @@ class BetHeaderCell: UITableViewCell {
     @IBOutlet weak var disagreeButton: UIButton!
     @IBOutlet weak var agreeImage: UIImageView!
     @IBOutlet weak var disagreeImage: UIImageView!
+    @IBOutlet weak var showPointsLabel: UILabel!
+    @IBOutlet weak var showEpisodeLabel: UILabel!
     
     
     override func awakeFromNib() {

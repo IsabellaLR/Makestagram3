@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     
     var totalEpisodes = ["Fire and Ice", "Viserys", "The Last Debt", "The Queen of Winterfell", "Reborn", "Claim to the Throne", "The Wheel Has Broken", "End Game"]
     var episodeImages = ["ep1", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon"]
+    var episodeName: String?
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -47,6 +48,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "MakeBetViewController") as? MakeBetViewController
         vc?.name = totalEpisodes[indexPath.row]
+        episodeName = vc?.name
+        UserDefaults.standard.set(episodeName, forKey: "episodeName")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 }

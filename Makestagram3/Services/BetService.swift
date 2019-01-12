@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 struct BetService {
     
-    static func create(description: String, senderUsername: String, sentToUsernames: [String]) {
+    static func create(description: String, senderUsername: String, sentToUsernames: [String], points: String, episode: String) {
         
 //        let lastMessageSent = lastMessageSent?.timeIntervalSince1970
 
@@ -25,7 +25,9 @@ struct BetService {
                                             "senderUsername" : senderUsername,
                                             "color": "white",
                                             "sentToUsernames": sentToUsernames,
-                                            "sentToUser": username]
+                                            "sentToUser": username,
+                                            "points": points,
+                                            "episode": episode]
         
             let betRef = Database.database().reference().child("bets").child(username).childByAutoId()
             _ = betRef.key

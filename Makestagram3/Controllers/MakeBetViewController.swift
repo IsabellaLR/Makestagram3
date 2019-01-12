@@ -13,9 +13,10 @@ class MakeBetViewController: UIViewController {
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var btnSelect: UIButton!
     @IBOutlet weak var betTextField: UITextField!
+    @IBOutlet weak var ptsLabel: UILabel!
     
     var betDescription: String?
-//    var betContent = UserDefaults.standard.set(betDescription, forKey: "betDescription")
+    var points: String?
     
     var name = ""
     
@@ -42,6 +43,14 @@ class MakeBetViewController: UIViewController {
     @IBAction func btnSelect(_ sender: Any) {
         betDescription = betTextField.text
         UserDefaults.standard.set(betDescription, forKey: "betDescription")
+    }
+    
+    
+    @IBAction func changeStepperValue(_ sender: UIStepper) {
+        let pointVlaue = Int(sender.value).description + " pts"
+        self.ptsLabel.text = pointVlaue
+        points = pointVlaue
+        UserDefaults.standard.set(points, forKey: "points")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

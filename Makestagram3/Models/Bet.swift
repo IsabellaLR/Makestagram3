@@ -19,6 +19,8 @@ class Bet {
     let senderUsername: String
     let sentToUser: String
     let color: String
+    let points: String
+    let episode: String
     var lastMessageSent: Date?
     
     init?(snapshot: DataSnapshot) {
@@ -31,6 +33,8 @@ class Bet {
             let color = dict["color"] as? String
             let sentToUsernames = dict["sentToUsernames"] as? [String]
             let sentToUser = dict["sentToUser"] as? String
+            let points = dict["points"] as? String
+            let episode = dict["episode"] as? String
             // i thing you're right this line will crash -- run again
 //            let lastMessageSent = dict["lastMessageSent"] as? TimeInterval
 //            else {
@@ -43,6 +47,8 @@ class Bet {
         self.description = description ?? "no description"
         self.sentToUser = sentToUser ?? ""
         self.color = color ?? "white"
+        self.points = points ?? "0 pts"
+        self.episode = episode ?? ""
 //        self.lastMessageSent = Date(timeIntervalSince1970: lastMessageSent)
         }
         else{
