@@ -48,13 +48,13 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ninja" translatesAutoresizingMaskIntoConstraints="NO" id="Vpr-Iq-mS8">
                                                     <rect key="frame" x="15" y="15" width="61" height="60"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreeb4" highlightedImage="agree" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-kg-rtK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-kg-rtK">
                                                     <rect key="frame" x="266" y="25" width="40" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="QRJ-dO-yQj"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disagreeb4" highlightedImage="disagree" translatesAutoresizingMaskIntoConstraints="NO" id="AgX-hp-ehB">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AgX-hp-ehB">
                                                     <rect key="frame" x="316" y="25" width="44" height="50"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-RT-ttq">
@@ -151,10 +151,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="agree" width="100" height="100"/>
-        <image name="agreeb4" width="100" height="100"/>
-        <image name="disagree" width="100" height="100"/>
-        <image name="disagreeb4" width="100" height="100"/>
         <image name="ninja" width="100" height="100"/>
         <image name="tab_plus_black" width="25" height="25"/>
     </resources>

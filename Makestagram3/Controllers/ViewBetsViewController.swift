@@ -66,12 +66,15 @@ extension ViewBetsViewController: UITableViewDataSource {
         
         let bet = bets[indexPath.row]
 
-        cell.usernameHeaderLabel.text = bet.senderUsername
+        if (bet.senderUsername == User.current.username) {
+            cell.usernameHeaderLabel.text = bet.sentToUser
+        }else{
+            cell.usernameHeaderLabel.text = bet.senderUsername
+        }
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
         
         //images - highlighted and nonhighlighted
-
         func changeAgreeImage() {
             if (agreeImageHighlighted == false) {
                 cell.agreeImage.image = UIImage(named: "agree")
@@ -123,40 +126,50 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.backgroundColor = colorSelected
         
         // assigning image states for other users
-        if bet.color == "white" {
-            cell.agreeImage.image = UIImage(named: "agreeb4")
-            cell.disagreeImage.image = UIImage(named: "disagreeb4")
-        }else if (bet.color == "blue") {
-            cell.agreeImage.image = UIImage(named: "agree")
-            cell.disagreeImage.image = UIImage(named: "disagreeb4")
-        }else{
-            cell.agreeImage.image = UIImage(named: "agreeb4")
-            cell.disagreeImage.image = UIImage(named: "disagree")
+        if (bet.senderUsername != User.current.username) {
+            if bet.color == "white" {
+                cell.agreeImage.image = UIImage(named: "agreeb4")
+                cell.disagreeImage.image = UIImage(named: "disagreeb4")
+            }else if (bet.color == "blue") {
+                cell.agreeImage.image = UIImage(named: "agree")
+                cell.disagreeImage.image = UIImage(named: "disagreeb4")
+            }else{
+                cell.agreeImage.image = UIImage(named: "agreeb4")
+                cell.disagreeImage.image = UIImage(named: "disagree")
+            }
         }
         
         // Assign the tap action which will be executed when the user taps the UIButton
         
         //Agree - blue
         cell.tapAgreeAction = { (cell) in
-            changeAgreeImage()
-            let parentKey = self.parentKeys[indexPath.row]
-            UserDefaults.standard.set(parentKey, forKey: "parentKey")
-            if (self.agreeImageHighlighted == true) {
-                BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+            if (bet.senderUsername == User.current.username) {
+                return
             }else{
-                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+                changeAgreeImage()
+                let parentKey = self.parentKeys[indexPath.row]
+                UserDefaults.standard.set(parentKey, forKey: "parentKey")
+                if (self.agreeImageHighlighted == true) {
+                    BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+                }else{
+                    BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+                }
             }
         }
         
         //Disagree - green
         cell.tapDisagreeAction = { (cell) in
-            changeDisagreeImage()
-            let parentKey = self.parentKeys[indexPath.row]
-            UserDefaults.standard.set(parentKey, forKey: "parentKey")
-            if (self.disagreeImageHighlighted == true) {
-                BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+            if (bet.senderUsername == User.current.username) {
+                return
             }else{
-                BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+                changeDisagreeImage()
+                let parentKey = self.parentKeys[indexPath.row]
+                UserDefaults.standard.set(parentKey, forKey: "parentKey")
+                if (self.disagreeImageHighlighted == true) {
+                    BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+                }else{
+                    BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+                }
             }
         }
         
