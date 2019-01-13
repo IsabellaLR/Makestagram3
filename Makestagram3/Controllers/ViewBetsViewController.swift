@@ -81,7 +81,7 @@ extension ViewBetsViewController: UITableViewDataSource {
         }
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
-        cell.showPointsLabel.text = bet.points
+        cell.showPointsLabel.text = bet.points + " pts"
         let date = bet.creationDate
         cell.timeAgoLabel.text = bet.creationDate
         cell.showEpisodeLabel.text = bet.episode
@@ -95,23 +95,25 @@ extension ViewBetsViewController: UITableViewDataSource {
         
         func changeToWin(){
             cell.agreeImage.image = UIImage(named: "winner")
+            let pointsValue: Int? = Int(bet.points)
             if bet.senderUsername == User.current.username {
-                ProfileService.create(username: User.current.username, posPoints: Int(bet.points)!, negPoints: 0)
-                ProfileService.create(username: bet.sentToUser, posPoints: 0, negPoints: Int(bet.points)!)
+                ProfileService.create(username: User.current.username, posValue: pointsValue ?? 0, negValue: 0)
+                ProfileService.create(username: bet.sentToUser, posValue: 0, negValue: pointsValue ?? 0)
             }else{
-                ProfileService.create(username: User.current.username, posPoints: Int(bet.points)!, negPoints: 0)
-                ProfileService.create(username: bet.senderUsername, posPoints: 0, negPoints: Int(bet.points)!)
+                ProfileService.create(username: User.current.username, posValue: pointsValue ?? 0, negValue: 0)
+                ProfileService.create(username: bet.senderUsername, posValue: 0, negValue: pointsValue ?? 0)
             }
         }
         
         func changeToLose(){
+            let pointsValue: Int? = Int(bet.points)
             cell.disagreeImage.image = UIImage(named: "loser")
             if bet.senderUsername == User.current.username {
-                ProfileService.create(username: bet.sentToUser, posPoints: Int(bet.points)!, negPoints: 0)
-                ProfileService.create(username: User.current.username, posPoints: 0, negPoints: Int(bet.points)!)
+                ProfileService.create(username: bet.sentToUser, posValue: pointsValue ?? 0, negValue: 0)
+                ProfileService.create(username: User.current.username, posValue: 0, negValue: pointsValue ?? 0)
             } else {
-                ProfileService.create(username: bet.senderUsername, posPoints: Int(bet.points)!, negPoints: 0)
-                ProfileService.create(username: User.current.username, posPoints: 0, negPoints: Int(bet.points)!)
+                ProfileService.create(username: bet.senderUsername, posValue: pointsValue ?? 0, negValue: 0)
+                ProfileService.create(username: User.current.username, posValue: 0, negValue: pointsValue ?? 0)
             }
         }
         

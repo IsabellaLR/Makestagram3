@@ -47,7 +47,7 @@ class Bet {
         self.description = description ?? "no description"
         self.sentToUser = sentToUser ?? ""
         self.color = color ?? "white"
-        self.points = points ?? "0 pts"
+        self.points = points ?? "0"
         self.episode = episode ?? ""
         self.creationDate = creationDate ?? "idk man"
         }

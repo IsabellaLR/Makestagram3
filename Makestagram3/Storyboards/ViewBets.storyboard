@@ -59,9 +59,6 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-RT-ttq">
                                                     <rect key="frame" x="264" y="25" width="42" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="cuS-MB-MfU"/>
-                                                    </constraints>
                                                     <connections>
                                                         <action selector="agreeButtonTapped:" destination="3Uw-2W-EwR" eventType="touchUpInside" id="aJ1-YK-eSe"/>
                                                     </connections>
@@ -69,7 +66,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywt-24-EuN">
                                                     <rect key="frame" x="316" y="25" width="44" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="1hA-Ok-ok4"/>
                                                         <constraint firstAttribute="width" constant="44" id="FJs-wE-kWp"/>
                                                     </constraints>
                                                     <connections>

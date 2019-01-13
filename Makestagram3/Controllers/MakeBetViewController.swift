@@ -47,7 +47,7 @@ class MakeBetViewController: UIViewController {
     
     
     @IBAction func changeStepperValue(_ sender: UIStepper) {
-        let pointVlaue = Int(sender.value).description + " pts"
+        let pointVlaue = Int(sender.value).description
         self.ptsLabel.text = pointVlaue
         points = pointVlaue
         UserDefaults.standard.set(points, forKey: "points")

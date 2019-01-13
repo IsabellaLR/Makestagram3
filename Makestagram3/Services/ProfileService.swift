@@ -12,13 +12,15 @@ import FirebaseDatabase
 
 struct ProfileService {
     
-    static func create(username: String, posPoints: Int, negPoints: Int) {
+    static func create(username: String, posValue: Int, negValue: Int) {
         
         let rootRef = Database.database().reference()
         
-        let posPointsValue = (rootRef.child("profile").child(username).value(forKey: "posPoints") as! Int) + posPoints
+        let posPointsValue = posValue
+        let negPointsValue = negValue
+//        let posPointsValue = (rootRef.child("profile").child(username).value(forKey: "posPoints") as! Int) + posValue
         
-        let negPointsValue = (rootRef.child("profile").child(username).value(forKey: "negPoints") as! Int) + negPoints
+//        let negPointsValue = (rootRef.child("profile").child(username).value(forKey: "negPoints") as! Int) + negValue
     
         var multiUpdateValue = [String : Any]()
         

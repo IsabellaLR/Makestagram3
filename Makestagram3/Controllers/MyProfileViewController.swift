@@ -30,7 +30,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         ProfileService.show(user: User.current) { [unowned self] (profiles) in
             self.profiles = profiles
         }
-        myPointsLabel.text = profiles.posPoints - profiles.negPoints
+        myPointsLabel.text = "hello"
     }
     
     override func didReceiveMemoryWarning() {
