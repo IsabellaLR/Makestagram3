@@ -15,7 +15,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var myPointsLabel: UILabel!
     
-    var profiles = [Profile]()
+    var profile: Profile?
+//    var points: Int = 0
     var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
@@ -27,10 +28,15 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
 //        profileButton.layer.borderColor = UIColor.black.cgColor
 //        self.applyRoundCorner(profileButton)
         
-        ProfileService.show(user: User.current) { [unowned self] (profiles) in
-            self.profiles = profiles
+        ProfileService.show { [weak self] (profile) in
+            self?.profile = profile
+            
+            if let points = profile?.posPoints {
+                DispatchQueue.main.async {
+                    self?.myPointsLabel.text = String(points)
+                }
+            }
         }
-        myPointsLabel.text = "hello"
     }
     
     override func didReceiveMemoryWarning() {

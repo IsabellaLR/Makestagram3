@@ -40,17 +40,38 @@ struct ProfileService {
         }
     }
 
-    static func show(user: User, completion: @escaping ([Profile]) -> Void) {
+    static func show(for user: User = User.current, completion: @escaping (Profile?) -> Void) {
 
         let profileRef = Database.database().reference().child("profile").child(user.username)
         let ref = Database.database().reference().child("profile").child(user.username).child(profileRef.key ?? "")
         
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        profileRef.observe(.value, with: { (snapshot) in
             guard let profile = Profile(snapshot: snapshot) else {
-                return completion([])
+                return completion(nil)
             }
             
-            completion([profile])
+            completion(profile)
         })
     }
+    
+//        ref.observe(.value, with: { (snapshot) in
+//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+//                return completion([])
+//            }
+//
+//            var profiles = [Profile]()
+//
+//            for profileInfo in snapshot {
+//                // this guard won't work -- ok, let see why // what happen here is the decode, something doesnt match youer model
+//                guard  let profileData = Profile(snapshot: profileInfo) else {
+//                    return completion([])
+//                }
+//                // to user is crashing -- why two???
+//                profiles.append(profileData) //1
+//                // TODO: safely unwrap line below. Refer to above method "show"
+//
+//            }
+//            completion(profiles)
+//        })
+//    }
 }

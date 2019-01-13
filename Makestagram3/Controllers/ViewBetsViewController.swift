@@ -15,7 +15,6 @@ class ViewBetsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var bets = [Bet]()
-    var profiles = [Profile]()
     var parentKeys = [String]()
     var agreeImageHighlighted = false
     var disagreeImageHighlighted = false
