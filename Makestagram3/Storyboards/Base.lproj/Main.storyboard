@@ -71,6 +71,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7v-YQ-7Ak">
+                                <rect key="frame" x="108" y="271" width="163" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWC-ab-Ebd">
+                                <rect key="frame" x="108" y="300" width="147" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -82,8 +96,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="XHO-ge-jnT"/>
                     <connections>
+                        <outlet property="lossesLabel" destination="IWC-ab-Ebd" id="Mng-nP-uwH"/>
                         <outlet property="myPointsLabel" destination="bWl-1d-ZIk" id="8ve-w4-198"/>
                         <outlet property="profileButton" destination="nfr-sj-vBb" id="xLS-eU-5Bh"/>
+                        <outlet property="winsLabel" destination="R7v-YQ-7Ak" id="Dwn-s6-Ri4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q4-Ry-WVP" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -71,6 +71,11 @@ struct BetService {
         })
     }
     
+    static func remove(parentKey: String, user: String){
+        
+        Database.database().reference().child("bets").child(User.current.username).child(parentKey).removeValue()
+        Database.database().reference().child("bets").child(user).child(parentKey).removeValue()
+    }
 
     static func setBetColor(color: String, parentKey: String, user1: String, user2: String) {
 

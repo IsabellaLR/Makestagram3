@@ -14,6 +14,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var myPointsLabel: UILabel!
+    @IBOutlet weak var winsLabel: UILabel!
+    @IBOutlet weak var lossesLabel: UILabel!
     
     var profile: Profile?
 //    var points: Int = 0
@@ -31,9 +33,24 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
             
-            if let points = profile?.posPoints {
+            //total Points
+            if let points = profile?.totalPoints {
                 DispatchQueue.main.async {
                     self?.myPointsLabel.text = String(points)
+                }
+            }
+            
+            //total Wins
+            if let wins = profile?.wins {
+                DispatchQueue.main.async {
+                    self?.myPointsLabel.text = String(wins)
+                }
+            }
+            
+            //total Losses
+            if let losses = profile?.losses {
+                DispatchQueue.main.async {
+                    self?.myPointsLabel.text = String(losses)
                 }
             }
         }
