@@ -41,7 +41,7 @@ class CreateUsernameViewController: UIViewController {
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()
             
-            ProfileService.create(username: User.current.username, totalValue: 0, posValue: 0, negValue: 0, wins: 0, losses: 0)
+            ProfileService.create(username: User.current.username, posValue: 0, negValue: 0, wins: 0, losses: 0)
         }
     }
 }

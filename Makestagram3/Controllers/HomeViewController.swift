@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     var dates = ["January 14", "April 31", "May 7", "May 14", "May 21", "May 28"]
     var epAndDates = ["The Queen of Winterfell Arpril 24", "Fire and Ice April 31", "Viserys May 7", "The Last Debt May 14", "The Wheel Has Broken May 21", "End Game May 28"]
     var episodeName: String?
+    var haveUser = false
     
     @IBOutlet weak var tableView: UITableView!
 

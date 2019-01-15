@@ -16,10 +16,12 @@ class ViewBetsViewController: UIViewController {
     
     var bets = [Bet]()
     var profile: Profile?
+    var profile2: Profile?
     var parentKeys = [String]()
     var agreeImageHighlighted = false
     var disagreeImageHighlighted = false
     var isPremieurEp = false
+    var haveUser = false
     
     var userBetsHandle: DatabaseHandle = 0
     var userBetsRef: DatabaseReference?
@@ -37,13 +39,14 @@ class ViewBetsViewController: UIViewController {
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
-            
-//            //total Points
-//            if let points = profile?.totalPoints {
-//                DispatchQueue.main.async {
-//                    self?.myPointsLabel.text = String(points)
-//                }
             }
+        
+//        if (haveUser == true){
+//            ProfileService.showOtherUser(for: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+//                self?.profile2 = profile2
+//                self!.haveUser = true
+//            }
+//        }
         
         // 2
         
@@ -83,11 +86,14 @@ extension ViewBetsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
         
         let bet = bets[indexPath.row]
+        haveUser = true
 
         if (bet.senderUsername == User.current.username) {
             cell.usernameHeaderLabel.text = bet.sentToUser
+            UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
         }else{
             cell.usernameHeaderLabel.text = bet.senderUsername
+            UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
         }
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
@@ -97,7 +103,6 @@ extension ViewBetsViewController: UITableViewDataSource {
         cell.showEpisodeLabel.text = bet.episode
         
         if (cell.showEpisodeLabel.text == UserDefaults.standard.string(forKey: "premieurEp") ?? "") {
-            isPremieurEp == true
             cell.agreeImage.image = UIImage(named: "winnerb4")
             cell.disagreeImage.image = UIImage(named: "loserb4")
             cell.whoWonLabel.text = "Who won?"
@@ -107,13 +112,19 @@ extension ViewBetsViewController: UITableViewDataSource {
             cell.agreeImage.image = UIImage(named: "winner")
             let pointsValue: Int? = Int(bet.points)
             if bet.senderUsername == User.current.username {
-                ProfileService.create(username: User.current.username, totalValue: (profile?.totalPoints ?? 0), posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
-                ProfileService.create(username: bet.sentToUser, totalValue: (profile?.totalPoints ?? 0), posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
-                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.sentToUser)
+                ProfileService.create(username: User.current.username, posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
+                ProfileService.showOtherUser(for: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+                    self?.profile2 = profile2
+                }
+                ProfileService.create(username: bet.sentToUser, posValue: 0 + (profile2?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile2?.negPoints ?? 0), wins: 0 + (profile2?.wins ?? 0), losses: 1 + (profile2?.losses ?? 0))
+//                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.sentToUser)
             }else{
-                ProfileService.create(username: User.current.username, totalValue: (profile?.totalPoints ?? 0), posValue: pointsValue ?? 0 + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
-                ProfileService.create(username: bet.senderUsername, totalValue: (profile?.totalPoints ?? 0), posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
-                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.senderUsername)
+                ProfileService.create(username: User.current.username, posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
+                ProfileService.showOtherUser(for: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+                    self?.profile2 = profile2
+                }
+                ProfileService.create(username: bet.senderUsername, posValue: 0 + (profile2?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile2?.negPoints ?? 0), wins: 0 + (profile2?.wins ?? 0), losses: 1 + (profile2?.losses ?? 0))
+//                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.senderUsername)
             }
         }
         
@@ -121,13 +132,19 @@ extension ViewBetsViewController: UITableViewDataSource {
             let pointsValue: Int? = Int(bet.points)
             cell.disagreeImage.image = UIImage(named: "loser")
             if bet.senderUsername == User.current.username {
-                ProfileService.create(username: bet.sentToUser, totalValue: (profile?.totalPoints ?? 0), posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
-                ProfileService.create(username: User.current.username, totalValue: (profile?.totalPoints ?? 0), posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
-                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.sentToUser)
+                ProfileService.showOtherUser(for: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+                    self?.profile2 = profile2
+                }
+                ProfileService.create(username: bet.sentToUser, posValue: (pointsValue ?? 0) + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
+                ProfileService.create(username: User.current.username, posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
+//                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.sentToUser)
             } else {
-                ProfileService.create(username: bet.senderUsername, totalValue: (profile?.totalPoints ?? 0), posValue: pointsValue ?? 0 + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
-                ProfileService.create(username: User.current.username, totalValue: (profile?.totalPoints ?? 0), posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
-                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.senderUsername)
+                ProfileService.showOtherUser(for: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+                    self?.profile2 = profile2
+                }
+                ProfileService.create(username: bet.senderUsername, posValue: pointsValue ?? 0 + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
+                ProfileService.create(username: User.current.username, posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
+//                BetService.remove(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user: bet.senderUsername)
             }
         }
         
