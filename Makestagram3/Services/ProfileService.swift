@@ -55,7 +55,7 @@ struct ProfileService {
         })
     }
     
-    static func showOtherUser(for user: String, completion: @escaping (Profile?) -> Void) {
+    static func showOtherUser(user: String, completion: @escaping (Profile?) -> Void) {
         
         let profileRef = Database.database().reference().child("profile").child(user)
         

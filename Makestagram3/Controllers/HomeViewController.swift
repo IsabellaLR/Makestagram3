@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     
     var totalEpisodes = ["The Queen of Winterfell", "Fire and Ice", "Viserys", "The Last Debt", "The Wheel Has Broken", "End Game"]
     var episodeImages = ["ep1", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon"]
-    var dates = ["January 14", "April 31", "May 7", "May 14", "May 21", "May 28"]
+    var dates = ["January 15", "April 31", "May 7", "May 14", "May 21", "May 28"]
     var epAndDates = ["The Queen of Winterfell Arpril 24", "Fire and Ice April 31", "Viserys May 7", "The Last Debt May 14", "The Wheel Has Broken May 21", "End Game May 28"]
     var episodeName: String?
     var haveUser = false
