@@ -55,16 +55,32 @@ struct ProfileService {
         })
     }
     
-    static func showOtherUser(user: String, completion: @escaping (Profile?) -> Void) {
+    static func showOtherUser(user: String?, completion: @escaping (Profile?) -> Void) {
         
-        let profileRef = Database.database().reference().child("profile").child(user)
-        
-        profileRef.observe(.value, with: { (snapshot) in
-            guard let profile2 = Profile(snapshot: snapshot) else {
-                return completion(nil)
+        if user == "" {
+            return
+        }else{
+            let profileRef = Database.database().reference().child("profile").child(user ?? "")
+
+            profileRef.observe(.value, with: { (snapshot) in
+                guard let profile2 = Profile(snapshot: snapshot) else {
+                    return completion(nil)
+                }
+                
+                completion(profile2)
+            })
+        }
+    }
+    
+    static func createImage(for image: UIImage) {
+        let imageRef = Storage.storage().reference().child("test_image.jpg")
+        StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
+            guard let downloadURL = downloadURL else {
+                return
             }
             
-            completion(profile2)
-        })
+            let urlString = downloadURL.absoluteString
+            print("image url: \(urlString)")
+        }
     }
 }

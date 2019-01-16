@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     
     var totalEpisodes = ["The Queen of Winterfell", "Fire and Ice", "Viserys", "The Last Debt", "The Wheel Has Broken", "End Game"]
     var episodeImages = ["ep1", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon"]
+    var datesAndYear = ["2019-01-14", "2019-02-27", "2019-05-7", "2019-05-14", "2019-05-21", "2019-05-28"]
     var dates = ["January 15", "April 31", "May 7", "May 14", "May 21", "May 28"]
     var epAndDates = ["The Queen of Winterfell Arpril 24", "Fire and Ice April 31", "Viserys May 7", "The Last Debt May 14", "The Wheel Has Broken May 21", "End Game May 28"]
     var episodeName: String?
@@ -23,12 +24,18 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // today's date
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM DD"
-        let defaultTimeZoneStr = formatter.string(from: NSDate() as Date)
+        let currentDateTime = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMMM DD"
+//        let defaultTimeZoneStr = formatter.string(from: NSDate() as Date)
         
         for i in 0..<6 {
-            if defaultTimeZoneStr == dates[i] {
+            let date = dateFormatter.date(from: datesAndYear[i])
+            if (currentDateTime >= date!) {
                 let premieurEp = totalEpisodes[i]
                 UserDefaults.standard.set(premieurEp, forKey: "premieurEp")
             }

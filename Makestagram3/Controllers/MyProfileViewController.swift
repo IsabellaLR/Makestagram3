@@ -17,6 +17,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
     
+    let photoHelper = MGPhotoHelper()
+    
     var profile: Profile?
 //    var points: Int = 0
     var imagePicker: UIImagePickerController!
@@ -30,27 +32,31 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
 //        profileButton.layer.borderColor = UIColor.black.cgColor
 //        self.applyRoundCorner(profileButton)
         
+        photoHelper.completionHandler = { image in
+            ProfileService.createImage(for: image)
+        }
+        
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
             
             //total Points
             if let points = profile?.totalPoints {
                 DispatchQueue.main.async {
-                    self?.myPointsLabel.text = String(points)
+                    self?.myPointsLabel.text = "Total points: " + String(points)
                 }
             }
             
             //total Wins
             if let wins = profile?.wins {
                 DispatchQueue.main.async {
-                    self?.myPointsLabel.text = String(wins)
+                    self?.winsLabel.text = "Wins: " + String(wins)
                 }
             }
             
             //total Losses
             if let losses = profile?.losses {
                 DispatchQueue.main.async {
-                    self?.myPointsLabel.text = String(losses)
+                    self?.lossesLabel.text = "Losses: " + String(losses)
                 }
             }
         }
