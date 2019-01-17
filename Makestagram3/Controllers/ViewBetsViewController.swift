@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import FirebaseDatabase
 
-class ViewBetsViewCowntroller: UIViewController {
+class ViewBetsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,15 +32,15 @@ class ViewBetsViewCowntroller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         tableView.rowHeight = 71
-
+        // remove separators for empty cells
         tableView.tableFooterView = UIView()
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
         }
-        
+
         userBetsHandle = UserService.observeBets { [weak self] (parentKeys, ref, bets) in
             self?.userBetsRef = ref
             self?.bets = bets
@@ -72,10 +72,10 @@ extension ViewBetsViewController: UITableViewDataSource {
 
         if (bet.senderUsername == User.current.username) {
             cell.usernameHeaderLabel.text = bet.sentToUser
-//            UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
+
         }else{
             cell.usernameHeaderLabel.text = bet.senderUsername
-//            UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
+
         }
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
@@ -168,6 +168,7 @@ extension ViewBetsViewController: UITableViewDataSource {
                     UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
 
                 }else{
+                    self.show = true
                     UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
                 }
                 changeToWin()
@@ -191,6 +192,7 @@ extension ViewBetsViewController: UITableViewDataSource {
                     UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
                     
                 }else{
+                    self.show = true
                     UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
                 }
                 changeToLose()
@@ -237,7 +239,7 @@ extension ViewBetsViewController: UITableViewDataSource {
                 ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
                     if  (self!.show == true){
                         self?.profile2 = profile2
-                        outcome1()
+                        outcome3()
                         self?.show = false
                     }
                 }
@@ -247,7 +249,7 @@ extension ViewBetsViewController: UITableViewDataSource {
                 ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
                     if  (self!.show == true){
                         self?.profile2 = profile2
-                        outcome2()
+                        outcome4()
                         self?.show = false
                     }
                 }
@@ -271,14 +273,14 @@ extension ViewBetsViewController: UITableViewDataSource {
         func outcome3(){
             let pointsValue: Int? = Int(bet.points)
             ProfileService.create(username: bet.sentToUser, posValue: (pointsValue ?? 0) + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
-            ProfileService.create(username: User.current.username, posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
+            ProfileService.create(username: User.current.username, posValue: 0 + (profile?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
             BetService.remove(parentKey:  bet.key ?? "", user: bet.sentToUser)
         }
        
         func outcome4(){
             let pointsValue: Int? = Int(bet.points)
-            ProfileService.create(username: bet.senderUsername, posValue: pointsValue ?? 0 + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
-            ProfileService.create(username: User.current.username, posValue: 0 + (profile?.posPoints ?? 0), negValue: pointsValue ?? 0 + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
+            ProfileService.create(username: bet.senderUsername, posValue: (pointsValue ?? 0) + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
+            ProfileService.create(username: User.current.username, posValue: 0 + (profile?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
             BetService.remove(parentKey: bet.key ?? "", user: bet.senderUsername)
         }
         
