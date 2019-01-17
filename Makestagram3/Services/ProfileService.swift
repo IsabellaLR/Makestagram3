@@ -57,19 +57,12 @@ struct ProfileService {
     
     static func showOtherUser(user: String?, completion: @escaping (Profile?) -> Void) {
         
-        if user == "" {
-            return
-        }else{
-            let profileRef = Database.database().reference().child("profile").child(user ?? "")
+        let profileRef = Database.database().reference().child("profile").child(user ?? "")
 
-            profileRef.observe(.value, with: { (snapshot) in
-                guard var profile2 = Profile(snapshot: snapshot) else {
-                    return completion(nil)
-                }
-                
-                completion(profile2)
-            })
-        }
+        profileRef.observe(.value, with: { (snapshot) in
+            let profile2 = Profile(snapshot: snapshot)
+            return completion(profile2)
+        })
     }
     
     static func createImage(for image: UIImage) {

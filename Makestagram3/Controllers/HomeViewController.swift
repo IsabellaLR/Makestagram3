@@ -41,10 +41,6 @@ class HomeViewController: UIViewController {
                 UserDefaults.standard.set(premieurEp, forKey: "premieurEp")
             }
         }
-
-        ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
-            self?.profile2 = profile2
-        }
     }
     
     override func didReceiveMemoryWarning() {
