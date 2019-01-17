@@ -27,7 +27,8 @@ struct ProfileService {
                                            "posPoints" :  posValue,
                                            "negPoints" : negValue,
                                            "wins" : wins,
-                                           "losses" : losses]
+                                           "losses" : losses,
+                                           "image": ""]
         
         // update all 4 values
         
@@ -66,14 +67,31 @@ struct ProfileService {
     }
     
     static func createImage(for image: UIImage) {
-        let imageRef = Storage.storage().reference().child("test_image.jpg")
+        let imageRef = StorageReference.newPostImageReference()
         StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
             guard let downloadURL = downloadURL else {
                 return
             }
             
             let urlString = downloadURL.absoluteString
-            print("image url: \(urlString)")
+            create(forURLString: urlString)
+        }
+    }
+    
+    private static func create(forURLString urlString: String) {
+        // 1
+        let currentUser = User.current
+        // 3
+        let dict = ["image": urlString]
+        
+        // 4
+        let profileRef = Database.database().reference().child("profile").child(currentUser.username)
+        //5
+        profileRef.updateChildValues(dict) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
         }
     }
 }

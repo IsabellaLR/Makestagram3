@@ -19,6 +19,7 @@ class Profile {
     let negPoints: Int
     let wins: Int
     let losses: Int
+    let imageURL: String
     
     init?(snapshot: DataSnapshot) {
         guard !snapshot.key.isEmpty else {return nil}
@@ -29,6 +30,7 @@ class Profile {
             let negPoints = dict["negPoints"] as? Int
             let wins = dict["wins"] as? Int
             let losses = dict["losses"] as? Int
+            let imageURL = dict["image"] as? String
             
             self.key = snapshot.key
             self.totalPoints = totalPoints ?? 0
@@ -36,6 +38,7 @@ class Profile {
             self.negPoints = negPoints ?? 0
             self.wins = wins ?? 0
             self.losses = losses ?? 0
+            self.imageURL = imageURL ?? ""
         }
         else{
             return nil

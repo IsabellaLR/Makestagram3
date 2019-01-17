@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Photos
+import FirebaseStorage
 
 class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -32,9 +33,9 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
 //        profileButton.layer.borderColor = UIColor.black.cgColor
 //        self.applyRoundCorner(profileButton)
         
-        photoHelper.completionHandler = { image in
-            ProfileService.createImage(for: image)
-        }
+//        photoHelper.completionHandler = { image in
+//            ProfileService.createImage(for: image)
+//        }
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
@@ -175,8 +176,28 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let chosenImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+        ProfileService.createImage(for: chosenImage)
         profileButton.imageView?.contentMode = .scaleAspectFill
         profileButton.setImage(chosenImage, for: .normal)
+        
+//        let storageRef = Storage.storage().reference().child("\(chosenImage).png")
+//
+//        if let uploadedData = chosenImage.pngData() {
+//
+//            storageRef.putData(uploadedData, metadata: nil, completion: { (metadata, error) in
+//
+//                if error != nil {
+//                    print(error)
+//                    return
+//                }
+//
+//                if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
+//                    let value = ["profileImageUrl": profileImageUrl]
+//
+//                    self.registerUserIntoDatabaseWithUID(User.current.uid, values: value)
+//                }
+//            })
+//        }
 
         dismiss(animated: true, completion: nil)
     }
