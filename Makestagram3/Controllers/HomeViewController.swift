@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     var epAndDates = ["The Queen of Winterfell Arpril 24", "Fire and Ice April 31", "Viserys May 7", "The Last Debt May 14", "The Wheel Has Broken May 21", "End Game May 28"]
     var episodeName: String?
     var haveUser = false
+    var profile2: Profile?
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -39,6 +40,10 @@ class HomeViewController: UIViewController {
                 let premieurEp = totalEpisodes[i]
                 UserDefaults.standard.set(premieurEp, forKey: "premieurEp")
             }
+        }
+
+        ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+            self?.profile2 = profile2
         }
     }
     
