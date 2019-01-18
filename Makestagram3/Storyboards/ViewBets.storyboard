@@ -147,6 +147,7 @@
                                             <outlet property="showEpisodeLabel" destination="wVj-4Q-yGX" id="IfS-dv-WSP"/>
                                             <outlet property="showPointsLabel" destination="b7Z-dh-wvn" id="oGf-nO-K1m"/>
                                             <outlet property="timeAgoLabel" destination="llX-0q-Y6S" id="yPG-cS-fCE"/>
+                                            <outlet property="userImage" destination="Vpr-Iq-mS8" id="I1a-hz-B8G"/>
                                             <outlet property="usernameHeaderLabel" destination="iFU-oa-zQd" id="CHu-bh-vDx"/>
                                             <outlet property="whoWonLabel" destination="oGq-xe-nEY" id="ifv-PT-C87"/>
                                         </connections>

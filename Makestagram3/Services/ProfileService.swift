@@ -79,7 +79,7 @@ struct ProfileService {
     }
     
     private static func create(forURLString urlString: String) {
-        // 1
+
         let currentUser = User.current
         // 3
         let dict = ["image": urlString]

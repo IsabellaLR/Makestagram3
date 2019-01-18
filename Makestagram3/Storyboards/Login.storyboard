@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="Yh5-oD-VTS">
             <objects>
-                <viewController id="QED-U7-GgA" customClass="LoginViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="QED-U7-GgA" customClass="LoginViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4xF-pT-Acf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

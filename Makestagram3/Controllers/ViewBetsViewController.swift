@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import FirebaseDatabase
+import Kingfisher
 
 class ViewBetsViewController: UIViewController {
 
@@ -72,11 +73,31 @@ extension ViewBetsViewController: UITableViewDataSource {
 
         if (bet.senderUsername == User.current.username) {
             cell.usernameHeaderLabel.text = bet.sentToUser
+            
+            //user profile image
+            ProfileService.showOtherUser(user: bet.sentToUser) { [weak self] (profile2) in
+                if  (self!.show == true){
+                    self?.profile2 = profile2
+                    self?.show = false
+                }
+            }
+            let imageURL = URL(string: (profile2?.imageURL ?? ""))
+            cell.userImage.kf.setImage(with: imageURL)
 
         }else{
             cell.usernameHeaderLabel.text = bet.senderUsername
-
+            
+            //user profile image
+            ProfileService.showOtherUser(user: bet.senderUsername) { [weak self] (profile2) in
+                if  (self!.show == true){
+                    self?.profile2 = profile2
+                    let imageURL = URL(string: (profile2?.imageURL ?? ""))
+                    cell.userImage.kf.setImage(with: imageURL)
+                    self?.show = false
+                }
+            }
         }
+
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
         cell.showPointsLabel.text = bet.points + " pts"

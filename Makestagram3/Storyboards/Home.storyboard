@@ -82,6 +82,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="contentView" destination="SBO-vG-JlU" id="64f-1a-z3M"/>
                                             <outlet property="dateLabel" destination="Deh-OD-pMM" id="pXO-8n-TGp"/>
                                             <outlet property="homeEpisodeLabel" destination="AcJ-jW-RgL" id="akY-0N-BH4"/>
                                             <outlet property="homeImage" destination="Yrb-OR-Slr" id="Ckn-jc-aYG"/>

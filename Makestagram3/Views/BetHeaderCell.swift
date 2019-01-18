@@ -15,6 +15,7 @@ class BetHeaderCell: UITableViewCell {
     var tapAgreeAction: ((UITableViewCell) -> Void)?
     var tapDisagreeAction: ((UITableViewCell) -> Void)?
     
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var usernameHeaderLabel: UILabel!
     @IBOutlet weak var betDescription: UILabel!
     @IBOutlet weak var agreeButton: UIButton!

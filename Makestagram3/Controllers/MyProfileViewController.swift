@@ -10,6 +10,8 @@ import UIKit
 import AVFoundation
 import Photos
 import FirebaseStorage
+import FirebaseAuth
+import Kingfisher
 
 class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -60,6 +62,12 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
                     self?.lossesLabel.text = "Losses: " + String(losses)
                 }
             }
+            
+//            if let imageURL = URL(string: (profile?.imageURL ?? "")) {
+//                DispatchQueue.main.async {
+//                    self?.profileButton.kf.setImage(with: imageURL)
+//                }
+//            }
         }
     }
     
@@ -71,6 +79,18 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
 //        object.layer.cornerRadius = object.frame.size.width / 2
 //        object.layer.masksToBounds = true
 //    }
+    
+    @IBAction func logOutButton(_ sender: Any) {
+    do {
+        try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        self.present(loginVC, animated: false, completion: nil)
+    }
+    
     
     @IBAction func addPhoto(_ sender: UIButton) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
