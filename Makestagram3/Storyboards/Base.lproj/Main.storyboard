@@ -40,7 +40,7 @@
             </objects>
             <point key="canvasLocation" x="-170.40000000000001" y="-662.51874062968523"/>
         </scene>
-        <!--Item-->
+        <!--My Profile View Controller-->
         <scene sceneID="C7K-oy-W6k">
             <objects>
                 <viewController id="0nu-dT-47x" customClass="MyProfileViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-sj-vBb">
-                                <rect key="frame" x="130" y="70" width="125" height="125"/>
+                                <rect key="frame" x="130" y="90" width="125" height="125"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -57,38 +57,40 @@
                                     <constraint firstAttribute="width" constant="125" id="2Eu-iF-GBR"/>
                                     <constraint firstAttribute="height" constant="125" id="q9n-Gh-9GM"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="ninja">
+                                <state key="normal">
                                     <color key="titleShadowColor" red="1" green="0.3921568627" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addPhoto:" destination="0nu-dT-47x" eventType="touchUpInside" id="th9-hU-9o0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWl-1d-ZIk">
-                                <rect key="frame" x="89" y="232" width="198" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7v-YQ-7Ak">
-                                <rect key="frame" x="108" y="271" width="163" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWC-ab-Ebd">
-                                <rect key="frame" x="108" y="300" width="147" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qlr-wL-KOp">
+                                <rect key="frame" x="88.5" y="238.5" width="198" height="190"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWl-1d-ZIk">
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7v-YQ-7Ak">
+                                        <rect key="frame" x="17.5" y="70" width="163" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWC-ab-Ebd">
+                                        <rect key="frame" x="25.5" y="140" width="147" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-Gz-Gha">
-                                <rect key="frame" x="297" y="39" width="46" height="30"/>
+                                <rect key="frame" x="293" y="39" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOutButton:" destination="0nu-dT-47x" eventType="touchUpInside" id="6Cd-zD-eX2"/>
                                 </connections>
@@ -96,13 +98,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nfr-sj-vBb" firstAttribute="top" secondItem="kmR-pX-gnx" secondAttribute="top" constant="50" id="Ijs-or-MeH"/>
+                            <constraint firstItem="qlr-wL-KOp" firstAttribute="centerX" secondItem="kP0-tW-g64" secondAttribute="centerX" id="4gY-Bu-DAS"/>
+                            <constraint firstItem="nfr-sj-vBb" firstAttribute="top" secondItem="kmR-pX-gnx" secondAttribute="top" constant="70" id="Ijs-or-MeH"/>
                             <constraint firstItem="kmR-pX-gnx" firstAttribute="trailing" secondItem="nfr-sj-vBb" secondAttribute="trailing" constant="120" id="Q5x-yh-5H5"/>
+                            <constraint firstItem="qlr-wL-KOp" firstAttribute="centerY" secondItem="kP0-tW-g64" secondAttribute="centerY" id="cwh-k2-ghT"/>
                             <constraint firstItem="nfr-sj-vBb" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="130" id="i5G-uT-zED"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kmR-pX-gnx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="XHO-ge-jnT"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="" image="tab_profile_black" id="XHO-ge-jnT"/>
                     <connections>
                         <outlet property="lossesLabel" destination="IWC-ab-Ebd" id="Mng-nP-uwH"/>
                         <outlet property="myPointsLabel" destination="bWl-1d-ZIk" id="8ve-w4-198"/>
@@ -144,6 +148,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ninja" width="100" height="100"/>
+        <image name="tab_profile_black" width="25" height="25"/>
     </resources>
 </document>

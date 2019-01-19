@@ -22,7 +22,7 @@ class ViewBetsViewController: UIViewController {
     var agreeImageHighlighted = false
     var disagreeImageHighlighted = false
     var isPremieurEp = false
-    var show = false
+    var show = true
     
     var userBetsHandle: DatabaseHandle = 0
     var userBetsRef: DatabaseReference?
@@ -70,7 +70,10 @@ extension ViewBetsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
         
         let bet = bets[indexPath.row]
-
+        
+        cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
+        cell.userImage.clipsToBounds = true
+        
         if (bet.senderUsername == User.current.username) {
             cell.usernameHeaderLabel.text = bet.sentToUser
             
@@ -78,11 +81,16 @@ extension ViewBetsViewController: UITableViewDataSource {
             ProfileService.showOtherUser(user: bet.sentToUser) { [weak self] (profile2) in
                 if  (self!.show == true){
                     self?.profile2 = profile2
-                    self?.show = false
+                    if (profile2?.imageURL != "") {
+                        let imageURL = URL(string: (profile2?.imageURL ?? ""))
+                        cell.userImage.kf.setImage(with: imageURL)
+                        self?.show = false
+                    }else{
+                        cell.userImage.image = UIImage(named: "ninja")
+                        self?.show = false
+                    }
                 }
             }
-            let imageURL = URL(string: (profile2?.imageURL ?? ""))
-            cell.userImage.kf.setImage(with: imageURL)
 
         }else{
             cell.usernameHeaderLabel.text = bet.senderUsername
@@ -91,12 +99,27 @@ extension ViewBetsViewController: UITableViewDataSource {
             ProfileService.showOtherUser(user: bet.senderUsername) { [weak self] (profile2) in
                 if  (self!.show == true){
                     self?.profile2 = profile2
-                    let imageURL = URL(string: (profile2?.imageURL ?? ""))
-                    cell.userImage.kf.setImage(with: imageURL)
-                    self?.show = false
+                    if (profile2?.imageURL != "") {
+                        let imageURL = URL(string: (profile2?.imageURL ?? ""))
+                        cell.userImage.kf.setImage(with: imageURL)
+                        self?.show = false
+                    }else{
+                        cell.userImage.image = UIImage(named: "ninja")
+                        self?.show = false
+                    }
                 }
             }
         }
+        
+//        if let imageURL = URL(string: (profile?.imageURL ?? "")) {
+//            DispatchQueue.main.async {
+//                self?.profileButton.setImage(nil, for: .normal)
+//                self?.profileButton.kf.setBackgroundImage(with: imageURL, for: .normal)
+//            }
+//        }else{
+//            let image = UIImage(named: "ninja")
+//            self?.profileButton.setImage(image, for: .normal)
+//        }
 
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left

@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
     var dates = ["January 14", "April 30", "May 7", "May 14", "May 21", "May 28"]
     var epAndDates = ["The Queen of Winterfell Arpril 24", "Fire and Ice April 30", "Viserys May 7", "The Last Debt May 14", "The Wheel Has Broken May 21", "End Game May 28"]
     var episodeName: String?
-    var haveUser = false
     var profile2: Profile?
     var premieurIndex: Int?
     
@@ -31,10 +30,6 @@ class HomeViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MMMM DD"
-//        let defaultTimeZoneStr = formatter.string(from: NSDate() as Date)
-        
         var premieurEps = [String]()
         for i in 0..<6 {
             let date = dateFormatter.date(from: datesAndYear[i])
@@ -45,6 +40,7 @@ class HomeViewController: UIViewController {
                 UserDefaults.standard.set(premieurEp, forKey: "premieurEp")
             }
         }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,6 +61,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? HomeTableViewCell
+        
+        cell?.isUserInteractionEnabled = true
+        cell?.contentView.alpha = 1.0
         
         if premieurIndex != nil {
             if (indexPath.row <= premieurIndex!) {

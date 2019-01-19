@@ -26,13 +26,6 @@ class MakeBetViewController: UIViewController {
         
         episodeLabel.text = "Make a bet for \(name)"
         
-        btnSelect.backgroundColor = .clear
-        btnSelect.layer.cornerRadius = 5
-        btnSelect.layer.borderWidth = 0.5
-        btnSelect.layer.borderColor = UIColor.lightGray.cgColor
-        betTextField.textAlignment = .left
-        betTextField.contentVerticalAlignment = .top
-        
 //        btnSelect(_ sender: Any)
     }
     

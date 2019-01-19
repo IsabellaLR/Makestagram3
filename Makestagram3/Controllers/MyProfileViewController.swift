@@ -31,9 +31,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
 //        profileButton.frame = CGRect(x: 160, y: 130, width: 100, height: 100)
         profileButton.layer.cornerRadius = 0.5 * profileButton.bounds.size.width
         profileButton.clipsToBounds = true
-//        profileButton.layer.borderWidth = 1
-//        profileButton.layer.borderColor = UIColor.black.cgColor
-//        self.applyRoundCorner(profileButton)
         
 //        photoHelper.completionHandler = { image in
 //            ProfileService.createImage(for: image)
@@ -41,6 +38,19 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
+            
+            //display profile image and remove ninja default image
+            if let imageURL = URL(string: (profile?.imageURL ?? "")) {
+                DispatchQueue.main.async {
+                    self?.profileButton.setImage(nil, for: .normal)
+                    self?.profileButton.kf.setBackgroundImage(with: imageURL, for: .normal)
+                    self?.profileButton.layer.borderWidth = 0.5
+                    self?.profileButton.layer.borderColor = UIColor.lightGray.cgColor
+                }
+            }else{
+                let image = UIImage(named: "ninja")
+                self?.profileButton.setImage(image, for: .normal)
+            }
             
             //total Points
             if let points = profile?.totalPoints {
@@ -62,12 +72,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
                     self?.lossesLabel.text = "Losses: " + String(losses)
                 }
             }
-            
-//            if let imageURL = URL(string: (profile?.imageURL ?? "")) {
-//                DispatchQueue.main.async {
-//                    self?.profileButton.kf.setImage(with: imageURL)
-//                }
-//            }
         }
     }
     

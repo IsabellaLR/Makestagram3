@@ -35,7 +35,6 @@
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
 		28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE421DCA71F0041FDDB /* Selection.swift */; };
 		28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */; };
-		28AC0FE921DCAC7F0041FDDB /* BetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */; };
 		28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */; };
 		28C06FDE21D09C2C008F2783 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDD21D09C2C008F2783 /* User.swift */; };
 		28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */; };
@@ -78,7 +77,6 @@
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		28AC0FE421DCA71F0041FDDB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBets.storyboard; sourceTree = "<group>"; };
-		28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsCell.swift; sourceTree = "<group>"; };
 		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28C06FDD21D09C2C008F2783 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				2840AC0E21D709890002A238 /* HomeTableViewCell.swift */,
 				2840AC1621D8029E0002A238 /* FindFriendsCell.swift */,
 				2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */,
-				28AC0FE821DCAC7F0041FDDB /* BetsCell.swift */,
 				283F0D0121DDB0410096BB6E /* ShowBetCell.swift */,
 				283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */,
 			);
@@ -408,7 +405,6 @@
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
 				283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */,
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
-				28AC0FE921DCAC7F0041FDDB /* BetsCell.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
 				2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */,
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
