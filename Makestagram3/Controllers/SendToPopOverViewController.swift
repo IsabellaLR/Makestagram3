@@ -13,6 +13,8 @@ class SendToPopOverViewController: UIViewController {
 
     var followingKeys = [String]()
     var selectedUsers = [String]()
+    var profile2: Profile?
+    var show = true
     
     var newVariableName = MakeBetViewController()
  
@@ -72,6 +74,25 @@ extension SendToPopOverViewController: UITableViewDataSource {
             fatalError("Could not retrieve cell")
         }
         
+        cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
+        cell.userImage.clipsToBounds = true
+        cell.userImage.layer.borderWidth = 0.5
+        cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
+        
+        ProfileService.showOtherUser(user: cell.followerName.text) { [weak self] (profile2) in
+            if  (self!.show == true){
+                self?.profile2 = profile2
+                if (profile2?.imageURL == "") {
+                    cell.userImage.image = UIImage(named: "ninja")
+                    self?.show = false
+                }else{
+                    let imageURL = URL(string: ((profile2?.imageURL ?? "")))
+                    cell.userImage.kf.setImage(with: imageURL)
+                    self?.show = false
+                }
+            }
+        }
+        
 //        cell.delegate = self
         configure(cell: cell, atIndexPath: indexPath)
         
@@ -81,6 +102,14 @@ extension SendToPopOverViewController: UITableViewDataSource {
     func configure(cell: SendToFollowersCell, atIndexPath indexPath: IndexPath) {
             
         cell.followerName.text = followingKeys[indexPath.row]
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension SendToPopOverViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }
 

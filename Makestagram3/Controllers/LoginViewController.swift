@@ -25,13 +25,17 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    @IBAction func loginButtonTapped(_ sender: Any) {
         guard let authUI = FUIAuth.defaultAuthUI() else { return }
         
         authUI.delegate = self
         
         let authViewController = authUI.authViewController()
         present(authViewController, animated: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

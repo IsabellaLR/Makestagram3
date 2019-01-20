@@ -25,6 +25,10 @@ class CreateUsernameViewController: UIViewController {
         nextButton.layer.cornerRadius = 6
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     // MARK: -IBActions
     
     @IBAction func nextButtonTapped(_ sender: Any) {
@@ -37,11 +41,11 @@ class CreateUsernameViewController: UIViewController {
             
             User.setCurrent(user, writeToUserDefaults: true)
             
+            ProfileService.create(username: User.current.username, posValue: 0, negValue: 0, wins: 0, losses: 0)
+            
             let initialViewController = UIStoryboard.initialViewController(for: .main)
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()
-            
-            ProfileService.create(username: User.current.username, posValue: 0, negValue: 0, wins: 0, losses: 0)
         }
     }
 }

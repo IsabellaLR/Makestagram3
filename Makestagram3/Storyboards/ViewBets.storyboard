@@ -45,7 +45,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vpr-Iq-mS8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vpr-Iq-mS8">
                                                     <rect key="frame" x="10" y="10" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="3fe-0F-EAJ"/>
@@ -62,7 +62,7 @@
                                                     <rect key="frame" x="316" y="25" width="44" height="51"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-RT-ttq">
-                                                    <rect key="frame" x="264" y="25" width="42" height="51"/>
+                                                    <rect key="frame" x="264" y="25" width="42" height="30"/>
                                                     <connections>
                                                         <action selector="agreeButtonTapped:" destination="3Uw-2W-EwR" eventType="touchUpInside" id="aJ1-YK-eSe"/>
                                                     </connections>
@@ -115,7 +115,6 @@
                                                 <constraint firstItem="Ywt-24-EuN" firstAttribute="leading" secondItem="cRh-RT-ttq" secondAttribute="trailing" constant="10" id="AUB-is-40y"/>
                                                 <constraint firstItem="b7Z-dh-wvn" firstAttribute="firstBaseline" secondItem="iFU-oa-zQd" secondAttribute="firstBaseline" id="BVW-Xm-J1b"/>
                                                 <constraint firstItem="Vpr-Iq-mS8" firstAttribute="leading" secondItem="1pe-tP-kci" secondAttribute="leading" constant="10" id="CrG-tC-vb7"/>
-                                                <constraint firstItem="iFU-oa-zQd" firstAttribute="top" secondItem="cRh-RT-ttq" secondAttribute="bottom" constant="5" id="CuL-pq-LLa"/>
                                                 <constraint firstItem="Hbg-A8-feh" firstAttribute="top" secondItem="wVj-4Q-yGX" secondAttribute="bottomMargin" constant="15" id="D2m-DS-hKw"/>
                                                 <constraint firstItem="wVj-4Q-yGX" firstAttribute="leading" secondItem="b7Z-dh-wvn" secondAttribute="leading" id="DcV-HZ-fvC"/>
                                                 <constraint firstItem="Io8-kg-rtK" firstAttribute="bottom" secondItem="AgX-hp-ehB" secondAttribute="bottom" id="E21-TZ-Zc6"/>
@@ -138,7 +137,7 @@
                                                 <constraint firstItem="Io8-kg-rtK" firstAttribute="top" secondItem="AgX-hp-ehB" secondAttribute="top" id="q4o-SU-LVh"/>
                                                 <constraint firstItem="Ywt-24-EuN" firstAttribute="top" secondItem="1pe-tP-kci" secondAttribute="topMargin" constant="14" id="raB-BL-FbF"/>
                                                 <constraint firstItem="Io8-kg-rtK" firstAttribute="top" secondItem="1pe-tP-kci" secondAttribute="top" constant="25" id="sN5-UA-T94"/>
-                                                <constraint firstItem="Io8-kg-rtK" firstAttribute="bottom" secondItem="Vpr-Iq-mS8" secondAttribute="bottom" id="y7i-xd-evO"/>
+                                                <constraint firstItem="iFU-oa-zQd" firstAttribute="bottom" secondItem="Vpr-Iq-mS8" secondAttribute="bottom" constant="25.5" id="y7i-xd-evO"/>
                                                 <constraint firstItem="AgX-hp-ehB" firstAttribute="leading" secondItem="Io8-kg-rtK" secondAttribute="trailing" constant="10" id="yYo-j9-64C"/>
                                             </constraints>
                                         </tableViewCellContentView>

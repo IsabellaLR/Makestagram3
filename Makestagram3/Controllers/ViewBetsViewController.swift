@@ -73,6 +73,8 @@ extension ViewBetsViewController: UITableViewDataSource {
         
         cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
         cell.userImage.clipsToBounds = true
+        cell.userImage.layer.borderWidth = 0.5
+        cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
         
         if (bet.senderUsername == User.current.username) {
             cell.usernameHeaderLabel.text = bet.sentToUser
@@ -81,35 +83,35 @@ extension ViewBetsViewController: UITableViewDataSource {
             ProfileService.showOtherUser(user: bet.sentToUser) { [weak self] (profile2) in
                 if  (self!.show == true){
                     self?.profile2 = profile2
-                    if (profile2?.imageURL != "") {
-                        let imageURL = URL(string: (profile2?.imageURL ?? ""))
-                        cell.userImage.kf.setImage(with: imageURL)
-                        self?.show = false
-                    }else{
+                    if (profile2?.imageURL == "") {
                         cell.userImage.image = UIImage(named: "ninja")
                         self?.show = false
-                    }
-                }
-            }
-
-        }else{
-            cell.usernameHeaderLabel.text = bet.senderUsername
-            
-            //user profile image
-            ProfileService.showOtherUser(user: bet.senderUsername) { [weak self] (profile2) in
-                if  (self!.show == true){
-                    self?.profile2 = profile2
-                    if (profile2?.imageURL != "") {
-                        let imageURL = URL(string: (profile2?.imageURL ?? ""))
-                        cell.userImage.kf.setImage(with: imageURL)
-                        self?.show = false
                     }else{
-                        cell.userImage.image = UIImage(named: "ninja")
+                        let imageURL = URL(string: ((profile2?.imageURL ?? "")))
+                        cell.userImage.kf.setImage(with: imageURL)
                         self?.show = false
                     }
                 }
             }
         }
+//        }else{
+//            cell.usernameHeaderLabel.text = bet.senderUsername
+//
+//            //user profile image
+//            ProfileService.showOtherUser(user: bet.senderUsername) { [weak self] (profile2) in
+//                if  (self!.show == true){
+//                    self?.profile2 = profile2
+//                    if (profile2?.imageURL != "") {
+//                        let imageURL = URL(string: (profile2?.imageURL ?? ""))
+//                        cell.userImage.kf.setImage(with: imageURL)
+//                        self?.show = false
+//                    }else{
+//                        cell.userImage.image = UIImage(named: "ninja")
+//                        self?.show = false
+//                    }
+//                }
+//            }
+//        }
         
 //        if let imageURL = URL(string: (profile?.imageURL ?? "")) {
 //            DispatchQueue.main.async {

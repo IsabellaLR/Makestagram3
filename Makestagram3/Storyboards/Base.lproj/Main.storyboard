@@ -13,7 +13,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="DNM-gq-zwt">
             <objects>
-                <tabBarController id="cW0-kF-e8T" customClass="MainTabBarController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="main" id="cW0-kF-e8T" customClass="MainTabBarController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="77M-cZ-0b6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
