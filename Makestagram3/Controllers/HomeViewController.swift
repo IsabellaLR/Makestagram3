@@ -40,7 +40,10 @@ class HomeViewController: UIViewController {
                 UserDefaults.standard.set(premieurEp, forKey: "premieurEp")
             }
         }
-
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {

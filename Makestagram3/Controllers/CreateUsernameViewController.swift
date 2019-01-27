@@ -23,10 +23,10 @@ class CreateUsernameViewController: UIViewController {
         super.viewDidLoad()
         
         nextButton.layer.cornerRadius = 6
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
     // MARK: -IBActions

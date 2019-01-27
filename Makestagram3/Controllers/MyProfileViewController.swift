@@ -25,6 +25,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     var profile: Profile?
 //    var points: Int = 0
     var imagePicker: UIImagePickerController!
+    var setImage = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +42,13 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             
             //display profile image and remove ninja default image
             if let imageURL = URL(string: (profile?.imageURL ?? "")) {
-                DispatchQueue.main.async {
-                    self?.profileButton.setImage(nil, for: .normal)
-                    self?.profileButton.kf.setBackgroundImage(with: imageURL, for: .normal)
-                    self?.profileButton.layer.borderWidth = 0.5
-                    self?.profileButton.layer.borderColor = UIColor.lightGray.cgColor
+                if self?.setImage == false {
+                    DispatchQueue.main.async {
+                        self?.profileButton.setImage(nil, for: .normal)
+                        self?.profileButton.kf.setBackgroundImage(with: imageURL, for: .normal)
+                        self?.profileButton.layer.borderWidth = 0.5
+                        self?.profileButton.layer.borderColor = UIColor.lightGray.cgColor
+                    }
                 }
             }else{
                 let image = UIImage(named: "ninja")
@@ -203,6 +206,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         ProfileService.createImage(for: chosenImage)
         profileButton.imageView?.contentMode = .scaleAspectFill
         profileButton.setImage(chosenImage, for: .normal)
+        self.setImage = true
         
 //        let storageRef = Storage.storage().reference().child("\(chosenImage).png")
 //

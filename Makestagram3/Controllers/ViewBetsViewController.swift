@@ -94,34 +94,6 @@ extension ViewBetsViewController: UITableViewDataSource {
                 }
             }
         }
-//        }else{
-//            cell.usernameHeaderLabel.text = bet.senderUsername
-//
-//            //user profile image
-//            ProfileService.showOtherUser(user: bet.senderUsername) { [weak self] (profile2) in
-//                if  (self!.show == true){
-//                    self?.profile2 = profile2
-//                    if (profile2?.imageURL != "") {
-//                        let imageURL = URL(string: (profile2?.imageURL ?? ""))
-//                        cell.userImage.kf.setImage(with: imageURL)
-//                        self?.show = false
-//                    }else{
-//                        cell.userImage.image = UIImage(named: "ninja")
-//                        self?.show = false
-//                    }
-//                }
-//            }
-//        }
-        
-//        if let imageURL = URL(string: (profile?.imageURL ?? "")) {
-//            DispatchQueue.main.async {
-//                self?.profileButton.setImage(nil, for: .normal)
-//                self?.profileButton.kf.setBackgroundImage(with: imageURL, for: .normal)
-//            }
-//        }else{
-//            let image = UIImage(named: "ninja")
-//            self?.profileButton.setImage(image, for: .normal)
-//        }
 
         cell.betDescription.text = bet.description
         cell.betDescription.textAlignment = .left
