@@ -148,6 +148,7 @@
                     <connections>
                         <outlet property="nextButton" destination="dMe-6e-egs" id="7fF-gq-9Zc"/>
                         <outlet property="usernameTextField" destination="QRX-MC-nCP" id="4rY-NI-L22"/>
+                        <segue destination="sZ1-vN-80o" kind="show" identifier="Characters" id="9fc-hF-YAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nc7-Ri-Xqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,6 +171,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUK-RQ-C18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="66.11694152923539"/>
+        </scene>
+        <!--OnBoarding-->
+        <scene sceneID="pwx-ph-UrW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OnBoarding" id="sZ1-vN-80o" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTT-cR-uuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2926" y="64"/>
         </scene>
     </scenes>
 </document>

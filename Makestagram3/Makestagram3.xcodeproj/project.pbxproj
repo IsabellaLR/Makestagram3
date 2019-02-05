@@ -19,6 +19,10 @@
 		2840AC1F21D82AFB0002A238 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1E21D82AFB0002A238 /* Home.storyboard */; };
 		2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */; };
 		2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */; };
+		2863649A220952560049761D /* ThroneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28636498220952560049761D /* ThroneCell.swift */; };
+		2863649B220952560049761D /* ThroneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28636499220952560049761D /* ThroneCell.xib */; };
+		2863649D220952EA0049761D /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863649C220952EA0049761D /* CharactersViewController.swift */; };
+		2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2863649E22095DF40049761D /* OnBoarding.storyboard */; };
 		2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45121D0BF3D007E3FF1 /* UserService.swift */; };
 		2871D45421D30F43007E3FF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45321D30F43007E3FF1 /* Constants.swift */; };
 		2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */; };
@@ -61,6 +65,10 @@
 		2840AC1E21D82AFB0002A238 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToPopOverViewController.swift; sourceTree = "<group>"; };
 		2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToFollowersCell.swift; sourceTree = "<group>"; };
+		28636498220952560049761D /* ThroneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroneCell.swift; sourceTree = "<group>"; };
+		28636499220952560049761D /* ThroneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThroneCell.xib; sourceTree = "<group>"; };
+		2863649C220952EA0049761D /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		2863649E22095DF40049761D /* OnBoarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		2871D45121D0BF3D007E3FF1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2871D45321D30F43007E3FF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -104,9 +112,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2863649522094DFE0049761D /* ThroneCell */ = {
+			isa = PBXGroup;
+			children = (
+				28636498220952560049761D /* ThroneCell.swift */,
+				28636499220952560049761D /* ThroneCell.xib */,
+			);
+			path = ThroneCell;
+			sourceTree = "<group>";
+		};
 		28EAC49921CEE7600083EE24 = {
 			isa = PBXGroup;
 			children = (
+				2863649522094DFE0049761D /* ThroneCell */,
 				28EAC4C021CEFF5E0083EE24 /* Views */,
 				28EAC4BF21CEFF560083EE24 /* Supporting */,
 				28EAC4BE21CEFF510083EE24 /* Storyboards */,
@@ -151,6 +169,7 @@
 				2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */,
 				283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */,
 				28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */,
+				2863649C220952EA0049761D /* CharactersViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +223,7 @@
 				2840AC1C21D82AB50002A238 /* Friends.storyboard */,
 				28EAC4A921CEE7600083EE24 /* Main.storyboard */,
 				28EAC4C321CF20500083EE24 /* Login.storyboard */,
+				2863649E22095DF40049761D /* OnBoarding.storyboard */,
 				28EAC4AE21CEE7610083EE24 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -314,9 +334,11 @@
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
 				28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */,
+				2863649B220952560049761D /* ThroneCell.xib in Resources */,
 				28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */,
 				28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */,
 				28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */,
+				2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +425,7 @@
 				2895D97C21EA95C00071D497 /* Profile.swift in Sources */,
 				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
+				2863649D220952EA0049761D /* CharactersViewController.swift in Sources */,
 				283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */,
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
@@ -416,6 +439,7 @@
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
+				2863649A220952560049761D /* ThroneCell.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,

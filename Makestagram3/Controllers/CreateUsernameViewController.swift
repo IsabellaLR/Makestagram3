@@ -43,9 +43,11 @@ class CreateUsernameViewController: UIViewController {
             
             ProfileService.create(username: User.current.username, posValue: 0, negValue: 0, wins: 0, losses: 0)
             
-            let initialViewController = UIStoryboard.initialViewController(for: .main)
-            self.view.window?.rootViewController = initialViewController
-            self.view.window?.makeKeyAndVisible()
+            self.performSegue(withIdentifier: "Characters", sender: self)
+            
+//            let initialViewController = UIStoryboard.initialViewController(for: .onBoarding)
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
         }
     }
 }
