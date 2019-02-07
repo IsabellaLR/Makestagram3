@@ -95,6 +95,7 @@ struct FollowService {
             }
         })
     }
+}
 
     
 //    static func followingUsernames(for user: User, completion: @escaping ([String]) -> Void) {
@@ -114,7 +115,6 @@ struct FollowService {
 //            completion(followingKeys)
 //        })
 //    }
-}
 //    static func retrieveFollowers(for user: User, completion: @escaping ([String]?) -> Void) {
 //        Database.database().reference().child("followers").child(user.uid).observe(.childAdded, with: { (snapshot) in
 //

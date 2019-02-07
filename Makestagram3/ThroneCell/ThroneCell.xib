@@ -19,25 +19,34 @@
                 <rect key="frame" x="0.0" y="0.0" width="203" height="214"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faO-IL-3rN">
-                        <rect key="frame" x="46" y="91.5" width="111" height="31.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faO-IL-3rN">
+                        <rect key="frame" x="0.0" y="172" width="203" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xe8-U1-PHu">
+                        <rect key="frame" x="0.0" y="0.0" width="203" height="158"/>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="1" green="0.3921568627" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="faO-IL-3rN" firstAttribute="centerY" secondItem="6B1-hB-Sj1" secondAttribute="centerY" id="a9w-zh-Aqf"/>
-                <constraint firstItem="faO-IL-3rN" firstAttribute="centerX" secondItem="6B1-hB-Sj1" secondAttribute="centerX" id="q25-eF-d2H"/>
+                <constraint firstItem="faO-IL-3rN" firstAttribute="top" secondItem="Xe8-U1-PHu" secondAttribute="bottom" constant="14" id="8fj-XT-pQp"/>
+                <constraint firstAttribute="trailing" secondItem="faO-IL-3rN" secondAttribute="trailing" id="Dl1-I8-7dB"/>
+                <constraint firstItem="Xe8-U1-PHu" firstAttribute="top" secondItem="6B1-hB-Sj1" secondAttribute="top" id="Ew6-q6-vEB"/>
+                <constraint firstAttribute="bottom" secondItem="faO-IL-3rN" secondAttribute="bottom" constant="20.5" id="MQ1-We-5sQ"/>
+                <constraint firstItem="Xe8-U1-PHu" firstAttribute="leading" secondItem="6B1-hB-Sj1" secondAttribute="leading" id="RL4-0b-sLU"/>
+                <constraint firstItem="faO-IL-3rN" firstAttribute="leading" secondItem="6B1-hB-Sj1" secondAttribute="leading" id="hxN-MA-qLb"/>
+                <constraint firstAttribute="trailing" secondItem="Xe8-U1-PHu" secondAttribute="trailing" id="z5N-Tm-UrJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="UBb-4C-Izg"/>
             <size key="customSize" width="203" height="214"/>
             <connections>
+                <outlet property="characterImage" destination="Xe8-U1-PHu" id="9gx-s4-9ac"/>
                 <outlet property="characterLabel" destination="faO-IL-3rN" id="Jux-md-A8t"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="25"/>
+            <point key="canvasLocation" x="32.799999999999997" y="24.287856071964018"/>
         </collectionViewCell>
     </objects>
 </document>

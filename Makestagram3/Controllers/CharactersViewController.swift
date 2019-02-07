@@ -18,6 +18,7 @@ class CharactersViewController: UIViewController {
     //    @IBOutlet weak var navigationTitle: UINavigationItem!
     
     var characters = ["Jaime Lannister", "Cersei Lannister", "Daenerys Targaryen",  "Jon Snow", "Sansa Stark", "Arya Stark", "Theon Greyjoy", "Bran Stark", "The Hound", "Tyrion Lannister", "Davos Seaworth", "Samwell Tarly", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne of Tarth", "Gilly", "Daario Naharis", "Missandei", "Jaqen H'ghar", "Podrick Payne", "Yara Greyjoy", "Grey Worm", "Meera Reed", "Ghost"]
+    var characterImages = ["ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1"]
     
     var estimateWidth = 160.0
     var cellMarginSize = 16.0
@@ -51,15 +52,6 @@ class CharactersViewController: UIViewController {
         flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
         flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        topic.topicType.subType = sub[indexPath.row]
-        
-        //        // if edit cell selected
-        //        if (topic.topicType == "Plus"){
-        //            print("Edit cell selected")
-        //        }
-    }
 }
 
 extension CharactersViewController: UICollectionViewDataSource {
@@ -70,9 +62,26 @@ extension CharactersViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThroneCell", for: indexPath) as! ThroneCell
-        cell.setData(text: self.characters[indexPath.row])
-        
+        cell.setData(text: self.characters[indexPath.row], image: UIImage(named: self.characterImages[indexPath.row])!)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThroneCell", for: indexPath) as! ThroneCell
+//        guard let indexPath = collectionView.indexPath(for: cell) else { return }
+        
+        let character = characters[indexPath.row]
+        cell.backgroundColor = UIColor.blue
+        onBoardingService.pickCharacter(character: character)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThroneCell", for: indexPath) as! ThroneCell
+        guard let indexPath = collectionView.indexPath(for: cell) else { return }
+        
+        let character = characters[indexPath.row]
+        cell.backgroundColor = UIColor.blue
+        onBoardingService.removeCharacter(character: character)
     }
 }
 

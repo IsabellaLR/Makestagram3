@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NJd-xU-R6w">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hge-Uk-Nbb">
                                     <size key="itemSize" width="60" height="30"/>
@@ -38,12 +38,22 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who will win the throne?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-en-84Q">
+                                <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NJd-xU-R6w" firstAttribute="bottom" secondItem="HqI-dj-lSL" secondAttribute="bottom" id="4gq-0Y-RtL"/>
-                            <constraint firstItem="NJd-xU-R6w" firstAttribute="top" secondItem="HqI-dj-lSL" secondAttribute="top" id="O6J-gL-8a9"/>
+                            <constraint firstItem="RK8-en-84Q" firstAttribute="top" secondItem="HqI-dj-lSL" secondAttribute="top" id="BdA-bY-hRx"/>
+                            <constraint firstItem="HqI-dj-lSL" firstAttribute="trailing" secondItem="RK8-en-84Q" secondAttribute="trailing" id="MWK-DQ-gLy"/>
+                            <constraint firstItem="NJd-xU-R6w" firstAttribute="top" secondItem="HqI-dj-lSL" secondAttribute="top" constant="100" id="O6J-gL-8a9"/>
+                            <constraint firstItem="NJd-xU-R6w" firstAttribute="top" secondItem="RK8-en-84Q" secondAttribute="bottom" id="VZx-Gd-ry0"/>
                             <constraint firstItem="NJd-xU-R6w" firstAttribute="trailing" secondItem="HqI-dj-lSL" secondAttribute="trailing" id="Y6u-1f-ORh"/>
+                            <constraint firstItem="RK8-en-84Q" firstAttribute="leading" secondItem="HqI-dj-lSL" secondAttribute="leading" id="fJp-Yq-l2O"/>
                             <constraint firstItem="NJd-xU-R6w" firstAttribute="leading" secondItem="HqI-dj-lSL" secondAttribute="leading" id="sua-Pm-lyz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HqI-dj-lSL"/>

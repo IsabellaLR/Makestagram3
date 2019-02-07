@@ -11,14 +11,16 @@ import UIKit
 class ThroneCell: UICollectionViewCell {
     
     @IBOutlet weak var characterLabel: UILabel!
+    @IBOutlet weak var characterImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func setData(text: String){
+    func setData(text: String, image: UIImage){
         self.characterLabel.text = text
+        self.characterImage.image = image
     }
     
 }
