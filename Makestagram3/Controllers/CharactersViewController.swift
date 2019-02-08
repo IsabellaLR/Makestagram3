@@ -31,6 +31,8 @@ class CharactersViewController: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
+        collectionView.allowsMultipleSelection = true
+        
         // Register cells
         self.collectionView.register(UINib(nibName: "ThroneCell", bundle: nil), forCellWithReuseIdentifier: "ThroneCell")
         
@@ -62,26 +64,28 @@ extension CharactersViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThroneCell", for: indexPath) as! ThroneCell
-        cell.setData(text: self.characters[indexPath.row], image: UIImage(named: self.characterImages[indexPath.row])!)
+        cell.setData(text: self.characters[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThroneCell", for: indexPath) as! ThroneCell
-//        guard let indexPath = collectionView.indexPath(for: cell) else { return }
-        
         let character = characters[indexPath.row]
-        cell.backgroundColor = UIColor.blue
+        
         onBoardingService.pickCharacter(character: character)
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.gray.cgColor
+//        self.collectionView.reloadItems(at: [indexPath])
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThroneCell", for: indexPath) as! ThroneCell
-        guard let indexPath = collectionView.indexPath(for: cell) else { return }
-        
         let character = characters[indexPath.row]
-        cell.backgroundColor = UIColor.blue
+        
         onBoardingService.removeCharacter(character: character)
+        cell.layer.borderWidth = 5.0
+        cell.layer.borderColor = UIColor.red.cgColor
+//        self.collectionView.reloadItems(at: [indexPath])
     }
 }
 

@@ -18,9 +18,10 @@ class ThroneCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setData(text: String, image: UIImage){
+//    func setData(text: String, image: UIImage){
+    func setData(text: String){
         self.characterLabel.text = text
-        self.characterImage.image = image
+//        self.characterImage.image = image
     }
     
 }
