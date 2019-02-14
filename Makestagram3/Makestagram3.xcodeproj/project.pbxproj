@@ -20,8 +20,6 @@
 		2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */; };
 		2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */; };
 		2856DB01220BCE3C0076A602 /* onBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856DB00220BCE3C0076A602 /* onBoardingService.swift */; };
-		2863649A220952560049761D /* ThroneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28636498220952560049761D /* ThroneCell.swift */; };
-		2863649B220952560049761D /* ThroneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28636499220952560049761D /* ThroneCell.xib */; };
 		2863649D220952EA0049761D /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863649C220952EA0049761D /* CharactersViewController.swift */; };
 		2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2863649E22095DF40049761D /* OnBoarding.storyboard */; };
 		2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45121D0BF3D007E3FF1 /* UserService.swift */; };
@@ -35,6 +33,7 @@
 		2871D46221D3528C007E3FF1 /* BetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46121D3528C007E3FF1 /* BetService.swift */; };
 		2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */; };
 		2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46721D3FD0E007E3FF1 /* StorageReference.swift */; };
+		28790AC72214CEB1005B1B12 /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */; };
 		2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97921EA91C70071D497 /* ProfileService.swift */; };
 		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
@@ -67,8 +66,6 @@
 		2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToPopOverViewController.swift; sourceTree = "<group>"; };
 		2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToFollowersCell.swift; sourceTree = "<group>"; };
 		2856DB00220BCE3C0076A602 /* onBoardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingService.swift; sourceTree = "<group>"; };
-		28636498220952560049761D /* ThroneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroneCell.swift; sourceTree = "<group>"; };
-		28636499220952560049761D /* ThroneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThroneCell.xib; sourceTree = "<group>"; };
 		2863649C220952EA0049761D /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		2863649E22095DF40049761D /* OnBoarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		2871D45121D0BF3D007E3FF1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -82,6 +79,7 @@
 		2871D46121D3528C007E3FF1 /* BetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetService.swift; sourceTree = "<group>"; };
 		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
+		28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
 		2895D97921EA91C70071D497 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -114,19 +112,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2863649522094DFE0049761D /* ThroneCell */ = {
-			isa = PBXGroup;
-			children = (
-				28636498220952560049761D /* ThroneCell.swift */,
-				28636499220952560049761D /* ThroneCell.xib */,
-			);
-			path = ThroneCell;
-			sourceTree = "<group>";
-		};
 		28EAC49921CEE7600083EE24 = {
 			isa = PBXGroup;
 			children = (
-				2863649522094DFE0049761D /* ThroneCell */,
 				28EAC4C021CEFF5E0083EE24 /* Views */,
 				28EAC4BF21CEFF560083EE24 /* Supporting */,
 				28EAC4BE21CEFF510083EE24 /* Storyboards */,
@@ -250,6 +238,7 @@
 				2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */,
 				283F0D0121DDB0410096BB6E /* ShowBetCell.swift */,
 				283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */,
+				28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,7 +326,6 @@
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
 				28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */,
-				2863649B220952560049761D /* ThroneCell.xib in Resources */,
 				28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */,
 				28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */,
 				28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */,
@@ -426,6 +414,7 @@
 				2856DB01220BCE3C0076A602 /* onBoardingService.swift in Sources */,
 				2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
+				28790AC72214CEB1005B1B12 /* CharacterViewCell.swift in Sources */,
 				2895D97C21EA95C00071D497 /* Profile.swift in Sources */,
 				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
@@ -443,7 +432,6 @@
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
-				2863649A220952560049761D /* ThroneCell.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
