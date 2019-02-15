@@ -16,8 +16,9 @@ class CharactersViewController: UIViewController, UICollectionViewDataSource, UI
     let characters = ["Jaime Lannister", "Cersei Lannister", "Daenerys Targaryen",  "Jon Snow", "Sansa Stark", "Arya Stark", "Theon Greyjoy", "Bran Stark", "The Hound", "Tyrion Lannister", "Davos Seaworth", "Samwell Tarly", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne of Tarth", "Gilly", "Daario Naharis", "Missandei", "Jaqen H'ghar", "Podrick Payne", "Yara Greyjoy", "Grey Worm", "Meera Reed", "Ghost"]
     let characterImages = ["ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1"]
     
-//    var estimateWidth = 160.0
-//    var cellMarginSize = 16.0
+    var selectedIndex:Int?
+    var estimateWidth = 100.0
+    var cellMarginSize = 10.0
 //
 //    var shouldTintBackgroundWhenSelected = true // You can change default value
 //    var specialHighlightedArea: UIView?
@@ -30,50 +31,66 @@ class CharactersViewController: UIViewController, UICollectionViewDataSource, UI
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func sendTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        let initialViewController = UIStoryboard.initialViewController(for: .main)
+        self.view.window?.rootViewController = initialViewController
+        self.view.window?.makeKeyAndVisible()
+    }
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.characters.count
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
+        let character = characters[indexPath.row]
         cell.characterName.text = characters[indexPath.row]
-//        cell.isUserInteractionEnabled = true
+        cell.characterImage.image = UIImage(named: characterImages[indexPath.row])
+        
+        if selectedIndex == indexPath.row {
+            onBoardingService.pickCharacter(character: character)
+            cell.backgroundColor =  UIColor.red
+        }else{
+            cell.backgroundColor = UIColor.clear
+            onBoardingService.removeCharacter(character: character)
+        }
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
-        let character = characters[indexPath.row]
-        cell.backgroundColor = UIColor.red
-        onBoardingService.pickCharacter(character: character)
+        selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
         collectionView.reloadData()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
-        let character = characters[indexPath.row]
-        cell.backgroundColor = UIColor.clear
-        onBoardingService.removeCharacter(character: character)
-        collectionView.reloadData()
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
+//
+//        selectedIndex = indexPath.row
+//        cell.backgroundColor = UIColor.clear
+//        collectionView.reloadData()
+//    }
 }
 
-//extension CharactersViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = self.calculateWith()
-//        return CGSize(width: width, height: width)
-//    }
-//
-//    func calculateWith() -> CGFloat {
-//        let estimatedWidth = CGFloat(estimateWidth)
-//        let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
-//
-//        let margin = CGFloat(cellMarginSize * 2)
-//        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
-//
-//        return width
-//    }
-//}
+extension CharactersViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.calculateWith()
+        return CGSize(width: width, height: width)
+    }
+
+    func calculateWith() -> CGFloat {
+        let estimatedWidth = CGFloat(estimateWidth)
+        let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
+
+        let margin = CGFloat(cellMarginSize * 2)
+        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
+
+        return width
+    }
+}
 
 //extension UIColor {
 //    convenience init(rgb: Int, alpha: CGFloat = 1.0) {

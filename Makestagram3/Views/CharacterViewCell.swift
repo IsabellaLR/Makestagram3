@@ -11,4 +11,6 @@ import UIKit
 class CharacterViewCell: UICollectionViewCell {
     
     @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var characterImage: UIImageView!
+    
 }
