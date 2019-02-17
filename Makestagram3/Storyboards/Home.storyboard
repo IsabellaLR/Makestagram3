@@ -181,6 +181,26 @@
                                     <constraint firstAttribute="width" constant="126.5" id="zdP-GT-k9e"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aML-JX-Poo">
+                                <rect key="frame" x="36" y="291" width="47" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="OEx-PR-Gd8" kind="popoverPresentation" popoverAnchorView="aML-JX-Poo" id="sjs-uu-Q1s">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTO-AF-F4t">
+                                <rect key="frame" x="287" y="289" width="47" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="OEx-PR-Gd8" kind="popoverPresentation" popoverAnchorView="dTO-AF-F4t" id="pgI-Q1-ega">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -202,6 +222,8 @@
                         <outlet property="betTextField" destination="7Od-wU-uZa" id="DLm-zd-tr0"/>
                         <outlet property="btnSelect" destination="1aO-aY-FBT" id="Xrs-es-Ssw"/>
                         <outlet property="episodeLabel" destination="aip-6b-zZg" id="V0K-5q-8wF"/>
+                        <outlet property="pickButton" destination="aML-JX-Poo" id="QSI-9B-3Va"/>
+                        <outlet property="pickButton2" destination="dTO-AF-F4t" id="FEv-V6-xcf"/>
                         <outlet property="ptsLabel" destination="i3r-60-9AE" id="Atw-pb-Eaf"/>
                     </connections>
                 </viewController>
@@ -330,6 +352,67 @@
             </objects>
             <point key="canvasLocation" x="1576.8" y="-307.1964017991005"/>
         </scene>
+        <!--Characters2 View Controller-->
+        <scene sceneID="bVO-xF-fSi">
+            <objects>
+                <viewController storyboardIdentifier="CharactersViewController" id="OEx-PR-Gd8" customClass="Characters2ViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X3G-Pe-7nu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Ro-aX-KsG">
+                                <rect key="frame" x="0.0" y="83" width="375" height="584"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sor-CY-rAu">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="throneCell" id="bSf-LF-CN6" customClass="Character2ViewCell" customModule="Makestagram3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDP-bN-8f7">
+                                                    <rect key="frame" x="11" y="80" width="79" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8FQ-DD-6ZM">
+                                                    <rect key="frame" x="20" y="20" width="60" height="60"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="100" height="107"/>
+                                        <connections>
+                                            <outlet property="characterImage" destination="8FQ-DD-6ZM" id="CBQ-aa-ope"/>
+                                            <outlet property="characterName" destination="qDP-bN-8f7" id="1cT-w4-xbz"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="OEx-PR-Gd8" id="RNR-Oe-n8d"/>
+                                    <outlet property="delegate" destination="OEx-PR-Gd8" id="hZQ-nD-JrK"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hVm-FG-Iyf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="r0h-Xc-FQO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iK1-k1-gtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3327" y="-957"/>
+        </scene>
     </scenes>
     <resources>
         <image name="got" width="452" height="302"/>
@@ -337,4 +420,7 @@
         <image name="sent" width="100" height="100"/>
         <image name="tab_home_black" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sjs-uu-Q1s"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,8 @@ class MakeBetViewController: UIViewController {
     @IBOutlet weak var btnSelect: UIButton!
     @IBOutlet weak var betTextField: UITextField!
     @IBOutlet weak var ptsLabel: UILabel!
+    @IBOutlet weak var pickButton: UIButton!
+    @IBOutlet weak var pickButton2: UIButton!
     
     var betDescription: String?
     var points: String?

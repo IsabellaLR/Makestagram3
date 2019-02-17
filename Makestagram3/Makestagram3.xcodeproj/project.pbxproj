@@ -34,6 +34,8 @@
 		2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */; };
 		2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D46721D3FD0E007E3FF1 /* StorageReference.swift */; };
 		28790AC72214CEB1005B1B12 /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */; };
+		28790AC922193C48005B1B12 /* Characters2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790AC822193C47005B1B12 /* Characters2ViewController.swift */; };
+		28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */; };
 		2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97921EA91C70071D497 /* ProfileService.swift */; };
 		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
@@ -80,6 +82,8 @@
 		2871D46521D3FC61007E3FF1 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		2871D46721D3FD0E007E3FF1 /* StorageReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageReference.swift; sourceTree = "<group>"; };
 		28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
+		28790AC822193C47005B1B12 /* Characters2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters2ViewController.swift; sourceTree = "<group>"; };
+		28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character2ViewCell.swift; sourceTree = "<group>"; };
 		2895D97921EA91C70071D497 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */,
 				28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */,
 				2863649C220952EA0049761D /* CharactersViewController.swift */,
+				28790AC822193C47005B1B12 /* Characters2ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 				283F0D0121DDB0410096BB6E /* ShowBetCell.swift */,
 				283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */,
 				28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */,
+				28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
 				2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */,
+				28790AC922193C48005B1B12 /* Characters2ViewController.swift in Sources */,
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
 				2871D45A21D316D0007E3FF1 /* FindFriendsViewController.swift in Sources */,
 				2871D45421D30F43007E3FF1 /* Constants.swift in Sources */,
@@ -433,6 +440,7 @@
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
+				28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */,
 				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 				283F0D0621DF36010096BB6E /* Bet.swift in Sources */,
