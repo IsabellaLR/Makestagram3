@@ -36,6 +36,8 @@
 		28790AC72214CEB1005B1B12 /* CharacterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */; };
 		28790AC922193C48005B1B12 /* Characters2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790AC822193C47005B1B12 /* Characters2ViewController.swift */; };
 		28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */; };
+		28790ACD221A7B2C005B1B12 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */; };
+		28790ACF221A804A005B1B12 /* EmojiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACE221A804A005B1B12 /* EmojiViewCell.swift */; };
 		2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97921EA91C70071D497 /* ProfileService.swift */; };
 		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
@@ -84,6 +86,8 @@
 		28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewCell.swift; sourceTree = "<group>"; };
 		28790AC822193C47005B1B12 /* Characters2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters2ViewController.swift; sourceTree = "<group>"; };
 		28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character2ViewCell.swift; sourceTree = "<group>"; };
+		28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
+		28790ACE221A804A005B1B12 /* EmojiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewCell.swift; sourceTree = "<group>"; };
 		2895D97921EA91C70071D497 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */,
 				2863649C220952EA0049761D /* CharactersViewController.swift */,
 				28790AC822193C47005B1B12 /* Characters2ViewController.swift */,
+				28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 				283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */,
 				28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */,
 				28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */,
+				28790ACE221A804A005B1B12 /* EmojiViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */,
+				28790ACF221A804A005B1B12 /* EmojiViewCell.swift in Sources */,
 				28C06FDE21D09C2C008F2783 /* User.swift in Sources */,
 				2871D46021D34E7F007E3FF1 /* StorageService.swift in Sources */,
 				28EAC4C621CF21640083EE24 /* LoginViewController.swift in Sources */,
@@ -437,6 +444,7 @@
 				2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */,
 				28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */,
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
+				28790ACD221A7B2C005B1B12 /* EmojiViewController.swift in Sources */,
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,

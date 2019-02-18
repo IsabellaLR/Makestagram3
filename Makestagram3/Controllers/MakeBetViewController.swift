@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakeBetViewController: UIViewController {
+class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var btnSelect: UIButton!
@@ -16,6 +16,7 @@ class MakeBetViewController: UIViewController {
     @IBOutlet weak var ptsLabel: UILabel!
     @IBOutlet weak var pickButton: UIButton!
     @IBOutlet weak var pickButton2: UIButton!
+    @IBOutlet weak var emojiButton: UIButton!
     
     var betDescription: String?
     var points: String?
@@ -45,6 +46,24 @@ class MakeBetViewController: UIViewController {
     @IBAction func btnSelect(_ sender: Any) {
         betDescription = betTextField.text
         UserDefaults.standard.set(betDescription, forKey: "betDescription")
+    }
+    
+    @IBAction func emojiButtonTapped(_ sender: UIButton) {
+        let VC = storyboard?.instantiateViewController(withIdentifier: "EmojiController") as! EmojiViewController
+        VC.preferredContentSize = CGSize(width: 200, height: 100)
+        let navController = UINavigationController(rootViewController: VC)
+        navController.modalPresentationStyle = UIModalPresentationStyle.popover
+        
+        let popOver = navController.popoverPresentationController
+        popOver?.sourceView = sender
+        popOver?.sourceRect = sender.bounds
+        popOver?.delegate = self
+        
+        self.present(navController, animated: true, completion: nil)
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
     

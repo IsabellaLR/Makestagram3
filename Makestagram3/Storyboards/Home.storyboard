@@ -201,6 +201,17 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKt-m5-CA3">
+                                <rect key="frame" x="233" y="291" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="emojiButtonTapped:" destination="TrX-W2-Fhr" eventType="touchUpInside" id="F40-qN-Ot7"/>
+                                    <segue destination="KYy-dW-7Qt" kind="popoverPresentation" identifier="" popoverAnchorView="OKt-m5-CA3" id="sgY-JV-dHs">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -218,9 +229,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ouv-eU-kwt"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="betTextField" destination="7Od-wU-uZa" id="DLm-zd-tr0"/>
                         <outlet property="btnSelect" destination="1aO-aY-FBT" id="Xrs-es-Ssw"/>
+                        <outlet property="emojiButton" destination="OKt-m5-CA3" id="XPm-wH-0BA"/>
                         <outlet property="episodeLabel" destination="aip-6b-zZg" id="V0K-5q-8wF"/>
                         <outlet property="pickButton" destination="aML-JX-Poo" id="QSI-9B-3Va"/>
                         <outlet property="pickButton2" destination="dTO-AF-F4t" id="FEv-V6-xcf"/>
@@ -355,7 +369,7 @@
         <!--Characters2 View Controller-->
         <scene sceneID="bVO-xF-fSi">
             <objects>
-                <viewController storyboardIdentifier="CharactersViewController" id="OEx-PR-Gd8" customClass="Characters2ViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Characters2ViewController" id="OEx-PR-Gd8" customClass="Characters2ViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X3G-Pe-7nu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,6 +427,72 @@
             </objects>
             <point key="canvasLocation" x="3327" y="-957"/>
         </scene>
+        <!--Emoji View Controller-->
+        <scene sceneID="Xne-38-UPR">
+            <objects>
+                <viewController storyboardIdentifier="EmojiController" id="KYy-dW-7Qt" customClass="EmojiViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fkz-mp-n4s">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bpw-0J-l4x">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                <color key="backgroundColor" red="0.60610623109999995" green="0.8576478609" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wMD-LD-c2d">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emojiCell" id="Lnl-kE-WhC" customClass="EmojiViewCell" customModule="Makestagram3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oi5-b4-S2G">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="oi5-b4-S2G" secondAttribute="bottom" id="P6v-N0-mMt"/>
+                                            <constraint firstItem="oi5-b4-S2G" firstAttribute="top" secondItem="Lnl-kE-WhC" secondAttribute="top" id="VVv-pB-zzf"/>
+                                            <constraint firstAttribute="trailing" secondItem="oi5-b4-S2G" secondAttribute="trailing" id="iBP-Rz-zOS"/>
+                                            <constraint firstItem="oi5-b4-S2G" firstAttribute="leading" secondItem="Lnl-kE-WhC" secondAttribute="leading" id="vd4-rY-fwy"/>
+                                        </constraints>
+                                        <size key="customSize" width="50" height="50"/>
+                                        <connections>
+                                            <outlet property="emojiImage" destination="oi5-b4-S2G" id="fJJ-WX-1bs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="KYy-dW-7Qt" id="Po9-Vq-l7N"/>
+                                    <outlet property="delegate" destination="KYy-dW-7Qt" id="Leb-4Q-3uJ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bpw-0J-l4x" firstAttribute="top" secondItem="Fkz-mp-n4s" secondAttribute="top" id="gPR-M8-7s3"/>
+                            <constraint firstItem="Bpw-0J-l4x" firstAttribute="leading" secondItem="Fkz-mp-n4s" secondAttribute="leading" id="mFd-pJ-z3o"/>
+                            <constraint firstAttribute="trailing" secondItem="Bpw-0J-l4x" secondAttribute="trailing" id="qag-bW-hqk"/>
+                            <constraint firstAttribute="bottom" secondItem="Bpw-0J-l4x" secondAttribute="bottom" id="trP-BJ-YQ5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tne-0q-w8E"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mmo-rM-ZHg"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="100"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="100"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sew-9v-DSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3109" y="139"/>
+        </scene>
     </scenes>
     <resources>
         <image name="got" width="452" height="302"/>
@@ -421,6 +501,6 @@
         <image name="tab_home_black" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sjs-uu-Q1s"/>
+        <segue reference="pgI-Q1-ega"/>
     </inferredMetricsTieBreakers>
 </document>
