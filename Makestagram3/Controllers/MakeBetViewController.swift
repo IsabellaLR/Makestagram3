@@ -55,6 +55,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         navController.modalPresentationStyle = UIModalPresentationStyle.popover
         
         let popOver = navController.popoverPresentationController
+        popOver?.permittedArrowDirections = .up
         popOver?.sourceView = sender
         popOver?.sourceRect = sender.bounds
         popOver?.delegate = self

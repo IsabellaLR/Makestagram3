@@ -10,12 +10,12 @@ import UIKit
 
 class Characters2ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let characters = ["Jaime Lannister", "Cersei Lannister", "Daenerys Targaryen",  "Jon Snow", "Sansa Stark", "Arya Stark", "Theon Greyjoy", "Bran Stark", "The Hound", "Tyrion Lannister", "Davos Seaworth", "Samwell Tarly", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne of Tarth", "Gilly", "Daario Naharis", "Missandei", "Jaqen H'ghar", "Podrick Payne", "Yara Greyjoy", "Grey Worm", "Meera Reed", "Ghost"]
-    let characterImages = ["ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1"]
+    let characters = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost"]
+    let characterImages = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost"]
     
     var selectedIndex:Int?
-    var estimateWidth = 100.0
-    var cellMarginSize = 10.0
+    var estimateWidth = 125.0
+    var cellMarginSize = 5.0
     //
     //    var shouldTintBackgroundWhenSelected = true // You can change default value
     //    var specialHighlightedArea: UIView?
@@ -39,6 +39,7 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
         let character = characters[indexPath.row]
         cell.characterName.text = characters[indexPath.row]
         cell.characterImage.image = UIImage(named: characterImages[indexPath.row])
+        cell.characterImage.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
         
         if selectedIndex == indexPath.row {
             cell.backgroundColor =  UIColor.red
@@ -81,4 +82,3 @@ extension Characters2ViewController: UICollectionViewDelegateFlowLayout {
         return width
     }
 }
-
