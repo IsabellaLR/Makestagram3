@@ -20,6 +20,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     
     var betDescription: String?
     var points: String?
+    var controller: String?
     
     var name = ""
     
@@ -36,7 +37,8 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         betTextField.textAlignment = .left
         betTextField.contentVerticalAlignment = .top
         
-//        btnSelect(_ sender: Any)
+        self.pickButton.titleLabel?.text = UserDefaults.standard.string(forKey: "character1") ?? ""
+        self.pickButton2.titleLabel?.text = UserDefaults.standard.string(forKey: "character2") ?? ""
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +48,16 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBAction func btnSelect(_ sender: Any) {
         betDescription = betTextField.text
         UserDefaults.standard.set(betDescription, forKey: "betDescription")
+    }
+    
+    @IBAction func selectChar1(_ sender: Any) {
+        controller = "1"
+        UserDefaults.standard.set(controller, forKey: "controller")
+    }
+    
+    @IBAction func selectChar2(_ sender: Any) {
+        controller = "2"
+        UserDefaults.standard.set(controller, forKey: "controller")
     }
     
     @IBAction func emojiButtonTapped(_ sender: UIButton) {

@@ -42,9 +42,13 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
         cell.characterImage.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
         
         if selectedIndex == indexPath.row {
-            cell.backgroundColor =  UIColor.red
+            if (UserDefaults.standard.string(forKey: "controller")) == "1" {
+                UserDefaults.standard.set(character, forKey: "character1")
+            }else{
+                UserDefaults.standard.set(character, forKey: "character2")
+            }
             self.dismiss(animated: true, completion: nil)
-            UserDefaults.standard.set(character, forKey: "characterPicked")
+
         }else{
             cell.backgroundColor = UIColor.clear
         }
@@ -56,14 +60,6 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
         collectionView.reloadData()
     }
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //
-    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
-    //
-    //        selectedIndex = indexPath.row
-    //        cell.backgroundColor = UIColor.clear
-    //        collectionView.reloadData()
-    //    }
 }
 
 extension Characters2ViewController: UICollectionViewDelegateFlowLayout {
