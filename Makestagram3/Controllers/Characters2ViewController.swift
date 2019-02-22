@@ -43,9 +43,9 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
         
         if selectedIndex == indexPath.row {
             if (UserDefaults.standard.string(forKey: "controller")) == "1" {
-                UserDefaults.standard.set(character, forKey: "character1")
+                UserDefaults.standard.set(characters[indexPath.row], forKey: "character1")
             }else{
-                UserDefaults.standard.set(character, forKey: "character2")
+                UserDefaults.standard.set(characters[indexPath.row], forKey: "character2")
             }
             self.dismiss(animated: true, completion: nil)
 

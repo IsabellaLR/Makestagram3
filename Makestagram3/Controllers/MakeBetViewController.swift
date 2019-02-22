@@ -18,9 +18,12 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBOutlet weak var pickButton2: UIButton!
     @IBOutlet weak var emojiButton: UIButton!
     
+    @IBOutlet weak var segment: UISegmentedControl!
+    
     var betDescription: String?
     var points: String?
     var controller: String?
+    var reward: String?
     
     var name = ""
     
@@ -37,8 +40,24 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         betTextField.textAlignment = .left
         betTextField.contentVerticalAlignment = .top
         
-        self.pickButton.titleLabel?.text = UserDefaults.standard.string(forKey: "character1") ?? ""
-        self.pickButton2.titleLabel?.text = UserDefaults.standard.string(forKey: "character2") ?? ""
+        self.pickButton.setTitle(UserDefaults.standard.string(forKey: "character1") ?? "", for: .normal)
+        self.pickButton2.setTitle(UserDefaults.standard.string(forKey: "character2") ?? "", for: .normal)
+    }
+
+    
+    @IBAction func segmentedTapped(_ sender: Any) {
+        let getIndex = segment.selectedSegmentIndex
+        
+        switch (getIndex) {
+        case 0:
+            reward = "shots"
+        case 1:
+            reward = "dollars"
+        case 2:
+            reward = "points"
+        default:
+            reward = ""
+        }
     }
     
     override func didReceiveMemoryWarning() {
