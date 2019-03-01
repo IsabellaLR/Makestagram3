@@ -29,6 +29,8 @@ class BetsRootViewController: UIPageViewController, UIPageViewControllerDataSour
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
+        
+        view.backgroundColor = .white
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
