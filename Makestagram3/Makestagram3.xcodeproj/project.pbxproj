@@ -19,6 +19,7 @@
 		2840AC1F21D82AFB0002A238 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1E21D82AFB0002A238 /* Home.storyboard */; };
 		2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */; };
 		2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */; };
+		2851D543222902B5001972CB /* BetsRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2851D542222902B5001972CB /* BetsRootViewController.swift */; };
 		2856DB01220BCE3C0076A602 /* onBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856DB00220BCE3C0076A602 /* onBoardingService.swift */; };
 		2863649D220952EA0049761D /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863649C220952EA0049761D /* CharactersViewController.swift */; };
 		2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2863649E22095DF40049761D /* OnBoarding.storyboard */; };
@@ -42,7 +43,10 @@
 		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
 		28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE421DCA71F0041FDDB /* Selection.swift */; };
-		28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */; };
+		28AC0FE721DCAC490041FDDB /* ViewBet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* ViewBet.storyboard */; };
+		28B30C2D2229272D00E33D2D /* YourBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B30C2C2229272D00E33D2D /* YourBetsViewController.swift */; };
+		28B30C2F2229273E00E33D2D /* DebtBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B30C2E2229273E00E33D2D /* DebtBetsViewController.swift */; };
+		28B30C3322292F6A00E33D2D /* ViewBetType.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B30C3222292F6A00E33D2D /* ViewBetType.storyboard */; };
 		28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */; };
 		28C06FDE21D09C2C008F2783 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDD21D09C2C008F2783 /* User.swift */; };
 		28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */; };
@@ -69,6 +73,7 @@
 		2840AC1E21D82AFB0002A238 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToPopOverViewController.swift; sourceTree = "<group>"; };
 		2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToFollowersCell.swift; sourceTree = "<group>"; };
+		2851D542222902B5001972CB /* BetsRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsRootViewController.swift; sourceTree = "<group>"; };
 		2856DB00220BCE3C0076A602 /* onBoardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingService.swift; sourceTree = "<group>"; };
 		2863649C220952EA0049761D /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		2863649E22095DF40049761D /* OnBoarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
@@ -92,7 +97,10 @@
 		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		28AC0FE421DCA71F0041FDDB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
-		28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBets.storyboard; sourceTree = "<group>"; };
+		28AC0FE621DCAC490041FDDB /* ViewBet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBet.storyboard; sourceTree = "<group>"; };
+		28B30C2C2229272D00E33D2D /* YourBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBetsViewController.swift; sourceTree = "<group>"; };
+		28B30C2E2229273E00E33D2D /* DebtBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtBetsViewController.swift; sourceTree = "<group>"; };
+		28B30C3222292F6A00E33D2D /* ViewBetType.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBetType.storyboard; sourceTree = "<group>"; };
 		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28C06FDD21D09C2C008F2783 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +178,8 @@
 				2863649C220952EA0049761D /* CharactersViewController.swift */,
 				28790AC822193C47005B1B12 /* Characters2ViewController.swift */,
 				28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */,
+				28B30C2C2229272D00E33D2D /* YourBetsViewController.swift */,
+				28B30C2E2229273E00E33D2D /* DebtBetsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,7 +229,8 @@
 		28EAC4BE21CEFF510083EE24 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				28AC0FE621DCAC490041FDDB /* ViewBets.storyboard */,
+				28B30C3222292F6A00E33D2D /* ViewBetType.storyboard */,
+				28AC0FE621DCAC490041FDDB /* ViewBet.storyboard */,
 				2840AC1E21D82AFB0002A238 /* Home.storyboard */,
 				2840AC1C21D82AB50002A238 /* Friends.storyboard */,
 				28EAC4A921CEE7600083EE24 /* Main.storyboard */,
@@ -251,6 +262,7 @@
 				28790AC62214CEB1005B1B12 /* CharacterViewCell.swift */,
 				28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */,
 				28790ACE221A804A005B1B12 /* EmojiViewCell.swift */,
+				2851D542222902B5001972CB /* BetsRootViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,11 +349,12 @@
 				2840AC1D21D82AB50002A238 /* Friends.storyboard in Resources */,
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
-				28AC0FE721DCAC490041FDDB /* ViewBets.storyboard in Resources */,
+				28AC0FE721DCAC490041FDDB /* ViewBet.storyboard in Resources */,
 				28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */,
 				28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */,
 				28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */,
 				2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */,
+				28B30C3322292F6A00E33D2D /* ViewBetType.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +445,7 @@
 				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
 				2863649D220952EA0049761D /* CharactersViewController.swift in Sources */,
+				28B30C2F2229273E00E33D2D /* DebtBetsViewController.swift in Sources */,
 				283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */,
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
@@ -447,10 +461,12 @@
 				28790ACD221A7B2C005B1B12 /* EmojiViewController.swift in Sources */,
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
+				2851D543222902B5001972CB /* BetsRootViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */,
 				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
+				28B30C2D2229272D00E33D2D /* YourBetsViewController.swift in Sources */,
 				283F0D0621DF36010096BB6E /* Bet.swift in Sources */,
 				2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */,
 			);

@@ -21,14 +21,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="U7r-gM-CXR" kind="relationship" relationship="viewControllers" id="4o4-2V-tnB"/>
-                        <segue destination="I1b-x8-Pp6" kind="relationship" relationship="viewControllers" id="ijo-HI-6Rt"/>
-                        <segue destination="ciS-e0-UQp" kind="relationship" relationship="viewControllers" id="Ppo-C3-nei"/>
                         <segue destination="1hA-xM-v1R" kind="relationship" relationship="viewControllers" id="f7Y-TW-Q2d"/>
+                        <segue destination="zna-Z6-ybi" kind="relationship" relationship="viewControllers" id="rbg-lx-UHr"/>
+                        <segue destination="ciS-e0-UQp" kind="relationship" relationship="viewControllers" id="Ppo-C3-nei"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1up-ds-cai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550" y="38"/>
+            <point key="canvasLocation" x="-406" y="20"/>
         </scene>
         <!--Friends-->
         <scene sceneID="1GU-j6-L7A">
@@ -158,15 +158,16 @@
             </objects>
             <point key="canvasLocation" x="460" y="-465.51724137931041"/>
         </scene>
-        <!--ViewBetType-->
-        <scene sceneID="UlH-Ln-xk6">
+        <!--Item-->
+        <scene sceneID="aJI-YR-EAT">
             <objects>
-                <viewControllerPlaceholder storyboardName="ViewBetType" id="I1b-x8-Pp6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gHm-gk-OSG"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tkq-9l-V2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="zna-Z6-ybi" customClass="BetsRootViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="TrZ-d8-gDm"/>
+                    <navigationItem key="navigationItem" id="WU2-lQ-ce1"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hv7-y1-aC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="653"/>
+            <point key="canvasLocation" x="366" y="602"/>
         </scene>
     </scenes>
     <resources>
