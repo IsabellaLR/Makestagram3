@@ -22,6 +22,7 @@ class Bet {
     let points: String
     let episode: String
     let creationDate: String
+    let winner: String
     
     init?(snapshot: DataSnapshot) {
         //do i need to include lastMessageSent is that why// not really
@@ -37,10 +38,8 @@ class Bet {
             let episode = dict["episode"] as? String
             // i thing you're right this line will crash -- run again
             let creationDate = dict["creationDate"] as? String
-//            else {
-//                print("oupss")
-//                return nil }
-        
+            let winner = dict["winner"] as? String
+
         self.key = snapshot.key
         self.senderUsername = senderUsername ?? ""
         self.sentToUsernames = sentToUsernames ?? [""]
@@ -50,6 +49,7 @@ class Bet {
         self.points = points ?? "0"
         self.episode = episode ?? ""
         self.creationDate = creationDate ?? "idk man"
+        self.winner = winner ?? ""
         }
         else{
             return nil

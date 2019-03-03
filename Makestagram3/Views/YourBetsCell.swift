@@ -1,15 +1,15 @@
 //
-//  BetHeaderCell.swift
+//  YourBetsCell.swift
 //  Makestagram3
 //
-//  Created by Bella on 1/2/19.
+//  Created by Bella on 3/2/19.
 //  Copyright © 2019 Bella. All rights reserved.
 //
 
 import UIKit
 
-class BetHeaderCell: UITableViewCell {
-
+class YourBetsCell: UITableViewCell {
+    
     static let height: CGFloat = 30
     
     var tapAgreeAction: ((UITableViewCell) -> Void)?
@@ -29,15 +29,14 @@ class BetHeaderCell: UITableViewCell {
     @IBOutlet weak var whoWonLabel: UILabel!
     @IBOutlet weak var claimWin: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

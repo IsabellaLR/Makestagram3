@@ -30,7 +30,8 @@ struct BetService {
                                             "sentToUser": username,
                                             "points": points,
                                             "episode": episode,
-                                            "creationDate": defaultTimeZoneStr]
+                                            "creationDate": defaultTimeZoneStr,
+                                            "winner": ""]
         
             let betRef = Database.database().reference().child("bets").child(username).childByAutoId()
             _ = betRef.key
@@ -101,38 +102,30 @@ struct BetService {
             }
         }
     }
-}
-
-    //for groupchat! color changes for all same parentKeys
-//    static func setBetColor(color: String, parentKey: String, usernames: [String]) {
-//
-//        let color = ["color": color]
-//
-//        // change color for current user
-//
-//        for user in usernames{
-//            let betRef = Database.database().reference().child("bets").child(user).child(parentKey)
-//
-//            betRef.updateChildValues(color) { (error, _) in
-//                if let error = error {
-//                    assertionFailure(error.localizedDescription)
-//                    return
-//                }
-//            }
-//        }
-//    }
-
+    
+    static func setBetWinner(parentKey: String, user1: String, user2: String) {
         
-//        // change color for sender User
-//        let betRef2 = Database.database().reference().child("bets").child(senderUser)
-//        let ref2 = Database.database().reference().child("bets").child(senderUser).child(betRef2.key ?? "")
-//
-//        ref2.updateChildValues(color) { (error, _) in
-//            if let error = error {
-//                assertionFailure(error.localizedDescription)
-//                return
-//            }
-//        }
+        let winner = ["winner": User.current.username]
+        
+        let betRef1 = Database.database().reference().child("bets").child(user1).child(parentKey)
+        
+        betRef1.updateChildValues(winner) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+
+        let betRef2 = Database.database().reference().child("bets").child(user2).child(parentKey)
+        
+        betRef2.updateChildValues(winner) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+    }
+}
 
 
 

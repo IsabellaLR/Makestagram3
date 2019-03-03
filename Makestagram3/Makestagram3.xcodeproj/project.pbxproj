@@ -42,6 +42,8 @@
 		2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97921EA91C70071D497 /* ProfileService.swift */; };
 		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
+		28A8EFAA222BBB8000F86F80 /* YourBetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8EFA9222BBB8000F86F80 /* YourBetsCell.swift */; };
+		28A8EFAC222BE10000F86F80 /* DebtBetsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8EFAB222BE10000F86F80 /* DebtBetsCell.swift */; };
 		28AC0FE521DCA71F0041FDDB /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC0FE421DCA71F0041FDDB /* Selection.swift */; };
 		28AC0FE721DCAC490041FDDB /* ViewBet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28AC0FE621DCAC490041FDDB /* ViewBet.storyboard */; };
 		28B30C2D2229272D00E33D2D /* YourBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B30C2C2229272D00E33D2D /* YourBetsViewController.swift */; };
@@ -96,6 +98,8 @@
 		2895D97921EA91C70071D497 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		28A8EFA9222BBB8000F86F80 /* YourBetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBetsCell.swift; sourceTree = "<group>"; };
+		28A8EFAB222BE10000F86F80 /* DebtBetsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtBetsCell.swift; sourceTree = "<group>"; };
 		28AC0FE421DCA71F0041FDDB /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		28AC0FE621DCAC490041FDDB /* ViewBet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBet.storyboard; sourceTree = "<group>"; };
 		28B30C2C2229272D00E33D2D /* YourBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBetsViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 				28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */,
 				28790ACE221A804A005B1B12 /* EmojiViewCell.swift */,
 				2851D542222902B5001972CB /* BetsRootViewController.swift */,
+				28A8EFA9222BBB8000F86F80 /* YourBetsCell.swift */,
+				28A8EFAB222BE10000F86F80 /* DebtBetsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 				28B30C2F2229273E00E33D2D /* DebtBetsViewController.swift in Sources */,
 				283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */,
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
+				28A8EFAA222BBB8000F86F80 /* YourBetsCell.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
 				2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */,
 				28790AC922193C48005B1B12 /* Characters2ViewController.swift in Sources */,
@@ -460,6 +467,7 @@
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
 				28790ACD221A7B2C005B1B12 /* EmojiViewController.swift in Sources */,
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
+				28A8EFAC222BE10000F86F80 /* DebtBetsCell.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
 				2851D543222902B5001972CB /* BetsRootViewController.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
