@@ -31,7 +31,7 @@ struct BetService {
                                             "points": points,
                                             "episode": episode,
                                             "creationDate": defaultTimeZoneStr,
-                                            "winner": ""]
+                                            "winner": "tbd"]
         
             let betRef = Database.database().reference().child("bets").child(username).childByAutoId()
             _ = betRef.key
@@ -105,7 +105,9 @@ struct BetService {
     
     static func setBetWinner(parentKey: String, user1: String, user2: String) {
         
-        let winner = ["winner": User.current.username]
+        let current = User.current.username
+        
+        let winner = ["winner": current]
         
         let betRef1 = Database.database().reference().child("bets").child(user1).child(parentKey)
         

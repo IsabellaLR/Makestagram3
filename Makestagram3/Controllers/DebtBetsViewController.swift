@@ -71,7 +71,7 @@ extension DebtBetsViewController: UITableViewDataSource {
         
         let bet = bets[indexPath.row]
         
-        if bet.winner != "" {
+        if bet.winner != "tbd" {
             
             tableView.separatorStyle = .singleLine
         

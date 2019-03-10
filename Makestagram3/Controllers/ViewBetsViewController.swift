@@ -75,7 +75,7 @@ extension ViewBetsViewController: UITableViewDataSource {
             
             tableView.separatorStyle = .singleLine
             
-            cell.claimWin.setTitle("Claim", for: .normal)
+//            cell.claimWin.setTitle("Claim", for: .normal)
             
             cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
             cell.userImage.clipsToBounds = true
@@ -164,10 +164,10 @@ extension ViewBetsViewController: UITableViewDataSource {
             cell.backgroundColor = colorSelected
             
             //assign action when user selects claim win
-            cell.tapClaimWinAction = { (cell) in
-                let parentKey = self.parentKeys[indexPath.row]
-                BetService.setBetWinner(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
-            }
+//            cell.tapClaimWinAction = { (cell) in
+//                let parentKey = self.parentKeys[indexPath.row]
+//                BetService.setBetWinner(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+//            }
             
             // assigning image states for other users
             if (cell.showEpisodeLabel.text != UserDefaults.standard.string(forKey: "premieurEp") ?? ""){

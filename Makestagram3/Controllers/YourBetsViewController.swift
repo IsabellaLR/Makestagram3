@@ -117,6 +117,7 @@ extension YourBetsViewController: UITableViewDataSource {
             //assign action when user selects claim win
             cell.tapClaimWinAction = { (cell) in
                 let parentKey = self.parentKeys[indexPath.row]
+                UserDefaults.standard.set(parentKey, forKey: "parentKey")
                 BetService.setBetWinner(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
             }
         }
