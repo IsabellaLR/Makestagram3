@@ -13,7 +13,7 @@ import Kingfisher
 
 class DebtBetsViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView3: UITableView!
     
     var bets = [Bet]()
     var profile: Profile?
@@ -34,9 +34,9 @@ class DebtBetsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 71
+        tableView3.rowHeight = 71
         // remove separators for empty cells
-        tableView.tableFooterView = UIView()
+        tableView3.tableFooterView = UIView()
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
@@ -48,7 +48,7 @@ class DebtBetsViewController: UIViewController {
             self?.parentKeys = parentKeys
             
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                self?.tableView3.reloadData()
             }
         }
     }
@@ -63,7 +63,13 @@ class DebtBetsViewController: UIViewController {
 
 extension DebtBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bets.count
+        var claimBets = 0
+        for bet in bets {
+            if bet.winner != "tbd" {
+                claimBets += 1
+            }
+        }
+        return claimBets
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

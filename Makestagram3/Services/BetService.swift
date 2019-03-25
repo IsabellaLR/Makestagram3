@@ -130,4 +130,48 @@ struct BetService {
 }
 
 
-
+//static func create(description: String, senderUsername: String, sentToUsernames: [String], points: String, episode: String) {
+//
+//    var multiUpdateValue = [String : Any]()
+//
+//    let formatter = DateFormatter()
+//    formatter.dateFormat = "MMMM DD"
+//    let defaultTimeZoneStr = formatter.string(from: NSDate() as Date)
+//
+//    for username in sentToUsernames {
+//        let rootRef = Database.database().reference()
+//
+//        let betDict: [String : Any] = ["description" : description,
+//                                       "senderUsername" : senderUsername,
+//                                       "color": "white",
+//                                       "sentToUsernames": sentToUsernames,
+//                                       "sentToUser": username,
+//                                       "points": points,
+//                                       "episode": episode,
+//                                       "creationDate": defaultTimeZoneStr,
+//                                       "winner": "tbd"]
+//
+//        let betRef = Database.database().reference().child("bets").child(username).childByAutoId()
+//        _ = betRef.key
+//
+//        multiUpdateValue["bets/\(username)/\(betRef.key ?? "")"] = betDict
+//
+//        rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
+//            if let error = error {
+//                assertionFailure(error.localizedDescription)
+//                return
+//            }
+//        }
+//
+//        //for current user
+//
+//        multiUpdateValue["bets/\(User.current.username)/\(betRef.key ?? "")"] = betDict
+//
+//        rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
+//            if let error = error {
+//                assertionFailure(error.localizedDescription)
+//                return
+//            }
+//        }
+//    }
+//}

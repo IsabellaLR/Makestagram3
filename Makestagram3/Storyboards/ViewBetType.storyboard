@@ -373,7 +373,7 @@
                         <viewLayoutGuide key="safeArea" id="kch-Rr-MS9"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="uZQ-I7-5Jb" id="MoK-Ly-KTk"/>
+                        <outlet property="tableView2" destination="uZQ-I7-5Jb" id="ZcJ-6X-5oo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5y-BI-NHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,29 +417,33 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-Oy-se2">
-                                                    <rect key="frame" x="283" y="11" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlN-sI-hVE">
+                                                    <rect key="frame" x="325" y="10" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="nBk-Un-bML"/>
+                                                        <constraint firstAttribute="width" constant="40" id="pQL-Hp-FP8"/>
+                                                    </constraints>
+                                                    <state key="normal" image="reward"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPG-Oy-se2">
+                                                    <rect key="frame" x="285" y="11" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="N4J-S1-S7E"/>
+                                                        <constraint firstAttribute="width" constant="40" id="yWv-fr-JxL"/>
+                                                    </constraints>
+                                                    <state key="normal" image="sword"/>
                                                     <connections>
                                                         <segue destination="Lct-UR-f55" kind="presentation" id="nhv-YQ-y9H"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sword" translatesAutoresizingMaskIntoConstraints="NO" id="UMW-8E-0BQ">
-                                                    <rect key="frame" x="283" y="11" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlN-sI-hVE">
-                                                    <rect key="frame" x="326" y="11" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reward" translatesAutoresizingMaskIntoConstraints="NO" id="wHI-G8-c1Y">
-                                                    <rect key="frame" x="326" y="11" width="40" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="WtE-gU-hNa" secondAttribute="bottom" constant="49" id="3WP-uy-VX8"/>
+                                                <constraint firstItem="UlN-sI-hVE" firstAttribute="top" secondItem="OgA-D2-6I1" secondAttribute="top" constant="10" id="8l2-Bx-Bwn"/>
+                                                <constraint firstItem="EPG-Oy-se2" firstAttribute="top" secondItem="OgA-D2-6I1" secondAttribute="top" constant="11" id="9vS-0K-faf"/>
                                                 <constraint firstItem="WtE-gU-hNa" firstAttribute="leading" secondItem="OgA-D2-6I1" secondAttribute="leading" constant="96" id="Es7-n1-IBc"/>
+                                                <constraint firstItem="UlN-sI-hVE" firstAttribute="leading" secondItem="EPG-Oy-se2" secondAttribute="trailing" id="HVJ-q7-XrY"/>
+                                                <constraint firstItem="EPG-Oy-se2" firstAttribute="leading" secondItem="WtE-gU-hNa" secondAttribute="trailing" constant="29" id="JTc-2O-52S"/>
                                                 <constraint firstItem="WtE-gU-hNa" firstAttribute="top" secondItem="OgA-D2-6I1" secondAttribute="topMargin" constant="4" id="oTn-SS-kF7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -458,12 +462,12 @@
                         <viewLayoutGuide key="safeArea" id="m8O-6c-n70"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="mM3-yL-8sJ" id="VKP-WF-1bR"/>
+                        <outlet property="tableView3" destination="mM3-yL-8sJ" id="awu-7w-j9Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKJ-qp-fbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917.60000000000002" y="1332.6836581709147"/>
+            <point key="canvasLocation" x="862" y="1335"/>
         </scene>
         <!--Ed Stark View Controller-->
         <scene sceneID="M7j-MI-wiA">

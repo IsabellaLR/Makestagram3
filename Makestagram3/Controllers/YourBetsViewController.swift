@@ -21,7 +21,7 @@ import Kingfisher
 
 class YourBetsViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView2: UITableView!
     
     var bets = [Bet]()
     var profile: Profile?
@@ -42,9 +42,9 @@ class YourBetsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 71
+        tableView2.rowHeight = 71
         // remove separators for empty cells
-        tableView.tableFooterView = UIView()
+        tableView2.tableFooterView = UIView()
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
@@ -56,7 +56,7 @@ class YourBetsViewController: UIViewController {
             self?.parentKeys = parentKeys
             
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
+                self?.tableView2.reloadData()
             }
         }
     }
@@ -71,7 +71,13 @@ class YourBetsViewController: UIViewController {
 
 extension YourBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bets.count
+        var yourBets = 0
+        for bet in bets {
+            if bet.senderUsername == User.current.username {
+                yourBets += 1
+            }
+        }
+        return yourBets
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,6 +97,17 @@ extension YourBetsViewController: UITableViewDataSource {
             cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
         
             cell.usernameHeaderLabel.text = bet.sentToUser
+            
+            //colors
+            if bet.color == "green" {
+                cell.backgroundColor = UIColor.green
+            }
+            if bet.color == "blue" {
+                cell.backgroundColor = UIColor.blue
+            }else if bet.color == "white" {
+                cell.backgroundColor = UIColor.white
+            }
+            
             
             //user profile image
             ProfileService.showOtherUser(user: bet.sentToUser) { [weak self] (profile2) in

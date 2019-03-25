@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2807916922486D0C00CC4242 /* FriendBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807916822486D0C00CC4242 /* FriendBet.swift */; };
+		2807916B22486D5A00CC4242 /* ClaimBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2807916A22486D5A00CC4242 /* ClaimBet.swift */; };
 		283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */; };
 		283F0D0221DDB0410096BB6E /* ShowBetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0D0121DDB0410096BB6E /* ShowBetCell.swift */; };
 		283F0D0421DDCCAB0096BB6E /* BetHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */; };
@@ -64,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		1DAF0DB8C582B08D3456AFA2 /* Pods_Makestagram3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Makestagram3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2807916822486D0C00CC4242 /* FriendBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendBet.swift; sourceTree = "<group>"; };
+		2807916A22486D5A00CC4242 /* ClaimBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimBet.swift; sourceTree = "<group>"; };
 		283F0CFF21DDAE330096BB6E /* ViewBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBetsViewController.swift; sourceTree = "<group>"; };
 		283F0D0121DDB0410096BB6E /* ShowBetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBetCell.swift; sourceTree = "<group>"; };
 		283F0D0321DDCCAB0096BB6E /* BetHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetHeaderCell.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 				28AC0FE421DCA71F0041FDDB /* Selection.swift */,
 				283F0D0521DF36010096BB6E /* Bet.swift */,
 				2895D97B21EA95C00071D497 /* Profile.swift */,
+				2807916822486D0C00CC4242 /* FriendBet.swift */,
+				2807916A22486D5A00CC4242 /* ClaimBet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -459,7 +465,9 @@
 				2871D46621D3FC61007E3FF1 /* UIImage+Size.swift in Sources */,
 				28A8EFAA222BBB8000F86F80 /* YourBetsCell.swift in Sources */,
 				2871D45821D316BF007E3FF1 /* HomeViewController.swift in Sources */,
+				2807916922486D0C00CC4242 /* FriendBet.swift in Sources */,
 				2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */,
+				2807916B22486D5A00CC4242 /* ClaimBet.swift in Sources */,
 				28790AC922193C48005B1B12 /* Characters2ViewController.swift in Sources */,
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
 				2871D45A21D316D0007E3FF1 /* FindFriendsViewController.swift in Sources */,

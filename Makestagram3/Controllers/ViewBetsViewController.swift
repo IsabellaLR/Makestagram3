@@ -63,7 +63,13 @@ class ViewBetsViewController: UIViewController {
 
 extension ViewBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bets.count
+        var FriendBets = 0
+        for bet in bets {
+            if bet.senderUsername != User.current.username {
+                FriendBets += 1
+            }
+        }
+        return FriendBets
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
