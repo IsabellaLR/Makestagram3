@@ -123,6 +123,15 @@ extension YourBetsViewController: UITableViewDataSource {
         }
         return cell
     }
+    
+    //deleting cell
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == UITableViewCell.EditingStyle.delete
+        {
+            bets.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate

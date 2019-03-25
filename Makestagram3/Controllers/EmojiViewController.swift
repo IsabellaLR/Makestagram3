@@ -10,7 +10,7 @@ import UIKit
 
 class EmojiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let emojiImages = ["ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1", "ep1"]
+    let emojiImages = ["GOT-baby", "GOT-betray", "GOT-breakup", "GOT-destroy", "GOT-duel", "GOT-fallinlove", "GOT-greenstuff", "GOT-iced", "GOT-injured", "GOT-marry", "GOT-outrank", "GOT-slay", "GOT-sleep", "GOT-suicide"]
     
     var selectedIndex: Int?
     var estimateWidth = 100.0
