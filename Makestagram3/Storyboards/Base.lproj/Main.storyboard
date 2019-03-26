@@ -130,13 +130,16 @@
                                 <rect key="frame" x="146" y="294" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="vTB-7M-6Hd" kind="presentation" identifier="showCouple" id="3gZ-aK-fNV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-hf-I7L">
                                 <rect key="frame" x="146" y="348" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="xeC-N8-JuG" kind="presentation" id="741-M6-mQr"/>
+                                    <segue destination="xeC-N8-JuG" kind="presentation" identifier="showShip" id="741-M6-mQr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqV-LM-lbE">
@@ -366,6 +369,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4O0-Ga-R6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2226" y="-680"/>
+        </scene>
+        <!--Couples View Controller-->
+        <scene sceneID="93F-aN-bzB">
+            <objects>
+                <viewController storyboardIdentifier="ShipViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vTB-7M-6Hd" customClass="CouplesViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MrE-Hb-FQq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c0q-b1-MQf">
+                                <rect key="frame" x="32.5" y="178.5" width="310" height="310"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="GFP-Lx-NMX"/>
+                                    <constraint firstAttribute="height" constant="310" id="m2Q-JV-Rtx"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vop-3B-EBS">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="coupleCell" id="2cV-R5-laE" customClass="CoupleViewCell" customModule="Makestagram3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-Ra-JKr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="5Xd-tX-W2E"/>
+                                                        <constraint firstAttribute="height" constant="100" id="eSz-O9-evr"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="sjv-Ra-JKr" firstAttribute="leading" secondItem="2cV-R5-laE" secondAttribute="leading" id="AjX-A4-OYx"/>
+                                            <constraint firstAttribute="bottom" secondItem="sjv-Ra-JKr" secondAttribute="bottom" id="M38-JR-E4T"/>
+                                            <constraint firstItem="sjv-Ra-JKr" firstAttribute="top" secondItem="2cV-R5-laE" secondAttribute="top" id="VrF-Cy-mcN"/>
+                                            <constraint firstAttribute="trailing" secondItem="sjv-Ra-JKr" secondAttribute="trailing" id="wJ3-qS-6dj"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="coupleImage" destination="sjv-Ra-JKr" id="lYr-rB-I4L"/>
+                                            <outlet property="shipImage" destination="sjv-Ra-JKr" id="Hfa-Hb-ol0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vTB-7M-6Hd" id="2yn-Bs-o3I"/>
+                                    <outlet property="delegate" destination="vTB-7M-6Hd" id="RLC-oz-NSZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c0q-b1-MQf" firstAttribute="centerY" secondItem="MrE-Hb-FQq" secondAttribute="centerY" id="H9I-8O-pGT"/>
+                            <constraint firstItem="c0q-b1-MQf" firstAttribute="centerX" secondItem="MrE-Hb-FQq" secondAttribute="centerX" id="iqb-hF-eJd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dyJ-SA-DVZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="c0q-b1-MQf" id="97F-bt-dUg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6f2-9Y-7lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3057" y="-163"/>
         </scene>
     </scenes>
     <resources>

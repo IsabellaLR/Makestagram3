@@ -1,5 +1,5 @@
 //
-//  ShipViewCell.swift
+//  CoupleViewCell.swift
 //  Makestagram3
 //
 //  Created by Bella on 3/25/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShipViewCell: UICollectionViewCell {
+class CoupleViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var shipImage: UIImageView!
+    @IBOutlet weak var coupleImage: UIImageView!
 }

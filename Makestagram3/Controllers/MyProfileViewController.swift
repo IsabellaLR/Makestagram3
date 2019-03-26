@@ -76,12 +76,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
                 }
             }
         }
-        
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ShipViewController") as! ShipViewController
-        vc.completionHandler = { (text) -> () in
-            print(text)
-            self.shipButton.setTitle(text, for: .normal)
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,6 +86,16 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
 //        object.layer.cornerRadius = object.frame.size.width / 2
 //        object.layer.masksToBounds = true
 //    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showShip" {
+            if let vc = segue.destination as? ShipViewController {
+                vc.completionHandler = { (text) -> ()in
+                    self.shipButton.setTitle(text, for: .normal)
+                }
+            }
+        }
+    }
     
     @IBAction func logOutButton(_ sender: Any) {
     do {

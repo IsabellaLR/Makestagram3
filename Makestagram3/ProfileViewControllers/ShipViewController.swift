@@ -59,17 +59,17 @@ class ShipViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         cell.shipImage.image = UIImage(named: characterImages[indexPath.row])
         
-        if selectedIndex == indexPath.row {
-//            cell.contentView.layer.borderColor = UIColor.yellow.cgColor
-            cell.contentView.layer.borderWidth = 2.0
-            let result = completionHandler?(shipNames[selectedIndex!])
-            
-            self.dismiss(animated: true, completion: nil)
-            
-        }else{
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.borderWidth = 1.0
-        }
+//        if selectedIndex == indexPath.row {
+////            cell.contentView.layer.borderColor = UIColor.yellow.cgColor
+//            cell.contentView.layer.borderWidth = 2.0
+//            let result = completionHandler?(shipNames[selectedIndex!])
+//
+//            self.dismiss(animated: true, completion: nil)
+//
+//        }else{
+//            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+//            cell.contentView.layer.borderWidth = 1.0
+//        }
         
         return cell
     }
@@ -80,7 +80,8 @@ class ShipViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
-        collectionView.reloadData()
+        let result = completionHandler?(shipNames[indexPath.item])
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -91,14 +92,3 @@ extension ShipViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: width)
     }
 }
-//
-//    func calculateWith() -> CGFloat {
-//        let estimatedWidth = CGFloat(estimateWidth)
-//        let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
-//
-//        let margin = CGFloat(cellMarginSize * 2)
-//        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
-//
-//        return width
-//    }
-//}
