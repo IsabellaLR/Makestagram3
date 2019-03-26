@@ -15,14 +15,15 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     var selectedIndex: Int?
     var estimateWidth = 100.0
     var cellMarginSize = 10.0
-    //
-    //    var shouldTintBackgroundWhenSelected = true // You can change default value
-    //    var specialHighlightedArea: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -44,7 +45,6 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         }else{
             cell.backgroundColor = UIColor.clear
         }
-        
         return cell
     }
     
@@ -52,29 +52,10 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
         collectionView.reloadData()
     }
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //
-    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
-    //
-    //        selectedIndex = indexPath.row
-    //        cell.backgroundColor = UIColor.clear
-    //        collectionView.reloadData()
-    //    }
 }
 
 extension EmojiViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let width = self.calculateWith()
         return CGSize(width: 40, height: 40)
     }
-
-//    func calculateWith() -> CGFloat {
-//        let estimatedWidth = CGFloat(estimateWidth)
-//        let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
-//
-//        let margin = CGFloat(cellMarginSize * 2)
-//        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
-//
-//        return width
-//    }
 }

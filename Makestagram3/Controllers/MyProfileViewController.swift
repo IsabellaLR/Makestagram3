@@ -20,6 +20,11 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var lossesLabel: UILabel!
     
+    @IBOutlet weak var coupleButton: UIButton!
+    @IBOutlet weak var shipButton: UIButton!
+    @IBOutlet weak var favCharButton: UIButton!
+    
+    
     let photoHelper = MGPhotoHelper()
     
     var profile: Profile?
@@ -29,13 +34,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        profileButton.frame = CGRect(x: 160, y: 130, width: 100, height: 100)
         profileButton.layer.cornerRadius = 0.5 * profileButton.bounds.size.width
         profileButton.clipsToBounds = true
-        
-//        photoHelper.completionHandler = { image in
-//            ProfileService.createImage(for: image)
-//        }
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
@@ -75,6 +75,12 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
                     self?.lossesLabel.text = "Losses: " + String(losses)
                 }
             }
+        }
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ShipViewController") as! ShipViewController
+        vc.completionHandler = { (text) -> () in
+            print(text)
+            self.shipButton.setTitle(text, for: .normal)
         }
     }
     

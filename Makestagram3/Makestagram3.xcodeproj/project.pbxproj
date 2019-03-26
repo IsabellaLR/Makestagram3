@@ -23,6 +23,10 @@
 		2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */; };
 		2851D543222902B5001972CB /* BetsRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2851D542222902B5001972CB /* BetsRootViewController.swift */; };
 		2856DB01220BCE3C0076A602 /* onBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2856DB00220BCE3C0076A602 /* onBoardingService.swift */; };
+		285CD7AB22498F360009BFBE /* CoupleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CD7AA22498F360009BFBE /* CoupleViewController.swift */; };
+		285CD7AD22498F4A0009BFBE /* ShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CD7AC22498F4A0009BFBE /* ShipViewController.swift */; };
+		285CD7AF22498F5E0009BFBE /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CD7AE22498F5E0009BFBE /* FavoriteViewController.swift */; };
+		285CD7B1224994DC0009BFBE /* ShipViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CD7B0224994DC0009BFBE /* ShipViewCell.swift */; };
 		2863649D220952EA0049761D /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863649C220952EA0049761D /* CharactersViewController.swift */; };
 		2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2863649E22095DF40049761D /* OnBoarding.storyboard */; };
 		2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45121D0BF3D007E3FF1 /* UserService.swift */; };
@@ -82,6 +86,10 @@
 		2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToFollowersCell.swift; sourceTree = "<group>"; };
 		2851D542222902B5001972CB /* BetsRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetsRootViewController.swift; sourceTree = "<group>"; };
 		2856DB00220BCE3C0076A602 /* onBoardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onBoardingService.swift; sourceTree = "<group>"; };
+		285CD7AA22498F360009BFBE /* CoupleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleViewController.swift; sourceTree = "<group>"; };
+		285CD7AC22498F4A0009BFBE /* ShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewController.swift; sourceTree = "<group>"; };
+		285CD7AE22498F5E0009BFBE /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		285CD7B0224994DC0009BFBE /* ShipViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipViewCell.swift; sourceTree = "<group>"; };
 		2863649C220952EA0049761D /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		2863649E22095DF40049761D /* OnBoarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		2871D45121D0BF3D007E3FF1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -138,6 +146,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		285CD7A922498DF50009BFBE /* ProfileViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				285CD7AA22498F360009BFBE /* CoupleViewController.swift */,
+				285CD7AC22498F4A0009BFBE /* ShipViewController.swift */,
+				285CD7AE22498F5E0009BFBE /* FavoriteViewController.swift */,
+			);
+			path = ProfileViewControllers;
+			sourceTree = "<group>";
+		};
 		28EAC49921CEE7600083EE24 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +166,7 @@
 				28EAC4BC21CEFF460083EE24 /* Models */,
 				28EAC4BB21CEFF400083EE24 /* Helpers */,
 				28EAC4BA21CEFF360083EE24 /* Extensions */,
+				285CD7A922498DF50009BFBE /* ProfileViewControllers */,
 				28EAC4B921CEFF090083EE24 /* Controllers */,
 				28EAC4A421CEE7600083EE24 /* Makestagram3 */,
 				28EAC4A321CEE7600083EE24 /* Products */,
@@ -278,6 +297,7 @@
 				2851D542222902B5001972CB /* BetsRootViewController.swift */,
 				28A8EFA9222BBB8000F86F80 /* YourBetsCell.swift */,
 				28A8EFAB222BE10000F86F80 /* DebtBetsCell.swift */,
+				285CD7B0224994DC0009BFBE /* ShipViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -457,6 +477,7 @@
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
 				28790AC72214CEB1005B1B12 /* CharacterViewCell.swift in Sources */,
 				2895D97C21EA95C00071D497 /* Profile.swift in Sources */,
+				285CD7B1224994DC0009BFBE /* ShipViewCell.swift in Sources */,
 				2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */,
 				2871D46821D3FD0E007E3FF1 /* StorageReference.swift in Sources */,
 				2863649D220952EA0049761D /* CharactersViewController.swift in Sources */,
@@ -471,6 +492,7 @@
 				28790AC922193C48005B1B12 /* Characters2ViewController.swift in Sources */,
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
 				2871D45A21D316D0007E3FF1 /* FindFriendsViewController.swift in Sources */,
+				285CD7AB22498F360009BFBE /* CoupleViewController.swift in Sources */,
 				2871D45421D30F43007E3FF1 /* Constants.swift in Sources */,
 				2871D46221D3528C007E3FF1 /* BetService.swift in Sources */,
 				2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */,
@@ -484,10 +506,12 @@
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */,
 				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
+				285CD7AF22498F5E0009BFBE /* FavoriteViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 				28B30C2D2229272D00E33D2D /* YourBetsViewController.swift in Sources */,
 				287346912234E6A800CB08B9 /* EdStarkViewController.swift in Sources */,
 				283F0D0621DF36010096BB6E /* Bet.swift in Sources */,
+				285CD7AD22498F4A0009BFBE /* ShipViewController.swift in Sources */,
 				2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

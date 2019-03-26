@@ -581,14 +581,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Bpw-0J-l4x" firstAttribute="bottom" secondItem="tne-0q-w8E" secondAttribute="bottom" id="LhP-vY-D1J"/>
+                            <constraint firstItem="Bpw-0J-l4x" firstAttribute="trailing" secondItem="tne-0q-w8E" secondAttribute="trailing" id="Ofz-8g-VZv"/>
                             <constraint firstItem="Bpw-0J-l4x" firstAttribute="top" secondItem="Fkz-mp-n4s" secondAttribute="top" id="gPR-M8-7s3"/>
+                            <constraint firstItem="Bpw-0J-l4x" firstAttribute="leading" secondItem="tne-0q-w8E" secondAttribute="leading" id="kJc-Mf-lHW"/>
                             <constraint firstItem="Bpw-0J-l4x" firstAttribute="leading" secondItem="Fkz-mp-n4s" secondAttribute="leading" id="mFd-pJ-z3o"/>
                             <constraint firstAttribute="trailing" secondItem="Bpw-0J-l4x" secondAttribute="trailing" id="qag-bW-hqk"/>
+                            <constraint firstItem="Bpw-0J-l4x" firstAttribute="top" secondItem="tne-0q-w8E" secondAttribute="top" id="tej-XN-0vh"/>
                             <constraint firstAttribute="bottom" secondItem="Bpw-0J-l4x" secondAttribute="bottom" id="trP-BJ-YQ5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tne-0q-w8E"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Mmo-rM-ZHg"/>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="100"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="200" height="100"/>
