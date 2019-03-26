@@ -52,6 +52,8 @@ class CharactersViewController: UIViewController, UICollectionViewDataSource, UI
         
         if selectedIndex == indexPath.row {
             onBoardingService.pickCharacter(character: character)
+            cell.contentView.layer.borderColor = UIColor.yellow.cgColor
+            cell.contentView.layer.borderWidth = 2.0
             cell.backgroundColor =  UIColor.red
         }else{
             cell.backgroundColor = UIColor.clear

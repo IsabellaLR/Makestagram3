@@ -56,25 +56,25 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             }
             
             //total Points
-            if let points = profile?.totalPoints {
-                DispatchQueue.main.async {
-                    self?.myPointsLabel.text = "Total points: " + String(points)
-                }
-            }
+//            if let points = profile?.totalPoints {
+//                DispatchQueue.main.async {
+//                    self?.myPointsLabel.text = "Total points: " + String(points)
+//                }
+//            }
             
             //total Wins
-            if let wins = profile?.wins {
-                DispatchQueue.main.async {
-                    self?.winsLabel.text = "Wins: " + String(wins)
-                }
-            }
+//            if let wins = profile?.wins {
+//                DispatchQueue.main.async {
+//                    self?.winsLabel.text = "Wins: " + String(wins)
+//                }
+//            }
             
             //total Losses
-            if let losses = profile?.losses {
-                DispatchQueue.main.async {
-                    self?.lossesLabel.text = "Losses: " + String(losses)
-                }
-            }
+//            if let losses = profile?.losses {
+//                DispatchQueue.main.async {
+//                    self?.lossesLabel.text = "Losses: " + String(losses)
+//                }
+//            }
         }
     }
     
@@ -92,6 +92,23 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             if let vc = segue.destination as? ShipViewController {
                 vc.completionHandler = { (text) -> ()in
                     self.shipButton.setTitle(text, for: .normal)
+                    self.shipButton.setImage(nil, for: .normal)
+                }
+            }
+        }
+        if segue.identifier == "showCouple" {
+            if let vc = segue.destination as? CoupleViewController {
+                vc.completionHandler = { (text) -> ()in
+                    self.coupleButton.setImage(nil, for: .normal)
+                    self.coupleButton.setTitle(text, for: .normal)
+                }
+            }
+        }
+        if segue.identifier == "showFav" {
+            if let vc = segue.destination as? FavoriteViewController {
+                vc.completionHandler = { (text) -> ()in
+                    self.favCharButton.setImage(nil, for: .normal)
+                    self.favCharButton.setTitle(text, for: .normal)
                 }
             }
         }

@@ -18,13 +18,9 @@ class CoupleViewController: UIViewController, UICollectionViewDataSource, UIColl
     var estimateWidth = 100.0
     var cellMarginSize = 1.0
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var completionHandler:((String) -> ())?
-    
-    
-    
-    //
-    //    var shouldTintBackgroundWhenSelected = true // You can change default value
-    //    var specialHighlightedArea: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +38,7 @@ class CoupleViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shipCell", for: indexPath) as! ShipViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "coupleCell", for: indexPath) as! CoupleViewCell
         
         //cornered cells
         cell.contentView.layer.cornerRadius = 2.0
@@ -58,19 +54,7 @@ class CoupleViewController: UIViewController, UICollectionViewDataSource, UIColl
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         //        cell.contentView.layer.borderWidth = 1.0
         
-        cell.shipImage.image = UIImage(named: characterImages[indexPath.row])
-        
-        //        if selectedIndex == indexPath.row {
-        ////            cell.contentView.layer.borderColor = UIColor.yellow.cgColor
-        //            cell.contentView.layer.borderWidth = 2.0
-        //            let result = completionHandler?(shipNames[selectedIndex!])
-        //
-        //            self.dismiss(animated: true, completion: nil)
-        //
-        //        }else{
-        //            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-        //            cell.contentView.layer.borderWidth = 1.0
-        //        }
+        cell.coupleImage.image = UIImage(named: characterImages[indexPath.row])
         
         return cell
     }
@@ -81,12 +65,12 @@ class CoupleViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
-        let result = completionHandler?(shipNames[indexPath.item])
+        let result = completionHandler?(coupleNames[indexPath.item])
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-extension ShipViewController: UICollectionViewDelegateFlowLayout {
+extension CoupleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = 150
         let height = 150
