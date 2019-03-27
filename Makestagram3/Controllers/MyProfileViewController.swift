@@ -24,6 +24,9 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var shipButton: UIButton!
     @IBOutlet weak var favCharButton: UIButton!
     
+    @IBOutlet weak var coupleLabel: UILabel!
+    @IBOutlet weak var shipLabel: UILabel!
+    @IBOutlet weak var favCharLabel: UILabel!
     
     let photoHelper = MGPhotoHelper()
     
@@ -55,6 +58,30 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
                 self?.profileButton.setImage(image, for: .normal)
             }
             
+            if let couple = profile?.couple {
+                DispatchQueue.main.async {
+                    self?.coupleLabel.text = "Best couple: " + couple
+                }
+            }
+
+            if let ship = profile?.ship {
+                DispatchQueue.main.async {
+                    self?.shipLabel.text = "Cutest ship: " + ship
+                }
+            }
+            
+            if let fav = profile?.fav {
+                DispatchQueue.main.async {
+                    self?.favCharLabel.text = "Fav character: " + fav
+                }
+            }
+            
+            if let throneChar = profile?.throneChar {
+                DispatchQueue.main.async {
+                    self?.favCharLabel.text = "Throne: " + throneChar
+                }
+            }
+            
             //total Points
 //            if let points = profile?.totalPoints {
 //                DispatchQueue.main.async {
@@ -82,37 +109,32 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         super.didReceiveMemoryWarning()
     }
     
-//    func applyRoundCorner(_ object: AnyObject) {
-//        object.layer.cornerRadius = object.frame.size.width / 2
-//        object.layer.masksToBounds = true
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showShip" {
+//            if let vc = segue.destination as? ShipViewController {
+//                vc.completionHandler = { (text) -> ()in
+//                    self.shipButton.setTitle(text, for: .normal)
+//                    self.shipButton.setImage(nil, for: .normal)
+//                }
+//            }
+//        }
+//        if segue.identifier == "showCouple" {
+//            if let vc = segue.destination as? CoupleViewController {
+//                vc.completionHandler = { (text) -> ()in
+//                    self.coupleButton.setImage(nil, for: .normal)
+//                    self.coupleButton.setTitle(text, for: .normal)
+//                }
+//            }
+//        }
+//        if segue.identifier == "showFav" {
+//            if let vc = segue.destination as? FavoriteViewController {
+//                vc.completionHandler = { (text) -> ()in
+//                    self.favCharButton.setImage(nil, for: .normal)
+//                    self.favCharButton.setTitle(text, for: .normal)
+//                }
+//            }
+//        }
 //    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showShip" {
-            if let vc = segue.destination as? ShipViewController {
-                vc.completionHandler = { (text) -> ()in
-                    self.shipButton.setTitle(text, for: .normal)
-                    self.shipButton.setImage(nil, for: .normal)
-                }
-            }
-        }
-        if segue.identifier == "showCouple" {
-            if let vc = segue.destination as? CoupleViewController {
-                vc.completionHandler = { (text) -> ()in
-                    self.coupleButton.setImage(nil, for: .normal)
-                    self.coupleButton.setTitle(text, for: .normal)
-                }
-            }
-        }
-        if segue.identifier == "showFav" {
-            if let vc = segue.destination as? FavoriteViewController {
-                vc.completionHandler = { (text) -> ()in
-                    self.favCharButton.setImage(nil, for: .normal)
-                    self.favCharButton.setTitle(text, for: .normal)
-                }
-            }
-        }
-    }
     
     @IBAction func logOutButton(_ sender: Any) {
     do {

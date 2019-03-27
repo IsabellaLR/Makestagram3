@@ -65,25 +65,21 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="5p7-Ck-SmM">
-                                <rect key="frame" x="60" y="289" width="271.5" height="140"/>
+                                <rect key="frame" x="50" y="289" width="151.5" height="140"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U2P-Dh-RsO">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="26"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Couple:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o22-IY-Erh">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="8eU-v7-nOV"/>
-                                                    <constraint firstAttribute="height" constant="20" id="lL8-n0-4pR"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="26"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4J-GA-hox">
-                                                <rect key="frame" x="110" y="0.0" width="150" height="20"/>
+                                                <rect key="frame" x="108" y="0.0" width="30" height="26"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="XWP-VF-t6d"/>
+                                                    <constraint firstAttribute="width" constant="30" id="XWP-VF-t6d"/>
                                                 </constraints>
                                                 <state key="normal" image="btn_heart_black_outline"/>
                                                 <connections>
@@ -93,19 +89,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sQn-eP-swJ">
-                                        <rect key="frame" x="0.0" y="50" width="253.5" height="36"/>
+                                        <rect key="frame" x="0.0" y="56" width="133.5" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cutest Ship:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIg-hv-BI3">
-                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lne-hf-I7L">
-                                                <rect key="frame" x="103.5" y="0.0" width="150" height="36"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="Ttc-Qa-1kw"/>
-                                                </constraints>
+                                                <rect key="frame" x="103.5" y="0.0" width="30" height="30"/>
                                                 <state key="normal" image="sailing"/>
                                                 <connections>
                                                     <segue destination="xeC-N8-JuG" kind="presentation" identifier="showShip" id="741-M6-mQr"/>
@@ -114,7 +107,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mqa-cr-YO2">
-                                        <rect key="frame" x="0.0" y="116" width="271.5" height="24"/>
+                                        <rect key="frame" x="0.0" y="116" width="151.5" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fav Character:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Np2-IF-RK9">
                                                 <rect key="frame" x="0.0" y="0.0" width="111.5" height="24"/>
@@ -123,9 +116,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqV-LM-lbE">
-                                                <rect key="frame" x="121.5" y="0.0" width="150" height="24"/>
+                                                <rect key="frame" x="121.5" y="0.0" width="30" height="24"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="06L-Tt-94W"/>
+                                                    <constraint firstAttribute="width" constant="30" id="06L-Tt-94W"/>
                                                 </constraints>
                                                 <state key="normal" image="princess"/>
                                                 <connections>
@@ -138,13 +131,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="1OK-0V-gZL"/>
                                     <constraint firstAttribute="trailing" secondItem="sQn-eP-swJ" secondAttribute="trailing" constant="18" id="AA4-D0-8N5"/>
+                                    <constraint firstItem="sQn-eP-swJ" firstAttribute="top" secondItem="5p7-Ck-SmM" secondAttribute="top" constant="56" id="Puf-ND-Kjd"/>
                                     <constraint firstItem="Mqa-cr-YO2" firstAttribute="top" secondItem="5p7-Ck-SmM" secondAttribute="top" constant="116" id="QK0-qQ-DzH"/>
-                                    <constraint firstAttribute="width" constant="271.5" id="ZBv-3a-bOu"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Throne: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmH-AX-fKB">
-                                <rect key="frame" x="57" y="473" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Throne: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmH-AX-fKB" userLabel="Throne:">
+                                <rect key="frame" x="50" y="459" width="63.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -152,10 +144,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="WmH-AX-fKB" firstAttribute="top" secondItem="5p7-Ck-SmM" secondAttribute="bottom" constant="30" id="2V1-oW-o9k"/>
+                            <constraint firstItem="WmH-AX-fKB" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="50" id="5xw-go-WJ0"/>
                             <constraint firstItem="5p7-Ck-SmM" firstAttribute="top" secondItem="nfr-sj-vBb" secondAttribute="bottom" constant="30" id="C3c-eu-0x4"/>
                             <constraint firstItem="nfr-sj-vBb" firstAttribute="top" secondItem="kmR-pX-gnx" secondAttribute="top" constant="70" id="Ijs-or-MeH"/>
                             <constraint firstItem="kmR-pX-gnx" firstAttribute="trailing" secondItem="nfr-sj-vBb" secondAttribute="trailing" constant="120" id="Q5x-yh-5H5"/>
-                            <constraint firstItem="5p7-Ck-SmM" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="60" id="TFs-Dl-xjK"/>
+                            <constraint firstItem="5p7-Ck-SmM" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="50" id="TFs-Dl-xjK"/>
                             <constraint firstItem="nfr-sj-vBb" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="130" id="i5G-uT-zED"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kmR-pX-gnx"/>
@@ -174,9 +168,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="coupleButton" destination="I4J-GA-hox" id="H5H-sq-NtJ"/>
+                        <outlet property="coupleLabel" destination="o22-IY-Erh" id="lVe-Hk-3W3"/>
                         <outlet property="favCharButton" destination="eqV-LM-lbE" id="R5X-jm-bnq"/>
+                        <outlet property="favCharLabel" destination="Np2-IF-RK9" id="9C4-sU-mLz"/>
                         <outlet property="profileButton" destination="nfr-sj-vBb" id="xLS-eU-5Bh"/>
                         <outlet property="shipButton" destination="Lne-hf-I7L" id="GcU-mi-G8q"/>
+                        <outlet property="shipLabel" destination="YIg-hv-BI3" id="8md-Ud-nTi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q4-Ry-WVP" userLabel="First Responder" sceneMemberID="firstResponder"/>

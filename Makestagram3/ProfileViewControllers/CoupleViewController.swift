@@ -65,7 +65,7 @@ class CoupleViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
-        let result = completionHandler?(coupleNames[indexPath.item])
+        ProfileService.updateChild(child: "couple", childVal: coupleNames[indexPath.item])
         self.dismiss(animated: true, completion: nil)
     }
 }

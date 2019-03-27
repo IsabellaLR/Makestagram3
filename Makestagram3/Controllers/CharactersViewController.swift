@@ -7,21 +7,18 @@
 //
 
 import UIKit
-
-/// same with UITableViewCell's selected backgroundColor
-//private let highlightedColor = UIColor(rgb: 0xD8D8D8)
+import FirebaseStorage
+import FirebaseDatabase
 
 class CharactersViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let characters = ["Jaime Lannister", "Cersei Lannister", "Daenerys Targaryen",  "Jon Snow", "Sansa Stark", "Arya Stark", "Theon Greyjoy", "Bran Stark", "The Hound", "Tyrion Lannister", "Davos Seaworth", "Samwell Tarly", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne of Tarth", "Gilly", "Daario Naharis", "Missandei", "Jaqen H'ghar", "Podrick Payne", "Yara Greyjoy", "Grey Worm", "Meera Reed", "Ghost", "none"]
+    let characters = ["Jaime Lannister", "Cersei Lannister", "Daenerys Targaryen",  "Jon Snow", "Sansa Stark", "Arya Stark", "Theon Greyjoy", "Bran Stark", "The Hound", "Tyrion Lannister", "Davos Seaworth", "Samwell Tarly", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne of Tarth", "Gilly", "Daario Naharis", "Missandei", "Jaqen H'ghar", "Podrick Payne", "Yara Greyjoy", "Grey Worm", "Meera Reed", "Ghost", "Demolished"]
     let characterImages = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost", "none"]
     
-    var selectedIndex:Int?
+    var selectedIndex: Int?
+    var selected = false
     var estimateWidth = 100.0
     var cellMarginSize = 10.0
-//
-//    var shouldTintBackgroundWhenSelected = true // You can change default value
-//    var specialHighlightedArea: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +29,12 @@ class CharactersViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     @IBAction func sendTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        let initialViewController = UIStoryboard.initialViewController(for: .main)
-        self.view.window?.rootViewController = initialViewController
-        self.view.window?.makeKeyAndVisible()
+        if selected {
+                self.dismiss(animated: true, completion: nil)
+                let initialViewController = UIStoryboard.initialViewController(for: .main)
+                self.view.window?.rootViewController = initialViewController
+                self.view.window?.makeKeyAndVisible()
+        }
     }
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,35 +45,31 @@ class CharactersViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
-        let character = characters[indexPath.row]
-//        cell.characterName.text = characters[indexPath.row]
+
         cell.characterImage.image = UIImage(named: characterImages[indexPath.row])
         
         if selectedIndex == indexPath.row {
-            onBoardingService.pickCharacter(character: character)
             cell.contentView.layer.borderColor = UIColor.yellow.cgColor
             cell.contentView.layer.borderWidth = 2.0
-            cell.backgroundColor =  UIColor.red
         }else{
-            cell.backgroundColor = UIColor.clear
-            onBoardingService.removeCharacter(character: character)
+            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+            cell.contentView.layer.borderWidth = 1.0
         }
-
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        selected = true
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
+        ProfileService.updateChild(child: "throneChar", childVal: character)
         collectionView.reloadData()
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! CharacterViewCell
-//
-//        selectedIndex = indexPath.row
-//        cell.backgroundColor = UIColor.clear
-//        collectionView.reloadData()
-//    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        selected = false
+    }
 }
 
 extension CharactersViewController: UICollectionViewDelegateFlowLayout {
@@ -93,9 +88,3 @@ extension CharactersViewController: UICollectionViewDelegateFlowLayout {
         return width
     }
 }
-
-//extension UIColor {
-//    convenience init(rgb: Int, alpha: CGFloat = 1.0) {
-//        self.init(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0, green: CGFloat((rgb & 0xFF00) >> 8) / 255.0, blue: CGFloat(rgb & 0xFF) / 255.0, alpha: alpha)
-//    }
-//}

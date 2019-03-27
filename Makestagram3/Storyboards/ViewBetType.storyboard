@@ -302,10 +302,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh9-4C-srF">
-                                                    <rect key="frame" x="322" y="-5" width="39" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh9-4C-srF">
+                                                    <rect key="frame" x="326" y="-5" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Claim"/>
+                                                    <state key="normal" title="Claim" image="crown"/>
                                                     <connections>
                                                         <action selector="claimWinTapped:" destination="4IN-kv-EQa" eventType="touchUpInside" id="4tA-rb-s9r"/>
                                                     </connections>
@@ -378,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5y-BI-NHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="1333"/>
+            <point key="canvasLocation" x="148" y="1332.6836581709147"/>
         </scene>
         <!--Debt Bets View Controller-->
         <scene sceneID="KT6-IF-yQe">
@@ -544,6 +544,7 @@
     <resources>
         <image name="EdStark" width="602" height="466"/>
         <image name="check" width="60" height="60"/>
+        <image name="crown" width="30" height="30"/>
         <image name="reward" width="100" height="100"/>
         <image name="sword" width="100" height="100"/>
         <image name="tab_agree" width="30" height="30"/>

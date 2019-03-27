@@ -42,7 +42,31 @@ struct ProfileService {
             }
         }
     }
+    
+    static func updateChild(child: String, childVal: String) {
+        
+        let profileRef = Database.database().reference().child("profile").child(User.current.username)
+    
+        profileRef.updateChildValues([child : childVal]) { (error, ref) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+    }
 
+    static func removeChild(child: String) {
+        
+        let childData = ["profile/\(User.current.username)/\(child)": NSNull()]
+        
+        let ref = Database.database().reference()
+        ref.updateChildValues(childData) { (error, ref) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+            }
+        }
+    }
+    
     static func show(for user: User = User.current, completion: @escaping (Profile?) -> Void) {
 
         let profileRef = Database.database().reference().child("profile").child(user.username)

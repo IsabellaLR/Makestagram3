@@ -19,12 +19,20 @@ class Profile {
     let negPoints: Int
     let wins: Int
     let losses: Int
+    let couple: String
+    let ship: String
+    let fav: String
+    let throneChar: String
     let imageURL: String
     
     init?(snapshot: DataSnapshot) {
         guard !snapshot.key.isEmpty else {return nil}
         if let dict = snapshot.value as? [String : Any]{
             
+            let throneChar = dict["throneChar"] as? String
+            let couple = dict["couple"] as? String
+            let ship = dict["ship"] as? String
+            let fav = dict["fav"] as? String
             let totalPoints = dict["totalPoints"] as? Int
             let posPoints = dict["posPoints"] as? Int
             let negPoints = dict["negPoints"] as? Int
@@ -33,6 +41,10 @@ class Profile {
             let imageURL = dict["image"] as? String
             
             self.key = snapshot.key
+            self.throneChar = throneChar ?? ""
+            self.couple = couple ?? ""
+            self.ship = ship ?? ""
+            self.fav = fav ?? ""
             self.totalPoints = totalPoints ?? 0
             self.posPoints = posPoints ?? 0
             self.negPoints = negPoints ?? 0

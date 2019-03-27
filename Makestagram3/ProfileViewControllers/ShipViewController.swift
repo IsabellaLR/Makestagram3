@@ -11,7 +11,7 @@ import UIKit
 class ShipViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let characterImages = ["otp1", "otp2", "otp3",  "otp4", "otp5", "otp6", "otp7", "otp8", "otp9", "otp10"]
-    let shipNames = ["Daeneron", "Tormienne", "Daary", "Jamienne", "Gendrya", "gressandei", "samilly", "Breera", "Sounsa", "None. All men must die."]
+    let shipNames = ["Daeneron", "Tormienne", "Daary", "Jamienne", "Gendrya", "Gressandei", "Samilly", "Breera", "Sounsa", "All men must die."]
     
     var selectedIndex:Int?
     var estimateWidth = 100.0
@@ -59,18 +59,6 @@ class ShipViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         cell.shipImage.image = UIImage(named: characterImages[indexPath.row])
         
-//        if selectedIndex == indexPath.row {
-////            cell.contentView.layer.borderColor = UIColor.yellow.cgColor
-//            cell.contentView.layer.borderWidth = 2.0
-//            let result = completionHandler?(shipNames[selectedIndex!])
-//
-//            self.dismiss(animated: true, completion: nil)
-//
-//        }else{
-//            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-//            cell.contentView.layer.borderWidth = 1.0
-//        }
-        
         return cell
     }
     
@@ -80,7 +68,7 @@ class ShipViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
-        let result = completionHandler?(shipNames[indexPath.item])
+        ProfileService.updateChild(child: "ship", childVal: shipNames[indexPath.item])
         self.dismiss(animated: true, completion: nil)
     }
 }

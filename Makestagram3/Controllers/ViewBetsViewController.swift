@@ -85,13 +85,13 @@ extension ViewBetsViewController: UITableViewDataSource {
             
             cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
             cell.userImage.clipsToBounds = true
-            cell.userImage.layer.borderWidth = 0.5
-            cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
+            cell.userImage.layer.borderWidth = 1
+            cell.userImage.layer.borderColor = UIColor.darkGray.cgColor
             
-            cell.usernameHeaderLabel.text = bet.sentToUser
+            cell.usernameHeaderLabel.text = bet.senderUsername
                 
                 //user profile image
-            ProfileService.showOtherUser(user: bet.sentToUser) { [weak self] (profile2) in
+            ProfileService.showOtherUser(user: bet.senderUsername) { [weak self] (profile2) in
                 if  (self!.show == true){
                     self?.profile2 = profile2
                     if (profile2?.imageURL == "") {

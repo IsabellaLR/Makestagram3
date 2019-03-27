@@ -53,7 +53,7 @@ class FavoriteViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
-        let result = completionHandler?(characters[indexPath.item])
+        ProfileService.updateChild(child: "fav", childVal: characters[indexPath.item])
         self.dismiss(animated: true, completion: nil)
     }
 }
