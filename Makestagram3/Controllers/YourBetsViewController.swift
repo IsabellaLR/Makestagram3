@@ -89,7 +89,7 @@ extension YourBetsViewController: UITableViewDataSource {
         
             tableView.separatorStyle = .singleLine
             
-            cell.claimWin.setTitle("Claim", for: .normal)
+//            cell.claimWin.setTitle("Claim", for: .normal)
             
             cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
             cell.userImage.clipsToBounds = true
@@ -126,17 +126,47 @@ extension YourBetsViewController: UITableViewDataSource {
         
             cell.betDescription.text = bet.description
             cell.betDescription.textAlignment = .left
-            cell.showPointsLabel.text = bet.points + " pts"
-            let date = bet.creationDate
-            cell.timeAgoLabel.text = bet.creationDate
             cell.showEpisodeLabel.text = bet.episode
             
-            //assign action when user selects claim win
-            cell.tapClaimWinAction = { (cell) in
-                let parentKey = self.parentKeys[indexPath.row]
-                UserDefaults.standard.set(parentKey, forKey: "parentKey")
-                BetService.setBetWinner(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+            //might need to use closure instead
+            let premieurArray = UserDefaults.standard.string(forKey: "premieurEps") ?? ""
+            if (premieurArray.contains(bet.episode)) {
+                cell.wonButton.isHidden = false
+                cell.lossButton.isHidden = false
+                cell.tieButton.isHidden = false
+            }else{
+                cell.wonButton.isHidden = true
+                cell.lossButton.isHidden = true
+                cell.tieButton.isHidden = true
             }
+            
+            cell.tappedWonAction = { (cell) in
+                HistoryService.save(username: User.current.username, description: bet.description, winner: User.current.username, loser: bet.sentToUser, reward: "reward", episode: bet.episode)
+                HistoryService.save(username: bet.sentToUser, description: bet.description, winner: User.current.username, loser: bet.sentToUser, reward: "reward", episode: bet.episode)
+                BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
+            }
+            
+            cell.tappedLossAction = { (cell) in
+                HistoryService.save(username: User.current.username, description: bet.description, winner: bet.sentToUser, loser: User.current.username, reward: "reward", episode: bet.episode)
+                HistoryService.save(username: bet.sentToUser, description: bet.description, winner: bet.sentToUser, loser: User.current.username, reward: "reward", episode: bet.episode)
+                BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
+            }
+            
+            cell.tappedTieAction = { (cell) in
+                HistoryService.save(username: User.current.username, description: bet.description, winner: "tie", loser: "tie", reward: "reward", episode: bet.episode)
+                HistoryService.save(username: bet.sentToUser, description: bet.description, winner: "tie", loser: "tie", reward: "reward", episode: bet.episode)
+                BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
+            }
+//            cell.showPointsLabel.text = bet.points + " pts"
+//            let date = bet.creationDate
+//            cell.timeAgoLabel.text = bet.creationDate
+            
+            //assign action when user selects claim win
+//            cell.tapClaimWinAction = { (cell) in
+//                let parentKey = self.parentKeys[indexPath.row]
+//                UserDefaults.standard.set(parentKey, forKey: "parentKey")
+//                BetService.setBetWinner(parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+//            }
         }
         return cell
     }

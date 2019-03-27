@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
                 UserDefaults.standard.set(premieurEp, forKey: "premieurEp")
             }
         }
+        UserDefaults.standard.set(premieurEps, forKey: "premieurEps")
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false

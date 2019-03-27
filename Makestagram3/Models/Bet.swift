@@ -21,6 +21,7 @@ class Bet {
     let color: String
     let points: String
     let episode: String
+    let episodeDate: Date
     let creationDate: String
     let winner: String
     
@@ -55,10 +56,4 @@ class Bet {
             return nil
         }
     }
-    
-//    var dictValue: [String : Any] {
-//        let createdAgo = creationDate.timeIntervalSince1970
-//        
-//        return [Constants.Dict.created_at : createdAgo]
-//    }
 }
