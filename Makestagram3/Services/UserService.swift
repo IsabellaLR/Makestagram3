@@ -59,7 +59,7 @@ struct UserService {
         ref.child("phoneNumber").observeSingleEvent(of: .value, with: { (snapshot) in
     
             if let number = snapshot.value as? String {
-                return number
+                completion(number)
             }
         })
     }

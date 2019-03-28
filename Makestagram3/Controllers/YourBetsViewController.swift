@@ -73,7 +73,7 @@ extension YourBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var yourBets = 0
         for bet in bets {
-            if bet.senderUsername == User.current.username {
+            if bet.senderUsername == User.current.uid {
                 yourBets += 1
             }
         }
@@ -85,7 +85,7 @@ extension YourBetsViewController: UITableViewDataSource {
         
         let bet = bets[indexPath.row]
         
-        if (bet.senderUsername == User.current.username) {
+        if (bet.senderUsername == User.current.uid) {
         
             tableView.separatorStyle = .singleLine
             
@@ -96,7 +96,9 @@ extension YourBetsViewController: UITableViewDataSource {
             cell.userImage.layer.borderWidth = 0.5
             cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
         
-            cell.usernameHeaderLabel.text = bet.sentToUser
+            UserService.show(forUID: bet.sentToUser) { (user) in
+                cell.usernameHeaderLabel.text = user?.username
+            }
             
             //colors
             if bet.color == "green" {
@@ -141,19 +143,19 @@ extension YourBetsViewController: UITableViewDataSource {
             }
             
             cell.tappedWonAction = { (cell) in
-                HistoryService.save(username: User.current.username, description: bet.description, winner: User.current.username, loser: bet.sentToUser, reward: "reward", episode: bet.episode)
-                HistoryService.save(username: bet.sentToUser, description: bet.description, winner: User.current.username, loser: bet.sentToUser, reward: "reward", episode: bet.episode)
+                HistoryService.save(username: User.current.uid, description: bet.description, winner: User.current.uid, loser: bet.sentToUser, reward: "reward", episode: bet.episode)
+                HistoryService.save(username: bet.sentToUser, description: bet.description, winner: User.current.uid, loser: bet.sentToUser, reward: "reward", episode: bet.episode)
                 BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
             }
             
             cell.tappedLossAction = { (cell) in
-                HistoryService.save(username: User.current.username, description: bet.description, winner: bet.sentToUser, loser: User.current.username, reward: "reward", episode: bet.episode)
-                HistoryService.save(username: bet.sentToUser, description: bet.description, winner: bet.sentToUser, loser: User.current.username, reward: "reward", episode: bet.episode)
+                HistoryService.save(username: User.current.uid, description: bet.description, winner: bet.sentToUser, loser: User.current.uid, reward: "reward", episode: bet.episode)
+                HistoryService.save(username: bet.sentToUser, description: bet.description, winner: bet.sentToUser, loser: User.current.uid, reward: "reward", episode: bet.episode)
                 BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
             }
             
             cell.tappedTieAction = { (cell) in
-                HistoryService.save(username: User.current.username, description: bet.description, winner: "tie", loser: "tie", reward: "reward", episode: bet.episode)
+                HistoryService.save(username: User.current.uid, description: bet.description, winner: "tie", loser: "tie", reward: "reward", episode: bet.episode)
                 HistoryService.save(username: bet.sentToUser, description: bet.description, winner: "tie", loser: "tie", reward: "reward", episode: bet.episode)
                 BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
             }

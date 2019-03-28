@@ -80,7 +80,7 @@ extension MessageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var wonBets = 0
         for bet in bets {
-            if bet.winner != User.current.username {
+            if bet.winner != User.current.uid {
                 wonBets += 1
             }
         }
@@ -93,7 +93,7 @@ extension MessageViewController: UITableViewDataSource {
         let bet = bets[indexPath.row]
         
         //winner
-        if bet.winner == User.current.username {
+        if bet.winner == User.current.uid {
             
             tableView.separatorStyle = .singleLine
             

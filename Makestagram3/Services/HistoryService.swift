@@ -39,7 +39,7 @@ struct HistoryService {
     
     static func observeHistory(for user: User = User.current, withCompletion completion: @escaping ([String], DatabaseReference, [History]) -> Void) -> DatabaseHandle {
         
-        let ref = Database.database().reference().child("history").child(user.username)
+        let ref = Database.database().reference().child("history").child(user.uid)
 
         return ref.observe(.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {

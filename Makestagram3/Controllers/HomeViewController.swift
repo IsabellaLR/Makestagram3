@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         checkDates()
-//        BetService.addPremieur(child: "premieurEps", childVal: premieurEps)
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false

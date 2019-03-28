@@ -256,25 +256,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         profileButton.imageView?.contentMode = .scaleAspectFill
         profileButton.setImage(chosenImage, for: .normal)
         self.setImage = true
-        
-//        let storageRef = Storage.storage().reference().child("\(chosenImage).png")
-//
-//        if let uploadedData = chosenImage.pngData() {
-//
-//            storageRef.putData(uploadedData, metadata: nil, completion: { (metadata, error) in
-//
-//                if error != nil {
-//                    print(error)
-//                    return
-//                }
-//
-//                if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
-//                    let value = ["profileImageUrl": profileImageUrl]
-//
-//                    self.registerUserIntoDatabaseWithUID(User.current.uid, values: value)
-//                }
-//            })
-//        }
 
         dismiss(animated: true, completion: nil)
     }

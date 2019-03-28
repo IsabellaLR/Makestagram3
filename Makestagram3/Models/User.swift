@@ -16,26 +16,26 @@ class User: Codable {
     
     let uid: String
     let username: String
-    let phoneNumber: String
+//    let phoneNumber: String
     var isFollowed = false
     
     // MARK: - Init
     
-    init(uid: String, username: String, phoneNumber: String){
+    init(uid: String, username: String){
         self.uid = uid
         self.username = username
-        self.phoneNumber = phoneNumber
+//        self.phoneNumber = phoneNumber
     }
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-            let username = dict[Constants.Dict.username] as? String,
-            let phoneNumber = dict["phoneNumber"] as? String
+            let username = dict[Constants.Dict.username] as? String
+//            let phoneNumber = dict["phoneNumber"] as? String
             else { return nil }
         
         self.uid = snapshot.key
         self.username = username
-        self.phoneNumber = phoneNumber
+//        self.phoneNumber = phoneNumber
     }
     
     // Mark: - Singleton

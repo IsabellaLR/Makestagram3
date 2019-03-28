@@ -60,7 +60,7 @@ struct BetService {
 
     static func addPremieur(child: String, childVal: [String]) {
         
-        let betRef = Database.database().reference().child("bets").child(User.current.username)
+        let betRef = Database.database().reference().child("bets").child(User.current.uid)
     
         betRef.updateChildValues([child : childVal]) { (error, ref) in
             if let error = error {
@@ -72,8 +72,8 @@ struct BetService {
     
     static func show(user: User, completion: @escaping (Bet?) -> Void) {
         // childAutoby create a new id/uid
-        let betRef = Database.database().reference().child("bets").child(User.current.username)
-        let ref = Database.database().reference().child("bets").child(user.username).child(betRef.key ?? "")
+        let betRef = Database.database().reference().child("bets").child(User.current.uid)
+        let ref = Database.database().reference().child("bets").child(user.uid).child(betRef.key ?? "")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let bet = Bet(snapshot: snapshot) else {
@@ -85,7 +85,7 @@ struct BetService {
     }
     
     static func remove(parentKey: String, user: String){
-        Database.database().reference().child("bets").child(User.current.username).child(parentKey).removeValue()
+        Database.database().reference().child("bets").child(User.current.uid).child(parentKey).removeValue()
         Database.database().reference().child("bets").child(user).child(parentKey).removeValue()
     }
 

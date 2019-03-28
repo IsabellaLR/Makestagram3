@@ -24,6 +24,8 @@ class DebtBetsViewController: UIViewController {
     var isPremieurEp = false
     var show = true
     
+    var winner: String?
+    
     var userBetsHandle: DatabaseHandle = 0
     var userBetsRef: DatabaseReference?
     
@@ -65,7 +67,7 @@ extension DebtBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var lossBets = 0
         for bet in bets {
-            if bet.winner != User.current.username {
+            if bet.winner != User.current.uid {
                 lossBets += 1
             }
         }
@@ -78,11 +80,17 @@ extension DebtBetsViewController: UITableViewDataSource {
         let bet = bets[indexPath.row]
         
         //winner
-        if bet.winner != User.current.username {
+        if bet.winner != User.current.uid {
             
             tableView.separatorStyle = .singleLine
-
-            cell.betDescription.text = bet.episode + ": You owe " + bet.winner + bet.reward + " for the bet ~ " + bet.description
+            
+            //this code seems to slow down
+            UserService.show(forUID: bet.winner) { (user) in
+                self.winner = user?.username ?? ""
+            }
+            var rewardVal = " " + bet.reward
+            var betVal = " for the bet ~ " + bet.description
+            cell.betDescription.text = bet.episode + ": You owe " + (winner ?? "") + rewardVal + betVal
         }
         
         //tie

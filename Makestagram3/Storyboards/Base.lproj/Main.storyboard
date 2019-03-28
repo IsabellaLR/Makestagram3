@@ -24,11 +24,12 @@
                         <segue destination="I1b-x8-Pp6" kind="relationship" relationship="viewControllers" id="ijo-HI-6Rt"/>
                         <segue destination="ciS-e0-UQp" kind="relationship" relationship="viewControllers" id="Ppo-C3-nei"/>
                         <segue destination="1hA-xM-v1R" kind="relationship" relationship="viewControllers" id="f7Y-TW-Q2d"/>
+                        <segue destination="hvi-E0-2rx" kind="relationship" relationship="viewControllers" id="wlj-ME-Lul"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1up-ds-cai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550" y="38"/>
+            <point key="canvasLocation" x="-566" y="79"/>
         </scene>
         <!--Friends-->
         <scene sceneID="1GU-j6-L7A">
@@ -434,7 +435,7 @@
             </objects>
             <point key="canvasLocation" x="3142" y="-111"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Item-->
         <scene sceneID="MnZ-sS-1Vh">
             <objects>
                 <viewController storyboardIdentifier="DebtBets" id="hvi-E0-2rx" customClass="MessageViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
@@ -506,6 +507,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IVc-pO-gqL"/>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="4" title="Item" image="crown" id="HnY-xl-vX8"/>
                     <connections>
                         <outlet property="tableView4" destination="7Nh-cG-VwR" id="LhV-3e-TeZ"/>
                     </connections>

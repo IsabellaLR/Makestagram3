@@ -45,7 +45,7 @@ struct ProfileService {
     
     static func updateChild(child: String, childVal: String) {
         
-        let profileRef = Database.database().reference().child("profile").child(User.current.username)
+        let profileRef = Database.database().reference().child("profile").child(User.current.uid)
     
         profileRef.updateChildValues([child : childVal]) { (error, ref) in
             if let error = error {
@@ -57,7 +57,7 @@ struct ProfileService {
 
     static func removeChild(child: String) {
         
-        let childData = ["profile/\(User.current.username)/\(child)": NSNull()]
+        let childData = ["profile/\(User.current.uid)/\(child)": NSNull()]
         
         let ref = Database.database().reference()
         ref.updateChildValues(childData) { (error, ref) in
@@ -69,7 +69,7 @@ struct ProfileService {
     
     static func show(for user: User = User.current, completion: @escaping (Profile?) -> Void) {
 
-        let profileRef = Database.database().reference().child("profile").child(user.username)
+        let profileRef = Database.database().reference().child("profile").child(user.uid)
         
         profileRef.observe(.value, with: { (snapshot) in
             guard let profile = Profile(snapshot: snapshot) else {
@@ -109,7 +109,7 @@ struct ProfileService {
         let dict = ["image": urlString]
         
         // 4
-        let profileRef = Database.database().reference().child("profile").child(currentUser.username)
+        let profileRef = Database.database().reference().child("profile").child(currentUser.uid)
         //5
         profileRef.updateChildValues(dict) { (error, _) in
             if let error = error {
