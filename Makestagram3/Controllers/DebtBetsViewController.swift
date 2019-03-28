@@ -15,7 +15,7 @@ class DebtBetsViewController: UIViewController {
     
     @IBOutlet weak var tableView3: UITableView!
     
-    var bets = [Bet]()
+    var bets = [History]()
     var profile: Profile?
     var profile2: Profile?
     var parentKeys = [String]()
@@ -42,7 +42,7 @@ class DebtBetsViewController: UIViewController {
             self?.profile = profile
         }
         
-        userBetsHandle = UserService.observeBets { [weak self] (parentKeys, ref, bets) in
+        userBetsHandle = HistoryService.observeHistory { [weak self] (parentKeys, ref, bets) in
             self?.userBetsRef = ref
             self?.bets = bets
             self?.parentKeys = parentKeys
@@ -63,13 +63,13 @@ class DebtBetsViewController: UIViewController {
 
 extension DebtBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var claimBets = 0
+        var lossBets = 0
         for bet in bets {
-            if bet.winner != "tbd" {
-                claimBets += 1
+            if bet.winner != User.current.username {
+                lossBets += 1
             }
         }
-        return claimBets
+        return lossBets
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,28 +77,22 @@ extension DebtBetsViewController: UITableViewDataSource {
         
         let bet = bets[indexPath.row]
         
-        if bet.winner != "tbd" {
+        //winner
+        if bet.winner != User.current.username {
             
             tableView.separatorStyle = .singleLine
-        
-            if (bet.winner == User.current.username) {
-                
-                if bet.senderUsername == User.current.username {
-                    cell.betDescription.text = User.current.username + " beat " + bet.sentToUser + " for " + bet.description
-                }else{
-                    cell.betDescription.text = User.current.username + " beat " + bet.senderUsername + " for " + bet.description
-                }
-            }
-            
-            if (bet.winner != User.current.username) {
-                
-                if bet.senderUsername == User.current.username {
-                    cell.betDescription.text = User.current.username + " loss to " + bet.sentToUser + " for " + bet.description
-                }else{
-                    cell.betDescription.text = User.current.username + " loss to " + bet.senderUsername + " for " + bet.description
-                }
-            }
+
+            cell.betDescription.text = bet.episode + ": You owe " + bet.winner + bet.reward + " for the bet ~ " + bet.description
         }
+        
+        //tie
+        if bet.winner == "tie" {
+            
+            tableView.separatorStyle = .singleLine
+            
+            cell.betDescription.text = bet.episode + ": No one voted for the bet ~ " + bet.description
+        }
+        
         return cell
     }
 }

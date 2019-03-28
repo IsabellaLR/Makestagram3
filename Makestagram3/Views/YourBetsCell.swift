@@ -27,6 +27,7 @@ class YourBetsCell: UITableViewCell {
     @IBOutlet weak var wonButton: UIButton!
     @IBOutlet weak var lossButton: UIButton!
     @IBOutlet weak var tieButton: UIButton!
+    @IBOutlet weak var outcomeLabel: UILabel!
     
     
     override func awakeFromNib() {

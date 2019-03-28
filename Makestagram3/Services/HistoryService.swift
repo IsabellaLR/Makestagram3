@@ -14,6 +14,8 @@ struct HistoryService {
     
     static func save(username: String, description: String, winner: String, loser: String, reward: String, episode: String) {
         
+        let rootRef = Database.database().reference()
+
         var multiUpdateValue = [String : Any]()
         
         let betDict: [String : Any] = ["description" : description,
@@ -22,29 +24,39 @@ struct HistoryService {
                                        "reward": reward,
                                        "episode": episode]
             
-            let betRef = Database.database().reference().child("history").child(username).childByAutoId()
-            _ = betRef.key
-            
-            multiUpdateValue["history/\(username)/\(betRef.key ?? "")"] = betDict
-            
-            rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
-                if let error = error {
-                    assertionFailure(error.localizedDescription)
-                    return
-                }
+        let betRef = Database.database().reference().child("history").child(username).childByAutoId()
+        _ = betRef.key
+        
+        multiUpdateValue["history/\(username)/\(betRef.key ?? "")"] = betDict
+        
+        rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
             }
         }
     }
     
-    static func showHistory(username: String, completion: @escaping (Bet?) -> Void) {
-        let betRef = Database.database().reference().child("history").child(User.current.username)
-        let ref = Database.database().reference().child("history").child(username).child(betRef.key ?? "")
+    static func observeHistory(for user: User = User.current, withCompletion completion: @escaping ([String], DatabaseReference, [History]) -> Void) -> DatabaseHandle {
         
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let history = History(snapshot: snapshot) else {
-                return completion(nil)
+        let ref = Database.database().reference().child("history").child(user.username)
+
+        return ref.observe(.value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion([], ref, [])
             }
-            
-            completion(history)
+
+            var bets = [History]()
+            var parentKeys = [String]()
+
+            for betInfo in snapshot {
+                guard  let betData = History(snapshot: betInfo) else {
+                    return completion([], ref, [])
+                }
+                bets.append(betData) //1
+                parentKeys.append(betInfo.ref.key ?? "nil")
+            }
+            completion(parentKeys, ref, bets)
         })
+    }
 }

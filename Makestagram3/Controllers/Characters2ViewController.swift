@@ -14,8 +14,8 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
     let characterImages = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost"]
     
     var selectedIndex:Int?
-    var estimateWidth = 125.0
-    var cellMarginSize = 5.0
+    var estimateWidth = 100.0
+    var cellMarginSize = 10.0
     //
     //    var shouldTintBackgroundWhenSelected = true // You can change default value
     //    var specialHighlightedArea: UIView?
@@ -37,20 +37,15 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! Character2ViewCell
         let character = characters[indexPath.row]
-        cell.characterName.text = characters[indexPath.row]
+
         cell.characterImage.image = UIImage(named: characterImages[indexPath.row])
-        cell.characterImage.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
         
         if selectedIndex == indexPath.row {
-            if (UserDefaults.standard.string(forKey: "controller")) == "1" {
-                UserDefaults.standard.set(characters[indexPath.row], forKey: "character1")
-            }else{
-                UserDefaults.standard.set(characters[indexPath.row], forKey: "character2")
-            }
-            self.dismiss(animated: true, completion: nil)
-
+            cell.contentView.layer.borderColor = UIColor.yellow.cgColor
+            cell.contentView.layer.borderWidth = 2.0
         }else{
-            cell.backgroundColor = UIColor.clear
+            cell.contentView.layer.borderColor = UIColor.clear.cgColor
+            cell.contentView.layer.borderWidth = 1.0
         }
         
         return cell

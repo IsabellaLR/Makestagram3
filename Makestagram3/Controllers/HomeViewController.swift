@@ -12,25 +12,35 @@ class HomeViewController: UIViewController {
     
     var totalEpisodes = ["The Queen of Winterfell", "Fire and Ice", "Viserys", "The Last Debt", "The Wheel Has Broken", "End Game"]
     var episodeImages = ["ep1", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon"]
-    var datesAndYear = ["2019-01-14", "2019-04-30", "2019-05-7", "2019-05-14", "2019-05-21", "2019-05-28"]
-    var dates = ["January 14", "April 30", "May 7", "May 14", "May 21", "May 28"]
+    var datesAndYear = ["2019-02-26", "2019-03-27", "2019-05-7", "2019-05-14", "2019-05-21", "2019-05-28"]
+    var dates = ["January 14", "May 01", "May 7", "May 14", "May 21", "May 28"]
     var epAndDates = ["The Queen of Winterfell Arpril 24", "Fire and Ice April 30", "Viserys May 7", "The Last Debt May 14", "The Wheel Has Broken May 21", "End Game May 28"]
     var episodeName: String?
     var profile2: Profile?
     var premieurIndex: Int?
+    var premieurEps = [String]()
+//    var premieurEps = [String]()
     
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkDates()
+//        BetService.addPremieur(child: "premieurEps", childVal: premieurEps)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    func checkDates() -> ([String]) {
         // today's date
         let currentDateTime = Date()
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        var premieurEps = [String]()
         for i in 0..<6 {
             let date = dateFormatter.date(from: datesAndYear[i])
             if (currentDateTime >= date!) {
@@ -40,11 +50,7 @@ class HomeViewController: UIViewController {
                 UserDefaults.standard.set(premieurEp, forKey: "premieurEp")
             }
         }
-        UserDefaults.standard.set(premieurEps, forKey: "premieurEps")
-        
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)
+        return premieurEps
     }
     
     override func didReceiveMemoryWarning() {

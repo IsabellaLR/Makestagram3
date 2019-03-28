@@ -128,16 +128,16 @@ extension YourBetsViewController: UITableViewDataSource {
             cell.betDescription.textAlignment = .left
             cell.showEpisodeLabel.text = bet.episode
             
-            //might need to use closure instead
-            let premieurArray = UserDefaults.standard.string(forKey: "premieurEps") ?? ""
-            if (premieurArray.contains(bet.episode)) {
+            if (HomeViewController().checkDates().contains(bet.episode)) {
                 cell.wonButton.isHidden = false
                 cell.lossButton.isHidden = false
                 cell.tieButton.isHidden = false
+                cell.outcomeLabel.text = "Claim"
             }else{
                 cell.wonButton.isHidden = true
                 cell.lossButton.isHidden = true
                 cell.tieButton.isHidden = true
+                cell.outcomeLabel.text = ""
             }
             
             cell.tappedWonAction = { (cell) in

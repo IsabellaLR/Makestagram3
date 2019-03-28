@@ -116,42 +116,6 @@ struct UserService {
         })
     }
 
-    
-//    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
-//        let ref = Database.database().reference().child("bets").child(user.username)
-//
-//        return ref.observe(.value, with: { (snapshot) in
-//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-//                return completion(ref, [])
-//            }
-//            let dispatchGroup = DispatchGroup()
-//            var bets = [Bet]()
-//
-//            for betSnap in snapshot {
-//
-//                dispatchGroup.enter()
-//
-//                guard let bet = Bet(snapshot: betSnap) else { return }
-//                bets.append(bet)
-//
-//                dispatchGroup.leave()
-//            }
-//            completion(ref, bets)
-//        })
-//    }
-    
-//    static func posts(for user: User, completion: @escaping ([Bet]) -> Void) {
-//        let ref = Database.database().reference().child("bets").child(user.uid)
-//        
-//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-//                return completion([])
-//            }
-//            
-//            completion(bets)
-//        })
-//    }
-    
     static func usersExcludingCurrentUser(completion: @escaping ([User]) -> Void) {
         let currentUser = User.current
         
