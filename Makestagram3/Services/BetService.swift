@@ -47,7 +47,7 @@ struct BetService {
             
             //for current user
             
-            multiUpdateValue["bets/\(User.current.username)/\(betRef.key ?? "")"] = betDict
+            multiUpdateValue["bets/\(User.current.uid)/\(betRef.key ?? "")"] = betDict
             
             rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
                 if let error = error {

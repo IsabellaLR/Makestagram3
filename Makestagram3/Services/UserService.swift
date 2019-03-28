@@ -40,11 +40,11 @@ struct UserService {
         }
     }
     
-    static func addNumber(childVal: String) {
+    static func addChild(child: String, childVal: String) {
         
         let ref = Database.database().reference().child("users").child(User.current.uid)
         
-        ref.updateChildValues(["phoneNumber" : childVal]) { (error, ref) in
+        ref.updateChildValues([child : childVal]) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return
@@ -96,25 +96,10 @@ struct UserService {
             }
         })
     }
-
-//    static func observeBets(for user: User = User.current, withCompletion completion: @escaping (DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
-//        let ref = Database.database().reference().child("bets").child(user.username)
-//
-//        return ref.observe(.value, with: { (snapshot) in
-//            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-//                return completion(ref, [])
-//            }
-//
-//            let bets = snapshot.flatMap(Bet.init)
-//            completion(ref, bets)
-//        })
-//    }
-    
-    // or this way
     
     static func observeBets(for user: User = User.current, withCompletion completion: @escaping ([String], DatabaseReference, [Bet]) -> Void) -> DatabaseHandle {
         
-        let ref = Database.database().reference().child("bets").child(user.username)
+        let ref = Database.database().reference().child("bets").child(user.uid)
 
         return ref.observe(.value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {

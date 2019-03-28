@@ -42,6 +42,7 @@ class CreateUsernameViewController: UIViewController {
             User.setCurrent(user, writeToUserDefaults: true)
             
             ProfileService.create(username: User.current.uid, posValue: 0, negValue: 0, wins: 0, losses: 0)
+            UserService.addChild(child: "uid", childVal: User.current.uid)
             
             self.performSegue(withIdentifier: "Characters", sender: self)
             

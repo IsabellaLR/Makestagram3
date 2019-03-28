@@ -77,6 +77,7 @@ extension YourBetsViewController: UITableViewDataSource {
                 yourBets += 1
             }
         }
+        print("YOUR BETS: " + String(yourBets))
         return yourBets
     }
     
@@ -97,6 +98,7 @@ extension YourBetsViewController: UITableViewDataSource {
             cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
         
             UserService.show(forUID: bet.sentToUser) { (user) in
+                print(bet.sentToUser)
                 cell.usernameHeaderLabel.text = user?.username
             }
             

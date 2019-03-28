@@ -435,7 +435,7 @@
             </objects>
             <point key="canvasLocation" x="3142" y="-111"/>
         </scene>
-        <!--Item-->
+        <!--Message View Controller-->
         <scene sceneID="MnZ-sS-1Vh">
             <objects>
                 <viewController storyboardIdentifier="DebtBets" id="hvi-E0-2rx" customClass="MessageViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
@@ -507,7 +507,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IVc-pO-gqL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="4" title="Item" image="crown" id="HnY-xl-vX8"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="" image="crown" id="HnY-xl-vX8"/>
                     <connections>
                         <outlet property="tableView4" destination="7Nh-cG-VwR" id="LhV-3e-TeZ"/>
                     </connections>

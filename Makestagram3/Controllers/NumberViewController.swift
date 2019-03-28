@@ -24,10 +24,9 @@ class NumberViewController: UIViewController {
     
     @IBAction func tappedNext(_ sender: Any) {
         if numberTextField.text?.count ?? 0 == 10 {
-            UserService.addNumber(childVal: numberTextField.text ?? "")
-            
-            self.dismiss(animated: true, completion: nil)
+            UserService.addChild(child: "phoneNumber", childVal: numberTextField.text ?? "")
             performSegue(withIdentifier: "pickChar", sender: nil)
+//            self.dismiss(animated: true, completion: nil)
         }
     }
 }

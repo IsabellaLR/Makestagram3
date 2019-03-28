@@ -12,7 +12,9 @@ import FirebaseDatabase.FIRDataSnapshot
 class SendToPopOverViewController: UIViewController {
 
     var followingKeys = [String]()
+    var followingKeys2 = [String]()
     var selectedUsers = [String]()
+    var selectedUsers2 = [String]()
     var profile2: Profile?
     var show = true
     
@@ -43,6 +45,11 @@ class SendToPopOverViewController: UIViewController {
             self.followingKeys = followingKeys
             self.tableView.reloadData()
         }
+        
+        FollowService.followingUids(for: User.current) { (followingKeys2) in
+            self.followingKeys2 = followingKeys2
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -59,7 +66,13 @@ class SendToPopOverViewController: UIViewController {
         for user in selectedIndexPathArray {
             selectedUsers.append(followingKeys[user.row])
         }
-        BetService.create(description: UserDefaults.standard.string(forKey: "betDescription") ?? "", senderUsername: User.current.uid, sentToUsernames: selectedUsers, points: UserDefaults.standard.string(forKey: "points") ?? "0 pts", episode: UserDefaults.standard.string(forKey: "episodeName") ?? "")
+        
+        for user in selectedIndexPathArray {
+            selectedUsers2.append(followingKeys2[user.row])
+        }
+        
+        //change selectedUsers to add the user uid NOT username
+        BetService.create(description: UserDefaults.standard.string(forKey: "betDescription") ?? "", senderUsername: User.current.uid, sentToUsernames: selectedUsers2, points: UserDefaults.standard.string(forKey: "points") ?? "0 pts", episode: UserDefaults.standard.string(forKey: "episodeName") ?? "")
     }
     
 }
