@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="PdQ-zs-7nR">
+            <objects>
+                <viewController id="zx1-Q8-q9W" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G3U-b1-6eN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="g7p-in-Fcp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVP-m4-gBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3753" y="-462"/>
+        </scene>
         <!--Characters View Controller-->
         <scene sceneID="ggC-0A-Hfh">
             <objects>
@@ -98,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0F-dY-9JU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3864.8000000000002" y="-456.52173913043481"/>
+            <point key="canvasLocation" x="4558" y="-466"/>
         </scene>
     </scenes>
     <resources>
