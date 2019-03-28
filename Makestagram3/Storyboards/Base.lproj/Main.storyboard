@@ -478,7 +478,7 @@
                                                     </constraints>
                                                     <state key="normal" image="crown"/>
                                                     <connections>
-                                                        <action selector="onSMSPress:" destination="hvi-E0-2rx" eventType="touchUpInside" id="9VO-ZP-aoS"/>
+                                                        <action selector="claimTapped:" destination="81L-Iu-9GN" eventType="touchUpInside" id="5kn-tD-KvW"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -493,6 +493,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="betDescription" destination="7Iz-51-EWL" id="rCl-b6-ind"/>
+                                            <outlet property="claimButton" destination="w33-nK-unp" id="0Pm-PT-xtj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -506,8 +507,6 @@
                         <viewLayoutGuide key="safeArea" id="IVc-pO-gqL"/>
                     </view>
                     <connections>
-                        <outlet property="claimButton" destination="w33-nK-unp" id="xGE-Yb-ga4"/>
-                        <outlet property="tableView3" destination="7Nh-cG-VwR" id="y4T-go-NPS"/>
                         <outlet property="tableView4" destination="7Nh-cG-VwR" id="LhV-3e-TeZ"/>
                     </connections>
                 </viewController>

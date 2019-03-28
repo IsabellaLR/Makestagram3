@@ -12,6 +12,9 @@ class WonCell: UITableViewCell {
     
     static let height: CGFloat = 30
     
+    var tappedClaimAction: ((UITableViewCell) -> Void)?
+    
+    @IBOutlet weak var claimButton: UIButton!
     @IBOutlet weak var betDescription: UILabel!
     
     override func awakeFromNib() {
@@ -23,5 +26,9 @@ class WonCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    @IBAction func claimTapped(_ sender: Any) {
+        tappedClaimAction?(self)
     }
 }

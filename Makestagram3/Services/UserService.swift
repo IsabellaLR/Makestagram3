@@ -40,6 +40,30 @@ struct UserService {
         }
     }
     
+    static func addNumber(childVal: String) {
+        
+        let ref = Database.database().reference().child("users").child(User.current.uid)
+        
+        ref.updateChildValues(["phoneNumber" : childVal]) { (error, ref) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+    }
+    
+    static func retrieveNumber(uid: String, completion: @escaping (String?) -> Void) {
+        
+        let ref = Database.database().reference().child("users").child(uid)
+        
+        ref.child("phoneNumber").observeSingleEvent(of: .value, with: { (snapshot) in
+    
+            if let number = snapshot.value as? String {
+                return number
+            }
+        })
+    }
+    
     // NEW
     static func following(for user: User = User.current, completion: @escaping ([User]) -> Void) {
         // 1

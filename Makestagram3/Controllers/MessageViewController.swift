@@ -19,6 +19,7 @@ class MessageViewController: UIViewController {
     
     var bets = [History]()
     var profile: Profile?
+    var user: User?
     var profile2: Profile?
     var parentKeys = [String]()
     var agreeImageHighlighted = false
@@ -44,6 +45,10 @@ class MessageViewController: UIViewController {
             self?.profile = profile
         }
         
+        UserService.show(forUID: User.current.uid) { [weak self] (user) in
+            self?.user = user
+        }
+        
         userBetsHandle = HistoryService.observeHistory { [weak self] (parentKeys, ref, bets) in
             self?.userBetsRef = ref
             self?.bets = bets
@@ -63,25 +68,6 @@ class MessageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func onSMSPress(_ sender: UIButton) {
-        
-        if MFMessageComposeViewController.canSendText() {
-            
-            let controller = MFMessageComposeViewController()
-            controller.body = self.msgText.text
-            controller.recipients = [self.phoneNumber.text!]
-            controller.messageComposeDelegate = self
-            
-            self.present(controller, animated: true, completion: nil)
-            
-        }
-        else {
-            print("Cannot send text")
-        }
-        
-    }
-    
 }
 
 extension MessageViewController: MFMessageComposeViewControllerDelegate {
@@ -102,7 +88,7 @@ extension MessageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "wonCell") as! wonCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wonCell") as! WonCell
         
         let bet = bets[indexPath.row]
         
@@ -113,6 +99,27 @@ extension MessageViewController: UITableViewDataSource {
             
             cell.betDescription.text = bet.episode + ": Claim " + bet.reward + " for the bet ~ " + bet.description
         }
+        
+        cell.tappedClaimAction = { (cell) in
+            if MFMessageComposeViewController.canSendText() {
+                
+                let controller = MFMessageComposeViewController()
+                controller.body = "You owe me " + bet.reward + " for the bet " + bet.description
+                // Change username to uid
+                UserService.retrieveNumber(uid: bet.loser) { (number) in
+                    if let number = number {
+                        controller.recipients = [number]
+                    }
+                }
+                controller.messageComposeDelegate = self
+                
+                self.present(controller, animated: true, completion: nil)
+            }
+            else {
+                print("Cannot send text")
+            }
+        }
+        
         return cell
     }
 }
