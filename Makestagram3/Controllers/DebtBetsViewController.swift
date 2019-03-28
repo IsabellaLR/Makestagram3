@@ -40,10 +40,6 @@ class DebtBetsViewController: UIViewController {
         // remove separators for empty cells
         tableView3.tableFooterView = UIView()
         
-        ProfileService.show { [weak self] (profile) in
-            self?.profile = profile
-        }
-        
         userBetsHandle = HistoryService.observeHistory { [weak self] (parentKeys, ref, bets) in
             self?.userBetsRef = ref
             self?.bets = bets
@@ -71,36 +67,44 @@ extension DebtBetsViewController: UITableViewDataSource {
                 lossBets += 1
             }
         }
+        print("NUM BETS" + String(lossBets))
         return lossBets
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DebtBetsCell") as! DebtBetsCell
         
-        let bet = bets[indexPath.row]
-        
-        //winner
-        if bet.winner != User.current.uid {
-            
-            tableView.separatorStyle = .singleLine
-            
-            //this code seems to slow down
-            UserService.show(forUID: bet.winner) { (user) in
-                self.winner = user?.username ?? ""
+        var info = [History]()
+        for bet in bets {
+            if bet.winner != User.current.uid {
+                info.append(bet)
             }
-            var rewardVal = " " + bet.reward
-            var betVal = " for the bet ~ " + bet.description
-            cell.betDescription.text = bet.episode + ": You owe " + (winner ?? "") + rewardVal + betVal
         }
+        let bet = info[indexPath.row]
+    
+//        cell.betDescription.text = "hello"
+//        cell.contentView.backgroundColor = UIColor.red
         
-        //tie
-        if bet.winner == "tie" {
-            
+//        winner
+        if (bet.winner != User.current.uid) {
             tableView.separatorStyle = .singleLine
-            
-            cell.betDescription.text = bet.episode + ": No one voted for the bet ~ " + bet.description
+            //tie
+            if bet.winner == "tie" {
+                print("TIE")
+                cell.betDescription.text = bet.episode + ": No one voted for the bet ~ " + bet.description
+            }else{
+                //this code seems to slow down
+                UserService.retrieveChild(uid: bet.winner, child: "username") { (childVal) in
+                    if let childVal = childVal {
+                        print("LOSS")
+                        self.winner = childVal
+                        var rewardVal = " " + bet.reward
+                        var betVal = " for the bet ~ " + bet.description
+                        cell.betDescription.text = bet.episode + ": You owe " + (self.winner ?? "") + rewardVal + betVal
+                    }
+                }
+            }
         }
-        
         return cell
     }
 }

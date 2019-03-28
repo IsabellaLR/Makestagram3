@@ -455,7 +455,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="wonCell" rowHeight="120" id="81L-Iu-9GN" customClass="WonCell" customModule="Makestagram3" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WonCell" rowHeight="120" id="81L-Iu-9GN" customClass="WonCell" customModule="Makestagram3" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="81L-Iu-9GN" id="L4i-rT-Fx0">
@@ -494,13 +494,13 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="betDescription" destination="7Iz-51-EWL" id="rCl-b6-ind"/>
-                                            <outlet property="claimButton" destination="w33-nK-unp" id="0Pm-PT-xtj"/>
+                                            <outlet property="claimButton" destination="w33-nK-unp" id="WOV-P3-Gox"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="hvi-E0-2rx" id="nLc-6n-QDy"/>
-                                    <outlet property="delegate" destination="hvi-E0-2rx" id="DrS-9l-N3O"/>
+                                    <outlet property="dataSource" destination="hvi-E0-2rx" id="0LR-hr-xKz"/>
+                                    <outlet property="delegate" destination="hvi-E0-2rx" id="FP0-zL-SaN"/>
                                 </connections>
                             </tableView>
                         </subviews>

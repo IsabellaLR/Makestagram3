@@ -15,7 +15,6 @@ import Kingfisher
 class MessageViewController: UIViewController {
 
     @IBOutlet weak var tableView4: UITableView!
-    @IBOutlet weak var claimButton: UIButton!
     
     var bets = [History]()
     var profile: Profile?
@@ -80,19 +79,25 @@ extension MessageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var wonBets = 0
         for bet in bets {
-            if bet.winner != User.current.uid {
+            if bet.winner == User.current.uid {
                 wonBets += 1
             }
         }
+        print(wonBets)
         return wonBets
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "wonCell") as! WonCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WonCell") as! WonCell
         
-        let bet = bets[indexPath.row]
+        var info = [History]()
+        for bet in bets {
+            if bet.winner == User.current.uid {
+                info.append(bet)
+            }
+        }
+        let bet = info[indexPath.row]
         
-        //winner
         if bet.winner == User.current.uid {
             
             tableView.separatorStyle = .singleLine
@@ -106,14 +111,16 @@ extension MessageViewController: UITableViewDataSource {
                 let controller = MFMessageComposeViewController()
                 controller.body = "You owe me " + bet.reward + " for the bet " + bet.description
                 // Change username to uid
-                UserService.retrieveNumber(uid: bet.loser) { (number) in
-                    if let number = number {
-                        controller.recipients = [number]
+                UserService.retrieveChild(uid: bet.loser, child: "phoneNumber") { (childVal) in
+                    if let childVal = childVal {
+                        controller.recipients = [childVal]
                     }
                 }
                 controller.messageComposeDelegate = self
                 
                 self.present(controller, animated: true, completion: nil)
+                
+                //show check mark
             }
             else {
                 print("Cannot send text")

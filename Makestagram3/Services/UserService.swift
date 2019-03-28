@@ -52,14 +52,14 @@ struct UserService {
         }
     }
     
-    static func retrieveNumber(uid: String, completion: @escaping (String?) -> Void) {
+    static func retrieveChild(uid: String, child: String, completion: @escaping (String?) -> Void) {
         
         let ref = Database.database().reference().child("users").child(uid)
         
-        ref.child("phoneNumber").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child(child).observeSingleEvent(of: .value, with: { (snapshot) in
     
-            if let number = snapshot.value as? String {
-                completion(number)
+            if let childVal = snapshot.value as? String {
+                completion(childVal)
             }
         })
     }
