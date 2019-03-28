@@ -19,6 +19,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBOutlet weak var emojiButton: UIButton!
     
     @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet weak var stepper: UIStepper!
     
     var betDescription: String?
     var points: String?
@@ -42,6 +43,28 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         
         self.pickButton.setTitle(UserDefaults.standard.string(forKey: "character1") ?? "", for: .normal)
         self.pickButton2.setTitle(UserDefaults.standard.string(forKey: "character2") ?? "", for: .normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEmoji" {
+            if let vc = segue.destination as? EmojiViewController {
+                vc.completionHandler = { (text) -> ()in
+                    let image = UIImage(named: text)
+                    self.emojiButton.setTitle("", for: .normal)
+                    self.emojiButton.setImage(image, for: .normal)
+                }
+            }
+        }
+        
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "popover":
+            print("go to popover")
+            
+        default:
+            print("Unexpected segue identifier")
+        }
     }
 
     
@@ -104,17 +127,5 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         self.ptsLabel.text = pointVlaue
         points = pointVlaue
         UserDefaults.standard.set(points, forKey: "points")
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-
-        switch identifier {
-        case "popover":
-            print("go to popover")
-            
-        default:
-            print("Unexpected segue identifier")
-        }
     }
 }

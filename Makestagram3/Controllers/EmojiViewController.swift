@@ -16,6 +16,8 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     var estimateWidth = 100.0
     var cellMarginSize = 10.0
     
+    var completionHandler:((String) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,21 +37,15 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emojiCell", for: indexPath) as! EmojiViewCell
-        let emoji = emojiImages[indexPath.row]
         cell.emojiImage.image = UIImage(named: emojiImages[indexPath.row])
-        
-        if selectedIndex == indexPath.row {
-            cell.backgroundColor =  UIColor.red
-            self.dismiss(animated: true, completion: nil)
-            UserDefaults.standard.set(emoji, forKey: "emojiPicked")
-        }else{
-            cell.backgroundColor = UIColor.clear
-        }
+    
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
+        let result = completionHandler?(emojiImages[indexPath.item])
+        self.dismiss(animated: true, completion: nil)
         collectionView.reloadData()
     }
 }

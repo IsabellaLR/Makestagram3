@@ -11,15 +11,12 @@ import UIKit
 class Characters2ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     let characters = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost"]
-    let characterImages = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost"]
+    let characterImages = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost", "NightKing"]
     
-    var selectedIndex:Int?
+    var selectedIndex: Int?
     var estimateWidth = 100.0
     var cellMarginSize = 10.0
-    //
-    //    var shouldTintBackgroundWhenSelected = true // You can change default value
-    //    var specialHighlightedArea: UIView?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,7 +32,7 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "throneCell", for: indexPath) as! Character2ViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "charCell", for: indexPath) as! Character2ViewCell
         let character = characters[indexPath.row]
 
         cell.characterImage.image = UIImage(named: characterImages[indexPath.row])

@@ -17,13 +17,7 @@ class ShipViewController: UIViewController, UICollectionViewDataSource, UICollec
     var estimateWidth = 100.0
     var cellMarginSize = 1.0
     
-    var completionHandler:((String) -> ())?
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    //
-    //    var shouldTintBackgroundWhenSelected = true // You can change default value
-    //    var specialHighlightedArea: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +49,6 @@ class ShipViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-//        cell.contentView.layer.borderWidth = 1.0
         
         cell.shipImage.image = UIImage(named: characterImages[indexPath.row])
         
