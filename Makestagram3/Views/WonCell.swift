@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class WonCell: UITableViewCell {
     
@@ -16,7 +17,7 @@ class WonCell: UITableViewCell {
     
     @IBOutlet weak var claimButton: UIButton!
     @IBOutlet weak var betDescription: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

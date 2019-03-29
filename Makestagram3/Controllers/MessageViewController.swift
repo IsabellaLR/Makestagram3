@@ -91,12 +91,22 @@ extension MessageViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WonCell") as! WonCell
         
         var info = [History]()
+        var keys = [String]()
+        var index = 0
         for bet in bets {
             if bet.winner == User.current.uid {
                 info.append(bet)
+                keys.append(parentKeys[index])
             }
+            index += 1
         }
         let bet = info[indexPath.row]
+        let key = keys[indexPath.row]
+        
+        print("CHECK" + String(bet.check))
+        if bet.check == "check2" {
+            cell.claimButton.setImage(UIImage(named: "greenCheck"), for: .normal)
+        }
         
         if bet.winner == User.current.uid {
             
@@ -125,7 +135,10 @@ extension MessageViewController: UITableViewDataSource {
             else {
                 print("Cannot send text")
             }
+            HistoryService.updateChild(child: "check", childVal: "check2", key: key) //do you love me
         }
+        
+        
         
         return cell
     }

@@ -10,13 +10,15 @@ import UIKit
 
 class Characters2ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let characters = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost"]
+    let characters = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost", "Night King"]
     let characterImages = ["Jaime", "Cersei", "Danny",  "JonSnow", "Sansa", "Arya", "Theon", "Bran", "Hound", "Tyrion", "Davos", "Samwell", "Melisandre", "Bronn", "Varys", "Gendry", "Brienne", "Gilly", "Daario", "Missandei", "Jaqen", "Podrick", "Yara", "Greyworm", "Meera", "Ghost", "NightKing"]
     
     var selectedIndex: Int?
     var estimateWidth = 100.0
     var cellMarginSize = 10.0
 
+    var completionHandler:((String) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -50,6 +52,8 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = selectedIndex == indexPath.row ? nil : indexPath.row
+        let result = completionHandler?(characters[indexPath.item])
+        self.dismiss(animated: true, completion: nil)
         collectionView.reloadData()
     }
 }

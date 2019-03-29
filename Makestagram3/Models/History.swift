@@ -19,6 +19,7 @@ class History {
     let loser: String
     let reward: String
     let episode: String
+    let check: String
     
     init?(snapshot: DataSnapshot) {
         //do i need to include lastMessageSent is that why// not really
@@ -30,6 +31,7 @@ class History {
             let loser = dict["loser"] as? String
             let reward = dict["reward"] as? String
             let episode = dict["episode"] as? String
+            let check = dict["check"] as? String
             
             self.key = snapshot.key
             self.winner = winner ?? ""
@@ -37,6 +39,7 @@ class History {
             self.description = description ?? ""
             self.episode = episode ?? ""
             self.reward = reward ?? ""
+            self.check = check ?? ""
         }else{
             return nil
         }

@@ -22,7 +22,8 @@ struct HistoryService {
                                        "winner" : winner,
                                        "loser": loser,
                                        "reward": reward,
-                                       "episode": episode]
+                                       "episode": episode,
+                                       "check": ""]
             
         let betRef = Database.database().reference().child("history").child(username).childByAutoId()
         _ = betRef.key
@@ -30,6 +31,18 @@ struct HistoryService {
         multiUpdateValue["history/\(username)/\(betRef.key ?? "")"] = betDict
         
         rootRef.updateChildValues(multiUpdateValue) { (error, ref) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return
+            }
+        }
+    }
+    
+    static func updateChild(child: String, childVal: String, key: String) {
+        
+        let ref = Database.database().reference().child("history").child(User.current.uid).child(key)
+        
+        ref.updateChildValues([child : childVal]) { (error, ref) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return

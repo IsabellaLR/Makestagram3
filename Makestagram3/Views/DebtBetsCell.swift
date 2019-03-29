@@ -11,7 +11,10 @@ import UIKit
 class DebtBetsCell: UITableViewCell {
     
     static let height: CGFloat = 30
+    
+    var tappedSwordAction: ((UITableViewCell) -> Void)?
 
+    @IBOutlet weak var swordButton: UIButton!
     @IBOutlet weak var betDescription: UILabel!
     
     override func awakeFromNib() {
@@ -23,5 +26,10 @@ class DebtBetsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    @IBAction func swordTapped(_ sender: Any) {
+        tappedSwordAction?(self)
+        swordButton.setImage(UIImage(named: "greenCheck"), for: .normal)
     }
 }

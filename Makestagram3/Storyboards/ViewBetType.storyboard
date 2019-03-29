@@ -73,7 +73,7 @@
                                                     <rect key="frame" x="316" y="25.5" width="44" height="71.5"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVT-6o-mur">
-                                                    <rect key="frame" x="264" y="25.5" width="42" height="71.5"/>
+                                                    <rect key="frame" x="264" y="25.5" width="30" height="71.5"/>
                                                     <connections>
                                                         <action selector="agreeButtonTapped:" destination="tV6-gc-ohB" eventType="touchUpInside" id="HBY-2S-d9s"/>
                                                     </connections>
@@ -139,7 +139,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="xZL-se-mqs" secondAttribute="bottom" constant="34" id="dLd-fs-ei7"/>
                                                 <constraint firstItem="gFK-XR-PWF" firstAttribute="top" secondItem="AG7-d3-kyy" secondAttribute="top" constant="25" id="dZT-Iv-TWM"/>
                                                 <constraint firstItem="iam-5k-3ba" firstAttribute="leading" secondItem="AG7-d3-kyy" secondAttribute="leading" constant="96" id="f3G-Dp-JjU"/>
-                                                <constraint firstItem="GAJ-ae-PyD" firstAttribute="leading" secondItem="mVT-6o-mur" secondAttribute="trailing" constant="10" id="fkY-6k-HdX"/>
                                                 <constraint firstAttribute="trailing" secondItem="e43-eO-qmh" secondAttribute="trailing" constant="15" id="g4G-RZ-AOo"/>
                                                 <constraint firstItem="iam-5k-3ba" firstAttribute="leading" secondItem="ZmT-PP-fhI" secondAttribute="trailing" constant="20" id="gQG-Dg-vrU"/>
                                                 <constraint firstItem="iam-5k-3ba" firstAttribute="top" secondItem="7xB-wn-X4z" secondAttribute="bottomMargin" constant="15" id="ghL-8H-JXc"/>
@@ -235,7 +234,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au7-w2-K7T">
                                                     <rect key="frame" x="96" y="60" width="160" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="kKf-Ae-WmP"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="jeY-u3-K6Q"/>
+                                                        <constraint firstAttribute="width" constant="160" id="kKf-Ae-WmP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -324,16 +324,16 @@
                                                         </button>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="94" id="mx7-6V-g0q"/>
                                                         <constraint firstAttribute="height" constant="30" id="oTn-ZR-sTP"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="G2m-Ky-QEH" secondAttribute="trailing" constant="15" id="0fA-dd-DZx"/>
                                                 <constraint firstItem="UOk-mj-PNw" firstAttribute="firstBaseline" secondItem="Hvp-b9-aPu" secondAttribute="firstBaseline" id="8ph-bF-J85"/>
-                                                <constraint firstItem="G2m-Ky-QEH" firstAttribute="leading" secondItem="Au7-w2-K7T" secondAttribute="trailing" constant="10" id="DNR-Od-Uhx"/>
-                                                <constraint firstItem="ewS-2c-3VG" firstAttribute="trailing" secondItem="G2m-Ky-QEH" secondAttribute="trailing" id="Dpd-H1-kLT"/>
                                                 <constraint firstItem="ewS-2c-3VG" firstAttribute="leading" secondItem="UOk-mj-PNw" secondAttribute="leading" id="EuA-tE-tUT"/>
-                                                <constraint firstItem="izx-gR-Z0r" firstAttribute="trailing" secondItem="ewS-2c-3VG" secondAttribute="trailing" id="Ieb-Uv-KUr"/>
+                                                <constraint firstAttribute="trailing" secondItem="ewS-2c-3VG" secondAttribute="trailing" constant="15" id="Ieb-Uv-KUr"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hvp-b9-aPu" secondAttribute="trailing" constant="15" id="PaN-fg-XhL"/>
                                                 <constraint firstItem="sh4-Br-iau" firstAttribute="leading" secondItem="mWa-fP-4tP" secondAttribute="leading" constant="10" id="Rid-hz-eaw"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hvp-b9-aPu" secondAttribute="bottom" constant="15" id="TeJ-Ky-b00"/>
@@ -342,6 +342,7 @@
                                                 <constraint firstItem="Au7-w2-K7T" firstAttribute="leading" secondItem="mWa-fP-4tP" secondAttribute="leading" constant="96" id="cxr-nj-YSD"/>
                                                 <constraint firstItem="UOk-mj-PNw" firstAttribute="top" secondItem="Au7-w2-K7T" secondAttribute="bottom" constant="20" id="d9s-Ou-Dvj"/>
                                                 <constraint firstItem="ewS-2c-3VG" firstAttribute="leading" secondItem="Au7-w2-K7T" secondAttribute="leading" id="dBc-PI-y03"/>
+                                                <constraint firstAttribute="trailing" secondItem="izx-gR-Z0r" secondAttribute="trailing" constant="15" id="ird-96-1qh"/>
                                                 <constraint firstItem="Hvp-b9-aPu" firstAttribute="leading" secondItem="mWa-fP-4tP" secondAttribute="leading" constant="15" id="l0t-GV-Mhj"/>
                                                 <constraint firstItem="sh4-Br-iau" firstAttribute="top" secondItem="mWa-fP-4tP" secondAttribute="top" constant="10" id="pRm-Yq-RwL"/>
                                                 <constraint firstItem="Au7-w2-K7T" firstAttribute="top" secondItem="ewS-2c-3VG" secondAttribute="bottomMargin" constant="15" id="vIn-bZ-SJ9"/>
@@ -425,6 +426,7 @@
                                                     </constraints>
                                                     <state key="normal" image="sword"/>
                                                     <connections>
+                                                        <action selector="swordTapped:" destination="cRX-Zi-itw" eventType="touchUpInside" id="2qq-zI-JU2"/>
                                                         <segue destination="Lct-UR-f55" kind="presentation" id="nhv-YQ-y9H"/>
                                                     </connections>
                                                 </button>
@@ -440,6 +442,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="betDescription" destination="WtE-gU-hNa" id="pYV-PR-dzB"/>
+                                            <outlet property="swordButton" destination="EPG-Oy-se2" id="28A-cM-U39"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

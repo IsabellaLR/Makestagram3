@@ -75,15 +75,25 @@ extension DebtBetsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DebtBetsCell") as! DebtBetsCell
         
         var info = [History]()
+        var keys = [String]()
+        var index = 0
         for bet in bets {
             if bet.winner != User.current.uid {
                 info.append(bet)
+                keys.append(parentKeys[index])
             }
+            index += 1
         }
         let bet = info[indexPath.row]
-    
-//        cell.betDescription.text = "hello"
-//        cell.contentView.backgroundColor = UIColor.red
+        let key = keys[indexPath.row]
+        
+        if bet.check == "check1" {
+            cell.swordButton.setImage(UIImage(named: "greenCheck"), for: .normal)
+        }
+
+        cell.tappedSwordAction = { (cell) in
+            HistoryService.updateChild(child: "check", childVal: "check1", key: key) //do you love me
+        }
         
 //        winner
         if (bet.winner != User.current.uid) {

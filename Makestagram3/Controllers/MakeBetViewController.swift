@@ -21,6 +21,9 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var stepper: UIStepper!
     
+    @IBOutlet weak var surviveTextField: UITextField!
+    @IBOutlet weak var dieTextField: UITextField!
+    
     var betDescription: String?
     var points: String?
     var controller: String?
@@ -41,32 +44,66 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         betTextField.textAlignment = .left
         betTextField.contentVerticalAlignment = .top
         
-        self.pickButton.setTitle(UserDefaults.standard.string(forKey: "character1") ?? "", for: .normal)
-        self.pickButton2.setTitle(UserDefaults.standard.string(forKey: "character2") ?? "", for: .normal)
+//        self.pickButton.setTitle(UserDefaults.standard.string(forKey: "character1") ?? "", for: .normal)
+//        self.pickButton2.setTitle(UserDefaults.standard.string(forKey: "character2") ?? "", for: .normal)
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showEmoji" {
+//            if let vc = segue.destination as? EmojiViewController {
+//                vc.completionHandler = { (text) -> ()in
+//                    let image = UIImage(named: text)
+//                    self.emojiButton.setTitle("", for: .normal)
+//                    self.emojiButton.setImage(image, for: .normal)
+//                }
+//            }
+//        }
+    
+//        guard let identifier = segue.identifier else { return }
+//
+//        switch identifier {
+//        case "popover":
+//            print("go to popover")
+//
+//        default:
+//            print("Unexpected segue identifier")
+//        }
+//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showEmoji" {
-            if let vc = segue.destination as? EmojiViewController {
-                vc.completionHandler = { (text) -> ()in
-                    let image = UIImage(named: text)
-                    self.emojiButton.setTitle("", for: .normal)
-                    self.emojiButton.setImage(image, for: .normal)
+        if segue.identifier == "surviveChar" {
+            if let vc = segue.destination as? Characters2ViewController {
+                vc.completionHandler = { (survChar) -> ()in
+                    self.surviveTextField.text = survChar
                 }
             }
         }
-        
-        guard let identifier = segue.identifier else { return }
-        
-        switch identifier {
-        case "popover":
-            print("go to popover")
-            
-        default:
-            print("Unexpected segue identifier")
+        if segue.identifier == "dieChar" {
+            if let vc = segue.destination as? Characters2ViewController {
+                vc.completionHandler = { (dieChar) -> ()in
+                    self.dieTextField.text = dieChar
+                }
+            }
         }
     }
 
+    @IBAction func firstCheck(_ sender: Any) {
+        if betTextField.text?.count ?? 0 > 3 {
+            performSegue(withIdentifier: "sendTo", sender: nil)
+        }
+    }
+    
+    @IBAction func secondCheck(_ sender: Any) {
+        if surviveTextField.text?.count ?? 0 > 2 {
+            performSegue(withIdentifier: "sendTo", sender: nil)
+        }
+    }
+    
+    @IBAction func thirdCheck(_ sender: Any) {
+        if dieTextField.text?.count ?? 0 > 2 {
+            performSegue(withIdentifier: "sendTo", sender: nil)
+        }
+    }
     
     @IBAction func segmentedTapped(_ sender: Any) {
         let getIndex = segment.selectedSegmentIndex
@@ -123,6 +160,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     
     
     @IBAction func changeStepperValue(_ sender: UIStepper) {
+        sender.maximumValue = 10
         let pointVlaue = Int(sender.value).description
         self.ptsLabel.text = pointVlaue
         points = pointVlaue

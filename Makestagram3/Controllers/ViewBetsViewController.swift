@@ -36,7 +36,7 @@ class ViewBetsViewController: UIViewController {
         
         tableView.rowHeight = 71
         // remove separators for empty cells
-        tableView.tableFooterView = UIView(frame: .zero)
+        tableView.tableFooterView = UIView()
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
@@ -65,10 +65,11 @@ extension ViewBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var FriendBets = 0
         for bet in bets {
-            if bet.senderUsername != User.current.username {
+            if bet.senderUsername != User.current.uid {
                 FriendBets += 1
             }
         }
+        print("FRIEND" + String(FriendBets))
         return FriendBets
     }
     
@@ -104,19 +105,19 @@ extension ViewBetsViewController: UITableViewDataSource {
                     }
                 }
             }
-
+            
+            if (HomeViewController().checkDates().contains(bet.episode)) {
+                cell.agreeButton.isHidden = true
+                cell.disagreeButton.isHidden = true
+            }else{
+                cell.agreeButton.isHidden = false
+                cell.disagreeButton.isHidden = false
+            }
+                
             cell.betDescription.text = bet.description
             cell.betDescription.textAlignment = .left
             cell.showPointsLabel.text = bet.points + " pts"
-            let date = bet.creationDate
-            cell.timeAgoLabel.text = bet.creationDate
             cell.showEpisodeLabel.text = bet.episode
-            
-            if (cell.showEpisodeLabel.text == UserDefaults.standard.string(forKey: "premieurEp") ?? "") {
-                cell.agreeImage.image = UIImage(named: "winnerb4")
-                cell.disagreeImage.image = UIImage(named: "loserb4")
-                cell.whoWonLabel.text = "Who won?"
-            }
             
             //images - highlighted and nonhighlighted
             func changeAgreeImage() {
@@ -170,7 +171,7 @@ extension ViewBetsViewController: UITableViewDataSource {
             cell.backgroundColor = colorSelected
             
             // assigning image states for other users
-            if (cell.showEpisodeLabel.text != UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
+            if (HomeViewController().checkDates().contains(bet.episode) == false) {
                 if (bet.senderUsername != User.current.username) {
                     if bet.color == "white" {
                         cell.agreeImage.image = UIImage(named: "agreeb4")
