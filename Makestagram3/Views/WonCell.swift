@@ -31,6 +31,6 @@ class WonCell: UITableViewCell {
     
     @IBAction func claimTapped(_ sender: Any) {
         tappedClaimAction?(self)
-        claimButton.setImage(UIImage(named: "greenCheck"), for: .normal)
+//        claimButton.setImage(UIImage(named: "greenCheck"), for: .normal)
     }
 }

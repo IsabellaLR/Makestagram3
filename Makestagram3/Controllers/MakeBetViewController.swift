@@ -29,6 +29,8 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     var controller: String?
     var reward: String?
     
+    var completionHandler:((String) -> ())?
+    
     var name = ""
     
     override func viewDidLoad() {
@@ -75,6 +77,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
             if let vc = segue.destination as? Characters2ViewController {
                 vc.completionHandler = { (survChar) -> ()in
                     self.surviveTextField.text = survChar
+                    UserDefaults.standard.set(survChar + " will survive", forKey: "betDescription")
                 }
             }
         }
@@ -82,25 +85,46 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
             if let vc = segue.destination as? Characters2ViewController {
                 vc.completionHandler = { (dieChar) -> ()in
                     self.dieTextField.text = dieChar
+                    UserDefaults.standard.set(dieChar + " will die", forKey: "betDescription")
                 }
             }
         }
     }
 
     @IBAction func firstCheck(_ sender: Any) {
-        if betTextField.text?.count ?? 0 > 3 {
+        if betTextField.text?.count ?? 0 > 3 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+            betDescription = betTextField.text
+            UserDefaults.standard.set(betDescription, forKey: "betDescription")
+            let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
+            if Int(rewPoints) ?? 0 > 1 {
+                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
+            }else{
+                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots"), forKey: "rewardAndPoints")
+            }
             performSegue(withIdentifier: "sendTo", sender: nil)
         }
     }
     
     @IBAction func secondCheck(_ sender: Any) {
-        if surviveTextField.text?.count ?? 0 > 2 {
+        if surviveTextField.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+            let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
+            if Int(rewPoints) ?? 0 > 1 {
+                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
+            }else{
+                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots"), forKey: "rewardAndPoints")
+            }
             performSegue(withIdentifier: "sendTo", sender: nil)
         }
     }
     
     @IBAction func thirdCheck(_ sender: Any) {
-        if dieTextField.text?.count ?? 0 > 2 {
+        if dieTextField.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+            let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
+            if Int(rewPoints) ?? 0 > 1 {
+                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
+            }else{
+                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots"), forKey: "rewardAndPoints")
+            }
             performSegue(withIdentifier: "sendTo", sender: nil)
         }
     }
@@ -110,13 +134,13 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         
         switch (getIndex) {
         case 0:
-            reward = "shots"
+            reward = "shot"
         case 1:
-            reward = "dollars"
+            reward = "dollar"
         case 2:
-            reward = "points"
+            reward = "point"
         default:
-            reward = ""
+            reward = "shot"
         }
     }
     
@@ -124,40 +148,39 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func btnSelect(_ sender: Any) {
-        betDescription = betTextField.text
-        UserDefaults.standard.set(betDescription, forKey: "betDescription")
-    }
+//    @IBAction func btnSelect(_ sender: Any) {
+//        betDescription = betTextField.text
+//        UserDefaults.standard.set(betDescription, forKey: "betDescription")
+//    }
     
-    @IBAction func selectChar1(_ sender: Any) {
-        controller = "1"
-        UserDefaults.standard.set(controller, forKey: "controller")
-    }
-    
-    @IBAction func selectChar2(_ sender: Any) {
-        controller = "2"
-        UserDefaults.standard.set(controller, forKey: "controller")
-    }
-    
-    @IBAction func emojiButtonTapped(_ sender: UIButton) {
-        let VC = storyboard?.instantiateViewController(withIdentifier: "EmojiController") as! EmojiViewController
-        VC.preferredContentSize = CGSize(width: 200, height: 100)
-        let navController = UINavigationController(rootViewController: VC)
-        navController.modalPresentationStyle = UIModalPresentationStyle.popover
-        
-        let popOver = navController.popoverPresentationController
-        popOver?.permittedArrowDirections = .up
-        popOver?.sourceView = sender
-        popOver?.sourceRect = sender.bounds
-        popOver?.delegate = self
-        
-        self.present(navController, animated: true, completion: nil)
-    }
+//    @IBAction func selectChar1(_ sender: Any) {
+//        controller = "1"
+//        UserDefaults.standard.set(controller, forKey: "controller")
+//    }
+//
+//    @IBAction func selectChar2(_ sender: Any) {
+//        controller = "2"
+//        UserDefaults.standard.set(controller, forKey: "controller")
+//    }
+//
+//    @IBAction func emojiButtonTapped(_ sender: UIButton) {
+//        let VC = storyboard?.instantiateViewController(withIdentifier: "EmojiController") as! EmojiViewController
+//        VC.preferredContentSize = CGSize(width: 200, height: 100)
+//        let navController = UINavigationController(rootViewController: VC)
+//        navController.modalPresentationStyle = UIModalPresentationStyle.popover
+//
+//        let popOver = navController.popoverPresentationController
+//        popOver?.permittedArrowDirections = .up
+//        popOver?.sourceView = sender
+//        popOver?.sourceRect = sender.bounds
+//        popOver?.delegate = self
+//
+//        self.present(navController, animated: true, completion: nil)
+//    }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-    
     
     @IBAction func changeStepperValue(_ sender: UIStepper) {
         sender.maximumValue = 10

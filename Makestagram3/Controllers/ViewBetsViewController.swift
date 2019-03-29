@@ -116,7 +116,7 @@ extension ViewBetsViewController: UITableViewDataSource {
                 
             cell.betDescription.text = bet.description
             cell.betDescription.textAlignment = .left
-            cell.showPointsLabel.text = bet.points + " pts"
+            cell.showPointsLabel.text = bet.points
             cell.showEpisodeLabel.text = bet.episode
             
             //images - highlighted and nonhighlighted

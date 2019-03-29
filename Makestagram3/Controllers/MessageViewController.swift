@@ -26,6 +26,8 @@ class MessageViewController: UIViewController {
     var isPremieurEp = false
     var show = true
     
+    var loser: String?
+    
     var userBetsHandle: DatabaseHandle = 0
     var userBetsRef: DatabaseReference?
     
@@ -112,27 +114,46 @@ extension MessageViewController: UITableViewDataSource {
             
             tableView.separatorStyle = .singleLine
             
-            cell.betDescription.text = bet.episode + ": Claim " + bet.reward + " for the bet ~ " + bet.description
+            UserService.retrieveChild(uid: bet.loser, child: "username") { (childVal) in
+                if let childVal = childVal {
+                    self.loser = childVal
+                    cell.betDescription.text = bet.episode + ": Claim " + bet.reward + " from " + (self.loser ?? "my foe") + " for the bet ~ " + bet.description
+                }
+            }
         }
-        
+
         cell.tappedClaimAction = { (cell) in
             if MFMessageComposeViewController.canSendText() {
                 
                 let controller = MFMessageComposeViewController()
-                controller.body = "You owe me " + bet.reward + " for the bet " + bet.description
+                
+                if bet.reward.contains("points"){
+                    controller.body = "I won" + bet.reward + " for the bet " + bet.description + " HA!"
+                }else{
+                    controller.body = "You owe me " + bet.reward + " boi for the bet " + bet.description
+                }
                 // Change username to uid
                 UserService.retrieveChild(uid: bet.loser, child: "phoneNumber") { (childVal) in
                     if let childVal = childVal {
                         controller.recipients = [childVal]
                     }
                 }
+                
+//                //show check mark only when cancel
+//                func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+//                    switch result.rawValue {
+//                    case MessageComposeResult.sent.rawValue:
+//                        HistoryService.updateChild(child: "check", childVal: "check2", key: key) //do you love me
+//                    default:
+//                        print("default message outcome")
+//                    }
+//                }
+                
                 controller.messageComposeDelegate = self
                 
                 self.present(controller, animated: true, completion: nil)
-                
-                //show check mark
-            }
-            else {
+
+            }else{
                 print("Cannot send text")
             }
             HistoryService.updateChild(child: "check", childVal: "check2", key: key) //do you love me

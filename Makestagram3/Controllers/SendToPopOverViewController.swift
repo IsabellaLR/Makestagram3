@@ -71,8 +71,12 @@ class SendToPopOverViewController: UIViewController {
             selectedUsers2.append(followingKeys2[user.row])
         }
         
-        //change selectedUsers to add the user uid NOT username
-        BetService.create(description: UserDefaults.standard.string(forKey: "betDescription") ?? "", senderUsername: User.current.uid, sentToUsernames: selectedUsers2, points: UserDefaults.standard.string(forKey: "points") ?? "0 pts", episode: UserDefaults.standard.string(forKey: "episodeName") ?? "")
+//        MakeBetViewController().completionHandler = { (reward) -> ()in
+//            var rewardAndPoints = reward
+//        }
+        
+        BetService.create(description: UserDefaults.standard.string(forKey: "betDescription") ?? "", senderUsername: User.current.uid, sentToUsernames: selectedUsers2, points: UserDefaults.standard.string(forKey: "rewardAndPoints") ?? "", episode: UserDefaults.standard.string(forKey: "episodeName") ?? "")
+        print("REW AND POINTS: " + (UserDefaults.standard.string(forKey: "rewardAndPoints") ?? ""))
     }
     
 }
