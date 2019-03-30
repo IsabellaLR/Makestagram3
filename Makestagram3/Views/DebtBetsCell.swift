@@ -30,6 +30,5 @@ class DebtBetsCell: UITableViewCell {
     
     @IBAction func swordTapped(_ sender: Any) {
         tappedSwordAction?(self)
-        swordButton.setImage(UIImage(named: "greenCheck"), for: .normal)
     }
 }

@@ -77,15 +77,18 @@ extension ViewBetsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
         
         var info = [Bet]()
+        var keys = [String]()
         var index = 0
         for bet in bets {
             if bet.senderUsername != User.current.uid {
                 info.append(bet)
+                keys.append(parentKeys[index])
             }
             index += 1
         }
         let bet = info[indexPath.row]
-        
+        let key = keys[indexPath.row]
+
         if (bet.senderUsername != User.current.uid){
             
             tableView.separatorStyle = .singleLine
@@ -198,128 +201,138 @@ extension ViewBetsViewController: UITableViewDataSource {
             
             //Agree - blue
             cell.tapAgreeAction = { (cell) in
-                //
-                if (bet.episode == UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
-                    if bet.senderUsername == User.current.uid {
-                        self.show = true
-                        UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
-
-                    }else{
-                        self.show = true
-                        UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
-                    }
-                    changeToWin()
-                }else{
-                    changeAgreeImage()
-                    let parentKey = self.parentKeys[indexPath.row]
-                    UserDefaults.standard.set(parentKey, forKey: "parentKey")
-                    if (self.agreeImageHighlighted == true) {
-                        BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
-                    }else{
-                        BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
-                    }
+                if bet.color == "blue" {
+                    BetService.setBetColor(color: "white", parentKey: key, user1: bet.senderUsername, user2: bet.sentToUser)
+                } else {
+                    BetService.setBetColor(color: "blue", parentKey: key, user1: bet.senderUsername, user2: bet.sentToUser)
                 }
+                //
+//                if (bet.episode == UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
+//                    if bet.senderUsername == User.current.uid {
+//                        self.show = true
+//                        UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
+//
+//                    }else{
+//                        self.show = true
+//                        UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
+//                    }
+//                    changeToWin()
+//                }else{
+//                    changeAgreeImage()
+//                    let parentKey = self.parentKeys[indexPath.row]
+//                    UserDefaults.standard.set(parentKey, forKey: "parentKey")
+//                    if (self.agreeImageHighlighted == true) {
+//                        BetService.setBetColor(color: "blue", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+//                    }else{
+//                        BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+//                    }
+//                }
             }
             
             //Disagree - green
             cell.tapDisagreeAction = { (cell) in
-                if (bet.episode == UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
-                    if bet.senderUsername == User.current.uid {
-                        self.show = true
-                        UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
-                        
-                    }else{
-                        self.show = true
-                        UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
-                    }
-                    changeToLose()
-                }else{
-                    changeDisagreeImage()
-                    let parentKey = self.parentKeys[indexPath.row]
-                    UserDefaults.standard.set(parentKey, forKey: "parentKey")
-                    if (self.disagreeImageHighlighted == true) {
-                        BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
-                    }else{
-                        BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
-                    }
+                if bet.color == "green" {
+                    BetService.setBetColor(color: "white", parentKey: key, user1: bet.senderUsername, user2: bet.sentToUser)
+                } else {
+                    BetService.setBetColor(color: "green", parentKey: key, user1: bet.senderUsername, user2: bet.sentToUser)
                 }
+//                if (bet.episode == UserDefaults.standard.string(forKey: "premieurEp") ?? ""){
+//                    if bet.senderUsername == User.current.uid {
+//                        self.show = true
+//                        UserDefaults.standard.set(bet.sentToUser, forKey: "otherUsername")
+//
+//                    }else{
+//                        self.show = true
+//                        UserDefaults.standard.set(bet.senderUsername, forKey: "otherUsername")
+//                    }
+//                    changeToLose()
+//                }else{
+//                    changeDisagreeImage()
+//                    let parentKey = self.parentKeys[indexPath.row]
+//                    UserDefaults.standard.set(parentKey, forKey: "parentKey")
+//                    if (self.disagreeImageHighlighted == true) {
+//                        BetService.setBetColor(color: "green", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+//                    }else{
+//                        BetService.setBetColor(color: "white", parentKey: UserDefaults.standard.string(forKey: "parentKey") ?? "nil", user1: bet.senderUsername, user2: bet.sentToUser)
+//                    }
+//                }
             }
             
-            func changeToWin(){
-                cell.agreeImage.image = UIImage(named: "winner")
-                if bet.senderUsername == User.current.uid {
-                    
-                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
-                        if  (self!.show == true){
-                            self?.profile2 = profile2
-                            outcome1()
-                            self?.show = false
-                        }
-                    }
-
-                }else{
-                    
-                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
-                        if  (self!.show == true){
-                            self?.profile2 = profile2
-                            outcome2()
-                            self?.show = false
-                        }
-                    }
-                }
-            }
-            
-            func changeToLose(){
-                cell.disagreeImage.image = UIImage(named: "loser")
-                if bet.senderUsername == User.current.uid {
-                    
-                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
-                        if  (self!.show == true){
-                            self?.profile2 = profile2
-                            outcome3()
-                            self?.show = false
-                        }
-                    }
-                    
-                }else{
-                    
-                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
-                        if  (self!.show == true){
-                            self?.profile2 = profile2
-                            outcome4()
-                            self?.show = false
-                        }
-                    }
-                }
-            }
-            
-            func outcome1(){
-                let pointsValue: Int? = Int(bet.points)
-                ProfileService.create(username: bet.sentToUser, posValue: 0 + (profile2?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile2?.negPoints ?? 0), wins: 0 + (profile2?.wins ?? 0), losses: 1 + (profile2?.losses ?? 0))
-                ProfileService.create(username: User.current.uid, posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
-                BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
-            }
-            
-            func outcome2(){
-                let pointsValue: Int? = Int(bet.points)
-                ProfileService.create(username: bet.senderUsername, posValue: 0 + (profile2?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile2?.negPoints ?? 0), wins: 0 + (profile2?.wins ?? 0), losses: 1 + (profile2?.losses ?? 0))
-                ProfileService.create(username: User.current.uid, posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
-                BetService.remove(parentKey: bet.key ?? "", user: bet.senderUsername)
-            }
-            
-            func outcome3(){
-                let pointsValue: Int? = Int(bet.points)
-                ProfileService.create(username: bet.sentToUser, posValue: (pointsValue ?? 0) + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
-                ProfileService.create(username: User.current.uid, posValue: 0 + (profile?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
-                BetService.remove(parentKey:  bet.key ?? "", user: bet.sentToUser)
-            }
-           
-            func outcome4(){
-                let pointsValue: Int? = Int(bet.points)
-                ProfileService.create(username: bet.senderUsername, posValue: (pointsValue ?? 0) + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
-                ProfileService.create(username: User.current.uid, posValue: 0 + (profile?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
-                BetService.remove(parentKey: bet.key ?? "", user: bet.senderUsername)
-            }
+//            func changeToWin(){
+//                cell.agreeImage.image = UIImage(named: "winner")
+//                if bet.senderUsername == User.current.uid {
+//
+//                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+//                        if  (self!.show == true){
+//                            self?.profile2 = profile2
+//                            outcome1()
+//                            self?.show = false
+//                        }
+//                    }
+//
+//                }else{
+//
+//                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+//                        if  (self!.show == true){
+//                            self?.profile2 = profile2
+//                            outcome2()
+//                            self?.show = false
+//                        }
+//                    }
+//                }
+//            }
+//
+//            func changeToLose(){
+//                cell.disagreeImage.image = UIImage(named: "loser")
+//                if bet.senderUsername == User.current.uid {
+//
+//                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+//                        if  (self!.show == true){
+//                            self?.profile2 = profile2
+//                            outcome3()
+//                            self?.show = false
+//                        }
+//                    }
+//
+//                }else{
+//
+//                    ProfileService.showOtherUser(user: UserDefaults.standard.string(forKey: "otherUsername") ?? "") { [weak self] (profile2) in
+//                        if  (self!.show == true){
+//                            self?.profile2 = profile2
+//                            outcome4()
+//                            self?.show = false
+//                        }
+//                    }
+//                }
+//            }
+//
+//            func outcome1(){
+//                let pointsValue: Int? = Int(bet.points)
+//                ProfileService.create(username: bet.sentToUser, posValue: 0 + (profile2?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile2?.negPoints ?? 0), wins: 0 + (profile2?.wins ?? 0), losses: 1 + (profile2?.losses ?? 0))
+//                ProfileService.create(username: User.current.uid, posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
+//                BetService.remove(parentKey: bet.key ?? "", user: bet.sentToUser)
+//            }
+//
+//            func outcome2(){
+//                let pointsValue: Int? = Int(bet.points)
+//                ProfileService.create(username: bet.senderUsername, posValue: 0 + (profile2?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile2?.negPoints ?? 0), wins: 0 + (profile2?.wins ?? 0), losses: 1 + (profile2?.losses ?? 0))
+//                ProfileService.create(username: User.current.uid, posValue: (pointsValue ?? 0) + (profile?.posPoints ?? 0), negValue: 0 + (profile?.negPoints ?? 0), wins: 1 + (profile?.wins ?? 0), losses: 0 + (profile?.losses ?? 0))
+//                BetService.remove(parentKey: bet.key ?? "", user: bet.senderUsername)
+//            }
+//
+//            func outcome3(){
+//                let pointsValue: Int? = Int(bet.points)
+//                ProfileService.create(username: bet.sentToUser, posValue: (pointsValue ?? 0) + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
+//                ProfileService.create(username: User.current.uid, posValue: 0 + (profile?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
+//                BetService.remove(parentKey:  bet.key ?? "", user: bet.sentToUser)
+//            }
+//
+//            func outcome4(){
+//                let pointsValue: Int? = Int(bet.points)
+//                ProfileService.create(username: bet.senderUsername, posValue: (pointsValue ?? 0) + (profile2?.posPoints ?? 0), negValue: 0 + (profile2?.negPoints ?? 0), wins: 1 + (profile2?.wins ?? 0), losses: 0 + (profile2?.losses ?? 0))
+//                ProfileService.create(username: User.current.uid, posValue: 0 + (profile?.posPoints ?? 0), negValue: (pointsValue ?? 0) + (profile?.negPoints ?? 0), wins: 0 + (profile?.wins ?? 0), losses: 1 + (profile?.losses ?? 0))
+//                BetService.remove(parentKey: bet.key ?? "", user: bet.senderUsername)
+//            }
         }
         return cell
     }
