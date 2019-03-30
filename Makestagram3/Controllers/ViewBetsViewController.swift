@@ -76,7 +76,15 @@ extension ViewBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BetHeaderCell") as! BetHeaderCell
         
-        let bet = bets[indexPath.row]
+        var info = [Bet]()
+        var index = 0
+        for bet in bets {
+            if bet.senderUsername != User.current.uid {
+                info.append(bet)
+            }
+            index += 1
+        }
+        let bet = info[indexPath.row]
         
         if (bet.senderUsername != User.current.uid){
             

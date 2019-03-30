@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yow-rY-2s4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yfw-c4-M9M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,19 +13,13 @@
         <!--Find Friends View Controller-->
         <scene sceneID="Xx3-gE-HqU">
             <objects>
-                <viewController id="Yfw-c4-M9M" customClass="FindFriendsViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Friends" id="Yfw-c4-M9M" customClass="FindFriendsViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="53q-Wq-Eoi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A82-jR-BQG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Find Friends" id="b2r-Fr-iUZ"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ipx-5x-syV">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindFriendsCell" rowHeight="71" id="fpz-uz-Q4r" customClass="FindFriendsCell" customModule="Makestagram3" customModuleProvider="target">
@@ -72,21 +66,23 @@
                                     <outlet property="dataSource" destination="Yfw-c4-M9M" id="eLA-yV-0JA"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hwU-ts-afw">
+                                <rect key="frame" x="0.0" y="40" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ipx-5x-syV" firstAttribute="trailing" secondItem="53q-Wq-Eoi" secondAttribute="trailing" id="1zU-p1-LGY"/>
-                            <constraint firstItem="A82-jR-BQG" firstAttribute="top" secondItem="odI-uy-QC1" secondAttribute="top" id="7RE-QF-yRH"/>
-                            <constraint firstItem="A82-jR-BQG" firstAttribute="leading" secondItem="odI-uy-QC1" secondAttribute="leading" id="G2A-Td-BTn"/>
+                            <constraint firstItem="hwU-ts-afw" firstAttribute="leading" secondItem="odI-uy-QC1" secondAttribute="leading" id="DvY-cs-CQ8"/>
+                            <constraint firstItem="Ipx-5x-syV" firstAttribute="top" secondItem="hwU-ts-afw" secondAttribute="bottom" id="H3q-HO-vXx"/>
+                            <constraint firstItem="hwU-ts-afw" firstAttribute="top" secondItem="odI-uy-QC1" secondAttribute="top" constant="20" id="Hbx-ij-2d7"/>
+                            <constraint firstItem="hwU-ts-afw" firstAttribute="trailing" secondItem="odI-uy-QC1" secondAttribute="trailing" id="Oi0-ws-oI0"/>
                             <constraint firstItem="Ipx-5x-syV" firstAttribute="bottom" secondItem="53q-Wq-Eoi" secondAttribute="bottom" id="Rhy-wY-JMZ"/>
                             <constraint firstItem="Ipx-5x-syV" firstAttribute="leading" secondItem="53q-Wq-Eoi" secondAttribute="leading" id="Sk7-Em-rxL"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="top" secondItem="A82-jR-BQG" secondAttribute="bottom" id="Z7P-yu-xJj"/>
-                            <constraint firstItem="A82-jR-BQG" firstAttribute="trailing" secondItem="odI-uy-QC1" secondAttribute="trailing" id="dej-G2-Gda"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="top" secondItem="A82-jR-BQG" secondAttribute="bottom" id="olw-xa-2ga"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="odI-uy-QC1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rTu-8X-Z2J"/>
                     <connections>
                         <outlet property="tableView" destination="Ipx-5x-syV" id="7rE-Tz-tgn"/>
                     </connections>
@@ -95,29 +91,5 @@
             </objects>
             <point key="canvasLocation" x="768.79999999999995" y="-662.51874062968523"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pNb-BZ-Mj6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yow-rY-2s4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="" image="tab_find_friends_black" id="VXc-f9-eoq">
-                        <inset key="imageInsets" minX="0.0" minY="-7" maxX="0.0" maxY="-7"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yka-wQ-n3o">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Yfw-c4-M9M" kind="relationship" relationship="rootViewController" id="sDY-KC-EP3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9zw-OF-dpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-170.40000000000001" y="-662.51874062968523"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="tab_find_friends_black" width="25" height="25"/>
-    </resources>
 </document>

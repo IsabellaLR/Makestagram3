@@ -84,7 +84,18 @@ extension YourBetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "YourBetsCell") as! YourBetsCell
         
-        let bet = bets[indexPath.row]
+        var info = [Bet]()
+        var keys = [String]()
+        var index = 0
+        for bet in bets {
+            if bet.senderUsername == User.current.uid {
+                info.append(bet)
+                keys.append(parentKeys[index])
+            }
+            index += 1
+        }
+        let bet = info[indexPath.row]
+//        let key = keys[indexPath.row]
         
         if (bet.senderUsername == User.current.uid) {
         
@@ -115,16 +126,12 @@ extension YourBetsViewController: UITableViewDataSource {
             
             //user profile image
             ProfileService.showOtherUser(user: bet.sentToUser) { [weak self] (profile2) in
-//                if  (self!.show == true){
-                    self?.profile2 = profile2
-                    if (profile2?.imageURL == "") {
-                        cell.userImage.image = UIImage(named: "ninja")
-//                        self?.show = false
-                    }else{
-                        let imageURL = URL(string: ((profile2?.imageURL ?? "")))
-                        cell.userImage.kf.setImage(with: imageURL)
-//                        self?.show = false
-//                    }
+                self?.profile2 = profile2
+                if (profile2?.imageURL == "") {
+                    cell.userImage.image = UIImage(named: "ninja")
+                }else{
+                    let imageURL = URL(string: ((profile2?.imageURL ?? "")))
+                    cell.userImage.kf.setImage(with: imageURL)
                 }
             }
         
@@ -132,6 +139,7 @@ extension YourBetsViewController: UITableViewDataSource {
             cell.showPointsLabel.text = bet.points
             cell.betDescription.textAlignment = .left
             cell.showEpisodeLabel.text = bet.episode
+            
             
             if (HomeViewController().checkDates().contains(bet.episode)) {
                 cell.wonButton.isHidden = false

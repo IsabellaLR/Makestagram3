@@ -53,6 +53,7 @@
 		28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */; };
 		28790ACD221A7B2C005B1B12 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */; };
 		28790ACF221A804A005B1B12 /* EmojiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACE221A804A005B1B12 /* EmojiViewCell.swift */; };
+		288CB0B3224F0AD300FE9239 /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288CB0B2224F0AD300FE9239 /* FindFriends.storyboard */; };
 		2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97921EA91C70071D497 /* ProfileService.swift */; };
 		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
@@ -123,6 +124,7 @@
 		28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character2ViewCell.swift; sourceTree = "<group>"; };
 		28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		28790ACE221A804A005B1B12 /* EmojiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewCell.swift; sourceTree = "<group>"; };
+		288CB0B2224F0AD300FE9239 /* FindFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FindFriends.storyboard; sourceTree = "<group>"; };
 		2895D97921EA91C70071D497 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		28EAC4BE21CEFF510083EE24 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				288CB0B2224F0AD300FE9239 /* FindFriends.storyboard */,
 				28B30C3222292F6A00E33D2D /* ViewBetType.storyboard */,
 				28AC0FE621DCAC490041FDDB /* ViewBet.storyboard */,
 				2840AC1E21D82AFB0002A238 /* Home.storyboard */,
@@ -403,6 +406,7 @@
 			files = (
 				2840AC1F21D82AFB0002A238 /* Home.storyboard in Resources */,
 				2840AC1D21D82AB50002A238 /* Friends.storyboard in Resources */,
+				288CB0B3224F0AD300FE9239 /* FindFriends.storyboard in Resources */,
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
 				28AC0FE721DCAC490041FDDB /* ViewBet.storyboard in Resources */,

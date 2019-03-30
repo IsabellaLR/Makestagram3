@@ -13,12 +13,20 @@ class FindFriendsViewController: UIViewController {
     var users = [User]()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var searchItem = [String]()
+    var searching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 71
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,13 +44,30 @@ class FindFriendsViewController: UIViewController {
 
 extension FindFriendsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        if searching {
+            return searchItem.count
+        } else {
+            return users.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindFriendsCell") as! FindFriendsCell
-        cell.delegate = self
-        configure(cell: cell, atIndexPath: indexPath)
+        
+//        let user = users[indexPath.row]
+        
+        var usernamesArr = [String]()
+        for user in users {
+            usernamesArr.append(user.username)
+        }
+        
+        if searching {
+            cell.textLabel?.text = searchItem[indexPath.row]
+        } else {
+            cell.textLabel?.text = usernamesArr[indexPath.row]
+            cell.delegate = self
+            configure(cell: cell, atIndexPath: indexPath)
+        }
         
         return cell
     }
@@ -72,5 +97,17 @@ extension FindFriendsViewController: FindFriendsCellDelegate {
             followee.isFollowed = !followee.isFollowed
             self.tableView.reloadRows(at: [indexPath], with: .none)
         }
+    }
+}
+
+extension FindFriendsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var usernamesArr = [String]()
+        for user in users {
+            usernamesArr.append(user.username)
+        }
+        searchItem = usernamesArr.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searching = true
+        tableView.reloadData()
     }
 }
