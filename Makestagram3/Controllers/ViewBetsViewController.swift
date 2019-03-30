@@ -124,9 +124,12 @@ extension ViewBetsViewController: UITableViewDataSource {
                 cell.agreeButton.isHidden = false
                 cell.disagreeButton.isHidden = false
             }
-                
-            cell.betDescription.text = bet.description
+            
+            cell.betDescription.numberOfLines = 0
             cell.betDescription.textAlignment = .left
+            cell.betDescription.sizeToFit()
+            cell.betDescription.adjustsFontSizeToFitWidth = true
+            cell.betDescription.text = bet.description
             cell.showPointsLabel.text = bet.points
             cell.showEpisodeLabel.text = bet.episode
             

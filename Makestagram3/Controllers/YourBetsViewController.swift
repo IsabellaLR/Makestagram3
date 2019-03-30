@@ -135,9 +135,12 @@ extension YourBetsViewController: UITableViewDataSource {
                 }
             }
         
+            cell.betDescription.numberOfLines = 0
+//            cell.betDescription.textAlignment = .left
+            cell.betDescription.sizeToFit()
+//            cell.betDescription.adjustsFontSizeToFitWidth = true
             cell.betDescription.text = bet.description
-            cell.showPointsLabel.text = bet.points
-            cell.betDescription.textAlignment = .left
+//            cell.showPointsLabel.text = bet.points
             cell.showEpisodeLabel.text = bet.episode
             
             
@@ -145,12 +148,12 @@ extension YourBetsViewController: UITableViewDataSource {
                 cell.wonButton.isHidden = false
                 cell.lossButton.isHidden = false
                 cell.tieButton.isHidden = false
-                cell.outcomeLabel.text = "Claim"
+                cell.outcomeLabel.text = bet.points
             }else{
                 cell.wonButton.isHidden = true
                 cell.lossButton.isHidden = true
                 cell.tieButton.isHidden = true
-                cell.outcomeLabel.text = ""
+                cell.outcomeLabel.text = bet.points
             }
             
             cell.tappedWonAction = { (cell) in

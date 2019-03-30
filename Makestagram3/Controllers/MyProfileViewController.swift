@@ -242,7 +242,8 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     func DisplayPicker(type: UIImagePickerController.SourceType){
-        self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: type)!
+//        self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: type)!
+//        self.imagePicker.mediaTypes = UIImagePickerController.availableCaptureModes(for: type)!
         self.imagePicker.sourceType = type
         self.imagePicker.allowsEditing = true
         
