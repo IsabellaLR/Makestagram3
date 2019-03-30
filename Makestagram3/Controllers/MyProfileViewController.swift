@@ -27,6 +27,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var coupleLabel: UILabel!
     @IBOutlet weak var shipLabel: UILabel!
     @IBOutlet weak var favCharLabel: UILabel!
+    @IBOutlet weak var throneCharLabel: UILabel!
     
     let photoHelper = MGPhotoHelper()
     
@@ -78,7 +79,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             
             if let throneChar = profile?.throneChar {
                 DispatchQueue.main.async {
-                    self?.favCharLabel.text = "Throne: " + throneChar
+                    self?.throneCharLabel.text = throneChar
                 }
             }
             

@@ -23,8 +23,8 @@
                         <segue destination="U7r-gM-CXR" kind="relationship" relationship="viewControllers" id="4o4-2V-tnB"/>
                         <segue destination="I1b-x8-Pp6" kind="relationship" relationship="viewControllers" id="ijo-HI-6Rt"/>
                         <segue destination="ciS-e0-UQp" kind="relationship" relationship="viewControllers" id="Ppo-C3-nei"/>
-                        <segue destination="1hA-xM-v1R" kind="relationship" relationship="viewControllers" id="f7Y-TW-Q2d"/>
                         <segue destination="hvi-E0-2rx" kind="relationship" relationship="viewControllers" id="wlj-ME-Lul"/>
+                        <segue destination="1hA-xM-v1R" kind="relationship" relationship="viewControllers" id="f7Y-TW-Q2d"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1up-ds-cai" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,19 +136,33 @@
                                     <constraint firstItem="Mqa-cr-YO2" firstAttribute="top" secondItem="5p7-Ck-SmM" secondAttribute="top" constant="116" id="QK0-qQ-DzH"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Throne: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmH-AX-fKB" userLabel="Throne:">
-                                <rect key="frame" x="50" y="459" width="63.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bgB-JP-gv7">
+                                <rect key="frame" x="50" y="459" width="274.5" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will win throne: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmH-AX-fKB" userLabel="Throne:">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c60-Ib-GEM">
+                                        <rect key="frame" x="131.5" y="0.0" width="143" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="8Tj-JC-8zo"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WmH-AX-fKB" firstAttribute="top" secondItem="5p7-Ck-SmM" secondAttribute="bottom" constant="30" id="2V1-oW-o9k"/>
-                            <constraint firstItem="WmH-AX-fKB" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="50" id="5xw-go-WJ0"/>
                             <constraint firstItem="5p7-Ck-SmM" firstAttribute="top" secondItem="nfr-sj-vBb" secondAttribute="bottom" constant="30" id="C3c-eu-0x4"/>
+                            <constraint firstItem="bgB-JP-gv7" firstAttribute="top" secondItem="5p7-Ck-SmM" secondAttribute="bottom" constant="30" id="GSE-1s-8ox"/>
                             <constraint firstItem="nfr-sj-vBb" firstAttribute="top" secondItem="kmR-pX-gnx" secondAttribute="top" constant="70" id="Ijs-or-MeH"/>
+                            <constraint firstItem="bgB-JP-gv7" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="50" id="NUK-UY-ey3"/>
                             <constraint firstItem="kmR-pX-gnx" firstAttribute="trailing" secondItem="nfr-sj-vBb" secondAttribute="trailing" constant="120" id="Q5x-yh-5H5"/>
                             <constraint firstItem="5p7-Ck-SmM" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="50" id="TFs-Dl-xjK"/>
                             <constraint firstItem="nfr-sj-vBb" firstAttribute="leading" secondItem="kmR-pX-gnx" secondAttribute="leading" constant="130" id="i5G-uT-zED"/>
@@ -175,6 +189,7 @@
                         <outlet property="profileButton" destination="nfr-sj-vBb" id="xLS-eU-5Bh"/>
                         <outlet property="shipButton" destination="Lne-hf-I7L" id="GcU-mi-G8q"/>
                         <outlet property="shipLabel" destination="YIg-hv-BI3" id="8md-Ud-nTi"/>
+                        <outlet property="throneCharLabel" destination="c60-Ib-GEM" id="PTM-Mf-hRi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q4-Ry-WVP" userLabel="First Responder" sceneMemberID="firstResponder"/>

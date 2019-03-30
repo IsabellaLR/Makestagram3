@@ -93,16 +93,16 @@ extension ViewBetsViewController: UITableViewDataSource {
                 
                 //user profile image
             ProfileService.showOtherUser(user: bet.senderUsername) { [weak self] (profile2) in
-                if  (self!.show == true){
+//                if  (self!.show == true){
                     self?.profile2 = profile2
                     if (profile2?.imageURL == "") {
                         cell.userImage.image = UIImage(named: "ninja")
-                        self?.show = false
+//                        self?.show = false
                     }else{
                         let imageURL = URL(string: ((profile2?.imageURL ?? "")))
                         cell.userImage.kf.setImage(with: imageURL)
-                        self?.show = false
-                    }
+//                        self?.show = false
+//                    }
                 }
             }
             

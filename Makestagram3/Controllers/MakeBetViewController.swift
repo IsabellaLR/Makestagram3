@@ -99,7 +99,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
             if Int(rewPoints) ?? 0 > 1 {
                 UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
             }else{
-                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots"), forKey: "rewardAndPoints")
+                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shot"), forKey: "rewardAndPoints")
             }
             performSegue(withIdentifier: "sendTo", sender: nil)
         }
