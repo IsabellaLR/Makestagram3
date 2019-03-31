@@ -30,6 +30,7 @@ class CharactersViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBAction func sendTapped(_ sender: Any) {
         if (selectedIndex != nil) {
+                navigationController?.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController

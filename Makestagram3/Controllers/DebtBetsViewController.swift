@@ -88,7 +88,9 @@ extension DebtBetsViewController: UITableViewDataSource {
         let key = keys[indexPath.row]
         
         if bet.check == "check1" {
-            cell.swordButton.setImage(UIImage(named: "cheater"), for: .normal)
+            cell.swordButton.setImage(UIImage(named: "greenCheck"), for: .normal)
+        } else {
+            cell.swordButton.setImage(UIImage(named: "reward"), for: .normal)
         }
 
         cell.tappedSwordAction = { (cell) in

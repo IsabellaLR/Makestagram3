@@ -23,8 +23,11 @@ class NumberViewController: UIViewController {
     }
     
     @IBAction func tappedNext(_ sender: Any) {
-        if numberTextField.text?.count ?? 0 == 10 {
+        if numberTextField.text?.count ?? 0 == 10 && numberTextField.text != "e.g 4155156226" {
             UserService.addChild(child: "phoneNumber", childVal: numberTextField.text ?? "")
+//            let initialViewController = UIStoryboard.initialViewController(for: .main)
+//            self.view.window?.rootViewController = initialViewController
+//            self.view.window?.makeKeyAndVisible()
             performSegue(withIdentifier: "pickChar", sender: nil)
 //            self.dismiss(animated: true, completion: nil)
         }

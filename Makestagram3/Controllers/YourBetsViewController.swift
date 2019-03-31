@@ -115,10 +115,10 @@ extension YourBetsViewController: UITableViewDataSource {
             
             //colors
             if bet.color == "green" {
-                cell.backgroundColor = UIColor.green
+                cell.backgroundColor = UIColor.red
             }
             if bet.color == "blue" {
-                cell.backgroundColor = UIColor.blue
+                cell.backgroundColor = UIColor.green
             }else if bet.color == "white" {
                 cell.backgroundColor = UIColor.white
             }
@@ -148,7 +148,7 @@ extension YourBetsViewController: UITableViewDataSource {
                 cell.wonButton.isHidden = false
                 cell.lossButton.isHidden = false
                 cell.tieButton.isHidden = false
-                cell.outcomeLabel.text = bet.points
+                cell.outcomeLabel.text = "Did you win?"
             }else{
                 cell.wonButton.isHidden = true
                 cell.lossButton.isHidden = true

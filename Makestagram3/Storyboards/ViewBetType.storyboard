@@ -230,8 +230,8 @@
                                                         <constraint firstAttribute="height" constant="66" id="kZj-OB-Wcu"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outcome?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izx-gR-Z0r">
-                                                    <rect key="frame" x="260" y="11" width="100" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you win?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izx-gR-Z0r">
+                                                    <rect key="frame" x="260" y="16" width="100" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="k51-gg-G4N"/>
                                                     </constraints>
@@ -240,7 +240,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="G2m-Ky-QEH">
-                                                    <rect key="frame" x="266" y="36.5" width="94" height="30"/>
+                                                    <rect key="frame" x="266" y="41.5" width="94" height="30"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSM-DF-cFr">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -270,7 +270,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="YGI-hS-5mL"/>
                                                                 <constraint firstAttribute="width" constant="30" id="cM3-HO-wIS"/>
                                                             </constraints>
-                                                            <state key="normal" title="T" image="tie"/>
+                                                            <state key="normal" title="tie" image="tie"/>
                                                             <connections>
                                                                 <action selector="tieTapped:" destination="4IN-kv-EQa" eventType="touchUpInside" id="wfJ-c0-4nU"/>
                                                             </connections>
@@ -295,7 +295,7 @@
                                                 <constraint firstItem="sh4-Br-iau" firstAttribute="leading" secondItem="mWa-fP-4tP" secondAttribute="leading" constant="10" id="Rid-hz-eaw"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hvp-b9-aPu" secondAttribute="bottom" constant="15" id="TeJ-Ky-b00"/>
                                                 <constraint firstItem="izx-gR-Z0r" firstAttribute="leading" secondItem="7Hv-sb-HSK" secondAttribute="trailing" constant="10" id="ZuE-aT-ZJb"/>
-                                                <constraint firstItem="izx-gR-Z0r" firstAttribute="top" secondItem="mWa-fP-4tP" secondAttribute="topMargin" id="c7z-W5-Ibs"/>
+                                                <constraint firstItem="izx-gR-Z0r" firstAttribute="top" secondItem="mWa-fP-4tP" secondAttribute="topMargin" constant="5" id="c7z-W5-Ibs"/>
                                                 <constraint firstAttribute="trailing" secondItem="izx-gR-Z0r" secondAttribute="trailing" constant="15" id="ird-96-1qh"/>
                                                 <constraint firstItem="Hvp-b9-aPu" firstAttribute="leading" secondItem="mWa-fP-4tP" secondAttribute="leading" constant="15" id="l0t-GV-Mhj"/>
                                                 <constraint firstItem="sh4-Br-iau" firstAttribute="top" secondItem="mWa-fP-4tP" secondAttribute="top" constant="10" id="pRm-Yq-RwL"/>
@@ -383,10 +383,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="N4J-S1-S7E"/>
                                                         <constraint firstAttribute="width" constant="40" id="yWv-fr-JxL"/>
                                                     </constraints>
-                                                    <state key="normal" image="sword"/>
+                                                    <state key="normal" image="reward"/>
                                                     <connections>
                                                         <action selector="swordTapped:" destination="cRX-Zi-itw" eventType="touchUpInside" id="2qq-zI-JU2"/>
-                                                        <segue destination="Lct-UR-f55" kind="presentation" id="nhv-YQ-y9H"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -507,7 +506,7 @@
         <image name="EdStark" width="602" height="466"/>
         <image name="check" width="60" height="60"/>
         <image name="loser" width="100" height="100"/>
-        <image name="sword" width="100" height="100"/>
+        <image name="reward" width="100" height="100"/>
         <image name="tab_agree" width="30" height="30"/>
         <image name="tie" width="30" height="30"/>
         <image name="winner" width="30" height="30"/>

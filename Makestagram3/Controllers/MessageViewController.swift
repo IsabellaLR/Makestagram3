@@ -108,6 +108,8 @@ extension MessageViewController: UITableViewDataSource {
         print("CHECK" + String(bet.check))
         if bet.check == "check2" {
             cell.claimButton.setImage(UIImage(named: "greenCheck"), for: .normal)
+        } else {
+            cell.claimButton.setImage(UIImage(named: "reward"), for: .normal)
         }
         
         if bet.winner == User.current.uid {
@@ -128,9 +130,9 @@ extension MessageViewController: UITableViewDataSource {
                 let controller = MFMessageComposeViewController()
                 
                 if bet.reward.contains("points"){
-                    controller.body = "I won" + bet.reward + " for the bet " + bet.description + " HA!"
+                    controller.body = "I won" + bet.reward + " for the bet '" + bet.description + "' HA!"
                 }else{
-                    controller.body = "You owe me " + bet.reward + " boi for the bet " + bet.description
+                    controller.body = "You owe me " + bet.reward + " boi for the bet '" + bet.description + "'"
                 }
                 // Change username to uid
                 UserService.retrieveChild(uid: bet.loser, child: "phoneNumber") { (childVal) in

@@ -171,9 +171,9 @@ extension ViewBetsViewController: UITableViewDataSource {
                     case .white:
                         return UIColor.white
                     case .blue:
-                        return UIColor.blue
-                    case .green:
                         return UIColor.green
+                    case .green:
+                        return UIColor.red
                     }
                 }
             }

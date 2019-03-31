@@ -122,7 +122,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     }
     
     @IBAction func secondCheck(_ sender: Any) {
-        if surviveButton.titleLabel?.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+        if surviveButton.titleLabel?.text != "  ?  " && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
             if Int(rewPoints) ?? 0 > 1 {
                 UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
@@ -134,7 +134,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     }
     
     @IBAction func thirdCheck(_ sender: Any) {
-        if dieButton.titleLabel?.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+        if dieButton.titleLabel?.text != "  ?  " && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
             if Int(rewPoints) ?? 0 > 1 {
                 UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
