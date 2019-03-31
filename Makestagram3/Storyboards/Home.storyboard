@@ -137,23 +137,22 @@
                                 <rect key="frame" x="20" y="70" width="294" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-MD-btj">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="1Dr-HB-Hea">
-                                                <rect key="frame" x="0.0" y="0.0" width="294" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="60"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-wU-uZa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="60"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC0-2Q-MfN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="240" id="1RI-7T-oJA"/>
-                                                            <constraint firstAttribute="height" constant="60" id="5gD-AO-P82"/>
+                                                            <constraint firstAttribute="width" constant="270" id="Bwd-pY-SJd"/>
+                                                            <constraint firstAttribute="height" constant="60" id="bdU-jL-EQ3"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                                    </textField>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
+                                                    </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-A2-guR">
-                                                        <rect key="frame" x="264" y="0.0" width="30" height="60"/>
+                                                        <rect key="frame" x="54" y="0.0" width="30" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="VFa-b5-Zyj"/>
                                                         </constraints>
@@ -165,9 +164,6 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="gdV-A2-guR" secondAttribute="trailing" id="1LM-bh-oOf"/>
-                                                    <constraint firstItem="7Od-wU-uZa" firstAttribute="leading" secondItem="1Dr-HB-Hea" secondAttribute="leading" id="FJ0-YO-nDR"/>
-                                                    <constraint firstItem="7Od-wU-uZa" firstAttribute="top" secondItem="1Dr-HB-Hea" secondAttribute="top" id="Kvo-1u-1ng"/>
-                                                    <constraint firstItem="gdV-A2-guR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Od-wU-uZa" secondAttribute="trailing" constant="20" id="aZh-KH-56N"/>
                                                     <constraint firstItem="gdV-A2-guR" firstAttribute="top" secondItem="1Dr-HB-Hea" secondAttribute="top" id="jpI-1P-SO4"/>
                                                 </constraints>
                                             </stackView>
@@ -179,19 +175,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAE-bW-2fR">
                                         <rect key="frame" x="0.0" y="75" width="182" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bx1-rV-AKb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9d-3e-JXZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="ObE-Ir-Bqb"/>
-                                                    <constraint firstAttribute="height" constant="30" id="wsy-R6-o92"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <segue destination="OEx-PR-Gd8" kind="presentation" identifier="surviveChar" id="SVw-g1-PE5"/>
+                                                    <segue destination="OEx-PR-Gd8" kind="presentation" identifier="surviveChar" id="a5E-Vf-O0K"/>
                                                 </connections>
-                                            </textField>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="   will survive" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyT-nG-wjM">
                                                 <rect key="frame" x="30" y="0.0" width="122" height="30"/>
                                                 <constraints>
@@ -215,27 +204,17 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="YaU-JT-dRC"/>
-                                            <constraint firstItem="bx1-rV-AKb" firstAttribute="top" secondItem="AAE-bW-2fR" secondAttribute="top" id="cOJ-Xf-9NA"/>
-                                            <constraint firstItem="bx1-rV-AKb" firstAttribute="leading" secondItem="AAE-bW-2fR" secondAttribute="leading" id="qlk-zB-CYa"/>
-                                            <constraint firstAttribute="bottom" secondItem="bx1-rV-AKb" secondAttribute="bottom" id="uzV-24-mk8"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="af9-EE-fZ8">
                                         <rect key="frame" x="0.0" y="120" width="182" height="30"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-xU-mJE">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xko-Xi-Q1f">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="Lyo-bk-MUL"/>
-                                                    <constraint firstAttribute="height" constant="30" id="X1Q-8b-5rM"/>
-                                                </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <segue destination="OEx-PR-Gd8" kind="presentation" identifier="dieChar" id="uU2-1J-MJi"/>
+                                                    <segue destination="OEx-PR-Gd8" kind="presentation" identifier="dieChar" id="yYI-hE-g1i"/>
                                                 </connections>
-                                            </textField>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" will die" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYG-nx-ZrD">
                                                 <rect key="frame" x="41" y="0.0" width="100" height="30"/>
                                                 <constraints>
@@ -259,9 +238,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Nlt-ow-vL9"/>
-                                            <constraint firstAttribute="bottom" secondItem="gLh-xU-mJE" secondAttribute="bottom" id="mJj-nK-rDK"/>
-                                            <constraint firstItem="gLh-xU-mJE" firstAttribute="leading" secondItem="af9-EE-fZ8" secondAttribute="leading" id="rIB-DS-0bL"/>
-                                            <constraint firstItem="gLh-xU-mJE" firstAttribute="top" secondItem="af9-EE-fZ8" secondAttribute="top" id="x85-af-VQN"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -331,13 +307,13 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="betTextField" destination="7Od-wU-uZa" id="DLm-zd-tr0"/>
-                        <outlet property="dieTextField" destination="gLh-xU-mJE" id="luV-NA-kbA"/>
+                        <outlet property="betTextView" destination="xC0-2Q-MfN" id="jj9-SO-rzv"/>
+                        <outlet property="dieButton" destination="xko-Xi-Q1f" id="VkZ-Ws-e8d"/>
                         <outlet property="episodeLabel" destination="aip-6b-zZg" id="V0K-5q-8wF"/>
                         <outlet property="ptsLabel" destination="PL6-w3-XPw" id="alt-qE-QN9"/>
                         <outlet property="segment" destination="HmD-iq-Huq" id="bon-ia-IAf"/>
                         <outlet property="stepper" destination="bjP-a3-tDN" id="hCy-0J-skQ"/>
-                        <outlet property="surviveTextField" destination="bx1-rV-AKb" id="iqr-XV-VFS"/>
+                        <outlet property="surviveButton" destination="J9d-3e-JXZ" id="NSe-u4-iT0"/>
                         <outlet property="view" destination="prS-Lc-iJ7" id="Ibh-xf-cQ8"/>
                         <segue destination="P52-3m-ghK" kind="presentation" identifier="sendTo" id="Zbl-Je-8bD"/>
                     </connections>
@@ -640,6 +616,6 @@
         <image name="tab_home_black" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SVw-g1-PE5"/>
+        <segue reference="a5E-Vf-O0K"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,7 +16,6 @@ class SendToPopOverViewController: UIViewController {
     var selectedUsers = [String]()
     var selectedUsers2 = [String]()
     var profile2: Profile?
-    var show = true
     
     var newVariableName = MakeBetViewController()
  
@@ -97,16 +96,12 @@ extension SendToPopOverViewController: UITableViewDataSource {
         cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
         
         ProfileService.showOtherUser(user: cell.followerName.text) { [weak self] (profile2) in
-            if  (self!.show == true){
-                self?.profile2 = profile2
-                if (profile2?.imageURL == "") {
-                    cell.userImage.image = UIImage(named: "ninja")
-                    self?.show = false
-                }else{
-                    let imageURL = URL(string: ((profile2?.imageURL ?? "")))
-                    cell.userImage.kf.setImage(with: imageURL)
-                    self?.show = false
-                }
+            self?.profile2 = profile2
+            if (profile2?.imageURL == "") {
+                cell.userImage.image = UIImage(named: "ninja")
+            }else{
+                let imageURL = URL(string: ((profile2?.imageURL ?? "")))
+                cell.userImage.kf.setImage(with: imageURL)
             }
         }
         

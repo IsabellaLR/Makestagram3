@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var btnSelect: UIButton!
@@ -17,12 +17,13 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBOutlet weak var pickButton: UIButton!
     @IBOutlet weak var pickButton2: UIButton!
     @IBOutlet weak var emojiButton: UIButton!
+    @IBOutlet weak var betTextView: UITextView!
     
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var stepper: UIStepper!
     
-    @IBOutlet weak var surviveTextField: UITextField!
-    @IBOutlet weak var dieTextField: UITextField!
+    @IBOutlet weak var surviveButton: UIButton!
+    @IBOutlet weak var dieButton: UIButton!
     
     var betDescription: String?
     var points: String?
@@ -43,8 +44,21 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
-        betTextField.textAlignment = .left
-        betTextField.contentVerticalAlignment = .top
+//        betTextField.textAlignment = .left
+//        betTextField.contentVerticalAlignment = .top
+//        betTextField.
+//        betTextField.sizeToFit()
+        betTextView.layer.borderColor = UIColor.lightGray.cgColor
+        betTextView.layer.borderWidth = 0.5
+        surviveButton.layer.cornerRadius = 5
+        surviveButton.layer.borderWidth = 1
+        surviveButton.layer.borderColor = UIColor.lightGray.cgColor
+        surviveButton.setTitle("  ?  ", for: .normal)
+        
+        dieButton.layer.cornerRadius = 5
+        dieButton.layer.borderWidth = 1
+        dieButton.layer.borderColor = UIColor.lightGray.cgColor
+        dieButton.setTitle("  ?  ", for: .normal)
         
 //        self.pickButton.setTitle(UserDefaults.standard.string(forKey: "character1") ?? "", for: .normal)
 //        self.pickButton2.setTitle(UserDefaults.standard.string(forKey: "character2") ?? "", for: .normal)
@@ -76,7 +90,8 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         if segue.identifier == "surviveChar" {
             if let vc = segue.destination as? Characters2ViewController {
                 vc.completionHandler = { (survChar) -> ()in
-                    self.surviveTextField.text = survChar
+                    self.surviveButton.setTitle(survChar, for: .normal)
+                    self.surviveButton.layer.borderColor = UIColor.clear.cgColor
                     UserDefaults.standard.set(survChar + " will survive", forKey: "betDescription")
                 }
             }
@@ -84,7 +99,8 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         if segue.identifier == "dieChar" {
             if let vc = segue.destination as? Characters2ViewController {
                 vc.completionHandler = { (dieChar) -> ()in
-                    self.dieTextField.text = dieChar
+                    self.dieButton.setTitle(dieChar, for: .normal)
+                    self.dieButton.layer.borderColor = UIColor.clear.cgColor
                     UserDefaults.standard.set(dieChar + " will die", forKey: "betDescription")
                 }
             }
@@ -92,8 +108,8 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     }
 
     @IBAction func firstCheck(_ sender: Any) {
-        if betTextField.text?.count ?? 0 > 3 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
-            betDescription = betTextField.text
+        if betTextView.text?.count ?? 0 > 3 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+            betDescription = betTextView.text
             UserDefaults.standard.set(betDescription, forKey: "betDescription")
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
             if Int(rewPoints) ?? 0 > 1 {
@@ -106,7 +122,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     }
     
     @IBAction func secondCheck(_ sender: Any) {
-        if surviveTextField.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+        if surviveButton.titleLabel?.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
             if Int(rewPoints) ?? 0 > 1 {
                 UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
@@ -118,7 +134,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     }
     
     @IBAction func thirdCheck(_ sender: Any) {
-        if dieTextField.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
+        if dieButton.titleLabel?.text?.count ?? 0 > 2 && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
             if Int(rewPoints) ?? 0 > 1 {
                 UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
