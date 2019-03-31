@@ -73,13 +73,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="trailing" secondItem="53q-Wq-Eoi" secondAttribute="trailing" id="1zU-p1-LGY"/>
+                            <constraint firstItem="Ipx-5x-syV" firstAttribute="trailing" secondItem="odI-uy-QC1" secondAttribute="trailing" id="1zU-p1-LGY"/>
                             <constraint firstItem="hwU-ts-afw" firstAttribute="leading" secondItem="odI-uy-QC1" secondAttribute="leading" id="DvY-cs-CQ8"/>
                             <constraint firstItem="Ipx-5x-syV" firstAttribute="top" secondItem="hwU-ts-afw" secondAttribute="bottom" id="H3q-HO-vXx"/>
                             <constraint firstItem="hwU-ts-afw" firstAttribute="top" secondItem="odI-uy-QC1" secondAttribute="top" constant="20" id="Hbx-ij-2d7"/>
                             <constraint firstItem="hwU-ts-afw" firstAttribute="trailing" secondItem="odI-uy-QC1" secondAttribute="trailing" id="Oi0-ws-oI0"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="bottom" secondItem="53q-Wq-Eoi" secondAttribute="bottom" id="Rhy-wY-JMZ"/>
-                            <constraint firstItem="Ipx-5x-syV" firstAttribute="leading" secondItem="53q-Wq-Eoi" secondAttribute="leading" id="Sk7-Em-rxL"/>
+                            <constraint firstItem="Ipx-5x-syV" firstAttribute="bottom" secondItem="odI-uy-QC1" secondAttribute="bottom" id="Rhy-wY-JMZ"/>
+                            <constraint firstItem="Ipx-5x-syV" firstAttribute="leading" secondItem="odI-uy-QC1" secondAttribute="leading" id="Sk7-Em-rxL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="odI-uy-QC1"/>
                     </view>

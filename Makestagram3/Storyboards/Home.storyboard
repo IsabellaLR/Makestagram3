@@ -125,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aip-6b-zZg">
-                                <rect key="frame" x="10" y="30" width="314" height="20"/>
+                                <rect key="frame" x="10" y="30" width="355" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="SqD-jT-GUa"/>
                                 </constraints>
@@ -134,7 +134,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="z6D-OO-dh2">
-                                <rect key="frame" x="20" y="70" width="294" height="150"/>
+                                <rect key="frame" x="20" y="70" width="335" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-MD-btj">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="60"/>
@@ -247,7 +247,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="din-aV-uEU">
-                                <rect key="frame" x="20" y="250" width="294" height="30"/>
+                                <rect key="frame" x="20" y="250" width="335" height="30"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HmD-iq-Huq">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="31"/>
@@ -274,7 +274,7 @@
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL6-w3-XPw">
-                                        <rect key="frame" x="264" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="305" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="3E4-J0-kMw"/>
                                             <constraint firstAttribute="height" constant="30" id="uXN-yi-mrH"/>
@@ -472,12 +472,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Ro-aX-KsG">
-                                <rect key="frame" x="0.0" y="83" width="375" height="584"/>
+                                <rect key="frame" x="0.0" y="63.5" width="375" height="603.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Tho-ej-6Wx"/>
-                                    <constraint firstAttribute="height" constant="584" id="Zpr-76-OUG"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sor-CY-rAu">
                                     <size key="itemSize" width="100" height="107"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -515,7 +511,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The man who fears losing has already lost" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-Sa-MEp">
-                                <rect key="frame" x="0.0" y="35" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="35" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -523,13 +519,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8Ro-aX-KsG" firstAttribute="trailing" secondItem="hVm-FG-Iyf" secondAttribute="trailing" id="SR9-y2-1ko"/>
+                            <constraint firstItem="hVm-FG-Iyf" firstAttribute="bottom" secondItem="8Ro-aX-KsG" secondAttribute="bottom" id="E7X-53-Qll"/>
                             <constraint firstItem="8Ro-aX-KsG" firstAttribute="top" secondItem="mzT-Sa-MEp" secondAttribute="bottom" constant="8" id="VpB-9f-RN7"/>
                             <constraint firstItem="mzT-Sa-MEp" firstAttribute="leading" secondItem="hVm-FG-Iyf" secondAttribute="leading" id="dHX-iH-KgT"/>
-                            <constraint firstItem="8Ro-aX-KsG" firstAttribute="bottom" secondItem="hVm-FG-Iyf" secondAttribute="bottom" id="giK-cx-DT2"/>
+                            <constraint firstItem="8Ro-aX-KsG" firstAttribute="leading" secondItem="hVm-FG-Iyf" secondAttribute="leading" id="ipi-PP-U2L"/>
                             <constraint firstItem="mzT-Sa-MEp" firstAttribute="top" secondItem="hVm-FG-Iyf" secondAttribute="top" constant="15" id="koh-h2-jqu"/>
                             <constraint firstItem="mzT-Sa-MEp" firstAttribute="trailing" secondItem="hVm-FG-Iyf" secondAttribute="trailing" id="tK6-24-l6M"/>
-                            <constraint firstItem="8Ro-aX-KsG" firstAttribute="leading" secondItem="hVm-FG-Iyf" secondAttribute="leading" id="yzi-VP-19I"/>
+                            <constraint firstItem="8Ro-aX-KsG" firstAttribute="trailing" secondItem="hVm-FG-Iyf" secondAttribute="trailing" id="tc1-VL-d1v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hVm-FG-Iyf"/>
                     </view>

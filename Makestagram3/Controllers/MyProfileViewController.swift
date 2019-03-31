@@ -39,7 +39,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         profileButton.layer.cornerRadius = 0.5 * profileButton.bounds.size.width
-        profileButton.clipsToBounds = true
         
         ProfileService.show { [weak self] (profile) in
             self?.profile = profile
@@ -52,6 +51,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
                         self?.profileButton.kf.setBackgroundImage(with: imageURL, for: .normal)
                         self?.profileButton.layer.borderWidth = 0.5
                         self?.profileButton.layer.borderColor = UIColor.lightGray.cgColor
+                        self?.profileButton.clipsToBounds = true
                     }
                 }
             }else{
