@@ -138,34 +138,34 @@
                                     <outlet property="delegate" destination="tx1-OM-Xer" id="2JM-Pj-prb"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who will win the throne?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-en-84Q">
-                                <rect key="frame" x="0.0" y="15" width="315" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uv-4h-cud">
-                                <rect key="frame" x="315" y="15" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="L6h-r9-yQj"/>
-                                    <constraint firstAttribute="height" constant="60" id="elU-cs-M7U"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="check"/>
-                                <connections>
-                                    <action selector="sendTapped:" destination="tx1-OM-Xer" eventType="touchUpInside" id="2Ye-HL-m03"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2E-qg-vh9">
+                                <rect key="frame" x="42" y="15" width="291" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who will win the throne?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-en-84Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="231" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uv-4h-cud">
+                                        <rect key="frame" x="231" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="L6h-r9-yQj"/>
+                                            <constraint firstAttribute="height" constant="60" id="elU-cs-M7U"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="check"/>
+                                        <connections>
+                                            <action selector="sendTapped:" destination="tx1-OM-Xer" eventType="touchUpInside" id="2Ye-HL-m03"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4uv-4h-cud" firstAttribute="top" secondItem="Jb1-3M-08t" secondAttribute="top" constant="15" id="AT9-ww-xlf"/>
-                            <constraint firstItem="r9q-JL-5hu" firstAttribute="top" secondItem="RK8-en-84Q" secondAttribute="bottom" constant="8" id="Qh7-1U-kCd"/>
-                            <constraint firstItem="RK8-en-84Q" firstAttribute="top" secondItem="Jb1-3M-08t" secondAttribute="top" constant="15" id="SEN-EK-Hdl"/>
-                            <constraint firstItem="r9q-JL-5hu" firstAttribute="top" secondItem="4uv-4h-cud" secondAttribute="bottom" constant="8" id="XvO-WA-2aS"/>
                             <constraint firstItem="r9q-JL-5hu" firstAttribute="trailing" secondItem="HqI-dj-lSL" secondAttribute="trailing" id="b65-cn-aQT"/>
-                            <constraint firstItem="4uv-4h-cud" firstAttribute="leading" secondItem="RK8-en-84Q" secondAttribute="trailing" id="g2g-Rx-F3E"/>
-                            <constraint firstItem="4uv-4h-cud" firstAttribute="trailing" secondItem="HqI-dj-lSL" secondAttribute="trailing" id="j5h-3K-n5f"/>
-                            <constraint firstItem="RK8-en-84Q" firstAttribute="leading" secondItem="HqI-dj-lSL" secondAttribute="leading" id="lAx-XX-0pK"/>
+                            <constraint firstItem="V2E-qg-vh9" firstAttribute="centerX" secondItem="Jb1-3M-08t" secondAttribute="centerX" id="dds-L8-Ktg"/>
+                            <constraint firstItem="r9q-JL-5hu" firstAttribute="top" secondItem="V2E-qg-vh9" secondAttribute="bottom" constant="8" symbolic="YES" id="hDm-hC-n3X"/>
                             <constraint firstItem="r9q-JL-5hu" firstAttribute="bottom" secondItem="HqI-dj-lSL" secondAttribute="bottom" id="qvU-Fl-CoY"/>
                             <constraint firstItem="r9q-JL-5hu" firstAttribute="leading" secondItem="HqI-dj-lSL" secondAttribute="leading" id="vPK-gc-cUV"/>
                         </constraints>
