@@ -56,6 +56,10 @@ class ViewBetsViewController: UIViewController {
     deinit {
         userBetsRef?.removeObserver(withHandle: userBetsHandle)
     }
+    
+    @IBAction func report(_ sender: Any) {
+        performSegue(withIdentifier: "reportUser", sender: nil)
+    }
 }
 
 

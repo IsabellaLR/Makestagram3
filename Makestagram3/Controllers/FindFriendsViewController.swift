@@ -65,7 +65,7 @@ extension FindFriendsViewController: UITableViewDataSource {
             cell.usernameLabel?.text = searchItem[indexPath.row]
         } else {
             cell.usernameLabel?.text = usernamesArr[indexPath.row]
-            cell.delegate = self
+//            cell.delegate = self
             configure(cell: cell, atIndexPath: indexPath)
         }
         

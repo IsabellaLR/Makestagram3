@@ -157,7 +157,21 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aV-IN-e4s">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Friend Bets" id="3xW-LW-xtq"/>
+                                    <navigationItem title="Friend Bets" id="3xW-LW-xtq">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="rAP-3f-25x">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pRD-pM-k4B">
+                                                <rect key="frame" x="329" y="0.0" width="30" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="report"/>
+                                                <connections>
+                                                    <action selector="report:" destination="zey-Wn-q3i" eventType="touchUpInside" id="AGd-8W-JAZ"/>
+                                                </connections>
+                                            </button>
+                                            <connections>
+                                                <segue destination="lI3-TF-Tqm" kind="presentation" identifier="reportUser" id="R3H-Xw-x13"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -501,11 +515,91 @@
             </objects>
             <point key="canvasLocation" x="1608.8" y="1335.3823088455774"/>
         </scene>
+        <!--Report View Controller-->
+        <scene sceneID="9kM-ob-glb">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="lI3-TF-Tqm" customClass="ReportViewController" customModule="Makestagram3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UtE-U8-Maz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4n-9K-nV5">
+                                <rect key="frame" x="81" y="128" width="212" height="216"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="report username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WkI-Ly-cFW">
+                                        <rect key="frame" x="38" y="185" width="124" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ZdM-kK-IsZ"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEq-mz-zvl">
+                                        <rect key="frame" x="161" y="182" width="30" height="30"/>
+                                        <state key="normal" image="check"/>
+                                        <connections>
+                                            <action selector="reportUser:" destination="lI3-TF-Tqm" eventType="touchUpInside" id="c3F-06-VkQ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EdStark" translatesAutoresizingMaskIntoConstraints="NO" id="2SU-Vx-VsD">
+                                        <rect key="frame" x="0.0" y="49" width="212" height="99"/>
+                                        <color key="backgroundColor" red="0.60610623109999995" green="0.8576478609" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="99" id="ipT-IK-2FO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please report innappropriate content" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry3-c3-u8p">
+                                        <rect key="frame" x="0.0" y="0.0" width="212" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1184895716" green="0.29800523480000002" blue="0.0099435454949999991" alpha="0.87981592465753422" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="2SU-Vx-VsD" firstAttribute="top" secondItem="ry3-c3-u8p" secondAttribute="bottom" constant="35" id="0dH-fp-ahM"/>
+                                    <constraint firstAttribute="height" constant="216" id="0lr-Ew-HVt"/>
+                                    <constraint firstItem="PEq-mz-zvl" firstAttribute="leading" secondItem="WkI-Ly-cFW" secondAttribute="trailing" constant="-1" id="CWJ-lh-Ybl"/>
+                                    <constraint firstItem="ry3-c3-u8p" firstAttribute="leading" secondItem="C4n-9K-nV5" secondAttribute="leading" id="G6u-iZ-Odu"/>
+                                    <constraint firstAttribute="trailing" secondItem="PEq-mz-zvl" secondAttribute="trailing" constant="21" id="GiJ-so-dA4"/>
+                                    <constraint firstAttribute="trailing" secondItem="2SU-Vx-VsD" secondAttribute="trailing" id="KWa-RN-Jfe"/>
+                                    <constraint firstItem="WkI-Ly-cFW" firstAttribute="leading" secondItem="C4n-9K-nV5" secondAttribute="leading" constant="38" id="NrJ-Bh-cfe"/>
+                                    <constraint firstAttribute="bottom" secondItem="PEq-mz-zvl" secondAttribute="bottom" constant="4" id="REc-Sh-ETW"/>
+                                    <constraint firstItem="ry3-c3-u8p" firstAttribute="top" secondItem="C4n-9K-nV5" secondAttribute="top" id="Sql-uF-tFO"/>
+                                    <constraint firstItem="WkI-Ly-cFW" firstAttribute="centerX" secondItem="2SU-Vx-VsD" secondAttribute="centerX" constant="-6" id="hFH-JJ-lKl"/>
+                                    <constraint firstAttribute="trailing" secondItem="ry3-c3-u8p" secondAttribute="trailing" id="jTL-On-AHu"/>
+                                    <constraint firstItem="PEq-mz-zvl" firstAttribute="top" secondItem="2SU-Vx-VsD" secondAttribute="bottom" constant="34" id="njT-q5-8TC"/>
+                                    <constraint firstItem="WkI-Ly-cFW" firstAttribute="top" secondItem="2SU-Vx-VsD" secondAttribute="bottom" constant="37" id="oj0-oi-DPy"/>
+                                    <constraint firstAttribute="width" constant="212" id="olU-AW-Z4h"/>
+                                    <constraint firstItem="2SU-Vx-VsD" firstAttribute="leading" secondItem="C4n-9K-nV5" secondAttribute="leading" id="q1p-vq-Ubj"/>
+                                    <constraint firstItem="2SU-Vx-VsD" firstAttribute="top" secondItem="C4n-9K-nV5" secondAttribute="top" constant="49" id="xSV-4X-hxZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C4n-9K-nV5" firstAttribute="centerX" secondItem="UtE-U8-Maz" secondAttribute="centerX" id="S7k-Jw-j5f"/>
+                            <constraint firstItem="C4n-9K-nV5" firstAttribute="centerY" secondItem="UtE-U8-Maz" secondAttribute="centerY" constant="-97.5" id="YSj-EU-2Ue"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5ch-dN-upx"/>
+                    </view>
+                    <connections>
+                        <outlet property="reportUserTextField" destination="WkI-Ly-cFW" id="U2R-K2-N1Q"/>
+                        <outlet property="view" destination="UtE-U8-Maz" id="gyy-Vd-hiJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CAI-Y5-aWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164" y="2041.529235382309"/>
+        </scene>
     </scenes>
     <resources>
         <image name="EdStark" width="602" height="466"/>
         <image name="check" width="60" height="60"/>
         <image name="loser" width="100" height="100"/>
+        <image name="report" width="30" height="30"/>
         <image name="reward" width="100" height="100"/>
         <image name="tab_agree" width="30" height="30"/>
         <image name="tie" width="30" height="30"/>

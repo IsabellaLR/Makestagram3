@@ -37,6 +37,7 @@
 		285CD7C1224C83250009BFBE /* WonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CD7C0224C83250009BFBE /* WonCell.swift */; };
 		2863649D220952EA0049761D /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863649C220952EA0049761D /* CharactersViewController.swift */; };
 		2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2863649E22095DF40049761D /* OnBoarding.storyboard */; };
+		286D6117225498F600CCDD72 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286D6116225498F600CCDD72 /* ReportViewController.swift */; };
 		2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45121D0BF3D007E3FF1 /* UserService.swift */; };
 		2871D45421D30F43007E3FF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45321D30F43007E3FF1 /* Constants.swift */; };
 		2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */; };
@@ -108,6 +109,7 @@
 		285CD7C0224C83250009BFBE /* WonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonCell.swift; sourceTree = "<group>"; };
 		2863649C220952EA0049761D /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		2863649E22095DF40049761D /* OnBoarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		286D6116225498F600CCDD72 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		2871D45121D0BF3D007E3FF1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2871D45321D30F43007E3FF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2871D45521D30FB0007E3FF1 /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				287346902234E6A800CB08B9 /* EdStarkViewController.swift */,
 				285CD7BE224C7E5A0009BFBE /* MessageViewController.swift */,
 				284CD708224C8CEF00F552D4 /* NumberViewController.swift */,
+				286D6116225498F600CCDD72 /* ReportViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
 				28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */,
 				28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */,
+				286D6117225498F600CCDD72 /* ReportViewController.swift in Sources */,
 				285CD7AF22498F5E0009BFBE /* FavoriteViewController.swift in Sources */,
 				28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */,
 				28B30C2D2229272D00E33D2D /* YourBetsViewController.swift in Sources */,
