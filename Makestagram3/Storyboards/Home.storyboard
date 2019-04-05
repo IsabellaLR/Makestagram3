@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVJ-2q-ELq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="got" translatesAutoresizingMaskIntoConstraints="NO" id="FdK-L0-b8B">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown1" translatesAutoresizingMaskIntoConstraints="NO" id="FdK-L0-b8B">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="zqS-YH-20V"/>
@@ -46,7 +46,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gotEp1" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-OR-Slr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-OR-Slr">
                                                     <rect key="frame" x="10" y="10" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="6ks-RY-SHt"/>
@@ -606,8 +606,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="got" width="452" height="302"/>
-        <image name="gotEp1" width="180" height="180"/>
+        <image name="crown1" width="1000" height="667"/>
         <image name="greenCheck" width="30" height="30"/>
         <image name="tab_home_black" width="25" height="25"/>
     </resources>

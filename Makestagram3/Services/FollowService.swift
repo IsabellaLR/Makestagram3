@@ -93,9 +93,63 @@ struct FollowService {
         })
     }
     
+    static func followerUsernames(for user: User, completion: @escaping ([String]) -> Void) {
+        
+        let followingRef = Database.database().reference().child("followers").child(user.uid)
+        
+        followingRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let followingDict = snapshot.value as? [String : Bool] else {
+                return completion([])
+            }
+            
+            let Keys = Array(followingDict.keys)
+            
+            //convert user.uid into username to display on sendBets table
+            var followingKeys = [String]()
+            
+            for following in Keys {
+                let ref2 = Database.database().reference().child("users").child(following).child("username")
+                ref2.observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if let item = snapshot.value as? String{
+                        followingKeys.append(item)
+                    }
+                    completion(followingKeys)
+                })
+            }
+        })
+    }
+    
     static func followingUids(for user: User, completion: @escaping ([String]) -> Void) {
         
         let followingRef = Database.database().reference().child("following").child(user.uid)
+        
+        followingRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let followingDict = snapshot.value as? [String : Bool] else {
+                return completion([])
+            }
+            
+            let Keys = Array(followingDict.keys)
+            
+            //convert user.uid into username to display on sendBets table
+            var followingKeys2 = [String]()
+            
+            for following in Keys {
+                let ref2 = Database.database().reference().child("users").child(following).child("uid")
+                ref2.observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if let item = snapshot.value as? String{
+                        followingKeys2.append(item)
+                    }
+                    completion(followingKeys2)
+                })
+            }
+        })
+    }
+    
+    static func followerUids(for user: User, completion: @escaping ([String]) -> Void) {
+        
+        let followingRef = Database.database().reference().child("followers").child(user.uid)
         
         followingRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let followingDict = snapshot.value as? [String : Bool] else {
