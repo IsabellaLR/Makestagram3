@@ -37,7 +37,8 @@ class Characters2ViewController: UIViewController, UICollectionViewDataSource, U
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "charCell", for: indexPath) as! Character2ViewCell
         let character = characters[indexPath.row]
 
-        cell.characterImage.image = UIImage(named: characterImages[indexPath.row])
+//        cell.characterImage.image = UIImage(named: characterImages[indexPath.row])
+        cell.characterName.text = characters[indexPath.row]
         
         if selectedIndex == indexPath.row {
             cell.contentView.layer.borderColor = UIColor.yellow.cgColor

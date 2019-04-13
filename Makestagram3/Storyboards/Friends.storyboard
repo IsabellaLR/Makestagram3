@@ -64,11 +64,16 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Yfw-c4-M9M" id="eLA-yV-0JA"/>
+                                    <outlet property="delegate" destination="Yfw-c4-M9M" id="Odv-pB-Ju9"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hwU-ts-afw">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwU-ts-afw">
                                 <rect key="frame" x="0.0" y="40" width="375" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yfw-c4-M9M" id="T53-y7-Dcc"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,6 +89,7 @@
                         <viewLayoutGuide key="safeArea" id="odI-uy-QC1"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="hwU-ts-afw" id="hUv-Ve-ej8"/>
                         <outlet property="tableView" destination="Ipx-5x-syV" id="7rE-Tz-tgn"/>
                     </connections>
                 </viewController>

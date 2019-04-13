@@ -23,11 +23,14 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var coupleButton: UIButton!
     @IBOutlet weak var shipButton: UIButton!
     @IBOutlet weak var favCharButton: UIButton!
+    @IBOutlet weak var houseButton: UIButton!
     
     @IBOutlet weak var coupleLabel: UILabel!
     @IBOutlet weak var shipLabel: UILabel!
     @IBOutlet weak var favCharLabel: UILabel!
     @IBOutlet weak var throneCharLabel: UILabel!
+    
+    @IBOutlet weak var houseImage: UIImageView!
     
     let photoHelper = MGPhotoHelper()
     
@@ -57,6 +60,12 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             }else{
                 let image = UIImage(named: "ninja")
                 self?.profileButton.setImage(image, for: .normal)
+            }
+            
+            if let house = profile?.house {
+                DispatchQueue.main.async {
+                    self?.houseImage.image = UIImage(named: house)
+                }
             }
             
             if let couple = profile?.couple {

@@ -38,7 +38,7 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         super.viewDidLoad()
 //        var betDescription: String = betTextField.text ?? ""
         
-        episodeLabel.text = "Make a bet for \(name)"
+        episodeLabel.text = "Make a prediction for \(name)"
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         tap.cancelsTouchesInView = false
@@ -112,11 +112,11 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
             betDescription = betTextView.text
             UserDefaults.standard.set(betDescription, forKey: "betDescription")
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
-            if Int(rewPoints) ?? 0 > 1 {
-                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
-            }else{
-                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shot"), forKey: "rewardAndPoints")
-            }
+//            if Int(rewPoints) ?? 0 > 1 {
+//                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
+//            }else{
+                UserDefaults.standard.set(rewPoints + " x " + (reward ?? "juice"), forKey: "rewardAndPoints")
+//            }
             performSegue(withIdentifier: "sendTo", sender: nil)
         }
     }
@@ -124,11 +124,11 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBAction func secondCheck(_ sender: Any) {
         if surviveButton.titleLabel?.text != "  ?  " && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
-            if Int(rewPoints) ?? 0 > 1 {
-                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
-            }else{
-                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots"), forKey: "rewardAndPoints")
-            }
+//            if Int(rewPoints) ?? 0 > 1 {
+//                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
+//            }else{
+                UserDefaults.standard.set(rewPoints + " x " + (reward ?? "juice"), forKey: "rewardAndPoints")
+//            }
             performSegue(withIdentifier: "sendTo", sender: nil)
         }
     }
@@ -136,11 +136,11 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
     @IBAction func thirdCheck(_ sender: Any) {
         if dieButton.titleLabel?.text != "  ?  " && reward != "" && ptsLabel.text?.count ?? 0 > 0 {
             let rewPoints = (UserDefaults.standard.string(forKey: "points") ?? "")
-            if Int(rewPoints) ?? 0 > 1 {
-                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
-            }else{
-                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots"), forKey: "rewardAndPoints")
-            }
+//            if Int(rewPoints) ?? 0 > 1 {
+//                UserDefaults.standard.set(rewPoints + " " + (reward ?? "shots") + "s", forKey: "rewardAndPoints")
+//            }else{
+                UserDefaults.standard.set(rewPoints + " x " + (reward ?? "juice"), forKey: "rewardAndPoints")
+//            }
             performSegue(withIdentifier: "sendTo", sender: nil)
         }
     }
@@ -150,13 +150,14 @@ class MakeBetViewController: UIViewController, UIPopoverPresentationControllerDe
         
         switch (getIndex) {
         case 0:
-            reward = "shot"
+            reward = "juice"
+            print("REWARD: JUICE")
         case 1:
-            reward = "dollar"
+            reward = "bread"
         case 2:
-            reward = "point"
+            reward = "points"
         default:
-            reward = "shot"
+            reward = "juice"
         }
     }
     

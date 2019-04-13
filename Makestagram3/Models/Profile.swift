@@ -24,6 +24,7 @@ class Profile {
     let fav: String
     let throneChar: String
     let imageURL: String
+    let house: String
     
     init?(snapshot: DataSnapshot) {
         guard !snapshot.key.isEmpty else {return nil}
@@ -39,6 +40,7 @@ class Profile {
             let wins = dict["wins"] as? Int
             let losses = dict["losses"] as? Int
             let imageURL = dict["image"] as? String
+            let house = dict["house"] as? String
             
             self.key = snapshot.key
             self.throneChar = throneChar ?? ""
@@ -51,6 +53,7 @@ class Profile {
             self.wins = wins ?? 0
             self.losses = losses ?? 0
             self.imageURL = imageURL ?? ""
+            self.house = house ?? ""
         }
         else{
             return nil

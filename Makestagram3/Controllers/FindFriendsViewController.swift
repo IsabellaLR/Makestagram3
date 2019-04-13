@@ -42,19 +42,27 @@ class FindFriendsViewController: UIViewController {
     }
 }
 
-extension FindFriendsViewController: UITableViewDataSource {
+extension FindFriendsViewController: UITableViewDataSource, UITableViewDelegate {
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        var usernamesArr = [String]()
+        for user in users {
+            usernamesArr.append(user.username)
+        }
+        
         if searching {
             return searchItem.count
         } else {
-            return users.count
+            return usernamesArr.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindFriendsCell") as! FindFriendsCell
         
-//        let user = users[indexPath.row]
+        let user = users[indexPath.row]
         
         var usernamesArr = [String]()
         for user in users {
@@ -62,13 +70,16 @@ extension FindFriendsViewController: UITableViewDataSource {
         }
         
         if searching {
-            cell.textLabel?.text = searchItem[indexPath.row]
+            cell.usernameLabel?.text = searchItem[indexPath.row]
+//            cell.followButton.isSelected = user.isFollowed
         } else {
-            cell.textLabel?.text = usernamesArr[indexPath.row]
+            cell.usernameLabel?.text = usernamesArr[indexPath.row]
+//            cell.followButton.isSelected = user.isFollowed
             cell.delegate = self
             configure(cell: cell, atIndexPath: indexPath)
         }
         
+//        print(S)
         return cell
     }
     
@@ -108,6 +119,12 @@ extension FindFriendsViewController: UISearchBarDelegate {
         }
         searchItem = usernamesArr.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
         searching = true
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
         tableView.reloadData()
     }
 }

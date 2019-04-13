@@ -94,9 +94,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPG-tw-6Nh">
-                                                    <rect key="frame" x="264" y="102" width="70" height="0.0"/>
+                                                    <rect key="frame" x="265" y="102" width="80" height="0.0"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="fXR-FO-u7m"/>
+                                                        <constraint firstAttribute="width" constant="80" id="fXR-FO-u7m"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -128,7 +128,7 @@
                                                 <constraint firstItem="BPG-tw-6Nh" firstAttribute="top" secondItem="xZL-se-mqs" secondAttribute="bottom" constant="5" id="gjA-gL-Gtw"/>
                                                 <constraint firstItem="ZmT-PP-fhI" firstAttribute="leading" secondItem="AG7-d3-kyy" secondAttribute="leading" constant="10" id="kma-1v-db8"/>
                                                 <constraint firstItem="xZL-se-mqs" firstAttribute="bottom" secondItem="gFK-XR-PWF" secondAttribute="bottom" id="pjd-Of-pOX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BPG-tw-6Nh" secondAttribute="trailing" constant="16" id="tK0-8F-7Ok"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BPG-tw-6Nh" secondAttribute="trailing" constant="5" id="tK0-8F-7Ok"/>
                                                 <constraint firstItem="e43-eO-qmh" firstAttribute="top" secondItem="mVT-6o-mur" secondAttribute="bottom" constant="5" id="u7V-LJ-Pl4"/>
                                                 <constraint firstItem="xZL-se-mqs" firstAttribute="top" secondItem="gFK-XR-PWF" secondAttribute="top" id="uol-It-6Rp"/>
                                                 <constraint firstItem="ZmT-PP-fhI" firstAttribute="top" secondItem="AG7-d3-kyy" secondAttribute="top" constant="10" id="vx0-Vu-f4y"/>
