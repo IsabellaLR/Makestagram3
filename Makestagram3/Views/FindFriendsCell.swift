@@ -27,8 +27,8 @@ class FindFriendsCell: UITableViewCell {
         followButton.layer.cornerRadius = 6
         followButton.clipsToBounds = true
         
-        followButton.setTitle("Follow", for: .normal)
-        followButton.setTitle("Following", for: .selected)
+        followButton.setTitle("Add", for: .normal)
+        followButton.setTitle("Friend", for: .selected)
     }
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {

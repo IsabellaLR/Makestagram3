@@ -568,11 +568,11 @@
             </objects>
             <point key="canvasLocation" x="591" y="365"/>
         </scene>
-        <!--Friends-->
+        <!--FindFriends-->
         <scene sceneID="DN6-eX-M5Q">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Friends" storyboardName="FindFriends" referencedIdentifier="Friends" id="f1R-Vp-XIA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jqF-04-Ew5"/>
+                <viewControllerPlaceholder storyboardIdentifier="FindFriends" storyboardName="FindFriends" id="f1R-Vp-XIA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="hyy" id="jqF-04-Ew5"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrS-6u-ICE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

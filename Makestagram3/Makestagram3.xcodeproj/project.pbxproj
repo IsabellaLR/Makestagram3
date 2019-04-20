@@ -66,11 +66,16 @@
 		28B30C2D2229272D00E33D2D /* YourBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B30C2C2229272D00E33D2D /* YourBetsViewController.swift */; };
 		28B30C2F2229273E00E33D2D /* DebtBetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B30C2E2229273E00E33D2D /* DebtBetsViewController.swift */; };
 		28B30C3322292F6A00E33D2D /* ViewBetType.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B30C3222292F6A00E33D2D /* ViewBetType.storyboard */; };
+		28B84732226A29B5001F8C10 /* FriendsListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B84731226A29B5001F8C10 /* FriendsListViewCell.swift */; };
 		28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */; };
 		28C06FDE21D09C2C008F2783 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDD21D09C2C008F2783 /* User.swift */; };
 		28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */; };
 		28CBB3A02262757E00919885 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CBB39F2262757E00919885 /* HouseViewController.swift */; };
 		28CBB3A22262772600919885 /* HouseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CBB3A12262772600919885 /* HouseViewCell.swift */; };
+		28E67959226A988900A976E0 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E67958226A988900A976E0 /* FriendsListViewController.swift */; };
+		28E6795B226A992600A976E0 /* RootFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6795A226A992600A976E0 /* RootFriendsViewController.swift */; };
+		28E6795D226AD86C00A976E0 /* FriendsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6795C226AD86C00A976E0 /* FriendsListCell.swift */; };
+		28E6795F226AD9A900A976E0 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6795E226AD9A900A976E0 /* FriendProfileViewController.swift */; };
 		28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAC4A521CEE7600083EE24 /* AppDelegate.swift */; };
 		28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4A921CEE7600083EE24 /* Main.storyboard */; };
 		28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4AC21CEE7610083EE24 /* Assets.xcassets */; };
@@ -141,11 +146,16 @@
 		28B30C2C2229272D00E33D2D /* YourBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBetsViewController.swift; sourceTree = "<group>"; };
 		28B30C2E2229273E00E33D2D /* DebtBetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtBetsViewController.swift; sourceTree = "<group>"; };
 		28B30C3222292F6A00E33D2D /* ViewBetType.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewBetType.storyboard; sourceTree = "<group>"; };
+		28B84731226A29B5001F8C10 /* FriendsListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewCell.swift; sourceTree = "<group>"; };
 		28C06FDB21CF7347008F2783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28C06FDD21D09C2C008F2783 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		28C06FDF21D0A612008F2783 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		28CBB39F2262757E00919885 /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		28CBB3A12262772600919885 /* HouseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewCell.swift; sourceTree = "<group>"; };
+		28E67958226A988900A976E0 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		28E6795A226A992600A976E0 /* RootFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFriendsViewController.swift; sourceTree = "<group>"; };
+		28E6795C226AD86C00A976E0 /* FriendsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCell.swift; sourceTree = "<group>"; };
+		28E6795E226AD9A900A976E0 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		28EAC4A221CEE7600083EE24 /* Makestagram3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EAC4A521CEE7600083EE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28EAC4AA21CEE7600083EE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +187,7 @@
 				285CD7AC22498F4A0009BFBE /* ShipViewController.swift */,
 				285CD7AE22498F5E0009BFBE /* FavoriteViewController.swift */,
 				28CBB39F2262757E00919885 /* HouseViewController.swift */,
+				28E6795E226AD9A900A976E0 /* FriendProfileViewController.swift */,
 			);
 			path = ProfileViewControllers;
 			sourceTree = "<group>";
@@ -238,6 +249,8 @@
 				284CD708224C8CEF00F552D4 /* NumberViewController.swift */,
 				286D6116225498F600CCDD72 /* ReportViewController.swift */,
 				286D6118225739EA00CCDD72 /* InstructionsViewController.swift */,
+				28E67958226A988900A976E0 /* FriendsListViewController.swift */,
+				28E6795A226A992600A976E0 /* RootFriendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,6 +347,8 @@
 				285CD7B4224A03710009BFBE /* FavoriteViewCell.swift */,
 				285CD7C0224C83250009BFBE /* WonCell.swift */,
 				28CBB3A12262772600919885 /* HouseViewCell.swift */,
+				28B84731226A29B5001F8C10 /* FriendsListViewCell.swift */,
+				28E6795C226AD86C00A976E0 /* FriendsListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -512,6 +527,7 @@
 				285CD7BD224B21850009BFBE /* HistoryService.swift in Sources */,
 				2856DB01220BCE3C0076A602 /* onBoardingService.swift in Sources */,
 				2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */,
+				28E6795B226A992600A976E0 /* RootFriendsViewController.swift in Sources */,
 				285CD7BB224B1E080009BFBE /* History.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
 				284CD709224C8CEF00F552D4 /* NumberViewController.swift in Sources */,
@@ -532,6 +548,7 @@
 				2807916922486D0C00CC4242 /* FriendBet.swift in Sources */,
 				2871D45E21D33B75007E3FF1 /* MGPhotoHelper.swift in Sources */,
 				2807916B22486D5A00CC4242 /* ClaimBet.swift in Sources */,
+				28B84732226A29B5001F8C10 /* FriendsListViewCell.swift in Sources */,
 				285CD7BF224C7E5B0009BFBE /* MessageViewController.swift in Sources */,
 				28790AC922193C48005B1B12 /* Characters2ViewController.swift in Sources */,
 				2871D45621D30FB0007E3FF1 /* Storyboard+Utility.swift in Sources */,
@@ -544,9 +561,11 @@
 				28C06FE021D0A612008F2783 /* CreateUsernameViewController.swift in Sources */,
 				2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */,
 				28790ACD221A7B2C005B1B12 /* EmojiViewController.swift in Sources */,
+				28E6795F226AD9A900A976E0 /* FriendProfileViewController.swift in Sources */,
 				2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */,
 				28A8EFAC222BE10000F86F80 /* DebtBetsCell.swift in Sources */,
 				283F0D0021DDAE330096BB6E /* ViewBetsViewController.swift in Sources */,
+				28E6795D226AD86C00A976E0 /* FriendsListCell.swift in Sources */,
 				2851D543222902B5001972CB /* BetsRootViewController.swift in Sources */,
 				285CD7B9224B0CD30009BFBE /* UIColor.swift in Sources */,
 				2840AC0F21D709890002A238 /* HomeTableViewCell.swift in Sources */,
@@ -560,6 +579,7 @@
 				287346912234E6A800CB08B9 /* EdStarkViewController.swift in Sources */,
 				283F0D0621DF36010096BB6E /* Bet.swift in Sources */,
 				285CD7AD22498F4A0009BFBE /* ShipViewController.swift in Sources */,
+				28E67959226A988900A976E0 /* FriendsListViewController.swift in Sources */,
 				2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

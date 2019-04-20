@@ -40,12 +40,12 @@ class SendToPopOverViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        FollowService.followerUsernames(for: User.current) { (followingKeys) in
+        FollowService.followingUsernames(for: User.current) { (followingKeys) in
             self.followingKeys = followingKeys
             self.tableView.reloadData()
         }
         
-        FollowService.followerUids(for: User.current) { (followingKeys2) in
+        FollowService.followingUids(for: User.current) { (followingKeys2) in
             self.followingKeys2 = followingKeys2
             self.tableView.reloadData()
         }
@@ -89,27 +89,27 @@ extension SendToPopOverViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SendToFollowersCell") as? SendToFollowersCell else {
             fatalError("Could not retrieve cell")
         }
-        
-        cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
-        cell.userImage.clipsToBounds = true
-        cell.userImage.layer.borderWidth = 0.5
-        cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
+//
+//        cell.userImage.layer.cornerRadius = 0.5 * cell.userImage.bounds.size.width
+//        cell.userImage.clipsToBounds = true
+//        cell.userImage.layer.borderWidth = 0.5
+//        cell.userImage.layer.borderColor = UIColor.lightGray.cgColor
         
         //        cell.delegate = self
         configure(cell: cell, atIndexPath: indexPath)
         
         // not showing images
-        ProfileService.showOtherUser(user: cell.followerName.text) { [weak self] (profile2) in
-            self?.profile2 = profile2
-            if (profile2?.imageURL == "") {
-                cell.userImage.image = UIImage(named: "ninja")
-                print("NINJAAAAAAAA")
-            }else{
-                let imageURL = URL(string: ((profile2?.imageURL ?? "ninja")))
-                cell.userImage.kf.setImage(with: imageURL)
-                print("IMAGGGGGGGGGE")
-            }
-        }
+//        ProfileService.showOtherUser(user: cell.followerName.text) { [weak self] (profile2) in
+//            self?.profile2 = profile2
+//            if (profile2?.imageURL == "") {
+//                cell.userImage.image = UIImage(named: "ninja")
+//                print("NINJAAAAAAAA")
+//            }else{
+//                let imageURL = URL(string: ((profile2?.imageURL ?? "ninja")))
+//                cell.userImage.kf.setImage(with: imageURL)
+//                print("IMAGGGGGGGGGE")
+//            }
+//        }
         
         return cell
     }
