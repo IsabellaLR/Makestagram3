@@ -85,8 +85,10 @@ struct ProfileService {
         let profileRef = Database.database().reference().child("profile").child(user ?? "")
 
         profileRef.observe(.value, with: { (snapshot) in
-            let profile2 = Profile(snapshot: snapshot)
-            return completion(profile2)
+            guard let profile2 = Profile(snapshot: snapshot) else {
+                return completion(nil)
+            }
+            completion(profile2)
         })
     }
     

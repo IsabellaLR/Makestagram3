@@ -17,7 +17,6 @@
 		2840AC1121D7116E0002A238 /* MakeBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1021D7116E0002A238 /* MakeBetViewController.swift */; };
 		2840AC1321D7F93F0002A238 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1221D7F93F0002A238 /* FollowService.swift */; };
 		2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC1621D8029E0002A238 /* FindFriendsCell.swift */; };
-		2840AC1D21D82AB50002A238 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1C21D82AB50002A238 /* Friends.storyboard */; };
 		2840AC1F21D82AFB0002A238 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2840AC1E21D82AFB0002A238 /* Home.storyboard */; };
 		2840AC2121D9BB240002A238 /* SendToPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */; };
 		2840AC2321D9BC2A0002A238 /* SendToFollowersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */; };
@@ -55,7 +54,6 @@
 		28790ACB22193DF1005B1B12 /* Character2ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */; };
 		28790ACD221A7B2C005B1B12 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */; };
 		28790ACF221A804A005B1B12 /* EmojiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28790ACE221A804A005B1B12 /* EmojiViewCell.swift */; };
-		288CB0B3224F0AD300FE9239 /* FindFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288CB0B2224F0AD300FE9239 /* FindFriends.storyboard */; };
 		2895D97A21EA91C70071D497 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97921EA91C70071D497 /* ProfileService.swift */; };
 		2895D97C21EA95C00071D497 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2895D97B21EA95C00071D497 /* Profile.swift */; };
 		28A8983521E67B1D00A9DFEA /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */; };
@@ -73,9 +71,9 @@
 		28CBB3A02262757E00919885 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CBB39F2262757E00919885 /* HouseViewController.swift */; };
 		28CBB3A22262772600919885 /* HouseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CBB3A12262772600919885 /* HouseViewCell.swift */; };
 		28E67959226A988900A976E0 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E67958226A988900A976E0 /* FriendsListViewController.swift */; };
-		28E6795B226A992600A976E0 /* RootFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6795A226A992600A976E0 /* RootFriendsViewController.swift */; };
 		28E6795D226AD86C00A976E0 /* FriendsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6795C226AD86C00A976E0 /* FriendsListCell.swift */; };
 		28E6795F226AD9A900A976E0 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E6795E226AD9A900A976E0 /* FriendProfileViewController.swift */; };
+		28E67961226B22BE00A976E0 /* Friend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28E67960226B22BE00A976E0 /* Friend.storyboard */; };
 		28EAC4A621CEE7600083EE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAC4A521CEE7600083EE24 /* AppDelegate.swift */; };
 		28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4A921CEE7600083EE24 /* Main.storyboard */; };
 		28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EAC4AC21CEE7610083EE24 /* Assets.xcassets */; };
@@ -97,7 +95,6 @@
 		2840AC1021D7116E0002A238 /* MakeBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeBetViewController.swift; sourceTree = "<group>"; };
 		2840AC1221D7F93F0002A238 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
 		2840AC1621D8029E0002A238 /* FindFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendsCell.swift; sourceTree = "<group>"; };
-		2840AC1C21D82AB50002A238 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		2840AC1E21D82AFB0002A238 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		2840AC2021D9BB240002A238 /* SendToPopOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToPopOverViewController.swift; sourceTree = "<group>"; };
 		2840AC2221D9BC2A0002A238 /* SendToFollowersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToFollowersCell.swift; sourceTree = "<group>"; };
@@ -135,7 +132,6 @@
 		28790ACA22193DF1005B1B12 /* Character2ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character2ViewCell.swift; sourceTree = "<group>"; };
 		28790ACC221A7B2C005B1B12 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		28790ACE221A804A005B1B12 /* EmojiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewCell.swift; sourceTree = "<group>"; };
-		288CB0B2224F0AD300FE9239 /* FindFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FindFriends.storyboard; sourceTree = "<group>"; };
 		2895D97921EA91C70071D497 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		2895D97B21EA95C00071D497 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		28A8983421E67B1D00A9DFEA /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -153,9 +149,9 @@
 		28CBB39F2262757E00919885 /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		28CBB3A12262772600919885 /* HouseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewCell.swift; sourceTree = "<group>"; };
 		28E67958226A988900A976E0 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
-		28E6795A226A992600A976E0 /* RootFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFriendsViewController.swift; sourceTree = "<group>"; };
 		28E6795C226AD86C00A976E0 /* FriendsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCell.swift; sourceTree = "<group>"; };
 		28E6795E226AD9A900A976E0 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
+		28E67960226B22BE00A976E0 /* Friend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friend.storyboard; sourceTree = "<group>"; };
 		28EAC4A221CEE7600083EE24 /* Makestagram3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makestagram3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EAC4A521CEE7600083EE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28EAC4AA21CEE7600083EE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -250,7 +246,6 @@
 				286D6116225498F600CCDD72 /* ReportViewController.swift */,
 				286D6118225739EA00CCDD72 /* InstructionsViewController.swift */,
 				28E67958226A988900A976E0 /* FriendsListViewController.swift */,
-				28E6795A226A992600A976E0 /* RootFriendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,11 +300,10 @@
 		28EAC4BE21CEFF510083EE24 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				288CB0B2224F0AD300FE9239 /* FindFriends.storyboard */,
+				28E67960226B22BE00A976E0 /* Friend.storyboard */,
 				28B30C3222292F6A00E33D2D /* ViewBetType.storyboard */,
 				28AC0FE621DCAC490041FDDB /* ViewBet.storyboard */,
 				2840AC1E21D82AFB0002A238 /* Home.storyboard */,
-				2840AC1C21D82AB50002A238 /* Friends.storyboard */,
 				28EAC4A921CEE7600083EE24 /* Main.storyboard */,
 				28EAC4C321CF20500083EE24 /* Login.storyboard */,
 				2863649E22095DF40049761D /* OnBoarding.storyboard */,
@@ -432,12 +426,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2840AC1F21D82AFB0002A238 /* Home.storyboard in Resources */,
-				2840AC1D21D82AB50002A238 /* Friends.storyboard in Resources */,
-				288CB0B3224F0AD300FE9239 /* FindFriends.storyboard in Resources */,
 				28EAC4B021CEE7610083EE24 /* LaunchScreen.storyboard in Resources */,
 				28EAC4AD21CEE7610083EE24 /* Assets.xcassets in Resources */,
 				28AC0FE721DCAC490041FDDB /* ViewBet.storyboard in Resources */,
 				28EAC4C421CF20500083EE24 /* Login.storyboard in Resources */,
+				28E67961226B22BE00A976E0 /* Friend.storyboard in Resources */,
 				28C06FDC21CF7347008F2783 /* GoogleService-Info.plist in Resources */,
 				28EAC4AB21CEE7600083EE24 /* Main.storyboard in Resources */,
 				2863649F22095DF40049761D /* OnBoarding.storyboard in Resources */,
@@ -527,7 +520,6 @@
 				285CD7BD224B21850009BFBE /* HistoryService.swift in Sources */,
 				2856DB01220BCE3C0076A602 /* onBoardingService.swift in Sources */,
 				2840AC1721D8029E0002A238 /* FindFriendsCell.swift in Sources */,
-				28E6795B226A992600A976E0 /* RootFriendsViewController.swift in Sources */,
 				285CD7BB224B1E080009BFBE /* History.swift in Sources */,
 				2871D45221D0BF3D007E3FF1 /* UserService.swift in Sources */,
 				284CD709224C8CEF00F552D4 /* NumberViewController.swift in Sources */,

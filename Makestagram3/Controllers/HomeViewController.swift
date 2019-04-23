@@ -10,9 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var totalEpisodes = ["Winterfell", "Enemies From the East", "The Long Night", "A Time For Wolves", "Children of the Dragon", "A Dream of Spring"]
-    var episodeImages = ["winterfell", "comingSoon", "comingSoon", "comingSoon", "comingSoon", "comingSoon"]
-    var datesAndYear = ["2019-04-15", "2019-04-21", "2019-04-28", "2019-05-05", "2019-05-12", "2019-05-19"]
+    var totalEpisodes = ["Winterfell", "A Knight of the Seven Kingdoms", "The Long Night", "A Time For Wolves", "Children of the Dragon", "A Dream of Spring"]
+    var episodeImages = ["winterfell", "ep2-f2", "ep3-f", "ep4-f", "ep5-2", "ep6-f"]
+    var datesAndYear = ["2019-04-15", "2019-04-22", "2019-04-29", "2019-05-06", "2019-05-13", "2019-05-20"]
     var dates = ["April 14", "April 21", "April 28", "May 5", "May 12", "May 19"]
     var epAndDates = ["The Queen of Winterfell Arpril 24", "Fire and Ice April 30", "Viserys May 7", "The Last Debt May 14", "The Wheel Has Broken May 21", "End Game May 28"]
     var episodeName: String?

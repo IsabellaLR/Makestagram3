@@ -63,9 +63,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcJ-jW-RgL">
-                                                    <rect key="frame" x="100" y="10" width="200" height="21"/>
+                                                    <rect key="frame" x="100" y="10" width="260" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="xz9-zv-oTQ"/>
+                                                        <constraint firstAttribute="width" constant="260" id="xz9-zv-oTQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>

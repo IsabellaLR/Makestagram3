@@ -12,18 +12,14 @@ class FriendsListViewController: UIViewController {
     
     var followingKeys = [String]()
     var followingKeys2 = [String]()
-    var username: String?
+    var uid: String?
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+
         FollowService.followingUsernames(for: User.current) { (followingKeys) in
             self.followingKeys = followingKeys
             self.tableView.reloadData()
@@ -62,9 +58,9 @@ extension FriendsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "FriendProfileViewController") as? FriendProfileViewController
-        vc?.name = followingKeys[indexPath.row]
-        username = vc?.name
-        UserDefaults.standard.set(username, forKey: "username")
+        vc?.name = followingKeys2[indexPath.row]
+        uid = vc?.name
+        UserDefaults.standard.set(uid, forKey: "uid")
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 }

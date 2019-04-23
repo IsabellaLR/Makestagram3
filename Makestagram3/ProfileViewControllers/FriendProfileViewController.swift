@@ -13,7 +13,7 @@ import FirebaseStorage
 import FirebaseAuth
 import Kingfisher
 
-class FriendProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FriendProfileViewController: UIViewController, UINavigationControllerDelegate {
     
     var name = ""
     
@@ -38,7 +38,7 @@ class FriendProfileViewController: UIViewController, UIImagePickerControllerDele
         profileButton.layer.cornerRadius = 0.5 * profileButton.bounds.size.width
         profileButton.clipsToBounds = true
         
-        name = (UserDefaults.standard.string(forKey: "username") ?? "")
+        name = (UserDefaults.standard.string(forKey: "uid") ?? "")
         
         ProfileService.showOtherUser(user: name) { [weak self] (profile2) in
             //                if  (self!.show == true){
@@ -85,7 +85,7 @@ class FriendProfileViewController: UIViewController, UIImagePickerControllerDele
             
             if let throneChar = profile2?.throneChar {
                 DispatchQueue.main.async {
-                    self?.throneCharLabel.text = throneChar
+                    self?.throneCharLabel.text = "Will win throne: " + throneChar
                 }
             }
         }
